@@ -1,0 +1,4 @@
+OPIS Z ZTP:
+
+
+Odtwarzacz muzyczny: obs³uga podstawowych formatów plików dŸwiêkowych (przynajmniej WAV i MP3); playlisty odtwarzanych plików z mo¿liwoœci¹ edycji (dodawanie, usuwanie, zmiana kolejnoœci); zapis playlist i ich eksport (do formatu XML i/lub JSON); biblioteka utworów z prezentacj¹ w widokach wzglêdem nazwy artysty, jego albumów i œcie¿ek w albumie; mo¿liwoœæ sortowania widoków biblioteki przynajmniej po nazwie, roku wydania, d³ugoœci œcie¿ki.
