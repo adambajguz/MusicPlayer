@@ -26,6 +26,7 @@ CREATE TABLE [Utwor] (
 	dlugosc timestamp NOT NULL,
 	bitrate integer NOT NULL,
 	dataUtworzeniaWBazie datetime NOT NULL,
+	liczbaOdtworzen integer NOT NULL DEFAULT '0',
   CONSTRAINT [PK_UTWOR] PRIMARY KEY CLUSTERED
   (
   [ID] ASC
