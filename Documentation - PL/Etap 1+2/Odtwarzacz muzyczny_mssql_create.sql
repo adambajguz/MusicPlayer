@@ -3,8 +3,9 @@ CREATE TABLE [Album] (
 	Okladka integer NOT NULL,
 	tytul text NOT NULL,
 	opis integer NOT NULL,
-	data_wydania datetime NOT NULL,
+	dataWydania datetime NOT NULL,
 	wytwornia string NOT NULL,
+	dataUtworzeniaWBazie datetime NOT NULL,
   CONSTRAINT [PK_ALBUM] PRIMARY KEY CLUSTERED
   (
   [ID] ASC
@@ -18,11 +19,13 @@ CREATE TABLE [Utwor] (
 	Album integer,
 	Grafika integer,
 	Gatunek integer NOT NULL,
+	ocena integer NOT NULL DEFAULT '0',
 	tytul text NOT NULL,
-	data_powstania datetime NOT NULL,
-	sciezka_pliku text NOT NULL,
+	dataPowstania datetime NOT NULL,
+	sciezkaDoPliku text,
 	dlugosc timestamp NOT NULL,
 	bitrate integer NOT NULL,
+	dataUtworzeniaWBazie datetime NOT NULL,
   CONSTRAINT [PK_UTWOR] PRIMARY KEY CLUSTERED
   (
   [ID] ASC
@@ -54,7 +57,7 @@ GO
 CREATE TABLE [Playlista] (
 	ID integer NOT NULL,
 	nazwa text NOT NULL,
-	data_utworzenia datetime NOT NULL,
+	dataUtworzeniaWBazie datetime NOT NULL,
 	opis datetime NOT NULL,
   CONSTRAINT [PK_PLAYLISTA] PRIMARY KEY CLUSTERED
   (
@@ -70,7 +73,7 @@ CREATE TABLE [Artysta] (
 	imie text NOT NULL,
 	nazwisko text NOT NULL,
 	pseudonim text NOT NULL,
-	data_urodzenia datetime NOT NULL,
+	dataUrodzenia datetime NOT NULL,
 	opis text NOT NULL,
   CONSTRAINT [PK_ARTYSTA] PRIMARY KEY CLUSTERED
   (
@@ -82,7 +85,7 @@ GO
 CREATE TABLE [UtworAlbum] (
 	AlbumID integer NOT NULL,
 	UtworID integer NOT NULL,
-	numer_sciezki integer NOT NULL,
+	numerSciezki integer NOT NULL,
   CONSTRAINT [PK_UTWORALBUM] PRIMARY KEY CLUSTERED
   (
   [AlbumID] ASC
@@ -103,8 +106,8 @@ GO
 CREATE TABLE [Zespol] (
 	ID integer NOT NULL,
 	nazwa binary NOT NULL,
-	data_powstania datetime NOT NULL,
-	data_rozwiazania datetime,
+	dataZalozenia datetime NOT NULL,
+	dataRozwiazania datetime,
 	opis string NOT NULL,
   CONSTRAINT [PK_ZESPOL] PRIMARY KEY CLUSTERED
   (
@@ -115,7 +118,7 @@ CREATE TABLE [Zespol] (
 GO
 CREATE TABLE [Obraz] (
 	ID integer NOT NULL,
-	sciezka_pliku text NOT NULL,
+	sciezkaDoPliku text NOT NULL,
   CONSTRAINT [PK_OBRAZ] PRIMARY KEY CLUSTERED
   (
   [ID] ASC
@@ -126,6 +129,7 @@ GO
 CREATE TABLE [UtworPlaylista] (
 	PlaylistaID integer NOT NULL,
 	UtworID integer NOT NULL,
+	kolejnosc integer NOT NULL,
   CONSTRAINT [PK_UTWORPLAYLISTA] PRIMARY KEY CLUSTERED
   (
   [PlaylistaID] ASC
