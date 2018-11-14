@@ -7,6 +7,25 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style TargetType="MediaPlayerElement">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="MediaPlayerElement">
+                        <Grid x:Name="LayoutRoot">
+                            <Border Background="Transparent" />
+                            <Image  x:Name="PosterImage" Visibility="Visible" Height="96px" Source="{TemplateBinding PosterSource}" Stretch="{TemplateBinding Stretch}" />
+                            <MediaPlayerPresenter x:Name="MediaPlayerPresenter" IsFullWindow="{TemplateBinding IsFullWindow}" Stretch="{TemplateBinding Stretch}"
+                                                  MediaPlayer="{TemplateBinding MediaPlayer}" Visibility="Visible"/>
+                            <ContentPresenter x:Name="TransportControlsPresenter" Visibility="{TemplateBinding AreTransportControlsEnabled}" />
+                            <Grid x:Name="TimedTextSourcePresenter" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -56,7 +75,7 @@
 
             <MediaPlayerElement Name="AudioPlayer" AutoPlay="False" Grid.Column="1"
                             AreTransportControlsEnabled="True" UseLayoutRounding="False" d:LayoutRounding="Auto" 
-                            Source="ms-appx:///Assets/sample.mp3" Margin="0,8,0,8">
+                            Source="ms-appx:///Assets/sample.mp3" Margin="0,8,0,8" PosterSource="/Assets/Wide310x150Logo.png">
 
                 <MediaPlayerElement.TransportControls>
                     <MediaTransportControls IsNextTrackButtonVisible="True" IsPreviousTrackButtonVisible="True" IsSeekBarVisible="True" IsFullWindowButtonVisible="True" IsFullWindowEnabled="True" IsRepeatButtonVisible="True"
