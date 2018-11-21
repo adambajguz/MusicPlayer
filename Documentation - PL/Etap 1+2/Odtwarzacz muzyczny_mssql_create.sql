@@ -2,9 +2,8 @@ CREATE TABLE [Album] (
 	ID integer NOT NULL,
 	Okladka integer NOT NULL,
 	tytul text NOT NULL,
-	opis integer NOT NULL,
+	opis text NOT NULL,
 	dataWydania datetime NOT NULL,
-	wytwornia string NOT NULL,
 	dataUtworzeniaWBazie datetime NOT NULL,
   CONSTRAINT [PK_ALBUM] PRIMARY KEY CLUSTERED
   (
@@ -59,7 +58,7 @@ CREATE TABLE [Playlista] (
 	ID integer NOT NULL,
 	nazwa text NOT NULL,
 	dataUtworzeniaWBazie datetime NOT NULL,
-	opis datetime NOT NULL,
+	opis text NOT NULL,
   CONSTRAINT [PK_PLAYLISTA] PRIMARY KEY CLUSTERED
   (
   [ID] ASC
@@ -74,7 +73,6 @@ CREATE TABLE [Artysta] (
 	imie text NOT NULL,
 	nazwisko text NOT NULL,
 	pseudonim text NOT NULL,
-	dataUrodzenia datetime NOT NULL,
 	opis text NOT NULL,
   CONSTRAINT [PK_ARTYSTA] PRIMARY KEY CLUSTERED
   (
@@ -106,10 +104,10 @@ CREATE TABLE [UtworArtysta] (
 GO
 CREATE TABLE [Zespol] (
 	ID integer NOT NULL,
-	nazwa binary NOT NULL,
+	nazwa text NOT NULL,
 	dataZalozenia datetime NOT NULL,
 	dataRozwiazania datetime,
-	opis string NOT NULL,
+	opis text NOT NULL,
   CONSTRAINT [PK_ZESPOL] PRIMARY KEY CLUSTERED
   (
   [ID] ASC
