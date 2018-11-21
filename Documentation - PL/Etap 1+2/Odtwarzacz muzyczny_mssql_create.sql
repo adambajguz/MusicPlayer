@@ -1,10 +1,10 @@
 CREATE TABLE [Album] (
 	ID integer NOT NULL,
-	Okladka integer NOT NULL,
-	tytul text NOT NULL,
-	opis text NOT NULL,
-	dataWydania datetime NOT NULL,
-	dataUtworzeniaWBazie datetime NOT NULL,
+	CoverImage integer NOT NULL,
+	Title text NOT NULL,
+	Description integer NOT NULL,
+	PublicationDate datetime NOT NULL,
+	DBCreationDate datetime NOT NULL,
   CONSTRAINT [PK_ALBUM] PRIMARY KEY CLUSTERED
   (
   [ID] ASC
@@ -12,198 +12,199 @@ CREATE TABLE [Album] (
 
 )
 GO
-CREATE TABLE [Utwor] (
+CREATE TABLE [Song] (
 	ID integer NOT NULL UNIQUE,
-	Artysta integer NOT NULL,
+	Artist integer NOT NULL,
 	Album integer,
-	Grafika integer,
-	Gatunek integer NOT NULL,
-	ocena integer NOT NULL DEFAULT '0',
-	tytul text NOT NULL,
-	dataPowstania datetime NOT NULL,
-	sciezkaDoPliku text,
-	dlugosc timestamp NOT NULL,
-	bitrate integer NOT NULL,
-	dataUtworzeniaWBazie datetime NOT NULL,
-	liczbaOdtworzen integer NOT NULL DEFAULT '0',
-  CONSTRAINT [PK_UTWOR] PRIMARY KEY CLUSTERED
+	Image integer,
+	Genre integer NOT NULL,
+	Score integer NOT NULL DEFAULT '0',
+	Title text NOT NULL,
+	CreationDate datetime NOT NULL,
+	FilePath text,
+	Length timestamp NOT NULL,
+	Bitrate integer NOT NULL,
+	DBCreationDate datetime NOT NULL,
+	PlayTimes integer NOT NULL DEFAULT '0',
+  CONSTRAINT [PK_SONG] PRIMARY KEY CLUSTERED
   (
   [ID] ASC
   ) WITH (IGNORE_DUP_KEY = OFF)
 
 )
 GO
-CREATE TABLE [Gatunek] (
+CREATE TABLE [Playlist] (
 	ID integer NOT NULL,
-	nazwa text NOT NULL,
-	opis text NOT NULL,
-  CONSTRAINT [PK_GATUNEK] PRIMARY KEY CLUSTERED
+	Name text NOT NULL,
+	DBCreationDate datetime NOT NULL,
+	Description datetime NOT NULL,
+  CONSTRAINT [PK_PLAYLIST] PRIMARY KEY CLUSTERED
   (
   [ID] ASC
   ) WITH (IGNORE_DUP_KEY = OFF)
 
 )
 GO
-CREATE TABLE [KolejkaOdtwarzania] (
+CREATE TABLE [Artist] (
 	ID integer NOT NULL,
-	Utwor integer NOT NULL,
-  CONSTRAINT [PK_KOLEJKAODTWARZANIA] PRIMARY KEY CLUSTERED
+	Band integer,
+	Photo integer NOT NULL,
+	Name text NOT NULL,
+	Surname text NOT NULL,
+	Pseudonym text NOT NULL,
+	Birthdate datetime NOT NULL,
+	Description text NOT NULL,
+  CONSTRAINT [PK_ARTIST] PRIMARY KEY CLUSTERED
   (
   [ID] ASC
   ) WITH (IGNORE_DUP_KEY = OFF)
 
 )
 GO
-CREATE TABLE [Playlista] (
-	ID integer NOT NULL,
-	nazwa text NOT NULL,
-	dataUtworzeniaWBazie datetime NOT NULL,
-	opis text NOT NULL,
-  CONSTRAINT [PK_PLAYLISTA] PRIMARY KEY CLUSTERED
-  (
-  [ID] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
-
-)
-GO
-CREATE TABLE [Artysta] (
-	ID integer NOT NULL,
-	Zespol integer,
-	Zdjecie integer NOT NULL,
-	imie text NOT NULL,
-	nazwisko text NOT NULL,
-	pseudonim text NOT NULL,
-	opis text NOT NULL,
-  CONSTRAINT [PK_ARTYSTA] PRIMARY KEY CLUSTERED
-  (
-  [ID] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
-
-)
-GO
-CREATE TABLE [UtworAlbum] (
+CREATE TABLE [SongAlbum] (
 	AlbumID integer NOT NULL,
-	UtworID integer NOT NULL,
-	numerSciezki integer NOT NULL,
-  CONSTRAINT [PK_UTWORALBUM] PRIMARY KEY CLUSTERED
+	SongID integer NOT NULL,
+	TrackNumber integer NOT NULL,
+  CONSTRAINT [PK_SONGALBUM] PRIMARY KEY CLUSTERED
   (
   [AlbumID] ASC
   ) WITH (IGNORE_DUP_KEY = OFF)
 
 )
 GO
-CREATE TABLE [UtworArtysta] (
-	ArtystaID integer NOT NULL,
-	UtworID integer NOT NULL,
-  CONSTRAINT [PK_UTWORARTYSTA] PRIMARY KEY CLUSTERED
+CREATE TABLE [SongArtist] (
+	ArtistID integer NOT NULL,
+	SongID integer NOT NULL,
+  CONSTRAINT [PK_SONGARTIST] PRIMARY KEY CLUSTERED
   (
-  [ArtystaID] ASC
+  [ArtistID] ASC
   ) WITH (IGNORE_DUP_KEY = OFF)
 
 )
 GO
-CREATE TABLE [Zespol] (
+CREATE TABLE [Image] (
 	ID integer NOT NULL,
-	nazwa text NOT NULL,
-	dataZalozenia datetime NOT NULL,
-	dataRozwiazania datetime,
-	opis text NOT NULL,
-  CONSTRAINT [PK_ZESPOL] PRIMARY KEY CLUSTERED
+	FilePath text NOT NULL,
+  CONSTRAINT [PK_IMAGE] PRIMARY KEY CLUSTERED
   (
   [ID] ASC
   ) WITH (IGNORE_DUP_KEY = OFF)
 
 )
 GO
-CREATE TABLE [Obraz] (
+CREATE TABLE [SongPlaylist] (
+	PlaylistID integer NOT NULL,
+	SongID integer NOT NULL,
+	Order integer NOT NULL,
+  CONSTRAINT [PK_SONGPLAYLIST] PRIMARY KEY CLUSTERED
+  (
+  [PlaylistID] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [Band] (
 	ID integer NOT NULL,
-	sciezkaDoPliku text NOT NULL,
-  CONSTRAINT [PK_OBRAZ] PRIMARY KEY CLUSTERED
+	Name text NOT NULL,
+	CreationDate datetime NOT NULL,
+	EndDate datetime,
+	Description text NOT NULL,
+  CONSTRAINT [PK_BAND] PRIMARY KEY CLUSTERED
   (
   [ID] ASC
   ) WITH (IGNORE_DUP_KEY = OFF)
 
 )
 GO
-CREATE TABLE [UtworPlaylista] (
-	PlaylistaID integer NOT NULL,
-	UtworID integer NOT NULL,
-	kolejnosc integer NOT NULL,
-  CONSTRAINT [PK_UTWORPLAYLISTA] PRIMARY KEY CLUSTERED
+CREATE TABLE [Genre] (
+	ID integer NOT NULL,
+	Name text NOT NULL,
+	Description text NOT NULL,
+  CONSTRAINT [PK_GENRE] PRIMARY KEY CLUSTERED
   (
-  [PlaylistaID] ASC
+  [ID] ASC
   ) WITH (IGNORE_DUP_KEY = OFF)
 
 )
 GO
-ALTER TABLE [Album] WITH CHECK ADD CONSTRAINT [Album_fk0] FOREIGN KEY ([Okladka]) REFERENCES [Obraz]([ID])
+CREATE TABLE [PlayQueue] (
+	ID integer NOT NULL,
+	Song integer NOT NULL,
+  CONSTRAINT [PK_PLAYQUEUE] PRIMARY KEY CLUSTERED
+  (
+  [ID] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+ALTER TABLE [Album] WITH CHECK ADD CONSTRAINT [Album_fk0] FOREIGN KEY ([CoverImage]) REFERENCES [Image]([ID])
 ON UPDATE CASCADE
 GO
 ALTER TABLE [Album] CHECK CONSTRAINT [Album_fk0]
 GO
 
-ALTER TABLE [Utwor] WITH CHECK ADD CONSTRAINT [Utwor_fk0] FOREIGN KEY ([ID]) REFERENCES [UtworPlaylista]([UtworID])
+ALTER TABLE [Song] WITH CHECK ADD CONSTRAINT [Song_fk0] FOREIGN KEY ([ID]) REFERENCES [SongPlaylist]([SongID])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Utwor] CHECK CONSTRAINT [Utwor_fk0]
+ALTER TABLE [Song] CHECK CONSTRAINT [Song_fk0]
 GO
-ALTER TABLE [Utwor] WITH CHECK ADD CONSTRAINT [Utwor_fk1] FOREIGN KEY ([Artysta]) REFERENCES [UtworArtysta]([UtworID])
+ALTER TABLE [Song] WITH CHECK ADD CONSTRAINT [Song_fk1] FOREIGN KEY ([Artist]) REFERENCES [SongArtist]([SongID])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Utwor] CHECK CONSTRAINT [Utwor_fk1]
+ALTER TABLE [Song] CHECK CONSTRAINT [Song_fk1]
 GO
-ALTER TABLE [Utwor] WITH CHECK ADD CONSTRAINT [Utwor_fk2] FOREIGN KEY ([Album]) REFERENCES [UtworAlbum]([UtworID])
+ALTER TABLE [Song] WITH CHECK ADD CONSTRAINT [Song_fk2] FOREIGN KEY ([Album]) REFERENCES [SongAlbum]([SongID])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Utwor] CHECK CONSTRAINT [Utwor_fk2]
+ALTER TABLE [Song] CHECK CONSTRAINT [Song_fk2]
 GO
-ALTER TABLE [Utwor] WITH CHECK ADD CONSTRAINT [Utwor_fk3] FOREIGN KEY ([Grafika]) REFERENCES [Obraz]([ID])
+ALTER TABLE [Song] WITH CHECK ADD CONSTRAINT [Song_fk3] FOREIGN KEY ([Image]) REFERENCES [Image]([ID])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Utwor] CHECK CONSTRAINT [Utwor_fk3]
+ALTER TABLE [Song] CHECK CONSTRAINT [Song_fk3]
 GO
-ALTER TABLE [Utwor] WITH CHECK ADD CONSTRAINT [Utwor_fk4] FOREIGN KEY ([Gatunek]) REFERENCES [Gatunek]([ID])
+ALTER TABLE [Song] WITH CHECK ADD CONSTRAINT [Song_fk4] FOREIGN KEY ([Genre]) REFERENCES [Genre]([ID])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Utwor] CHECK CONSTRAINT [Utwor_fk4]
+ALTER TABLE [Song] CHECK CONSTRAINT [Song_fk4]
 GO
 
 
-ALTER TABLE [KolejkaOdtwarzania] WITH CHECK ADD CONSTRAINT [KolejkaOdtwarzania_fk0] FOREIGN KEY ([Utwor]) REFERENCES [Utwor]([ID])
+ALTER TABLE [Artist] WITH CHECK ADD CONSTRAINT [Artist_fk0] FOREIGN KEY ([Band]) REFERENCES [Band]([ID])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [KolejkaOdtwarzania] CHECK CONSTRAINT [KolejkaOdtwarzania_fk0]
+ALTER TABLE [Artist] CHECK CONSTRAINT [Artist_fk0]
 GO
-
-
-ALTER TABLE [Artysta] WITH CHECK ADD CONSTRAINT [Artysta_fk0] FOREIGN KEY ([Zespol]) REFERENCES [Zespol]([ID])
+ALTER TABLE [Artist] WITH CHECK ADD CONSTRAINT [Artist_fk1] FOREIGN KEY ([Photo]) REFERENCES [Image]([ID])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Artysta] CHECK CONSTRAINT [Artysta_fk0]
+ALTER TABLE [Artist] CHECK CONSTRAINT [Artist_fk1]
 GO
-ALTER TABLE [Artysta] WITH CHECK ADD CONSTRAINT [Artysta_fk1] FOREIGN KEY ([Zdjecie]) REFERENCES [Obraz]([ID])
+
+ALTER TABLE [SongAlbum] WITH CHECK ADD CONSTRAINT [SongAlbum_fk0] FOREIGN KEY ([AlbumID]) REFERENCES [Album]([ID])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Artysta] CHECK CONSTRAINT [Artysta_fk1]
+ALTER TABLE [SongAlbum] CHECK CONSTRAINT [SongAlbum_fk0]
 GO
 
-ALTER TABLE [UtworAlbum] WITH CHECK ADD CONSTRAINT [UtworAlbum_fk0] FOREIGN KEY ([AlbumID]) REFERENCES [Album]([ID])
+ALTER TABLE [SongArtist] WITH CHECK ADD CONSTRAINT [SongArtist_fk0] FOREIGN KEY ([ArtistID]) REFERENCES [Artist]([ID])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [UtworAlbum] CHECK CONSTRAINT [UtworAlbum_fk0]
+ALTER TABLE [SongArtist] CHECK CONSTRAINT [SongArtist_fk0]
 GO
 
-ALTER TABLE [UtworArtysta] WITH CHECK ADD CONSTRAINT [UtworArtysta_fk0] FOREIGN KEY ([ArtystaID]) REFERENCES [Artysta]([ID])
+
+ALTER TABLE [SongPlaylist] WITH CHECK ADD CONSTRAINT [SongPlaylist_fk0] FOREIGN KEY ([PlaylistID]) REFERENCES [Playlist]([ID])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [UtworArtysta] CHECK CONSTRAINT [UtworArtysta_fk0]
+ALTER TABLE [SongPlaylist] CHECK CONSTRAINT [SongPlaylist_fk0]
 GO
 
 
 
-ALTER TABLE [UtworPlaylista] WITH CHECK ADD CONSTRAINT [UtworPlaylista_fk0] FOREIGN KEY ([PlaylistaID]) REFERENCES [Playlista]([ID])
+ALTER TABLE [PlayQueue] WITH CHECK ADD CONSTRAINT [PlayQueue_fk0] FOREIGN KEY ([Song]) REFERENCES [Song]([ID])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [UtworPlaylista] CHECK CONSTRAINT [UtworPlaylista_fk0]
+ALTER TABLE [PlayQueue] CHECK CONSTRAINT [PlayQueue_fk0]
 GO
 

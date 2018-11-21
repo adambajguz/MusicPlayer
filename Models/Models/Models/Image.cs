@@ -7,6 +7,6 @@ namespace MusicPlayer.Core.Models
 {
     public class Image : BaseEntity<int>
     {
-        public String filePath { get; set; }
+        public String FilePath { get; set; }
     }
 }
