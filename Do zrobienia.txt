@@ -23,6 +23,7 @@
     - pod nagłówkiem:
         # opis zespołu/playlisty/albumu a w przypadku kolejki odtwarzania nic
         # statystyki ile jest utworów i ile łącznie trwają 
+    - z lewej obok naglowka i pod naglowkiem okłądka albumu lub jakis losowy obrazek może
     - w formie tabelki z:
         # tytułem utowru
         # nazwą albumu
