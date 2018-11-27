@@ -1,0 +1,44 @@
+﻿WSTĘPNIE CO TRZEBA ZROBIĆ (można edytować, usuwać itp.)
+
+1) pole wyszukiwania
+    - wyszukiwanie utworów lub wyszukiwanie wszystkiego (druga opcja gorsza bo nie wiem jak to wyswietlać chyba że po prostu taka tabelka <nazwa><typ>, gdzie nazwa to nazwa elementu a typ to np. album, playlista, utwór - w sumie to nie jest zły pomysł)
+
+2) widok albumów:
+    - w formie kawelków z okładką albumu i nazw pod okładką
+    - możliwość sortowania:
+        # A..Z
+        # Z..a
+        # ostatnio utworzone
+        # data wydania (rosnąco, malejąco)
+
+3) widok playlist:
+    - w formie listy z nazwami playlist lub kafelków
+    - sortowanie:
+        # A..Z
+        # Z..A
+        # ostatnio utworzone
+
+4)  widok utworów = widok wszystkich utworów/albumu/playlisty/koleki odtwarzania
+    - na górze nagłówek z nazwą albumu, playlisty lub napisem kolejka odtwarzania
+    - pod nagłówkiem:
+        # opis zespołu/playlisty/albumu a w przypadku kolejki odtwarzania nic
+        # statystyki ile jest utworów i ile łącznie trwają 
+    - w formie tabelki z:
+        # tytułem utowru
+        # nazwą albumu
+        # oceną
+        # nazwą zespołu lub artysty gdy nie ma zespołu
+        # czasem trwania
+        # datą dodania
+        # liczbie odtworzeń
+    - sortowanie po:
+        # tytule (rosnąco - A..Z, malejąco - Z..A)
+        # ocenie (rosnąco, malejąco)
+        # albumie (rosnąco, malejąco)
+        # nazwie zespołu lub artysty (rosnąco, malejąco)
+        # czasie trwania (rosnąco, malejąco)
+        # dacie dodania (rosnąco, malejąco)
+        # liczbie odtworzeń (rosnąco, malejąco)
+
+5) widok gatunków
+    - tabela z nazwami gatunków i ilością utworów w gatunku
