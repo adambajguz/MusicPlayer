@@ -19,17 +19,9 @@ namespace MusicPlayer.Core.Data
         IRepository<SongArtist, int> SongArtistRepository { get; }
         IRepository<SongPlaylist, int> SongPlaylistRepository { get; }
 
-        void BeginTransaction();
-
-        int Commit();
-
-        Task<int> CommitAsync();
-
         void Dispose(bool disposing);
 
         IRepository<TEntity, TKey> Repository<TEntity, TKey>() where TEntity : BaseEntity<TKey> where TKey : IComparable;
-
-        void Rollback();
 
         int SaveChanges();
 
