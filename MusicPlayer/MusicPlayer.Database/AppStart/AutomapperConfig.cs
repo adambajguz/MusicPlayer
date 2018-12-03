@@ -3,7 +3,7 @@ using System.Reflection;
 using Autofac;
 using AutoMapper;
 
-namespace MusicPlayer.DatabaseService.AppStart
+namespace MusicPlayer.Service.AppStart
 {
     public static class MapperConfig
     {

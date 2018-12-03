@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Mvc.Filters;
-using MusicPlayer.DatabaseService.Models;
+using MusicPlayer.Service.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using MusicPlayer.Core.Services.Logging;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http.Extensions;
 
-namespace MusicPlayer.DatabaseService.Filters
+namespace MusicPlayer.Service.Filters
 {
     public class ApiExceptionAttribute : ExceptionFilterAttribute
     {

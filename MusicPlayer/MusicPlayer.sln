@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicPlayer.Core", "MusicPl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicPlayer.Data", "MusicPlayer.Data\MusicPlayer.Data.csproj", "{28C233A4-F253-4801-BF89-74EB4B06CAC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayer.DatabaseService", "MusicPlayer.Database\MusicPlayer.DatabaseService.csproj", "{56FBAF44-B488-4E03-BF3E-167B123CEB06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicPlayer.DatabaseService", "MusicPlayer.Database\MusicPlayer.DatabaseService.csproj", "{56FBAF44-B488-4E03-BF3E-167B123CEB06}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayer.UWP", "MusicPlayer.UWP\MusicPlayer.UWP.csproj", "{5D1D361E-7D67-4E2B-9B4B-3AD860DE7F50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayer.Service", "Service\MusicPlayer.Service.csproj", "{AED00581-BD5D-4847-A501-01091C67B14C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,26 @@ Global
 		{5D1D361E-7D67-4E2B-9B4B-3AD860DE7F50}.Release|x86.ActiveCfg = Release|x86
 		{5D1D361E-7D67-4E2B-9B4B-3AD860DE7F50}.Release|x86.Build.0 = Release|x86
 		{5D1D361E-7D67-4E2B-9B4B-3AD860DE7F50}.Release|x86.Deploy.0 = Release|x86
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Debug|ARM.Build.0 = Debug|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Debug|x64.Build.0 = Debug|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Debug|x86.Build.0 = Debug|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Release|ARM.ActiveCfg = Release|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Release|ARM.Build.0 = Release|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Release|ARM64.Build.0 = Release|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Release|x64.ActiveCfg = Release|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Release|x64.Build.0 = Release|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Release|x86.ActiveCfg = Release|Any CPU
+		{AED00581-BD5D-4847-A501-01091C67B14C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

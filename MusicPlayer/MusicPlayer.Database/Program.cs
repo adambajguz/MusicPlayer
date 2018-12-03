@@ -7,9 +7,9 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using MusicPlayer.DatabaseService;
+using MusicPlayer.Service;
 
-namespace MusicPlayer.DatabaseService
+namespace MusicPlayer.Service
 {
     public class Program
     {

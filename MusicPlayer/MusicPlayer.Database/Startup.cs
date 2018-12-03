@@ -1,6 +1,6 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using MusicPlayer.DatabaseService.Filters;
+using MusicPlayer.Service.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -8,11 +8,11 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using Microsoft.AspNetCore.Cors;
 using MusicPlayer.Data;
-using MusicPlayer.DatabaseService.AppStart;
+using MusicPlayer.Service.AppStart;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 
-namespace MusicPlayer.DatabaseService
+namespace MusicPlayer.Service
 {
     public class Startup
     {

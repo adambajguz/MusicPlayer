@@ -1,9 +1,9 @@
-﻿using MusicPlayer.Core.Data;
+﻿/*using MusicPlayer.Core.Data;
 using Microsoft.AspNetCore.Mvc;
-using MusicPlayer.Service.Models;
+using MusicPlayer.DatabaseService.Models;
 using System.Diagnostics;
 
-namespace MusicPlayer.Service.Controllers
+namespace MusicPlayer.DatabaseService.Controllers
 {
     public class HomeController : Controller
     {
@@ -39,3 +39,4 @@ namespace MusicPlayer.Service.Controllers
         }
     }
 }
+*/

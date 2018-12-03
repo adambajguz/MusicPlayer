@@ -47,8 +47,6 @@ namespace MusicPlayer.Service.CQRS
                 await cache2.Save(query, queryResult);
             }
 
-            
-
             return queryResult;
         }
 
