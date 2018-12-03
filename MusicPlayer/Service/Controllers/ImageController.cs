@@ -23,6 +23,11 @@ namespace MusicPlayer.Service.Controllers
             return await _queryDispatcher.Dispatch<GetImages.Query, List<GetImages.Result>>(new GetImages.Query());
         }
 
+        public async Task<Image.GetImage.Result> Get(int id)
+        {
+            return await _queryDispatcher.Dispatch<GetImage.Query, GetImage.Result>(new GetImage.Query() { ID = id });
+        }
+
         public async Task Create(string filePath)
         {
             await _commandDispatcher.Dispatch<CreateImage.Command>(new CreateImage.Command
