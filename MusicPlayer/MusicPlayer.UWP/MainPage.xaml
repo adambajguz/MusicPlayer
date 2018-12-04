@@ -7,8 +7,84 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style TargetType="MediaPlayerElement">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="MediaPlayerElement">
+                        <Grid x:Name="LayoutRoot">
+                            <Border Background="Transparent" />
+                            <Image  x:Name="PosterImage" Visibility="Visible" Height="96px" Source="{TemplateBinding PosterSource}" Stretch="{TemplateBinding Stretch}" />
+                            <MediaPlayerPresenter x:Name="MediaPlayerPresenter" IsFullWindow="{TemplateBinding IsFullWindow}" Stretch="{TemplateBinding Stretch}"
+                                                  MediaPlayer="{TemplateBinding MediaPlayer}" Visibility="Visible"/>
+                            <ContentPresenter x:Name="TransportControlsPresenter" Visibility="{TemplateBinding AreTransportControlsEnabled}" />
+                            <Grid x:Name="TimedTextSourcePresenter" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <NavigationView x:Name="Nav" Grid.Row="0" RequestedTheme="Default" AlwaysShowHeader="False">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Library" Content="Biblioteka" x:Name="LibraryPageItem" />
+                <NavigationViewItem Icon="Memo" Content="Playlisty" x:Name="PlaylistPageItem" />
+                <NavigationViewItem Icon="MusicInfo" Content="Gatunki" x:Name="GenresPageItem" />
+            </NavigationView.MenuItems>
+            <Frame x:Name="PageContentFrame">
+                <Pivot Title="Biblioteka">
+                    <PivotItem Header="Zespoły">
+                        <Grid/>
+                    </PivotItem>
+                    <PivotItem Header="Artyści">
+                        <Grid/>
+                    </PivotItem>
+                    <PivotItem Header="Albumy">
+                        <Grid/>
+                    </PivotItem>
+                    <PivotItem Header="Utwory">
+                        <Grid/>
+                    </PivotItem>
+                </Pivot>
+            </Frame>
+
+
+        </NavigationView>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{Binding ActualHeight, ElementName=AudioPlayer}" />
+            </Grid.RowDefinitions>
+
+            <Image Width="{Binding ActualHeight, ElementName=AudioPlayer}" Height="{Binding ActualHeight, ElementName=AudioPlayer}" Grid.Column="0" Source="/Assets/StoreLogo.png" Margin="10,0,8,0" />
+
+            <MediaPlayerElement Name="AudioPlayer" AutoPlay="False" Grid.Column="1"
+                            AreTransportControlsEnabled="True" UseLayoutRounding="False" d:LayoutRounding="Auto" 
+                            Source="ms-appx:///Assets/sample.mp3" Margin="0,8,0,8" PosterSource="/Assets/Wide310x150Logo.png">
+
+                <MediaPlayerElement.TransportControls>
+                    <MediaTransportControls IsNextTrackButtonVisible="True" IsPreviousTrackButtonVisible="True" IsSeekBarVisible="True" IsFullWindowButtonVisible="True" IsFullWindowEnabled="True" IsRepeatButtonVisible="True"
+                                        IsZoomEnabled="False" IsPlaybackRateEnabled="True" IsPlaybackRateButtonVisible="True"
+                                        IsRepeatEnabled="True" IsSkipBackwardButtonVisible="True" IsSkipBackwardEnabled="True" IsSkipForwardButtonVisible="True"
+                                        IsSkipForwardEnabled="True" IsTextScaleFactorEnabled="False" IsVolumeEnabled="True" IsSeekEnabled="True" IsZoomButtonVisible="False"/>
+                </MediaPlayerElement.TransportControls>
+            </MediaPlayerElement>
+        </Grid>
 
     </Grid>
+
 </Page>
