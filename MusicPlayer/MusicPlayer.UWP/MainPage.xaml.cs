@@ -17,6 +17,6 @@ namespace MusicPlayer.UWP
         }
 
         //https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
-
+        //https://blogs.msdn.microsoft.com/appconsult/2018/05/06/using-the-navigationview-in-your-uwp-applications/
     }
 }
