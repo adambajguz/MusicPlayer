@@ -50,15 +50,14 @@ namespace Service
             ImageController ImgController = new ImageController(queryDispatcher, commandDispatcher);
             ImgController.Create("sciezka3").Wait();
             Console.WriteLine(ImgController.GetImages().ToString());
-            
 
             //test  --  nie mozna 2 szybko po sobie
-   //         BandController BandController = new BandController(queryDispatcher, commandDispatcher);
+            //         BandController BandController = new BandController(queryDispatcher, commandDispatcher);
             //BandController.Create("band1", new DateTime(2018, 5, 5), null, "opis").Wait();
             //Console.WriteLine("bandyciiii:");
             //Console.WriteLine(BandController.GetBands().ToString());
-     //       Console.WriteLine("usuwam");
-     //       BandController.Delete(1).Wait();
+            //       Console.WriteLine("usuwam");
+            //       BandController.Delete(1).Wait();
 
 
             Console.ReadKey();
