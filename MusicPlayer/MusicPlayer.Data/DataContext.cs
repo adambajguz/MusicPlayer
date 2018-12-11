@@ -30,21 +30,5 @@ namespace MusicPlayer.Data
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer("Data Source =.\\SQLEXPRESS; Initial Catalog = MusicPlayer; Persist Security Info = False; Integrated Security = True;");
         }
-
-        //public DataContext(DbContextOptions options) : base(options){}
-        /*public DataContext(IConfiguration conf )
-        {
-            _conf = conf;
-        }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(_conf["SQL-Server:localhost"]);
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
-        */
     }
 }
