@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MusicPlayer.Service.Controllers.Image
+namespace MusicPlayer.Service.Controllers.Playlist
 {
-    public class GetImages
+    public class GetPlaylists
     {
         public class Query : IQuery
         {
@@ -15,8 +15,6 @@ namespace MusicPlayer.Service.Controllers.Image
         }
         public class HandlerList : IQueryHandler<Query, List<Result>>
         {
-
-
             private IUnitOfWork _uow;
             public HandlerList(IUnitOfWork uow)
             {
@@ -25,7 +23,7 @@ namespace MusicPlayer.Service.Controllers.Image
 
             public async Task<List<Result>> Handle(Query query)
             {
-                var result = await _uow.ImageRepository.Query().Select(x => new Result(x)).ToListAsync();
+                var result = await _uow.PlaylistRepository.Query().Select(x => new Result(x)).OrderBy(y => y.Name).ToListAsync();
 
                 return result;
             }

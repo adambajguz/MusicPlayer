@@ -18,14 +18,14 @@ namespace MusicPlayer.Service.Controllers
             _commandDispatcher = commandDispatcher;
         }
 
-        public async Task<List<Image.GetImages.Result>> GetImages()
+        public async Task<List<Result>> GetImages()
         {
-            return await _queryDispatcher.Dispatch<GetImages.Query, List<GetImages.Result>>(new GetImages.Query());
+            return await _queryDispatcher.Dispatch<GetImages.Query, List<Result>>(new GetImages.Query());
         }
 
-        public async Task<Image.GetImage.Result> Get(int id)
+        public async Task<Result> Get(int id)
         {
-            return await _queryDispatcher.Dispatch<GetImage.Query, GetImage.Result>(new GetImage.Query() { ID = id });
+            return await _queryDispatcher.Dispatch<GetImage.Query, Result>(new GetImage.Query() { ID = id });
         }
 
         public async Task Create(string filePath)

@@ -1,11 +1,12 @@
 ﻿using FluentValidation;
 using MusicPlayer.Core.CQRS;
 using MusicPlayer.Core.Data;
+using System;
 using System.Threading.Tasks;
 
-namespace MusicPlayer.Service.Controllers.Image
+namespace MusicPlayer.Service.Controllers.Artist
 {
-    public class CreateImage
+    public class CreateArtist
     {
         public class Command : ICommand
         {
@@ -23,7 +24,7 @@ namespace MusicPlayer.Service.Controllers.Image
 
             public async Task Execute(Command command)
             {
-                _uow.ImageRepository.Insert(command._data.Image);
+                _uow.ArtistRepository.Insert(command._data.Artist);
                 await _uow.SaveChangesAsync();
             }
         }
@@ -40,14 +41,21 @@ namespace MusicPlayer.Service.Controllers.Image
 
         public class Data
         {
-            public Core.Entities.Image Image { get; private set; }
+            public Core.Entities.Artist Artist { get; private set; }
 
-            public Data(string filePath)
+            public Data(string name, string surname, string pseudonym, DateTime birthdate, string description)
             {
-                Image = new Core.Entities.Image();
+                Artist = new Core.Entities.Artist();
 
-                Image.FilePath = filePath;
+                //Artist.Band = x.Band;
+                //Artist.Photo = x.Photo;
+                Artist.Name = name;
+                Artist.Surname = surname;
+                Artist.Pseudonym = pseudonym;
+                Artist.Birthdate = birthdate;
+                Artist.Description = description;
             }
         }
     }
 }
+

@@ -1,6 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using MusicPlayer.Core.Data;
 using MusicPlayer.Core.Entities;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
