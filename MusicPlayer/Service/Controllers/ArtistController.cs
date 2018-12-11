@@ -27,11 +27,11 @@ namespace MusicPlayer.Service.Controllers
             return await _queryDispatcher.Dispatch<GetArtist.Query, Result>(new GetArtist.Query() { ID = id });
         }
 
-        public async Task Create(string title, string description, DateTime publicationDate)
+        public async Task Create(string name, string surname, string pseudonym, DateTime birthdate, string description)
         {
             await _commandDispatcher.Dispatch<CreateArtist.Command>(new CreateArtist.Command
             {
-                _data = new CreateArtist.Data(title, description, publicationDate)
+                _data = new CreateArtist.Data(name, surname, pseudonym, birthdate, description)
 
             });
 
