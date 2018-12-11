@@ -1,7 +1,6 @@
 # Creational patterns / Wzorce kreacyjne:
 	1. Dependency Injection
-	2. Builder (jeszcze nie ma)
-	3. Singleton (NLogLogger)
+	2. Singleton (NLogLogger)
 
 
 # Structural patterns / Wozrce strukturalne:
@@ -11,10 +10,14 @@
 
 # Behavioral patterns / Wzorce czynnoœciowe:
 	1. Strategy
+	2. Specification (do sortowania itp.)
+	   https://stackoverflow.com/questions/29972051/specification-pattern-using-entity-framework-order-by-property
+
+	   https://deviq.com/specification-pattern/
 
 # Wzorce architekturalne:
-	1. MVP
+	1. MVP (Model-View-Presenter)
 
-# Inne
+# Inne jakies chyba:
 	1. Unit of work
-	2. Dispatcher
+	2. CQRS (Command Query Responsibility Segregation) (QueryDispatcher, CommandDispatcher)
