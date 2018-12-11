@@ -1,13 +1,11 @@
-using MusicPlayer.Core.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore.Design;
+using MusicPlayer.Core.Entities;
 
 namespace MusicPlayer.Data
 {
     public class DataContext : DbContext, IEntitiesContext
     {
-        public DbSet<Album> Albums{get;set;}
+        public DbSet<Album> Albums { get; set; }
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Band> Bands { get; set; }
         public DbSet<Genre> Genres { get; set; }
