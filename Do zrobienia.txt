@@ -4,7 +4,7 @@
     - wyszukiwanie utworów lub wyszukiwanie wszystkiego (druga opcja gorsza bo nie wiem jak to wyswietlać chyba że po prostu taka tabelka <nazwa><typ>, gdzie nazwa to nazwa elementu a typ to np. album, playlista, utwór - w sumie to nie jest zły pomysł)
 
 2) widok albumów:
-    - w formie kawelków z okładką albumu i nazw pod okładką
+    - w formie kafelków z okładką albumu i nazw pod okładką
     - możliwość sortowania:
         # A..Z
         # Z..a
@@ -18,10 +18,10 @@
         # Z..A
         # ostatnio utworzone
 
-4)  widok utworów = widok wszystkich utworów/albumu/playlisty/koleki odtwarzania
+4) widok utworów = widok wszystkich utworów/albumu/playlisty/koleki odtwarzania
     - na górze nagłówek z nazwą albumu, playlisty lub napisem kolejka odtwarzania
     - pod nagłówkiem:
-        # opis zespołu/playlisty/albumu a w przypadku kolejki odtwarzania nic
+        # opis playlisty/albumu a w przypadku kwszystkich utworów i kolejki odtwarzania nic
         # statystyki ile jest utworów i ile łącznie trwają 
     - z lewej obok naglowka i pod naglowkiem okłądka albumu lub jakis losowy obrazek może
     - w formie tabelki z:
@@ -43,3 +43,12 @@
 
 5) widok gatunków
     - tabela z nazwami gatunków i ilością utworów w gatunku
+
+6) widok zespołu:
+    - na górze nagłówek z nazwą zespołu
+    - pod nagłówkiem:
+        # opis zespołu
+        # z lewej data założenie i rozwiązania, a z prawej statystyki ile zespół ma albumów i utworów
+    - osadzony widok albumów 2)
+    - osadzony widok utworów 4) nie majacych albumu
+    - lista artystów
