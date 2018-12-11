@@ -1,11 +1,12 @@
 ﻿using FluentValidation;
 using MusicPlayer.Core.CQRS;
 using MusicPlayer.Core.Data;
+using System;
 using System.Threading.Tasks;
 
-namespace MusicPlayer.Service.Controllers.Image
+namespace MusicPlayer.Service.Controllers.Genre
 {
-    public class CreateImage
+    public class CreateGenre
     {
         public class Command : ICommand
         {
@@ -23,7 +24,7 @@ namespace MusicPlayer.Service.Controllers.Image
 
             public async Task Execute(Command command)
             {
-                _uow.ImageRepository.Insert(command._data.Image);
+                _uow.GenreRepository.Insert(command._data.Genre);
                 await _uow.SaveChangesAsync();
             }
         }
@@ -40,14 +41,16 @@ namespace MusicPlayer.Service.Controllers.Image
 
         public class Data
         {
-            public Core.Entities.Image Image { get; private set; }
+            public Core.Entities.Genre Genre { get; private set; }
 
-            public Data(string filePath)
+            public Data(string name, string description)
             {
-                Image = new Core.Entities.Image();
+                Genre = new Core.Entities.Genre();
 
-                Image.FilePath = filePath;
+                Genre.Name = name;
+                Genre.Description = description;
             }
         }
     }
 }
+

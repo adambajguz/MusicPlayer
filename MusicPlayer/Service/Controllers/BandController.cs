@@ -1,9 +1,7 @@
-﻿using EShop.Controllers.Band;
-using MusicPlayer.Core.CQRS;
+﻿using MusicPlayer.Core.CQRS;
 using MusicPlayer.Service.Controllers.Band;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MusicPlayer.Service.Controllers
@@ -19,14 +17,14 @@ namespace MusicPlayer.Service.Controllers
             _commandDispatcher = commandDispatcher;
         }
 
-        public async Task<List<Band.GetBands.Result>> GetBands()
+        public async Task<List<Result>> GetBands()
         {
-            return await _queryDispatcher.Dispatch<GetBands.Query, List<GetBands.Result>>(new GetBands.Query());
+            return await _queryDispatcher.Dispatch<GetBands.Query, List<Result>>(new GetBands.Query());
         }
 
-        public async Task<Band.GetBand.Result> Get(int id)
+        public async Task<Result> Get(int id)
         {
-            return await _queryDispatcher.Dispatch<GetBand.Query, GetBand.Result>(new GetBand.Query() { ID = id });
+            return await _queryDispatcher.Dispatch<GetBand.Query, Result>(new GetBand.Query() { ID = id });
         }
 
         public async Task Create(string name, DateTime creationDate, DateTime? endDate, string description)
@@ -43,7 +41,7 @@ namespace MusicPlayer.Service.Controllers
         {
             await _commandDispatcher.Dispatch<DeleteBand.Command>(new DeleteBand.Command
             {
-                _data = new DeleteBand.Data(id)
+                ID = id
             });
         }
     }

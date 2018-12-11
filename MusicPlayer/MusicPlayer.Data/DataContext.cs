@@ -1,13 +1,11 @@
-using MusicPlayer.Core.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore.Design;
+using MusicPlayer.Core.Entities;
 
 namespace MusicPlayer.Data
 {
     public class DataContext : DbContext, IEntitiesContext
     {
-        public DbSet<Album> Albums{get;set;}
+        public DbSet<Album> Albums { get; set; }
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Band> Bands { get; set; }
         public DbSet<Genre> Genres { get; set; }
@@ -30,21 +28,5 @@ namespace MusicPlayer.Data
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer("Data Source =.\\SQLEXPRESS; Initial Catalog = MusicPlayer; Persist Security Info = False; Integrated Security = True;");
         }
-
-        //public DataContext(DbContextOptions options) : base(options){}
-        /*public DataContext(IConfiguration conf )
-        {
-            _conf = conf;
-        }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(_conf["SQL-Server:localhost"]);
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
-        */
     }
 }

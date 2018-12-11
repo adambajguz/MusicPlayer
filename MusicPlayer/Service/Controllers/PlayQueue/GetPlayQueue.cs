@@ -1,35 +1,31 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MusicPlayer.Core.CQRS;
 using MusicPlayer.Core.Data;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MusicPlayer.Service.Controllers.Image
+namespace MusicPlayer.Service.Controllers.PlayQueue
 {
-    public class GetImages
+    public class GetPlayQueue
     {
         public class Query : IQuery
         {
             public int ID;
         }
-        public class HandlerList : IQueryHandler<Query, List<Result>>
+
+        public class Handler : IQueryHandler<Query, Result>
         {
-
-
             private IUnitOfWork _uow;
-            public HandlerList(IUnitOfWork uow)
+            public Handler(IUnitOfWork uow)
             {
                 _uow = uow;
             }
 
-            public async Task<List<Result>> Handle(Query query)
+            public async Task<Result> Handle(Query query)
             {
-                var result = await _uow.ImageRepository.Query().Select(x => new Result(x)).ToListAsync();
-
+                var result = await _uow.PlayQueueRepository.Query().Where(x => x.Id == query.ID).Select(x => new Result(x)).FirstOrDefaultAsync();
                 return result;
             }
-
         }
     }
 }

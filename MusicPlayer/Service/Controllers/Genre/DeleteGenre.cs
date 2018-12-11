@@ -3,9 +3,9 @@ using MusicPlayer.Core.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MusicPlayer.Service.Controllers.Band
+namespace MusicPlayer.Service.Controllers.Genre
 {
-    public class DeleteBand
+    public class DeleteGenre
     {
         public class Command : ICommand
         {
@@ -23,8 +23,8 @@ namespace MusicPlayer.Service.Controllers.Band
 
             public async Task Execute(Command command)
             {
-                var band = _uow.BandRepository.Query().Where(x => x.Id == command.ID).FirstOrDefault();
-                _uow.BandRepository.Delete(band);
+                var genre = _uow.GenreRepository.Query().Where(x => x.Id == command.ID).FirstOrDefault();
+                _uow.GenreRepository.Delete(genre);
 
                 await _uow.SaveChangesAsync();
             }

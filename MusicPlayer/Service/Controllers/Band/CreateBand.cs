@@ -2,8 +2,6 @@
 using MusicPlayer.Core.CQRS;
 using MusicPlayer.Core.Data;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MusicPlayer.Service.Controllers.Band
@@ -26,7 +24,7 @@ namespace MusicPlayer.Service.Controllers.Band
 
             public async Task Execute(Command command)
             {
-                _uow.BandRepository.Insert(command._data.ToBandEntity());
+                _uow.BandRepository.Insert(command._data.Band);
                 await _uow.SaveChangesAsync();
             }
         }
@@ -43,32 +41,34 @@ namespace MusicPlayer.Service.Controllers.Band
 
         public class Data
         {
-            public string name { get; set; }
-            public DateTime CreationData { get; set; }
-            public DateTime? EndDate { get; set; }
-            public string Description { get; set; }
+            public Core.Entities.Band Band { get; private set; }
+
+            //public string name { get; set; }
+            //public DateTime CreationData { get; set; }
+            //public DateTime? EndDate { get; set; }
+            //public string Description { get; set; }
 
             public Data(string name, DateTime creationData, DateTime? endDate, string description)
             {
-                this.name = name;
-                this.CreationData = creationData;
-                this.EndDate = endDate;
-                this.Description = description;
+                Band = new Core.Entities.Band();
+
+                Band.name = name;
+                Band.CreationData = creationData;
+                Band.EndDate = endDate;
+                Band.Description = description;
             }
 
-            public Core.Entities.Band ToBandEntity()
-            {
-                var Band = new Core.Entities.Band
-                {
-                    name = name,
-                    CreationData=CreationData,
-                    EndDate=EndDate,
-                    Description=Description
-                };
-                return Band;
-            }
-
-
+            //public Core.Entities.Band ToBandEntity()
+            //{
+            //    var Band = new Core.Entities.Band
+            //    {
+            //        name = name,
+            //        CreationData=CreationData,
+            //        EndDate=EndDate,
+            //        Description=Description
+            //    };
+            //    return Band;
+            //}
         }
     }
 }
