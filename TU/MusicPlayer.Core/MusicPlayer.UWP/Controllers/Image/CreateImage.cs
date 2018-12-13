@@ -24,7 +24,10 @@ namespace MusicPlayer.UWP.Controllers.Image
             public async Task Execute(Command command)
             {
                 _uow.ImageRepository.Insert(command._data.Image);
+                int i = _uow.SaveChanges();
                 await _uow.SaveChangesAsync();
+                
+                
             }
         }
 

@@ -15,7 +15,8 @@ namespace MusicPlayer.Data
 
 
             var builder = new DbContextOptionsBuilder<DataContext>();
-            var connectionString = "Data Source =.\\SQLEXPRESS; Initial Catalog = MusicPlayer; Persist Security Info = False; Integrated Security = True;";
+            string connectionString=("Data Source = localhost\\SQLEXPRESS; Initial Catalog = Music.Player;Integrated Security = SSPI;");
+            //var connectionString = "Data Source =.\\SQLEXPRESS; Initial Catalog = MusicPlayer; Persist Security Info = False; Integrated Security = True;";
             builder.UseSqlServer(connectionString);
 
             return new DataContext(builder.Options);
