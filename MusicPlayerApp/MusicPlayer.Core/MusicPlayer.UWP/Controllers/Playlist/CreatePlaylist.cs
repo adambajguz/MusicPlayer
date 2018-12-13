@@ -24,7 +24,7 @@ namespace MusicPlayer.UWP.Controllers.Playlist
 
             public async Task Execute(Command command)
             {
-                _uow.PlaylistRepository.Insert(command._data.Playlist);
+                _uow.PlaylistRepository.Insert(command._data.GetEntity());
                 await _uow.SaveChangesAsync();
             }
         }
@@ -39,17 +39,22 @@ namespace MusicPlayer.UWP.Controllers.Playlist
         }
 
         // Private Class Data Pattern
-        public class Data
+        public class Data : ICreateResultData<Core.Entities.Playlist>
         {
-            public Core.Entities.Playlist Playlist { get; private set; }
+            private Core.Entities.Playlist playlist;
 
             public Data(string name, string description)
             {
-                Playlist = new Core.Entities.Playlist();
+                playlist = new Core.Entities.Playlist();
 
-                Playlist.Name = name;
-                Playlist.Description = description;
-                Playlist.DBCreationDate = DateTime.UtcNow;
+                playlist.Name = name;
+                playlist.Description = description;
+                playlist.DBCreationDate = DateTime.UtcNow;
+            }
+
+            public Core.Entities.Playlist GetEntity()
+            {
+                return playlist;
             }
         }
     }

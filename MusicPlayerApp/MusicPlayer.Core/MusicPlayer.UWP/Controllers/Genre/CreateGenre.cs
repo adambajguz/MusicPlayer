@@ -24,7 +24,7 @@ namespace MusicPlayer.UWP.Controllers.Genre
 
             public async Task Execute(Command command)
             {
-                _uow.GenreRepository.Insert(command._data.Genre);
+                _uow.GenreRepository.Insert(command._data.GetEntity());
                 await _uow.SaveChangesAsync();
             }
         }
@@ -39,16 +39,21 @@ namespace MusicPlayer.UWP.Controllers.Genre
         }
 
         // Private Class Data Pattern
-        public class Data
+        public class Data : ICreateResultData<Core.Entities.Genre>
         {
-            public Core.Entities.Genre Genre { get; private set; }
+            private Core.Entities.Genre genre;
 
             public Data(string name, string description)
             {
-                Genre = new Core.Entities.Genre();
+                genre = new Core.Entities.Genre();
 
-                Genre.Name = name;
-                Genre.Description = description;
+                genre.Name = name;
+                genre.Description = description;
+            }
+
+            public Core.Entities.Genre GetEntity()
+            {
+                return genre;
             }
         }
     }

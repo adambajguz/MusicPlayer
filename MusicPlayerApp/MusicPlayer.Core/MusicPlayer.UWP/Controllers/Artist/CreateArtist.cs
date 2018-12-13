@@ -24,7 +24,7 @@ namespace MusicPlayer.UWP.Controllers.Artist
 
             public async Task Execute(Command command)
             {
-                _uow.ArtistRepository.Insert(command._data.Artist);
+                _uow.ArtistRepository.Insert(command._data.GetEntity());
                 await _uow.SaveChangesAsync();
             }
         }
@@ -39,21 +39,26 @@ namespace MusicPlayer.UWP.Controllers.Artist
         }
 
         // Private Class Data Pattern
-        public class Data
+        public class Data : ICreateResultData<Core.Entities.Artist>
         {
-            public Core.Entities.Artist Artist { get; private set; }
+            private Core.Entities.Artist artist;
 
             public Data(string name, string surname, string pseudonym, DateTime birthdate, string description)
             {
-                Artist = new Core.Entities.Artist();
+                artist = new Core.Entities.Artist();
 
-                //Artist.Band = x.Band;
-                //Artist.Photo = x.Photo;
-                Artist.Name = name;
-                Artist.Surname = surname;
-                Artist.Pseudonym = pseudonym;
-                Artist.Birthdate = birthdate;
-                Artist.Description = description;
+                //artist.Band = x.Band;
+                //artist.Photo = x.Photo;
+                artist.Name = name;
+                artist.Surname = surname;
+                artist.Pseudonym = pseudonym;
+                artist.Birthdate = birthdate;
+                artist.Description = description;
+            }
+
+            public Core.Entities.Artist GetEntity()
+            {
+                return artist;
             }
         }
     }

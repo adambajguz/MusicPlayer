@@ -24,7 +24,7 @@ namespace MusicPlayer.UWP.Controllers.Band
 
             public async Task Execute(Command command)
             {
-                _uow.BandRepository.Insert(command._data.Band);
+                _uow.BandRepository.Insert(command._data.GetEntity());
                 await _uow.SaveChangesAsync();
             }
         }
@@ -39,9 +39,9 @@ namespace MusicPlayer.UWP.Controllers.Band
         }
 
         // Private Class Data Pattern
-        public class Data
+        public class Data : ICreateResultData<Core.Entities.Band>
         {
-            public Core.Entities.Band Band { get; private set; }
+            private Core.Entities.Band band;
 
             //public string name { get; set; }
             //public DateTime CreationData { get; set; }
@@ -50,12 +50,17 @@ namespace MusicPlayer.UWP.Controllers.Band
 
             public Data(string name, DateTime creationData, DateTime? endDate, string description)
             {
-                Band = new Core.Entities.Band();
+                band = new Core.Entities.Band();
 
-                Band.name = name;
-                Band.CreationData = creationData;
-                Band.EndDate = endDate;
-                Band.Description = description;
+                band.name = name;
+                band.CreationData = creationData;
+                band.EndDate = endDate;
+                band.Description = description;
+            }
+
+            public Core.Entities.Band GetEntity()
+            {
+                return band;
             }
 
             //public Core.Entities.Band ToBandEntity()

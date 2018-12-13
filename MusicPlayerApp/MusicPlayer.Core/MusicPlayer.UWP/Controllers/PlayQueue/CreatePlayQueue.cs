@@ -24,7 +24,7 @@ namespace MusicPlayer.UWP.Controllers.PlayQueue
 
             public async Task Execute(Command command)
             {
-                _uow.PlayQueueRepository.Insert(command._data.PlayQueue);
+                _uow.PlayQueueRepository.Insert(command._data.GetEntity());
                 await _uow.SaveChangesAsync();
             }
         }
@@ -39,15 +39,20 @@ namespace MusicPlayer.UWP.Controllers.PlayQueue
         }
 
         // Private Class Data Pattern
-        public class Data
+        public class Data : ICreateResultData<Core.Entities.PlayQueue>
         {
-            public Core.Entities.PlayQueue PlayQueue { get; private set; }
+            private Core.Entities.PlayQueue playQueue;
 
             public Data()
             {
-                PlayQueue = new Core.Entities.PlayQueue();
+                playQueue = new Core.Entities.PlayQueue();
 
-                //PlayQueue.Song = song;
+                //playQueue.Song = song;
+            }
+
+            public Core.Entities.PlayQueue GetEntity()
+            {
+                return playQueue;
             }
         }
     }

@@ -24,7 +24,7 @@ namespace MusicPlayer.UWP.Controllers.Song
 
             public async Task Execute(Command command)
             {
-                _uow.SongRepository.Insert(command._data.Song);
+                _uow.SongRepository.Insert(command._data.GetEntity());
                 await _uow.SaveChangesAsync();
             }
         }
@@ -39,26 +39,31 @@ namespace MusicPlayer.UWP.Controllers.Song
         }
 
         // Private Class Data Pattern
-        public class Data
+        public class Data : ICreateResultData<Core.Entities.Song>
         {
-            public Core.Entities.Song Song { get; private set; }
+            private Core.Entities.Song song;
 
             public Data(int score, string title, DateTime creationDate, string filePath)
             {
-                Song = new Core.Entities.Song();
+                song = new Core.Entities.Song();
 
-                //Song.Artist = Artist;
-                //Song.Album = Album;
-                //Song.Image = Image;
-                //Song.Genre = Genre;
-                Song.Score = score;
-                Song.Title = title;
-                Song.CreationDate = creationDate;
-                Song.FilePath = filePath;
-                Song.Length = new TimeSpan(0, 0, 0); // get from file if exists
-                Song.bitrate = 0;  // get from file if exists
-                Song.DBCreationDate = DateTime.UtcNow;
-                Song.PlayTimes = 0;
+                //song.Artist = Artist;
+                //song.Album = Album;
+                //song.Image = Image;
+                //song.Genre = Genre;
+                song.Score = score;
+                song.Title = title;
+                song.CreationDate = creationDate;
+                song.FilePath = filePath;
+                song.Length = new TimeSpan(0, 0, 0); // get from file if exists
+                song.bitrate = 0;  // get from file if exists
+                song.DBCreationDate = DateTime.UtcNow;
+                song.PlayTimes = 0;
+            }
+
+            public Core.Entities.Song GetEntity()
+            {
+                return song;
             }
         }
     }

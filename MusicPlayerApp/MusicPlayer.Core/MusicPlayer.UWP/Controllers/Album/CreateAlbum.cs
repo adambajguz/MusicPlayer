@@ -24,7 +24,7 @@ namespace MusicPlayer.UWP.Controllers.Album
 
             public async Task Execute(Command command)
             {
-                _uow.AlbumRepository.Insert(command._data.Album);
+                _uow.AlbumRepository.Insert(command._data.GetEntity());
                 await _uow.SaveChangesAsync();
             }
         }
@@ -39,19 +39,24 @@ namespace MusicPlayer.UWP.Controllers.Album
         }
 
         // Private Class Data Pattern
-        public class Data
+        public class Data : ICreateResultData<Core.Entities.Album>
         {
-            public Core.Entities.Album Album { get; private set; }
+            private Core.Entities.Album album;
 
             public Data(string title, string description, DateTime publicationDate)
             {
-                Album = new Core.Entities.Album();
+                album = new Core.Entities.Album();
 
                 //Album.CoverImage = x.CoverImage;
-                Album.Title = title;
-                Album.Description = description;
-                Album.PublicationDate = publicationDate;
-                Album.DBCreationDate = DateTime.UtcNow;
+                album.Title = title;
+                album.Description = description;
+                album.PublicationDate = publicationDate;
+                album.DBCreationDate = DateTime.UtcNow;
+            }
+
+            public Core.Entities.Album GetEntity()
+            {
+                return album;
             }
         }
     }

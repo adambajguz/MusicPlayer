@@ -23,7 +23,7 @@ namespace MusicPlayer.UWP.Controllers.Image
 
             public async Task Execute(Command command)
             {
-                _uow.ImageRepository.Insert(command._data.Image);
+                _uow.ImageRepository.Insert(command._data.GetEntity());
                 int i = _uow.SaveChanges();
                 await _uow.SaveChangesAsync();
                 
@@ -41,15 +41,20 @@ namespace MusicPlayer.UWP.Controllers.Image
         }
 
         // Private Class Data Pattern
-        public class Data
+        public class Data : ICreateResultData<Core.Entities.Image>
         {
-            public Core.Entities.Image Image { get; private set; }
+            private Core.Entities.Image image;
 
             public Data(string filePath)
             {
-                Image = new Core.Entities.Image();
+                image = new Core.Entities.Image();
 
-                Image.FilePath = filePath;
+                image.FilePath = filePath;
+            }
+
+            public Core.Entities.Image GetEntity()
+            {
+                return image;
             }
         }
     }

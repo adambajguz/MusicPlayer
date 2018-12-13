@@ -120,6 +120,7 @@
     <Compile Include="Controllers\Genre\GetGenre.cs" />
     <Compile Include="Controllers\Genre\GetGenres.cs" />
     <Compile Include="Controllers\Genre\Result.cs" />
+    <Compile Include="Controllers\ICreateResultData.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\Image\CreateImage.cs" />
     <Compile Include="Controllers\Image\GetImage.cs" />
