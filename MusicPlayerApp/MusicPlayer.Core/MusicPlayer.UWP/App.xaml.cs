@@ -67,11 +67,7 @@ namespace MusicPlayer.UWP
 
             ImageController ImgController = new ImageController(queryDispatcher, commandDispatcher);
             ImgController.Create("sciezka3").Wait();
-            Console.WriteLine(ImgController.GetImages().ToString());
-            foreach (var i in ImgController.GetImages().Result)
-            {
-                Console.WriteLine(i);
-            }
+
 
             //test  --  nie mozna 2 szybko po sobie
             //         BandController BandController = new BandController(queryDispatcher, commandDispatcher);
