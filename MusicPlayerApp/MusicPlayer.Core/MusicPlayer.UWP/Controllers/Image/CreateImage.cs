@@ -40,7 +40,7 @@ namespace MusicPlayer.UWP.Controllers.Image
             }
         }
 
-
+        // Private Class Data Pattern
         public class Data
         {
             public Core.Entities.Image Image { get; private set; }

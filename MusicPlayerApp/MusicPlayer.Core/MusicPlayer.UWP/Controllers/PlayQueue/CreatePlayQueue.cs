@@ -38,7 +38,7 @@ namespace MusicPlayer.UWP.Controllers.PlayQueue
             }
         }
 
-
+        // Private Class Data Pattern
         public class Data
         {
             public Core.Entities.PlayQueue PlayQueue { get; private set; }

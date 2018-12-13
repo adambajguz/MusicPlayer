@@ -38,7 +38,7 @@ namespace MusicPlayer.UWP.Controllers.Genre
             }
         }
 
-
+        // Private Class Data Pattern
         public class Data
         {
             public Core.Entities.Genre Genre { get; private set; }

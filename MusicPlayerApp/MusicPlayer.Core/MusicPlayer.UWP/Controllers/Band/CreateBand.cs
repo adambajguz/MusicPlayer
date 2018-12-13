@@ -38,7 +38,7 @@ namespace MusicPlayer.UWP.Controllers.Band
             }
         }
 
-
+        // Private Class Data Pattern
         public class Data
         {
             public Core.Entities.Band Band { get; private set; }
