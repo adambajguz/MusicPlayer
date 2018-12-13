@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayer.UWP", "MusicPla
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E0C16D8-88F9-4FF8-BBE0-B31C99523E79}"
 	ProjectSection(SolutionItems) = preProject
-		Graph1.dgml = Graph1.dgml
+		GraphOfDependencies.dgml = GraphOfDependencies.dgml
 	EndProjectSection
 EndProject
 Global

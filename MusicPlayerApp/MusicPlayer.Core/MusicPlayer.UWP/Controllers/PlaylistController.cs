@@ -1,6 +1,5 @@
 ﻿using MusicPlayer.Core.CQRS;
 using MusicPlayer.UWP.Controllers.Playlist;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
