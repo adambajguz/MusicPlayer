@@ -20,6 +20,10 @@ namespace MusicPlayer.UWP
     /// <summary>
     /// Pusta strona, która może być używana samodzielnie lub do której można nawigować wewnątrz ramki.
     /// </summary>
+    /// 
+
+    //https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
+    //https://blogs.msdn.microsoft.com/appconsult/2018/05/06/using-the-navigationview-in-your-uwp-applications/
     public sealed partial class MainPage : Page
     {
         public MainPage()

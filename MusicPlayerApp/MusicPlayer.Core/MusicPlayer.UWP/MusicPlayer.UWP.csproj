@@ -120,7 +120,17 @@
     <Compile Include="Controllers\Genre\GetGenre.cs" />
     <Compile Include="Controllers\Genre\GetGenres.cs" />
     <Compile Include="Controllers\Genre\Result.cs" />
-    <Compile Include="Controllers\ICreateResultData.cs" />
+    <Compile Include="Controllers\Image\DeleteImage.cs" />
+    <Compile Include="Controllers\ZMisc\ControllerInterfaces\IAlbumController.cs" />
+    <Compile Include="Controllers\ZMisc\ControllerInterfaces\IArtistController.cs" />
+    <Compile Include="Controllers\ZMisc\ControllerInterfaces\IBandController.cs" />
+    <Compile Include="Controllers\ZMisc\ControllerInterfaces\IController.cs" />
+    <Compile Include="Controllers\ZMisc\ControllerInterfaces\IGenreController.cs" />
+    <Compile Include="Controllers\ZMisc\ControllerInterfaces\IImageController.cs" />
+    <Compile Include="Controllers\ZMisc\ControllerInterfaces\IPlaylistController.cs" />
+    <Compile Include="Controllers\ZMisc\ControllerInterfaces\IPlayQueueController.cs" />
+    <Compile Include="Controllers\ZMisc\ControllerInterfaces\ISongController.cs" />
+    <Compile Include="Controllers\ZMisc\ICreateResultData.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\Image\CreateImage.cs" />
     <Compile Include="Controllers\Image\GetImage.cs" />
@@ -144,13 +154,12 @@
     <Compile Include="Controllers\Song\GetSong.cs" />
     <Compile Include="Controllers\Song\GetSongs.cs" />
     <Compile Include="Controllers\Song\Result.cs" />
+    <Compile Include="Controllers\ZMisc\ISpecification.cs" />
     <Compile Include="CQRS\CommandDispatcher.cs" />
     <Compile Include="CQRS\QueryDispatcher.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\ValidationError.cs" />
-    <Compile Include="Models\ValidationResultModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

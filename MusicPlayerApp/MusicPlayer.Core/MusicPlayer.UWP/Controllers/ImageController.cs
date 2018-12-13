@@ -1,13 +1,11 @@
 ﻿using MusicPlayer.Core.CQRS;
 using MusicPlayer.UWP.Controllers.Image;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MusicPlayer.UWP.Controllers
 {
-    public class ImageController
+    public class ImageController : IImageController, IController<Result>
     {
         private IQueryDispatcher _queryDispatcher;
         private ICommandDispatcher _commandDispatcher;
@@ -18,7 +16,7 @@ namespace MusicPlayer.UWP.Controllers
             _commandDispatcher = commandDispatcher;
         }
 
-        public async Task<List<Result>> GetImages()
+        public async Task<List<Result>> GetAll()
         {
             return await _queryDispatcher.Dispatch<GetImages.Query, List<Result>>(new GetImages.Query());
         }
@@ -36,6 +34,14 @@ namespace MusicPlayer.UWP.Controllers
 
             });
 
+        }
+
+        public async Task Delete(int id)
+        {
+            await _commandDispatcher.Dispatch<DeleteImage.Command>(new DeleteImage.Command
+            {
+                ID = id
+            });
         }
     }
 }

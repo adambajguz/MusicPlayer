@@ -121,7 +121,7 @@ namespace MusicPlayer.Data
             if (!_disposed && disposing)
             {
                 _context.Dispose();
-                if (_repositories != null)
+                if (_repositories.IsNotNull())
                 {
                     foreach (IDisposable repository in _repositories.Values)
                     {

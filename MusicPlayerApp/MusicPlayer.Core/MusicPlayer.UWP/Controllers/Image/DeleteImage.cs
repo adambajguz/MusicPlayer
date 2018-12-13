@@ -3,9 +3,9 @@ using MusicPlayer.Core.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MusicPlayer.UWP.Controllers.Playlist
+namespace MusicPlayer.UWP.Controllers.Image
 {
-    public class DeletePlaylist
+    public class DeleteImage
     {
         public class Command : ICommand
         {
@@ -23,8 +23,8 @@ namespace MusicPlayer.UWP.Controllers.Playlist
 
             public async Task Execute(Command command)
             {
-                var playlist = _uow.PlaylistRepository.Query().Where(x => x.Id == command.ID).FirstOrDefault();
-                _uow.PlaylistRepository.Delete(playlist);
+                var image = _uow.ImageRepository.Query().Where(x => x.Id == command.ID).FirstOrDefault();
+                _uow.ImageRepository.Delete(image);
                 int i = _uow.SaveChanges();
 
                 await _uow.SaveChangesAsync();

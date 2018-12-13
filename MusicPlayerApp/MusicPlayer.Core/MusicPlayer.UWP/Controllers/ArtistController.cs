@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicPlayer.UWP.Controllers
 {
-    public class ArtistController
+    public class ArtistController : IArtistController, IController<Result>
     {
         private IQueryDispatcher _queryDispatcher;
         private ICommandDispatcher _commandDispatcher;
@@ -17,7 +17,7 @@ namespace MusicPlayer.UWP.Controllers
             _commandDispatcher = commandDispatcher;
         }
 
-        public async Task<List<Result>> GetBands()
+        public async Task<List<Result>> GetAll()
         {
             return await _queryDispatcher.Dispatch<GetArtists.Query, List<Result>>(new GetArtists.Query());
         }

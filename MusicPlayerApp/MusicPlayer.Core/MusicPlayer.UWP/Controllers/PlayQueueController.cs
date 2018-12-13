@@ -1,12 +1,11 @@
 ﻿using MusicPlayer.Core.CQRS;
 using MusicPlayer.UWP.Controllers.PlayQueue;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MusicPlayer.UWP.Controllers
 {
-    public class PlayQueueController
+    public class PlayQueueController : IPlayQueueController, IController<Result>
     {
         private IQueryDispatcher _queryDispatcher;
         private ICommandDispatcher _commandDispatcher;
@@ -17,7 +16,7 @@ namespace MusicPlayer.UWP.Controllers
             _commandDispatcher = commandDispatcher;
         }
 
-        public async Task<List<Result>> GetPlayQueues()
+        public async Task<List<Result>> GetAll()
         {
             return await _queryDispatcher.Dispatch<GetPlayQueues.Query, List<Result>>(new GetPlayQueues.Query());
         }

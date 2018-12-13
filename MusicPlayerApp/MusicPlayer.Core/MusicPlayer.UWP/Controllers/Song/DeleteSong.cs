@@ -25,6 +25,7 @@ namespace MusicPlayer.UWP.Controllers.Song
             {
                 var song = _uow.SongRepository.Query().Where(x => x.Id == command.ID).FirstOrDefault();
                 _uow.SongRepository.Delete(song);
+                int i = _uow.SaveChanges();
 
                 await _uow.SaveChangesAsync();
             }

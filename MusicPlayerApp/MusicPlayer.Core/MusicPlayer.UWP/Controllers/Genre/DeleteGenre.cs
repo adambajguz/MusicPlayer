@@ -25,6 +25,7 @@ namespace MusicPlayer.UWP.Controllers.Genre
             {
                 var genre = _uow.GenreRepository.Query().Where(x => x.Id == command.ID).FirstOrDefault();
                 _uow.GenreRepository.Delete(genre);
+                int i = _uow.SaveChanges();
 
                 await _uow.SaveChangesAsync();
             }

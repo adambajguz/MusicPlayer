@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace MusicPlayer.UWP.Controllers
 {
-    interface ICreateResultData<T>
+    interface IController<T>
     {
-        T GetEntity();
+        Task<T> Get(int id);
+
+        Task<List<T>> GetAll();
+
+        Task Delete(int id);
+
     }
 }

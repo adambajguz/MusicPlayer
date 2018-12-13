@@ -25,6 +25,7 @@ namespace MusicPlayer.UWP.Controllers.Album
             {
                 var album = _uow.AlbumRepository.Query().Where(x => x.Id == command.ID).FirstOrDefault();
                 _uow.AlbumRepository.Delete(album);
+                int i = _uow.SaveChanges();
 
                 await _uow.SaveChangesAsync();
             }

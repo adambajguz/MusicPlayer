@@ -25,6 +25,7 @@ namespace MusicPlayer.UWP.Controllers.Band
             {
                 var band = _uow.BandRepository.Query().Where(x => x.Id == command.ID).FirstOrDefault();
                 _uow.BandRepository.Delete(band);
+                int i = _uow.SaveChanges();
 
                 await _uow.SaveChangesAsync();
             }

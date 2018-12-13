@@ -25,6 +25,7 @@ namespace MusicPlayer.UWP.Controllers.PlayQueue
             {
                 var playQueue = _uow.PlayQueueRepository.Query().Where(x => x.Id == command.ID).FirstOrDefault();
                 _uow.PlayQueueRepository.Delete(playQueue);
+                int i = _uow.SaveChanges();
 
                 await _uow.SaveChangesAsync();
             }

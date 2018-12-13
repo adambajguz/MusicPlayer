@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using MusicPlayer.Core.CQRS;
 using MusicPlayer.Core.Data;
+using MusicPlayer.UWP.Controllers.ZMisc;
 using System;
 using System.Threading.Tasks;
 
@@ -25,6 +26,7 @@ namespace MusicPlayer.UWP.Controllers.Artist
             public async Task Execute(Command command)
             {
                 _uow.ArtistRepository.Insert(command._data.GetEntity());
+                int i = _uow.SaveChanges();
                 await _uow.SaveChangesAsync();
             }
         }

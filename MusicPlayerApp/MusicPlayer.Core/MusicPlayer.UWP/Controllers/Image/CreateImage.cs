@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using MusicPlayer.Core.CQRS;
 using MusicPlayer.Core.Data;
+using MusicPlayer.UWP.Controllers.ZMisc;
 using System.Threading.Tasks;
 
 namespace MusicPlayer.UWP.Controllers.Image
@@ -26,8 +27,6 @@ namespace MusicPlayer.UWP.Controllers.Image
                 _uow.ImageRepository.Insert(command._data.GetEntity());
                 int i = _uow.SaveChanges();
                 await _uow.SaveChangesAsync();
-                
-                
             }
         }
 

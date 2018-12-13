@@ -1,12 +1,13 @@
 ﻿using MusicPlayer.Core.CQRS;
 using MusicPlayer.UWP.Controllers.Album;
+using MusicPlayer.UWP.Controllers.ZMisc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MusicPlayer.UWP.Controllers
 {
-    public class AlbumController
+    public class AlbumController : IAlbumController, IController<Result>
     {
         private IQueryDispatcher _queryDispatcher;
         private ICommandDispatcher _commandDispatcher;
@@ -17,7 +18,7 @@ namespace MusicPlayer.UWP.Controllers
             _commandDispatcher = commandDispatcher;
         }
 
-        public async Task<List<Result>> GetBands()
+        public async Task<List<Result>> GetAll()
         {
             return await _queryDispatcher.Dispatch<GetAlbums.Query, List<Result>>(new GetAlbums.Query());
         }
