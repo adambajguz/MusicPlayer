@@ -165,7 +165,8 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagramUWP2.cd" />
+    <None Include="ClassDiagramUWP.cd" />
     <None Include="MusicPlayer.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

@@ -1,236 +1,223 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="MusicPlayer.Core.Extensions.EnumerableExtensions" Collapsed="true">
-    <Position X="30.75" Y="0.5" Width="1.5" />
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="MusicPlayer.Core.Extensions.EnumerableExtensions">
+    <Position X="18.75" Y="10.5" Width="5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Extensions\EnumerableExtensions.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.Core.Extensions.EnumExtensions" Collapsed="true">
-    <Position X="32.5" Y="0.5" Width="1.5" />
+  <Class Name="MusicPlayer.Core.Extensions.EnumExtensions">
+    <Position X="21" Y="9.25" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Extensions\EnumExtensions.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.Core.Extensions.ObjectExtensions" Collapsed="true">
-    <Position X="30.75" Y="1.5" Width="1.5" />
+  <Class Name="MusicPlayer.Core.Extensions.ObjectExtensions">
+    <Position X="27.25" Y="13.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAA=</HashCode>
       <FileName>Extensions\ObjectExtensions.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.Core.Extensions.StringExtensions" Collapsed="true">
-    <Position X="32.5" Y="1.5" Width="1.5" />
+  <Class Name="MusicPlayer.Core.Extensions.StringExtensions">
+    <Position X="24" Y="13.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Extensions\StringExtensions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MusicPlayer.Core.Entities.Album">
-    <Position X="4" Y="1.75" Width="1.5" />
+    <Position X="25.25" Y="1.75" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAgAgAEAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Entities\Album.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MusicPlayer.Core.Entities.Artist">
-    <Position X="8.5" Y="1.75" Width="1.5" />
+    <Position X="14.5" Y="1.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgACAAAAAAAAQABAAAAAAAAAAACAAAgAA=</HashCode>
       <FileName>Entities\Artist.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.Core.Entities.Band" Collapsed="true">
-    <Position X="13" Y="1.75" Width="1.5" />
+  <Class Name="MusicPlayer.Core.Entities.Band">
+    <Position X="14.25" Y="6.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAgAAAAAAAAAAAgAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\Band.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.Core.Entities.ErrorViewModel" Collapsed="true">
-    <Position X="34.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\ErrorViewModel.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MusicPlayer.Core.Entities.Genre" Collapsed="true">
-    <Position X="19.75" Y="1.75" Width="1.5" />
+  <Class Name="MusicPlayer.Core.Entities.Genre">
+    <Position X="24.25" Y="6.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\Genre.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.Core.Entities.Image" Collapsed="true">
-    <Position X="24.25" Y="1.75" Width="1.5" />
+  <Class Name="MusicPlayer.Core.Entities.Image">
+    <Position X="30.25" Y="6.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>Entities\Image.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MusicPlayer.Core.Entities.Playlist">
-    <Position X="6.25" Y="1.75" Width="1.5" />
+    <Position X="28.75" Y="1.75" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\Playlist.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MusicPlayer.Core.Entities.PlayQueue">
-    <Position X="10.75" Y="1.75" Width="1.5" />
+    <Position X="18" Y="3" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\PlayQueue.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.Core.Entities.Song" Collapsed="true">
-    <Position X="15.25" Y="1.75" Width="1.5" />
+  <Class Name="MusicPlayer.Core.Entities.Song">
+    <Position X="17.75" Y="6.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAgAAAEgAAAIAAABAAIAAABAAAABCCIAAAAA=</HashCode>
       <FileName>Entities\Song.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.Core.Entities.SongAlbum" Collapsed="true">
-    <Position X="17.5" Y="1.75" Width="1.5" />
+  <Class Name="MusicPlayer.Core.Entities.SongAlbum">
+    <Position X="21.25" Y="6.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAgAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Entities\SongAlbum.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.Core.Entities.SongArtist" Collapsed="true">
-    <Position X="22" Y="1.75" Width="1.5" />
+  <Class Name="MusicPlayer.Core.Entities.SongArtist">
+    <Position X="27.25" Y="6.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\SongArtist.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.Core.Entities.SongPlaylist" Collapsed="true">
-    <Position X="26.5" Y="1.75" Width="1.5" />
+  <Class Name="MusicPlayer.Core.Entities.SongPlaylist">
+    <Position X="20.5" Y="2.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAEQAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\SongPlaylist.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.Core.Entities.BaseEntity&lt;TKey&gt;" Collapsed="true">
-    <Position X="15.25" Y="0.5" Width="1.5" />
+  <Class Name="MusicPlayer.Core.Entities.BaseEntity&lt;TKey&gt;">
+    <Position X="24.5" Y="4.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BaseEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.Core.Logging.NLogLogger" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="29" Y="1.5" Width="1.5" />
+  <Class Name="MusicPlayer.Core.Logging.NLogLogger" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="8.5" Width="5.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAYEAAAAAAAAAAAAAABEAQAAAAEAEIAA=</HashCode>
       <FileName>Logging\NLogLogger.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="MusicPlayer.Core.NullObjects.ImageNullObject" Collapsed="true">
-    <Position X="24.25" Y="3.25" Width="1.5" />
+  <Class Name="MusicPlayer.Core.NullObjects.ImageNullObject">
+    <Position X="30" Y="8.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>NullObjects\ImageNullObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="MusicPlayer.Core.Data.IRepository&lt;TEntity, TKey&gt;" Collapsed="true">
-    <Position X="29" Y="4.25" Width="1.5" />
+  <Interface Name="MusicPlayer.Core.Data.IRepository&lt;TEntity, TKey&gt;">
+    <Position X="30" Y="10.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAEAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>Data\IRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MusicPlayer.Core.Data.IUnitOfWork" Collapsed="true">
-    <Position X="30.75" Y="4.25" Width="1.5" />
+  <Interface Name="MusicPlayer.Core.Data.IUnitOfWork">
+    <Position X="33.25" Y="1.75" Width="4.5" />
     <TypeIdentifier>
       <HashCode>gBAIAAIAAyAAAEQAAAAAAQAUAAAAAAAAAAAABBAAAAA=</HashCode>
       <FileName>Data\IUnitOfWork.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MusicPlayer.Core.CQRS.ICacheKey&lt;TQuery&gt;" Collapsed="true">
-    <Position X="4.25" Y="3.5" Width="1.5" />
+  <Interface Name="MusicPlayer.Core.CQRS.ICacheKey&lt;TQuery&gt;">
+    <Position X="15.25" Y="10.25" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CQRS\ICacheKey.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MusicPlayer.Core.CQRS.ICommand" Collapsed="true">
-    <Position X="29" Y="2.75" Width="1.5" />
+  <Interface Name="MusicPlayer.Core.CQRS.ICommand">
+    <Position X="33.5" Y="12" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CQRS\ICommand.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MusicPlayer.Core.CQRS.ICommandDispatcher" Collapsed="true">
-    <Position X="30.75" Y="2.75" Width="1.5" />
+  <Interface Name="MusicPlayer.Core.CQRS.ICommandDispatcher">
+    <Position X="32.75" Y="10.5" Width="5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CQRS\ICommandDispatcher.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MusicPlayer.Core.CQRS.ICommandHandler&lt;TCommand, TResult&gt;" Collapsed="true">
-    <Position X="32.5" Y="2.75" Width="1.5" />
+  <Interface Name="MusicPlayer.Core.CQRS.ICommandHandler&lt;TCommand, TResult&gt;">
+    <Position X="33.25" Y="8" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CQRS\ICommandHandler.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MusicPlayer.Core.CQRS.ICommandHandler&lt;TCommand&gt;" Collapsed="true">
-    <Position X="34.25" Y="2.75" Width="1.5" />
+  <Interface Name="MusicPlayer.Core.CQRS.ICommandHandler&lt;TCommand&gt;">
+    <Position X="33.5" Y="13.25" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CQRS\ICommandHandler.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MusicPlayer.Core.CQRS.IQuery" Collapsed="true">
-    <Position X="30.75" Y="3.5" Width="1.5" />
+  <Interface Name="MusicPlayer.Core.CQRS.IQuery">
+    <Position X="35.75" Y="12" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CQRS\IQuery.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MusicPlayer.Core.CQRS.IQueryDispatcher" Collapsed="true">
-    <Position X="32.5" Y="3.5" Width="1.5" />
+  <Interface Name="MusicPlayer.Core.CQRS.IQueryDispatcher">
+    <Position X="33.25" Y="6.25" Width="4.25" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CQRS\IQueryDispatcher.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MusicPlayer.Core.CQRS.IQueryHandler&lt;TQuery, TResult&gt;" Collapsed="true">
-    <Position X="34.25" Y="3.5" Width="1.5" />
+  <Interface Name="MusicPlayer.Core.CQRS.IQueryHandler&lt;TQuery, TResult&gt;">
+    <Position X="30.25" Y="13.25" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>CQRS\IQueryHandler.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MusicPlayer.Core.CQRS.IReadCacheHandler&lt;TQuery, TResult&gt;" Collapsed="true">
-    <Position X="5.25" Y="4.75" Width="1.5" />
+  <Interface Name="MusicPlayer.Core.CQRS.IReadCacheHandler&lt;TQuery, TResult&gt;">
+    <Position X="19.5" Y="12.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CQRS\IReadCacheHandler.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MusicPlayer.Core.CQRS.IWriteCacheHandler&lt;TQuery, TResult&gt;" Collapsed="true">
-    <Position X="3" Y="4.75" Width="1.5" />
+  <Interface Name="MusicPlayer.Core.CQRS.IWriteCacheHandler&lt;TQuery, TResult&gt;">
+    <Position X="15" Y="12.5" Width="4.25" />
+    <InheritanceLine Type="MusicPlayer.Core.CQRS.ICacheKey&lt;TQuery&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="16.75" Y="11.353" />
+        <Point X="16.75" Y="12.125" />
+        <Point X="17.375" Y="12.125" />
+        <Point X="17.375" Y="12.5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CQRS\IWriteCacheHandler.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MusicPlayer.Core.Services.Logging.ILogger" Collapsed="true">
-    <Position X="29" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAYAAAAAAAAAAAAAAABEAAAAAAEAEAAA=</HashCode>
-      <FileName>Services\Logging\ILogger.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Enum Name="MusicPlayer.Core.Data.OrderBy" Collapsed="true">
-    <Position X="29" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\OrderBy.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

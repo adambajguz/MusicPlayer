@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="MusicPlayer.UWP.Controllers.Album.CreateAlbum">
+    <Position X="0.5" Y="0.5" Width="4.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Album.CreateAlbum.Command">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Album\CreateAlbum.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Album.CreateAlbum.Handler">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Album\CreateAlbum.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Album.CreateAlbum.Validator">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Album\CreateAlbum.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Album.CreateAlbum.Data">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Album\CreateAlbum.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Album\CreateAlbum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Album.DeleteAlbum">
+    <Position X="5" Y="0.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Album.DeleteAlbum.Command">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Album\DeleteAlbum.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Album.DeleteAlbum.Handler">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Album\DeleteAlbum.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Album\DeleteAlbum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Album.GetAlbum">
+    <Position X="5.25" Y="5.25" Width="3" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Album.GetAlbum.Query">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Album\GetAlbum.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Album.GetAlbum.Handler">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Album\GetAlbum.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Album\GetAlbum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Album.GetAlbums">
+    <Position X="8.25" Y="0.5" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Album.GetAlbums.Query">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Album\GetAlbums.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Album.GetAlbums.HandlerList">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Album\GetAlbums.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Album\GetAlbums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Album.Result">
+    <Position X="8.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Album\Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MusicPlayer.UWP.Controllers.ZMisc.ICreateResultData&lt;T&gt;">
+    <Position X="8.5" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ZMisc\ICreateResultData.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MusicPlayer.UWP.Controllers.IAlbumController">
+    <Position X="0.5" Y="8.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ZMisc\ControllerInterfaces\IAlbumController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MusicPlayer.UWP.Controllers.IController&lt;T&gt;">
+    <Position X="8.5" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ZMisc\ControllerInterfaces\IController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

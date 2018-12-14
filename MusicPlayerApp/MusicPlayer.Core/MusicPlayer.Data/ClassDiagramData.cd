@@ -1,39 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="MusicPlayer.Data.DataContext" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="MusicPlayer.Data.DataContext" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="4.25" />
     <TypeIdentifier>
       <HashCode>AAAQBAAAAQAAAAAAAAIEAAAAAABABBAAIEAACAAEAAA=</HashCode>
       <FileName>DataContext.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="MusicPlayer.Data.DataContextFactory" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+  <Class Name="MusicPlayer.Data.DataContextFactory" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="6.25" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataContextFactory.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="MusicPlayer.Data.EntityRepository&lt;TEntity, TKey&gt;" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+  <Class Name="MusicPlayer.Data.EntityRepository&lt;TEntity, TKey&gt;" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="0.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAQAAEAAACAEBAAAAAAAAAAAAAEAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>EntityRepository.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="MusicPlayer.Data.UnitOfWork" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.25" Y="1.5" Width="1.5" />
+  <Class Name="MusicPlayer.Data.UnitOfWork" BaseTypeListCollapsed="true">
+    <Position X="5" Y="0.5" Width="4.5" />
     <TypeIdentifier>
       <HashCode>gBAIAAIAAyAEBEQIAAAAAQAUAAAAAAAAAAAABBAAAAA=</HashCode>
       <FileName>UnitOfWork.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="MusicPlayer.Data.IEntitiesContext" Collapsed="true">
-    <Position X="0.5" Y="2.75" Width="1.5" />
+  <Interface Name="MusicPlayer.Data.IEntitiesContext">
+    <Position X="0.5" Y="4.5" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAQBAAAAAAAAAAAAAIEAAAAAABABBAAIEAACAAEAAA=</HashCode>
       <FileName>IEntitiesContext.cs</FileName>
