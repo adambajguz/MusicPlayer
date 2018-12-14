@@ -1,40 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DirectedGraph DataVirtualized="True" FilterState="CodeSchema_AttributeUse,UncategorizedRelationship,UncategorizedCodeElement,CodeMap_TestAsset,CodeSchema_Struct,CodeSchema_Delegate" Layout="ForceDirected" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+<DirectedGraph DataVirtualized="True" FilterState="CodeSchema_Struct" Layout="ForceDirected" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="(@1 @5 @7 Member=(Name=Debug @12))" Category="CodeSchema_Method" Bounds="826.110586240053,287.88,71.5999999999999,25.9599999999999" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Debug" />
-    <Node Id="(@1 @5 @7 Member=(Name=Debug @19))" Category="CodeSchema_Method" Bounds="732.300586240053,343.84,71.6,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Debug" />
-    <Node Id="(@1 @5 @7 Member=(Name=Error @12))" Category="CodeSchema_Method" Bounds="833.900586240053,343.84,61.62,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Error" />
-    <Node Id="(@1 @5 @7 Member=(Name=Error @19))" Category="CodeSchema_Method" Bounds="925.520586240053,343.84,61.6200000000001,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Error" />
-    <Node Id="(@1 @5 @7 Member=(Name=Fatal @12))" Category="CodeSchema_Method" Bounds="905.840586240053,175.96,60.6366666666665,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Fatal" />
-    <Node Id="(@1 @5 @7 Member=(Name=Fatal @19))" Category="CodeSchema_Method" Bounds="732.300586240053,231.92,60.6366666666667,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Fatal" />
-    <Node Id="(@1 @5 @7 Member=(Name=Info @12))" Category="CodeSchema_Method" Bounds="732.300586240053,175.96,56.77,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Info" />
-    <Node Id="(@1 @5 @7 Member=(Name=Info @19))" Category="CodeSchema_Method" Bounds="819.070586240053,175.96,56.7700000000001,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Info" />
-    <Node Id="(@1 @5 @7 Member=(Name=Trace @12))" Category="CodeSchema_Method" Bounds="732.300586240053,399.8,63.3433333333334,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Trace" />
-    <Node Id="(@1 @5 @7 Member=(Name=Trace @19))" Category="CodeSchema_Method" Bounds="822.93725290672,231.92,63.3433333333334,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Trace" />
-    <Node Id="(@1 @5 @7 Member=(Name=Warn @12))" Category="CodeSchema_Method" Bounds="916.280586240053,231.92,63.8100000000001,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Warn" />
-    <Node Id="(@1 @5 @7 Member=(Name=Warn @19))" Category="CodeSchema_Method" Bounds="732.300586240053,287.88,63.8100000000001,25.9599999999999" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Warn" />
-    <Node Id="@10" Category="CodeSchema_Class" Bounds="40.0000000000001,80,602.300486240053,421.72" CodeSchemaProperty_IsPublic="True" CommonLabel="NLogLogger" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="17" Group="Expanded" Icon="CodeSchema_Class" Label="NLogLogger" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Logging/NLogLogger.cs StartLineNumber=5 StartCharacterOffset=17 EndLineNumber=5 EndCharacterOffset=27)" />
-    <Node Id="@13" Category="CodeSchema_Method" Bounds="170.658222573936,120,71.6,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Debug" />
-    <Node Id="@14" Category="CodeSchema_Method" Bounds="267.217559993201,343.84,61.62,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Error" />
-    <Node Id="@15" Category="CodeSchema_Method" Bounds="252.287669117536,399.8,60.6366666666667,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Fatal" />
-    <Node Id="@16" Category="CodeSchema_Method" Bounds="165.517569117536,392.594052352759,56.77,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Info" />
-    <Node Id="@17" Category="CodeSchema_Method" Bounds="60.0000000000001,315.543951102576,63.3433333333334,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Trace" />
-    <Node Id="@18" Category="CodeSchema_Method" Bounds="72.1902676823139,203.623951102577,63.8100000000001,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Warn" />
-    <Node Id="@2" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2018 10:37:10" Bounds="0,0,1047.14058624005,541.72" CodeSchemaProperty_StrongName="MusicPlayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" CommonLabel="MusicPlayer.Core" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" FilePath="$(ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPath)" Group="Expanded" Label="MusicPlayer.Core.dll" />
-    <Node Id="@20" Category="CodeSchema_Method" Bounds="170.6585203244,455.76,71.6,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Debug" />
-    <Node Id="@21" Category="CodeSchema_Method" Bounds="267.21726667753,231.92,61.62,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Error" />
-    <Node Id="@22" Category="CodeSchema_Method" Bounds="252.770467682314,175.96,60.6366666666668,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Fatal" />
-    <Node Id="@23" Category="CodeSchema_Method" Bounds="166.000367682314,183.170461740179,56.77,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Info" />
-    <Node Id="@24" Category="CodeSchema_Method" Bounds="60.0000000000002,259.583951102577,63.3433333333333,25.9599999999999" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Trace" />
-    <Node Id="@25" Category="CodeSchema_Method" Bounds="71.7074691175361,371.503951102576,63.81,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Warn" />
-    <Node Id="@26" Category="CodeSchema_Method" Bounds="301.014157947432,287.88,133.056666666667,25.96" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsSpecialName="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="static NLogLogger" />
-    <Node Id="@27" Category="CodeSchema_Method" Bounds="377.371704601361,353.410764422351,101.986666666667,25.96" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="NLogLogger" />
-    <Node Id="@28" Category="CodeSchema_Property" Bounds="519.991424786006,230.79911437153,102.309061454048,25" CodeSchemaProperty_IsStatic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Instance" />
-    <Node Id="@29" Category="CodeSchema_Field" Bounds="392.737991452672,231.069062582558,97.2533333333333,25.96" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="LazyLogger" />
-    <Node Id="@30" Category="CodeSchema_Field" Bounds="153.343433333334,287.88,106.23,25.96" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="LazyNLogger" />
-    <Node Id="@4" Category="CodeSchema_Namespace" Bounds="20.0000000000001,40,642.300486240053,481.72" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.Core.Logging" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.Core.Logging" />
-    <Node Id="@6" Category="CodeSchema_Namespace" Bounds="692.300586240053,95.96,334.84,369.8" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer‎.Core‎.Services‎.Logging" />
-    <Node Id="@8" Category="CodeSchema_Interface" Bounds="712.300586240053,135.96,294.84,309.8" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="12" Group="Expanded" Label="ILogger" />
+    <Node Id="(@1 @5 @7 Member=(Name=Debug @12))" Category="CodeSchema_Method" Bounds="927.11348359928,399.8,71.5999999999999,25.9599999999999" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Debug" />
+    <Node Id="(@1 @5 @7 Member=(Name=Debug @19))" Category="CodeSchema_Method" Bounds="731.70348359928,399.8,71.5999999999999,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Debug" />
+    <Node Id="(@1 @5 @7 Member=(Name=Error @12))" Category="CodeSchema_Method" Bounds="822.340150265947,287.88,61.6199999999999,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Error" />
+    <Node Id="(@1 @5 @7 Member=(Name=Error @19))" Category="CodeSchema_Method" Bounds="913.960150265947,287.88,61.6200000000001,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Error" />
+    <Node Id="(@1 @5 @7 Member=(Name=Fatal @12))" Category="CodeSchema_Method" Bounds="905.24348359928,231.92,60.6366666666665,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Fatal" />
+    <Node Id="(@1 @5 @7 Member=(Name=Fatal @19))" Category="CodeSchema_Method" Bounds="731.70348359928,287.88,60.6366666666668,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Fatal" />
+    <Node Id="(@1 @5 @7 Member=(Name=Info @12))" Category="CodeSchema_Method" Bounds="731.70348359928,231.92,56.77,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Info" />
+    <Node Id="(@1 @5 @7 Member=(Name=Info @19))" Category="CodeSchema_Method" Bounds="818.47348359928,231.92,56.77,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Info" />
+    <Node Id="(@1 @5 @7 Member=(Name=Trace @12))" Category="CodeSchema_Method" Bounds="731.70348359928,343.84,63.3433333333332,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Trace" />
+    <Node Id="(@1 @5 @7 Member=(Name=Trace @19))" Category="CodeSchema_Method" Bounds="825.046816932613,343.84,63.3433333333332,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Trace" />
+    <Node Id="(@1 @5 @7 Member=(Name=Warn @12))" Category="CodeSchema_Method" Bounds="918.390150265947,343.84,63.8099999999999,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Warn" />
+    <Node Id="(@1 @5 @7 Member=(Name=Warn @19))" Category="CodeSchema_Method" Bounds="833.30348359928,399.8,63.8099999999999,25.9599999999999" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Warn" />
+    <Node Id="@10" Category="CodeSchema_Class" Bounds="40,80,601.70338359928,477.68" CodeSchemaProperty_IsPublic="True" CommonLabel="NLogLogger" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="17" Group="Expanded" Icon="CodeSchema_Class" Label="NLogLogger" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Logging/NLogLogger.cs StartLineNumber=5 StartCharacterOffset=17 EndLineNumber=5 EndCharacterOffset=27)" />
+    <Node Id="@13" Category="CodeSchema_Method" Bounds="60,214.218021338149,71.6,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Debug" />
+    <Node Id="@14" Category="CodeSchema_Method" Bounds="267.761512100914,343.84,61.62,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Error" />
+    <Node Id="@15" Category="CodeSchema_Method" Bounds="177.598533216302,455.76,60.6366666666667,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Fatal" />
+    <Node Id="@16" Category="CodeSchema_Method" Bounds="161.6001,184.586368385926,56.77,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Info" />
+    <Node Id="@17" Category="CodeSchema_Method" Bounds="61.0926294844485,270.177929103482,63.3433333333334,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Trace" />
+    <Node Id="@18" Category="CodeSchema_Method" Bounds="248.3702,175.96,63.8100000000002,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Warn" />
+    <Node Id="@2" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2018 10:37:10" Bounds="0,0,1058.71348359928,597.68" CodeSchemaProperty_StrongName="MusicPlayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" CommonLabel="MusicPlayer.Core" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" FilePath="$(ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPath)" Group="Expanded" Label="MusicPlayer.Core.dll" />
+    <Node Id="@20" Category="CodeSchema_Method" Bounds="172.116864947788,511.72,71.6,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Debug" />
+    <Node Id="@21" Category="CodeSchema_Method" Bounds="177.106863861313,120,61.62,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Error" />
+    <Node Id="@22" Category="CodeSchema_Method" Bounds="268.25307136696,231.92,60.6366666666668,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Fatal" />
+    <Node Id="@23" Category="CodeSchema_Method" Bounds="123.552078058854,382.097984291359,56.77,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Info" />
+    <Node Id="@24" Category="CodeSchema_Method" Bounds="210.322104386229,399.8,63.3433333333333,25.9599999999999" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Trace" />
+    <Node Id="@25" Category="CodeSchema_Method" Bounds="60.625962817782,326.137981136346,63.81,25.96" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="Warn" />
+    <Node Id="@26" Category="CodeSchema_Method" Bounds="300.748087962559,287.880070515594,133.056666666667,25.96" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsSpecialName="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="static NLogLogger" />
+    <Node Id="@27" Category="CodeSchema_Method" Bounds="369.831643044383,359.507310403333,101.986666666667,25.96" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="NLogLogger" />
+    <Node Id="@28" Category="CodeSchema_Property" Bounds="519.394322145232,231.671542042838,102.309061454048,25" CodeSchemaProperty_IsStatic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Instance" />
+    <Node Id="@29" Category="CodeSchema_Field" Bounds="392.140888811899,231.639303486624,97.2533333333333,25.96" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="LazyLogger" />
+    <Node Id="@30" Category="CodeSchema_Field" Bounds="154.436062817782,287.88,106.23,25.96" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="LazyNLogger" />
+    <Node Id="@4" Category="CodeSchema_Namespace" Bounds="20,40,641.70338359928,537.68" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.Core.Logging" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.Core.Logging" />
+    <Node Id="@6" Category="CodeSchema_Namespace" Bounds="691.70348359928,151.92,347.01,313.84" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer‎.Core‎.Services‎.Logging" />
+    <Node Id="@8" Category="CodeSchema_Interface" Bounds="711.70348359928,191.92,307.01,253.84" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="12" Group="Expanded" Label="ILogger" />
   </Nodes>
   <Links>
     <Link Source="@10" Target="@13" Category="Contains" FetchingParent="@10" />
@@ -54,29 +54,29 @@
     <Link Source="@10" Target="@28" Category="Contains" FetchingParent="@10" />
     <Link Source="@10" Target="@29" Category="Contains" FetchingParent="@10" />
     <Link Source="@10" Target="@30" Category="Contains" FetchingParent="@10" />
-    <Link Source="@10" Target="@8" Category="Implements" Bounds="116.893331593041,-51.4307018857949,1.37525597665444E-06,81.0003030212421" Weight="1" />
-    <Link Source="@13" Target="@30" Category="CodeSchema_FieldRead" Bounds="210.967376708984,145.960006713867,16.0602722167969,133.106643676758" Weight="1" />
-    <Link Source="@14" Target="@30" Category="CodeSchema_FieldRead" Bounds="235.377515752182,318.533116597147,41.410457678384,25.3068834028534" Weight="1" />
-    <Link Source="@15" Target="@30" Category="CodeSchema_FieldRead" Bounds="220.352398806861,321.281040800356,53.4223362463533,78.5189591996437" Weight="1" />
-    <Link Source="@16" Target="@30" Category="CodeSchema_FieldRead" Bounds="195.458951607367,322.775990662722,8.37161854301183,69.818061690037" Weight="1" />
-    <Link Source="@17" Target="@30" Category="CodeSchema_FieldRead" Bounds="123.343333333334,315.446834782022,22.589559222375,5.44415074928673" Weight="1" />
-    <Link Source="@18" Target="@30" Category="CodeSchema_FieldRead" Bounds="119.864745453196,229.583951102576,63.8754048316416,52.5764243281189" Weight="1" />
+    <Link Source="@10" Target="@8" Category="Implements" Bounds="641.703369140625,290.033020019531,61.190185546875,14.4005126953125" Weight="1" />
+    <Link Source="@13" Target="@30" Category="CodeSchema_FieldRead" Bounds="115.491689277497,240.178021338149,64.8533035611821,42.7487895203641" Weight="1" />
+    <Link Source="@14" Target="@30" Category="CodeSchema_FieldRead" Bounds="236.330284105667,318.553663742094,41.1289079149207,25.2863362579061" Weight="1" />
+    <Link Source="@15" Target="@30" Category="CodeSchema_FieldRead" Bounds="207.598956302477,322.839978634685,0.289627351998462,132.920021365315" Weight="1" />
+    <Link Source="@16" Target="@30" Category="CodeSchema_FieldRead" Bounds="192.192459677571,210.546368385926,11.642379319831,68.4610148073733" Weight="1" />
+    <Link Source="@17" Target="@30" Category="CodeSchema_FieldRead" Bounds="124.435962817782,288.042238549817,21.1052510524167,3.25478852020996" Weight="1" />
+    <Link Source="@18" Target="@30" Category="CodeSchema_FieldRead" Bounds="220.889059260514,201.92,50.9519082464093,78.4132722901863" Weight="1" />
     <Link Source="@2" Target="@4" Category="Contains" FetchingParent="@2" />
     <Link Source="@2" Target="@6" Category="Contains" FetchingParent="@2" />
-    <Link Source="@20" Target="@30" Category="CodeSchema_FieldRead" Bounds="210.886245727539,322.659912109375,15.7659149169922,133.10009765625" Weight="1" />
-    <Link Source="@21" Target="@30" Category="CodeSchema_FieldRead" Bounds="235.377441028251,257.88,41.4103071216226,25.3068724575257" Weight="1" />
-    <Link Source="@22" Target="@30" Category="CodeSchema_FieldRead" Bounds="220.430267660236,201.92,53.7712730577309,78.5338901879001" Weight="1" />
-    <Link Source="@23" Target="@30" Category="CodeSchema_FieldRead" Bounds="195.881968610506,209.130461740179,8.04898870339724,69.8087722665592" Weight="1" />
-    <Link Source="@24" Target="@30" Category="CodeSchema_FieldRead" Bounds="123.343333333334,280.371323456442,22.948808010008,5.65710327458282" Weight="1" />
-    <Link Source="@25" Target="@30" Category="CodeSchema_FieldRead" Bounds="119.576084779317,319.517852799166,63.9357544738965,51.9860983034101" Weight="1" />
-    <Link Source="@26" Target="@10" Category="References" Bounds="367.54248046875,313.839996337891,12.322265625,201.379974365234" Weight="2" />
-    <Link Source="@26" Target="@27" Category="CodeSchema_Calls" Bounds="379.589911489077,313.84,30.6051302367239,32.9742454072097" Weight="1" />
-    <Link Source="@26" Target="@29" Category="CodeSchema_FieldWrite" Bounds="384.409168176515,262.517955877207,32.956348508083,25.362044122793" Weight="1" />
-    <Link Source="@26" Target="@30" Category="CodeSchema_FieldWrite" Bounds="268.573433333334,300.86,32.440724614098,0" Weight="1" />
-    <Link Source="@28" Target="@10" Category="References" Bounds="622.300476074219,243.299118041992,33.5,12.322265625" IsSourceVirtualized="True" Weight="1" />
-    <Link Source="@28" Target="@29" Category="CodeSchema_FieldRead" Bounds="498.99117452719,243.594713580161,21.0002502588158,0.121351076226063" IsSourceVirtualized="True" Weight="1" />
-    <Link Source="@28" Target="@8" Category="CodeSchema_ReturnTypeLink" Bounds="143.40325621258,-55.4827198734829,314.881934291248,207.245202128319" IsSourceVirtualized="True" Weight="1" />
-    <Link Source="@29" Target="@10" Category="References" Bounds="441.364654541016,66.5,12.322265625,164.569061279297" Weight="1" />
+    <Link Source="@20" Target="@30" Category="CodeSchema_FieldRead" Bounds="167.46435546875,322.659729003906,35.657470703125,189.060272216797" Weight="1" />
+    <Link Source="@21" Target="@30" Category="CodeSchema_FieldRead" Bounds="211.174362182617,145.960006713867,12.7010955810547,133.041152954102" Weight="1" />
+    <Link Source="@22" Target="@30" Category="CodeSchema_FieldRead" Bounds="236.330256712408,257.88,41.1288528192822,25.2863322216247" Weight="1" />
+    <Link Source="@23" Target="@30" Category="CodeSchema_FieldRead" Bounds="159.598773727683,321.590509648526,35.7157054239415,60.5074746428326" Weight="1" />
+    <Link Source="@24" Target="@30" Category="CodeSchema_FieldRead" Bounds="214.192758723785,322.441886091118,23.8064952375115,77.3581139088818" Weight="1" />
+    <Link Source="@25" Target="@30" Category="CodeSchema_FieldRead" Bounds="124.373020440047,316.680566340578,35.614551871928,11.846110842328" Weight="1" />
+    <Link Source="@26" Target="@10" Category="References" Bounds="367.276428222656,66.5000152587891,12.322265625,221.379959106445" Weight="2" />
+    <Link Source="@26" Target="@27" Category="CodeSchema_Calls" Bounds="376.980274830546,313.840070515594,28.7519243674657,38.4589459184425" Weight="1" />
+    <Link Source="@26" Target="@29" Category="CodeSchema_FieldWrite" Bounds="384.237690018245,263.068813157057,32.4213301235128,24.811154469916" Weight="1" />
+    <Link Source="@26" Target="@30" Category="CodeSchema_FieldWrite" Bounds="269.666055908203,300.859981365112,31.0820237223307,6.41845588233991E-06" Weight="1" />
+    <Link Source="@28" Target="@10" Category="References" Bounds="621.703369140625,244.171539306641,33.5,12.322265625" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@28" Target="@29" Category="CodeSchema_FieldRead" Bounds="498.39416858064,244.348031467698,21.0001535645922,0.0724531135737152" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@28" Target="@8" Category="CodeSchema_ReturnTypeLink" Bounds="610.97216796875,256.671539306641,92.1266479492188,27.9018249511719" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@29" Target="@10" Category="References" Bounds="440.767578125,66.5000152587891,12.322265625,165.139190673828" Weight="1" />
     <Link Source="@4" Target="@10" Category="Contains" FetchingParent="@4" />
     <Link Source="@6" Target="@8" Category="Contains" FetchingParent="@6" />
     <Link Source="@8" Target="(@1 @5 @7 Member=(Name=Debug @12))" Category="Contains" FetchingParent="@8" />
@@ -138,7 +138,7 @@
     <Property Id="FilterState" DataType="System.String" />
     <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
     <Property Id="GroupLabel" DataType="System.String" />
-    <Property Id="Icon" Label="Icon" DataType="System.String" />
+    <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
     <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
     <Property Id="IsContainment" DataType="System.Boolean" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
@@ -266,7 +266,7 @@
       <Setter Property="Icon" Value="CodeSchema_Enum" />
       <Setter Property="LayoutSettings" Value="List" />
     </Style>
-    <Style TargetType="Node" IsEnabled="false" GroupLabel="Delegate" ValueLabel="Has category">
+    <Style TargetType="Node" GroupLabel="Delegate" ValueLabel="Has category">
       <Condition Expression="HasCategory('CodeSchema_Delegate')" />
       <Setter Property="Background" Value="#FF1382CE" />
       <Setter Property="Stroke" Value="#FF1382CE" />
@@ -394,7 +394,7 @@
     <Style TargetType="Link" GroupLabel="References" ValueLabel="True" Visibility="Hidden">
       <Condition Expression="HasCategory('References')" />
     </Style>
-    <Style TargetType="Link" IsEnabled="false" GroupLabel="Uses Attribute" ValueLabel="True" Visibility="Hidden">
+    <Style TargetType="Link" GroupLabel="Uses Attribute" ValueLabel="True" Visibility="Hidden">
       <Condition Expression="HasCategory('CodeSchema_AttributeUse')" />
     </Style>
     <Style TargetType="Node" GroupLabel="Solution Folder" ValueLabel="True" Visibility="Hidden">
@@ -415,7 +415,7 @@
     </Style>
   </Styles>
   <Paths>
-    <Path Id="ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPath" Value="X:\Dokumenty\GitHub\MusicPlayer\MusicPlayerApp\MusicPlayer.Core\MusicPlayer.Core\bin\Debug\netstandard2.0\MusicPlayer.Core.dll" />
-    <Path Id="ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPathUri" Value="file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/bin/Debug/netstandard2.0/MusicPlayer.Core.dll" />
+    <Path Id="ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPath" Value="X:\GitHub\MusicPlayer\MusicPlayerApp\MusicPlayer.Core\MusicPlayer.Core\bin\Debug\netstandard2.0\MusicPlayer.Core.dll" />
+    <Path Id="ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPathUri" Value="file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/bin/Debug/netstandard2.0/MusicPlayer.Core.dll" />
   </Paths>
 </DirectedGraph>

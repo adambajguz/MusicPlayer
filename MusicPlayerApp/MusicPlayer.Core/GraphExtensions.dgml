@@ -59,7 +59,7 @@
     <Property Id="FilePath" Label="File Path" Description="File Path" DataType="System.String" />
     <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
     <Property Id="GroupLabel" DataType="System.String" />
-    <Property Id="Icon" Label="Icon" DataType="System.String" />
+    <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
     <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
     <Property Id="IsContainment" DataType="System.Boolean" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
@@ -316,7 +316,7 @@
     </Style>
   </Styles>
   <Paths>
-    <Path Id="ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPath" Value="X:\Dokumenty\GitHub\MusicPlayer\MusicPlayerApp\MusicPlayer.Core\MusicPlayer.Core\bin\Debug\netstandard2.0\MusicPlayer.Core.dll" />
-    <Path Id="ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPathUri" Value="file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/bin/Debug/netstandard2.0/MusicPlayer.Core.dll" />
+    <Path Id="ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPath" Value="X:\GitHub\MusicPlayer\MusicPlayerApp\MusicPlayer.Core\MusicPlayer.Core\bin\Debug\netstandard2.0\MusicPlayer.Core.dll" />
+    <Path Id="ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPathUri" Value="file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/bin/Debug/netstandard2.0/MusicPlayer.Core.dll" />
   </Paths>
 </DirectedGraph>
