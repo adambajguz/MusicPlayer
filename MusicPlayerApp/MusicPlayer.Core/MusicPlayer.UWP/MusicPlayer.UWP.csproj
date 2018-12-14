@@ -154,7 +154,6 @@
     <Compile Include="Controllers\Song\GetSong.cs" />
     <Compile Include="Controllers\Song\GetSongs.cs" />
     <Compile Include="Controllers\Song\Result.cs" />
-    <Compile Include="Controllers\ZMisc\ISpecification.cs" />
     <Compile Include="CQRS\CommandDispatcher.cs" />
     <Compile Include="CQRS\QueryDispatcher.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -166,6 +165,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="ClassDiagram1.cd" />
     <None Include="MusicPlayer.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

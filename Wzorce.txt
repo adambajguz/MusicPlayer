@@ -1,25 +1,27 @@
 # Creational patterns / Wzorce kreacyjne:
-	1. Dependency Injection
-	2. Singleton (NLogLogger)
+	+1. Dependency Injection
+	+2. Singleton (NLogLogger)
+	3. Builder
+	4. Factory
 
 
 # Structural patterns / Wozrce strukturalne:
-	1. Extension object
-	2. Private Class Data
+	+1. Extension object
+	+2. Private Class Data
 	-. ---------brak-----Adapter (NLogLogger, ILogger, tylko ¿e chyba powinno byc cos jeszcze orpocz NLogLogger)
 	   https://softwareengineering.stackexchange.com/questions/273157/which-design-pattern-would-be-suitable-to-abstract-logging-platforms
 
 # Behavioral patterns / Wzorce czynnoœciowe:
-	1. Specification (do sortowania itp.)
+	-. Specification (do sortowania itp.)
 	   https://stackoverflow.com/questions/29972051/specification-pattern-using-entity-framework-order-by-property
 
 	   https://deviq.com/specification-pattern/
-	2. Null Object
+	+1. Null Object
 
 # Wzorce architekturalne:
-	1. MVP (Model-View-Presenter)
+	+1. MVP (Model-View-Presenter)
 
 # Inne jakies chyba:
-	1. Unit of work
-	2. Repository
-	3. CQRS (Command Query Responsibility Segregation) (QueryDispatcher, CommandDispatcher)
+	+1. Unit of work
+	+2. Repository
+	+3. CQRS (Command Query Responsibility Segregation) (QueryDispatcher, CommandDispatcher)
