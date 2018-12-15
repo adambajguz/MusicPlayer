@@ -115,9 +115,11 @@
     <Compile Include="Controllers\BandController.cs" />
     <Compile Include="Controllers\Band\CreateBand.cs" />
     <Compile Include="Controllers\Band\DeleteBand.cs" />
+    <Compile Include="Controllers\Band\GetArtists.cs" />
     <Compile Include="Controllers\Band\GetBand.cs" />
     <Compile Include="Controllers\Band\GetBands.cs" />
     <Compile Include="Controllers\Band\Result.cs" />
+    <Compile Include="Controllers\Band\SearchBands.cs" />
     <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\Genre\CreateGenre.cs" />
     <Compile Include="Controllers\Genre\DeleteGenre.cs" />
@@ -129,6 +131,8 @@
     <Compile Include="Controllers\Playlist\DeleteSong.cs" />
     <Compile Include="Controllers\Playlist\GetSongs.cs" />
     <Compile Include="Controllers\Playlist\SearchPlaylists.cs" />
+    <Compile Include="Controllers\PlayQueue\GetPreviousQueue.cs" />
+    <Compile Include="Controllers\PlayQueue\RandomSong.cs" />
     <Compile Include="Controllers\ZMisc\ControllerInterfaces\IAlbumController.cs" />
     <Compile Include="Controllers\ZMisc\ControllerInterfaces\IArtistController.cs" />
     <Compile Include="Controllers\ZMisc\ControllerInterfaces\IBandController.cs" />

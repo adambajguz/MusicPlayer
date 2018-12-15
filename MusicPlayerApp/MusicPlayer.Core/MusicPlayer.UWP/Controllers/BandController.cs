@@ -22,6 +22,16 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetBands.Query, List<Result>>(new GetBands.Query());
         }
 
+        public async Task<List<Artist.Result>> GetArtists(int bandId)
+        {
+            return await _queryDispatcher.Dispatch<GetArtists.Query, List<Artist.Result>>(new GetArtists.Query(){ ID=bandId });
+        }
+
+        public async Task<List<Result>> Search(string name)
+        {
+            return await _queryDispatcher.Dispatch<SearchBands.Query, List<Result>>(new SearchBands.Query() { Name = name });
+        }
+
         public async Task<Result> Get(int id)
         {
             return await _queryDispatcher.Dispatch<GetBand.Query, Result>(new GetBand.Query() { ID = id });

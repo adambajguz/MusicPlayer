@@ -23,8 +23,15 @@ namespace MusicPlayer.UWP.Controllers.Band
 
             public async Task Execute(Command command)
             {
+                var artists = _uow.ArtistRepository.Query().Where(x => x.BandId==command.ID).Select(x => new Artist.Result(x)).ToList();
+                foreach(Artist.Result artist in artists)
+                {
+                    artist.BandId = null;
+                }
+
                 var band = _uow.BandRepository.Query().Where(x => x.Id == command.ID).FirstOrDefault();
                 _uow.BandRepository.Delete(band);
+
                 int i = _uow.SaveChanges();
 
                 await _uow.SaveChangesAsync();
