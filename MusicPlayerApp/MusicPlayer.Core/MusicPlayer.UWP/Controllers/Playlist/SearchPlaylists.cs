@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MusicPlayer.UWP.Controllers.Album
+namespace MusicPlayer.UWP.Controllers.Playlist
 {
-    public class SearchAlbums
+    public class SearchPlaylists
     {
         public class Query : IQuery
         {
@@ -23,7 +23,7 @@ namespace MusicPlayer.UWP.Controllers.Album
 
             public async Task<List<Result>> Handle(Query query)
             {
-                var result = await _uow.AlbumRepository.Query().Where(x=>x.Title.ToUpper().Contains(query.Name.ToUpper())).Select(x => new Result(x)).OrderBy(y => y.Title).ToListAsync();
+                var result = await _uow.PlaylistRepository.Query().Where(x => x.Name.ToUpper().Contains(query.Name.ToUpper())).Select(x => new Result(x)).OrderBy(y => y.Name).ToListAsync();
 
                 return result;
             }

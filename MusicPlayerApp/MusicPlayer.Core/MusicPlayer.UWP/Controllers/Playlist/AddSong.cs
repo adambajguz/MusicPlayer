@@ -36,7 +36,8 @@ namespace MusicPlayer.UWP.Controllers.Playlist
 
             public Validator()
             {
-                //RuleFor(x => x._data.Value).GreaterThan(0);
+                RuleFor(x => x._data.GetEntity().PlaylistId).GreaterThan(0);
+                RuleFor(x => x._data.GetEntity().SongId).GreaterThan(0);
             }
         }
 

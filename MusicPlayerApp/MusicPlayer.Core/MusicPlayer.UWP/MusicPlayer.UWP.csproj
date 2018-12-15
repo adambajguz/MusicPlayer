@@ -126,6 +126,9 @@
     <Compile Include="Controllers\Genre\Result.cs" />
     <Compile Include="Controllers\Image\DeleteImage.cs" />
     <Compile Include="Controllers\Playlist\AddSong.cs" />
+    <Compile Include="Controllers\Playlist\DeleteSong.cs" />
+    <Compile Include="Controllers\Playlist\GetSongs.cs" />
+    <Compile Include="Controllers\Playlist\SearchPlaylists.cs" />
     <Compile Include="Controllers\ZMisc\ControllerInterfaces\IAlbumController.cs" />
     <Compile Include="Controllers\ZMisc\ControllerInterfaces\IArtistController.cs" />
     <Compile Include="Controllers\ZMisc\ControllerInterfaces\IBandController.cs" />
