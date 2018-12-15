@@ -105,6 +105,7 @@
     <Compile Include="Controllers\Album\GetAlbums.cs" />
     <Compile Include="Controllers\Album\GetSongs.cs" />
     <Compile Include="Controllers\Album\Result.cs" />
+    <Compile Include="Controllers\Album\SearchAlbums.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\Artist\CreateArtist.cs" />
     <Compile Include="Controllers\Artist\DeleteArtist.cs" />
