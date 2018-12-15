@@ -22,9 +22,27 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetArtists.Query, List<Result>>(new GetArtists.Query());
         }
 
+        public async Task<List<Result>> Search(string name)
+        {
+            return await _queryDispatcher.Dispatch<SearchArtists.Query, List<Result>>(new SearchArtists.Query() { Name = name });
+        }
+
         public async Task<Result> Get(int id)
         {
             return await _queryDispatcher.Dispatch<GetArtist.Query, Result>(new GetArtist.Query() { ID = id });
+        }
+
+        public async Task<List<Song.Result>> GetSongs(int artistId)
+        {
+            return await _queryDispatcher.Dispatch<GetSongs.Query, List<Song.Result>>(new GetSongs.Query() { ID = artistId });
+        }
+
+        public async Task AddSong(int artistId, int songId)
+        {
+            await _commandDispatcher.Dispatch<AddSong.Command>(new AddSong.Command
+            {
+                _data = new AddSong.Data(artistId, songId)
+            });
         }
 
         public async Task Create(string name, string surname, string pseudonym, DateTime birthdate, string description)
@@ -42,6 +60,15 @@ namespace MusicPlayer.UWP.Controllers
             await _commandDispatcher.Dispatch<DeleteArtist.Command>(new DeleteArtist.Command
             {
                 ID = id
+            });
+        }
+
+        public async Task DeleteSong(int songId, int artistId)
+        {
+            await _commandDispatcher.Dispatch<DeleteSong.Command>(new DeleteSong.Command
+            {
+                SongId = songId,
+                ArtistId = artistId
             });
         }
     }

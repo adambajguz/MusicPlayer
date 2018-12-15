@@ -107,11 +107,15 @@
     <Compile Include="Controllers\Album\Result.cs" />
     <Compile Include="Controllers\Album\SearchAlbums.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
+    <Compile Include="Controllers\Artist\AddSong.cs" />
     <Compile Include="Controllers\Artist\CreateArtist.cs" />
     <Compile Include="Controllers\Artist\DeleteArtist.cs" />
+    <Compile Include="Controllers\Artist\DeleteSong.cs" />
     <Compile Include="Controllers\Artist\GetArtist.cs" />
     <Compile Include="Controllers\Artist\GetArtists.cs" />
+    <Compile Include="Controllers\Artist\GetSongs.cs" />
     <Compile Include="Controllers\Artist\Result.cs" />
+    <Compile Include="Controllers\Artist\SearchArtists.cs" />
     <Compile Include="Controllers\BandController.cs" />
     <Compile Include="Controllers\Band\CreateBand.cs" />
     <Compile Include="Controllers\Band\DeleteBand.cs" />

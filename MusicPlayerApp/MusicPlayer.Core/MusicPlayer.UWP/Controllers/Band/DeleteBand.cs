@@ -23,7 +23,7 @@ namespace MusicPlayer.UWP.Controllers.Band
 
             public async Task Execute(Command command)
             {
-                var artists = _uow.ArtistRepository.Query().Where(x => x.BandId==command.ID).Select(x => new Artist.Result(x)).ToList();
+                var artists = _uow.ArtistRepository.Query().Where(x => x.BandId==command.ID).ToList();
                 foreach(Artist.Result artist in artists)
                 {
                     artist.BandId = null;
