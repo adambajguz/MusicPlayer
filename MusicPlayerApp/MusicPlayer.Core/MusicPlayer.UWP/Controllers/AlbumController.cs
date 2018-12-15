@@ -27,14 +27,27 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetAlbum.Query, Result>(new GetAlbum.Query() { ID = id });
         }
 
-        public async Task Create(string title, string description, DateTime publicationDate)
+        public async Task<List<Song.Result>> GetSongs(int albumId)
+        {
+            return await _queryDispatcher.Dispatch<GetSongs.Query, List<Song.Result>>(new GetSongs.Query() { ID = albumId });
+        }
+
+        public async Task Create(string title, string description, DateTime publicationDate, int imageId)
         {
             await _commandDispatcher.Dispatch<CreateAlbum.Command>(new CreateAlbum.Command
             {
-                _data = new CreateAlbum.Data(title, description, publicationDate)
+                _data = new CreateAlbum.Data(title, description, publicationDate, imageId)
 
             });
 
+        }
+
+        public async Task AddSong(int albumId,int songId, int trackNumber)
+        {
+            await _commandDispatcher.Dispatch<AddSong.Command>(new AddSong.Command
+            {
+                _data=new AddSong.Data(albumId,songId,trackNumber)
+            });
         }
 
         public async Task Delete(int id)
@@ -42,6 +55,15 @@ namespace MusicPlayer.UWP.Controllers
             await _commandDispatcher.Dispatch<DeleteAlbum.Command>(new DeleteAlbum.Command
             {
                 ID = id
+            });
+        }
+
+        public async Task DeleteSong(int songId, int albumId)
+        {
+            await _commandDispatcher.Dispatch<DeleteSong.Command>(new DeleteSong.Command
+            {
+                SongId = songId,
+                AlbumId = albumId
             });
         }
     }

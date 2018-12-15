@@ -69,7 +69,9 @@ namespace MusicPlayer.UWP
 
 
             ImageController ImgController = new ImageController(queryDispatcher, commandDispatcher);
-            ImgController.Create("sciezka4").Wait();
+            //ImgController.Create("sciezka4").Wait();
+            AlbumController albumController = new AlbumController(queryDispatcher, commandDispatcher);
+            albumController.Create("tytul", "opis", DateTime.UtcNow, 1).Wait();
             //ImgController.Get(0).Wait();
 
             //GenreController GenreController = new GenreController(queryDispatcher, commandDispatcher);

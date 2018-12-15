@@ -21,5 +21,7 @@ namespace MusicPlayer.Data
 
             return new DataContext(builder.Options);
         }
+
+
     }
 }

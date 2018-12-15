@@ -10,8 +10,8 @@ using MusicPlayer.Data;
 namespace MusicPlayer.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20181212215601_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20181214001318_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,11 +27,11 @@ namespace MusicPlayer.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CoverImageId");
-
                     b.Property<DateTime>("DBCreationDate");
 
                     b.Property<string>("Description");
+
+                    b.Property<int>("ImageId");
 
                     b.Property<DateTime>("PublicationDate");
 
@@ -39,7 +39,7 @@ namespace MusicPlayer.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CoverImageId");
+                    b.HasIndex("ImageId");
 
                     b.ToTable("Albums");
                 });
@@ -56,9 +56,9 @@ namespace MusicPlayer.Data.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("Name");
+                    b.Property<int>("ImageId");
 
-                    b.Property<int?>("PhotoId");
+                    b.Property<string>("Name");
 
                     b.Property<string>("Pseudonym");
 
@@ -68,7 +68,7 @@ namespace MusicPlayer.Data.Migrations
 
                     b.HasIndex("BandId");
 
-                    b.HasIndex("PhotoId");
+                    b.HasIndex("ImageId");
 
                     b.ToTable("Artists");
                 });
@@ -126,7 +126,7 @@ namespace MusicPlayer.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("SongId");
+                    b.Property<int>("SongId");
 
                     b.HasKey("Id");
 
@@ -158,17 +158,13 @@ namespace MusicPlayer.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AlbumId");
-
-                    b.Property<int?>("ArtistId");
-
                     b.Property<DateTime>("CreationDate");
 
                     b.Property<DateTime>("DBCreationDate");
 
                     b.Property<string>("FilePath");
 
-                    b.Property<int?>("GenreId");
+                    b.Property<int>("GenreId");
 
                     b.Property<int?>("ImageId");
 
@@ -184,10 +180,6 @@ namespace MusicPlayer.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AlbumId");
-
-                    b.HasIndex("ArtistId");
-
                     b.HasIndex("GenreId");
 
                     b.HasIndex("ImageId");
@@ -201,9 +193,9 @@ namespace MusicPlayer.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AlbumId");
+                    b.Property<int>("AlbumId");
 
-                    b.Property<int?>("SongId");
+                    b.Property<int>("SongId");
 
                     b.Property<int>("TrackNumber");
 
@@ -222,9 +214,9 @@ namespace MusicPlayer.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ArtistId");
+                    b.Property<int>("ArtistId");
 
-                    b.Property<int?>("SongId");
+                    b.Property<int>("SongId");
 
                     b.HasKey("Id");
 
@@ -243,9 +235,9 @@ namespace MusicPlayer.Data.Migrations
 
                     b.Property<int>("Order");
 
-                    b.Property<int?>("PlaylistId");
+                    b.Property<int>("PlaylistId");
 
-                    b.Property<int?>("SongId");
+                    b.Property<int>("SongId");
 
                     b.HasKey("Id");
 
@@ -258,9 +250,10 @@ namespace MusicPlayer.Data.Migrations
 
             modelBuilder.Entity("MusicPlayer.Core.Entities.Album", b =>
                 {
-                    b.HasOne("MusicPlayer.Core.Entities.Image", "CoverImage")
+                    b.HasOne("MusicPlayer.Core.Entities.Image", "Image")
                         .WithMany()
-                        .HasForeignKey("CoverImageId");
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("MusicPlayer.Core.Entities.Artist", b =>
@@ -271,29 +264,24 @@ namespace MusicPlayer.Data.Migrations
 
                     b.HasOne("MusicPlayer.Core.Entities.Image", "Photo")
                         .WithMany()
-                        .HasForeignKey("PhotoId");
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("MusicPlayer.Core.Entities.PlayQueue", b =>
                 {
                     b.HasOne("MusicPlayer.Core.Entities.Song", "Song")
                         .WithMany()
-                        .HasForeignKey("SongId");
+                        .HasForeignKey("SongId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("MusicPlayer.Core.Entities.Song", b =>
                 {
-                    b.HasOne("MusicPlayer.Core.Entities.Album", "Album")
-                        .WithMany()
-                        .HasForeignKey("AlbumId");
-
-                    b.HasOne("MusicPlayer.Core.Entities.Artist", "Artist")
-                        .WithMany()
-                        .HasForeignKey("ArtistId");
-
                     b.HasOne("MusicPlayer.Core.Entities.Genre", "Genre")
                         .WithMany()
-                        .HasForeignKey("GenreId");
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("MusicPlayer.Core.Entities.Image", "Image")
                         .WithMany()
@@ -303,33 +291,34 @@ namespace MusicPlayer.Data.Migrations
             modelBuilder.Entity("MusicPlayer.Core.Entities.SongAlbum", b =>
                 {
                     b.HasOne("MusicPlayer.Core.Entities.Album", "Album")
-                        .WithMany()
+                        .WithMany("SongAlbums")
                         .HasForeignKey("AlbumId");
 
                     b.HasOne("MusicPlayer.Core.Entities.Song", "Song")
-                        .WithMany()
+                        .WithMany("SongAlbums")
                         .HasForeignKey("SongId");
                 });
 
             modelBuilder.Entity("MusicPlayer.Core.Entities.SongArtist", b =>
                 {
                     b.HasOne("MusicPlayer.Core.Entities.Artist", "Artist")
-                        .WithMany()
-                        .HasForeignKey("ArtistId");
+                        .WithMany("SongArtists")
+                        .HasForeignKey("ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("MusicPlayer.Core.Entities.Song", "Song")
-                        .WithMany()
+                        .WithMany("SongArtists")
                         .HasForeignKey("SongId");
                 });
 
             modelBuilder.Entity("MusicPlayer.Core.Entities.SongPlaylist", b =>
                 {
                     b.HasOne("MusicPlayer.Core.Entities.Playlist", "Playlist")
-                        .WithMany()
+                        .WithMany("SongPlaylists")
                         .HasForeignKey("PlaylistId");
 
                     b.HasOne("MusicPlayer.Core.Entities.Song", "Song")
-                        .WithMany()
+                        .WithMany("SongPlaylists")
                         .HasForeignKey("SongId");
                 });
 #pragma warning restore 612, 618

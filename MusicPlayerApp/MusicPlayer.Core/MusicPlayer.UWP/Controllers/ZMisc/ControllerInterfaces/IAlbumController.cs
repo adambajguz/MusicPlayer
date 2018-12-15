@@ -7,6 +7,6 @@ namespace MusicPlayer.UWP.Controllers
 {
     public interface IAlbumController
     {
-        Task Create(string title, string description, DateTime publicationDate);
+        Task Create(string title, string description, DateTime publicationDate, int imageId);
     }
 }

@@ -29,5 +29,40 @@ namespace MusicPlayer.Data
             optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Music.Player;Integrated Security=SSPI;");
             //optionsBuilder.UseSqlServer("Data Source =.\\SQLEXPRESS; Initial Catalog = MusicPlayer; Persist Security Info = False; Integrated Security = True;");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+                modelBuilder.Entity<SongAlbum>()
+           .HasOne(po => po.Song)
+           .WithMany(p => p.SongAlbums)
+           .HasForeignKey(po => po.SongId).OnDelete(DeleteBehavior.ClientSetNull);
+
+                modelBuilder.Entity<SongAlbum>()
+           .HasOne(po => po.Album)
+           .WithMany(p => p.SongAlbums)
+           .HasForeignKey(po => po.AlbumId).OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<SongArtist>()
+           .HasOne(po => po.Song)
+           .WithMany(p => p.SongArtists)
+           .HasForeignKey(po => po.SongId).OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<SongArtist>()
+       .HasOne(po => po.Artist)
+       .WithMany(p => p.SongArtists)
+       .HasForeignKey(po => po.ArtistId).OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<SongPlaylist>()
+           .HasOne(po => po.Song)
+           .WithMany(p => p.SongPlaylists)
+           .HasForeignKey(po => po.SongId).OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<SongPlaylist>()
+       .HasOne(po => po.Playlist)
+       .WithMany(p => p.SongPlaylists)
+       .HasForeignKey(po => po.PlaylistId).OnDelete(DeleteBehavior.ClientSetNull);
+
+        }
     }
 }

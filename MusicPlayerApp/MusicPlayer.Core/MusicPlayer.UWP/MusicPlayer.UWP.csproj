@@ -97,10 +97,13 @@
     </Compile>
     <Compile Include="AppStart\IocConfig.cs" />
     <Compile Include="Controllers\AlbumController.cs" />
+    <Compile Include="Controllers\Album\AddSong.cs" />
     <Compile Include="Controllers\Album\CreateAlbum.cs" />
     <Compile Include="Controllers\Album\DeleteAlbum.cs" />
+    <Compile Include="Controllers\Album\DeleteSong.cs" />
     <Compile Include="Controllers\Album\GetAlbum.cs" />
     <Compile Include="Controllers\Album\GetAlbums.cs" />
+    <Compile Include="Controllers\Album\GetSongs.cs" />
     <Compile Include="Controllers\Album\Result.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\Artist\CreateArtist.cs" />
@@ -121,6 +124,7 @@
     <Compile Include="Controllers\Genre\GetGenres.cs" />
     <Compile Include="Controllers\Genre\Result.cs" />
     <Compile Include="Controllers\Image\DeleteImage.cs" />
+    <Compile Include="Controllers\Playlist\AddSong.cs" />
     <Compile Include="Controllers\ZMisc\ControllerInterfaces\IAlbumController.cs" />
     <Compile Include="Controllers\ZMisc\ControllerInterfaces\IArtistController.cs" />
     <Compile Include="Controllers\ZMisc\ControllerInterfaces\IBandController.cs" />

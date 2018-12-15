@@ -5,9 +5,9 @@ using MusicPlayer.UWP.Controllers.ZMisc;
 using System;
 using System.Threading.Tasks;
 
-namespace MusicPlayer.UWP.Controllers.Album
+namespace MusicPlayer.UWP.Controllers.Playlist
 {
-    public class CreateAlbum
+    public class AddSong
     {
         public class Command : ICommand
         {
@@ -25,7 +25,7 @@ namespace MusicPlayer.UWP.Controllers.Album
 
             public async Task Execute(Command command)
             {
-                _uow.AlbumRepository.Insert(command._data.GetEntity());
+                _uow.SongPlaylistRepository.Insert(command._data.GetEntity());
                 int i = _uow.SaveChanges();
                 await _uow.SaveChangesAsync();
             }
@@ -36,31 +36,26 @@ namespace MusicPlayer.UWP.Controllers.Album
 
             public Validator()
             {
-                RuleFor(x => x._data.GetEntity().Title).NotEmpty();
-                RuleFor(x => x._data.GetEntity().ImageId).NotNull();
-                RuleFor(x => x._data.GetEntity().PublicationDate).NotEmpty();
+                //RuleFor(x => x._data.Value).GreaterThan(0);
             }
         }
 
         // Private Class Data Pattern
-        public class Data : ICreateResultData<Core.Entities.Album>
+        public class Data : ICreateResultData<Core.Entities.SongPlaylist>
         {
-            private Core.Entities.Album album;
+            private Core.Entities.SongPlaylist songPlaylist;
 
-            public Data(string title, string description, DateTime publicationDate, int imageId)
+            public Data(int playlistId, int songId)
             {
-                album = new Core.Entities.Album();
+                songPlaylist = new Core.Entities.SongPlaylist();
 
-                album.ImageId = imageId;
-                album.Title = title;
-                album.Description = description;
-                album.PublicationDate = publicationDate;
-                album.DBCreationDate = DateTime.UtcNow;
+                songPlaylist.PlaylistId = playlistId;
+                songPlaylist.SongId = songId;
             }
 
-            public Core.Entities.Album GetEntity()
+            public Core.Entities.SongPlaylist GetEntity()
             {
-                return album;
+                return songPlaylist;
             }
         }
     }

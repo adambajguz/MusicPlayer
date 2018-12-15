@@ -5,7 +5,7 @@
         public Result(Core.Entities.Album x)
         {
             Id = x.Id;
-            CoverImage = x.CoverImage;
+            ImageId = x.ImageId;
             Title = x.Title;
             Description = x.Description;
             PublicationDate = x.PublicationDate;
