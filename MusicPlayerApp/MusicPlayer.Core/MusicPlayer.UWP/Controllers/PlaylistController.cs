@@ -21,6 +21,21 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetPlaylists.Query, List<Result>>(new GetPlaylists.Query());
         }
 
+        public async Task<List<Result>> GetAllDescending()
+        {
+            return await _queryDispatcher.Dispatch<GetPlaylistsDescending.Query, List<Result>>(new GetPlaylistsDescending.Query());
+        }
+
+        public async Task<List<Result>> GetAllByDate()
+        {
+            return await _queryDispatcher.Dispatch<GetPlaylistsByDate.Query, List<Result>>(new GetPlaylistsByDate.Query());
+        }
+
+        public async Task<List<Result>> GetAllByDateDescending()
+        {
+            return await _queryDispatcher.Dispatch<GetPlaylistsByDateDescending.Query, List<Result>>(new GetPlaylistsByDateDescending.Query());
+        }
+
         public async Task<List<Result>> GetSongs(int albumId)
         {
             return await _queryDispatcher.Dispatch<GetSongs.Query, List<Result>>(new GetSongs.Query() { ID = albumId });

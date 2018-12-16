@@ -22,6 +22,31 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetAlbums.Query, List<Result>>(new GetAlbums.Query());
         }
 
+        public async Task<List<Result>> GetAllDescending()
+        {
+            return await _queryDispatcher.Dispatch<GetAlbumsDescending.Query, List<Result>>(new GetAlbumsDescending.Query());
+        }
+
+        public async Task<List<Result>> GetAllByDate()
+        {
+            return await _queryDispatcher.Dispatch<GetAlbumsByDate.Query, List<Result>>(new GetAlbumsByDate.Query());
+        }
+
+        public async Task<List<Result>> GetAllByDateDescending()
+        {
+            return await _queryDispatcher.Dispatch<GetAlbumsByDateDescending.Query, List<Result>>(new GetAlbumsByDateDescending.Query());
+        }
+
+        public async Task<List<Result>> GetAllByPublicationDate()
+        {
+            return await _queryDispatcher.Dispatch<GetAlbumsByPublicationDate.Query, List<Result>>(new GetAlbumsByPublicationDate.Query());
+        }
+
+        public async Task<List<Result>> GetAllByPublicationDateDescending()
+        {
+            return await _queryDispatcher.Dispatch<GetAlbumsByPublicationDateDescending.Query, List<Result>>(new GetAlbumsByPublicationDateDescending.Query());
+        }
+
         public async Task<List<Result>> Search(string name)
         {
             return await _queryDispatcher.Dispatch<SearchAlbums.Query, List<Result>>(new SearchAlbums.Query() { Name = name });
