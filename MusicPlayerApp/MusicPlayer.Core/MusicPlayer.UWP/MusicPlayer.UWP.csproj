@@ -134,9 +134,11 @@
     <Compile Include="Controllers\Genre\DeleteGenre.cs" />
     <Compile Include="Controllers\Genre\GetGenre.cs" />
     <Compile Include="Controllers\Genre\GetGenres.cs" />
+    <Compile Include="Controllers\Genre\GetGenresDescending.cs" />
     <Compile Include="Controllers\Genre\GetSongs.cs" />
     <Compile Include="Controllers\Genre\Result.cs" />
     <Compile Include="Controllers\Genre\SearchGenres.cs" />
+    <Compile Include="Controllers\Genre\SongQuantity.cs" />
     <Compile Include="Controllers\Image\DeleteImage.cs" />
     <Compile Include="Controllers\Playlist\AddSong.cs" />
     <Compile Include="Controllers\Playlist\DeleteSong.cs" />
