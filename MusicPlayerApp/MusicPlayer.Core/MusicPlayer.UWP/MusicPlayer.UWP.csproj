@@ -151,6 +151,9 @@
     <Compile Include="Controllers\Playlist\SearchPlaylists.cs" />
     <Compile Include="Controllers\PlayQueue\GetPreviousQueue.cs" />
     <Compile Include="Controllers\PlayQueue\RandomSong.cs" />
+    <Compile Include="Controllers\Song\GetAlbum.cs" />
+    <Compile Include="Controllers\Song\GetArtist.cs" />
+    <Compile Include="Controllers\Song\GetBand.cs" />
     <Compile Include="Controllers\Song\GetSongsByDate.cs" />
     <Compile Include="Controllers\Song\GetSongsByDateDescending.cs" />
     <Compile Include="Controllers\Song\GetSongsByLength.cs" />
