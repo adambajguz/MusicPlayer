@@ -22,6 +22,11 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetArtists.Query, List<Result>>(new GetArtists.Query());
         }
 
+        public async Task<List<Result>> GetAllDescending()
+        {
+            return await _queryDispatcher.Dispatch<GetArtistsDescending.Query, List<Result>>(new GetArtistsDescending.Query());
+        }
+
         public async Task<List<Result>> Search(string name)
         {
             return await _queryDispatcher.Dispatch<SearchArtists.Query, List<Result>>(new SearchArtists.Query() { Name = name });

@@ -118,6 +118,7 @@
     <Compile Include="Controllers\Artist\DeleteSong.cs" />
     <Compile Include="Controllers\Artist\GetArtist.cs" />
     <Compile Include="Controllers\Artist\GetArtists.cs" />
+    <Compile Include="Controllers\Artist\GetArtistsDescending.cs" />
     <Compile Include="Controllers\Artist\GetSongs.cs" />
     <Compile Include="Controllers\Artist\Result.cs" />
     <Compile Include="Controllers\Artist\SearchArtists.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Controllers\Band\GetArtists.cs" />
     <Compile Include="Controllers\Band\GetBand.cs" />
     <Compile Include="Controllers\Band\GetBands.cs" />
+    <Compile Include="Controllers\Band\GetBandsDescending.cs" />
     <Compile Include="Controllers\Band\Result.cs" />
     <Compile Include="Controllers\Band\SearchBands.cs" />
     <Compile Include="Controllers\GenreController.cs" />
