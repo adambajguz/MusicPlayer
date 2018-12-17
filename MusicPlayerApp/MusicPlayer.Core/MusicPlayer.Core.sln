@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayer.UWP", "MusicPlayer.UWP\MusicPlayer.UWP.csproj", "{33F2107C-7C77-4AC8-8814-9CAFBBFDC4FC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E0C16D8-88F9-4FF8-BBE0-B31C99523E79}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Graphs", "Graphs", "{B984BC7B-ABA1-45F7-A862-F953E49456CF}"
 	ProjectSection(SolutionItems) = preProject
 		GraphCQRS.dgml = GraphCQRS.dgml
 		GraphDependencyInjection.dgml = GraphDependencyInjection.dgml
@@ -111,6 +113,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B984BC7B-ABA1-45F7-A862-F953E49456CF} = {0E0C16D8-88F9-4FF8-BBE0-B31C99523E79}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B663DA9D-4A19-4A4A-A700-87C8E6D3C0CF}

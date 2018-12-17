@@ -15,14 +15,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MusicPlayer.Core.Extensions.ObjectExtensions">
-    <Position X="27.25" Y="13.25" Width="2.75" />
+    <Position X="27.25" Y="13" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAA=</HashCode>
       <FileName>Extensions\ObjectExtensions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MusicPlayer.Core.Extensions.StringExtensions">
-    <Position X="24" Y="13.25" Width="2.75" />
+    <Position X="24" Y="13" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Extensions\StringExtensions.cs</FileName>
@@ -31,14 +31,14 @@
   <Class Name="MusicPlayer.Core.Entities.Album">
     <Position X="25.25" Y="1.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAgAgAEAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAgAgAEAAAAAAAAAAAAAAABEAAAAAAAAEAAA=</HashCode>
       <FileName>Entities\Album.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MusicPlayer.Core.Entities.Artist">
     <Position X="14.5" Y="1.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgACAAAAAAAAQABAAAAAAAAAAACAAAgAA=</HashCode>
+      <HashCode>AAAABAAAAAAgACAAAAAAAAQABAAAAAEAEAAACAAAgAA=</HashCode>
       <FileName>Entities\Artist.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,42 +66,42 @@
   <Class Name="MusicPlayer.Core.Entities.Playlist">
     <Position X="28.75" Y="1.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAgAgAAAAAAAAAAQAAABAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\Playlist.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MusicPlayer.Core.Entities.PlayQueue">
     <Position X="18" Y="3" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\PlayQueue.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MusicPlayer.Core.Entities.Song">
     <Position X="17.75" Y="6.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAgAAAEgAAAIAAABAAIAAABAAAABCCIAAAAA=</HashCode>
+      <HashCode>QAAABAAAAgAAIEgAAAIAAABAAABAABEAAABCAIAEAAA=</HashCode>
       <FileName>Entities\Song.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MusicPlayer.Core.Entities.SongAlbum">
     <Position X="21.25" Y="6.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAgAAAAAAAAAACAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAgAggAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Entities\SongAlbum.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MusicPlayer.Core.Entities.SongArtist">
     <Position X="27.25" Y="6.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAABAAAAAAAAEAgAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\SongArtist.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MusicPlayer.Core.Entities.SongPlaylist">
-    <Position X="20.5" Y="2.5" Width="2.25" />
+    <Position X="20.5" Y="2" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAEQAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEQAAAAAAABAAAAAAABAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\SongPlaylist.cs</FileName>
     </TypeIdentifier>
   </Class>

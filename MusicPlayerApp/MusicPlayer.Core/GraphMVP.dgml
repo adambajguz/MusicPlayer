@@ -1,105 +1,183 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DirectedGraph DataVirtualized="True" FilterState="CodeSchema_FieldRead,CodeSchema_FieldWrite,CodeSchema_FunctionPointer,CodeSchema_ReturnTypeLink,CodeSchema_Calls,References" GraphDirection="LeftToRight" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+<DirectedGraph DataVirtualized="True" FilterState="CodeSchema_FieldRead,CodeSchema_FieldWrite" GraphDirection="LeftToRight" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="@10" Category="CodeSchema_Namespace" Bounds="365.846666666667,545,319.54,195" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Album" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Album" />
-    <Node Id="@12" Category="CodeSchema_Namespace" Bounds="354.406666666666,320,305.98,195" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Artist" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Artist" />
-    <Node Id="@14" Category="CodeSchema_Namespace" Bounds="770.056666666667,40,303.573333333333,195" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Band" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Band" />
-    <Node Id="@16" Category="CodeSchema_Namespace" Bounds="690.386666666666,320,313.386666666667,195" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Genre" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Genre" />
-    <Node Id="@18" Category="CodeSchema_Namespace" Bounds="20,545,315.846666666667,195" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Image" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Image" />
-    <Node Id="@2" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2018 11:01:40" Bounds="0,0,1093.63,760" CodeSchemaProperty_StrongName="MusicPlayer.UWP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" CommonLabel="MusicPlayer.UWP" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" FilePath="$(33f2107c-7c77-4ac8-8814-9cafbbfdc4fc.OutputPathUri)" Group="Expanded" Label="MusicPlayer.UWP.exe" />
-    <Node Id="@20" Category="CodeSchema_Namespace" Bounds="715.386666666667,545,322.913333333333,195" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Playlist" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Playlist" />
-    <Node Id="@22" Category="CodeSchema_Namespace" Bounds="440.8,40,299.256666666667,250" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.PlayQueue" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.PlayQueue" />
-    <Node Id="@24" Category="CodeSchema_Namespace" Bounds="20,320,304.406666666666,195" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Song" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Song" />
-    <Node Id="@25" Category="CodeSchema_Class" Bounds="1318.40333333333,387.5,156.656666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" CommonLabel="BaseEntity&lt;TKey&gt;" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="BaseEntity&lt;TKey&gt;" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/BaseEntity.cs StartLineNumber=2 StartCharacterOffset=26 EndLineNumber=2 EndCharacterOffset=36)" />
-    <Node Id="@26" Category="CodeSchema_Class" Bounds="1178.10333333333,667.5,95.8266666666668,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Album" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Album" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Album.cs StartLineNumber=4 StartCharacterOffset=17 EndLineNumber=4 EndCharacterOffset=22)" />
-    <Node Id="@27" Category="CodeSchema_Class" Bounds="216.763333333333,190,148.61,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AlbumController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AlbumController" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/AlbumController.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=32)" />
-    <Node Id="@28" Category="CodeSchema_Class" Bounds="1181.49333333333,611.5,89.0466666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Artist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Artist" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Artist.cs StartLineNumber=4 StartCharacterOffset=17 EndLineNumber=4 EndCharacterOffset=23)" />
-    <Node Id="@29" Category="CodeSchema_Class" Bounds="40,135,141.83,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ArtistController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ArtistController" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ArtistController.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=33)" />
-    <Node Id="@30" Category="CodeSchema_Class" Bounds="1182.095,555.5,87.8433333333332,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Band" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Band" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Band.cs StartLineNumber=4 StartCharacterOffset=17 EndLineNumber=4 EndCharacterOffset=21)" />
-    <Node Id="@31" Category="CodeSchema_Class" Bounds="40,80,140.626666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="BandController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="BandController" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/BandController.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=31)" />
-    <Node Id="@32" Category="CodeSchema_Class" Bounds="385.846666666667,695,130.156666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateAlbum" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateAlbum" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/CreateAlbum.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=28)" />
-    <Node Id="@33" Category="CodeSchema_Class" Bounds="374.406666666666,470,123.376666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateArtist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateArtist" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/CreateArtist.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=29)" />
-    <Node Id="@34" Category="CodeSchema_Class" Bounds="790.056666666667,190,122.173333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateBand" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateBand" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/CreateBand.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=27)" />
-    <Node Id="@35" Category="CodeSchema_Class" Bounds="710.386666666666,470,127.08,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateGenre" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateGenre" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/CreateGenre.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=28)" />
-    <Node Id="@36" Category="CodeSchema_Class" Bounds="40,695,128.31,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateImage" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateImage" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Image/CreateImage.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=28)" />
-    <Node Id="@37" Category="CodeSchema_Class" Bounds="735.386666666667,695,131.843333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreatePlaylist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreatePlaylist" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/CreatePlaylist.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=31)" />
-    <Node Id="@38" Category="CodeSchema_Class" Bounds="460.8,245,152.05,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreatePlayQueue" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreatePlayQueue" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueue/CreatePlayQueue.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=32)" />
-    <Node Id="@39" Category="CodeSchema_Class" Bounds="40,470,122.59,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateSong" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateSong" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/CreateSong.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=27)" />
-    <Node Id="@4" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2018 11:01:04" Bounds="1123.63,27.4999999999997,391.43,705" CodeSchemaProperty_StrongName="MusicPlayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" CommonLabel="MusicPlayer.Core" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" FilePath="$(ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPath)" Group="Expanded" Label="MusicPlayer.Core.dll" />
-    <Node Id="@40" Category="CodeSchema_Class" Bounds="535.343333333334,640,130.043333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteAlbum" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteAlbum" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/DeleteAlbum.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=28)" />
-    <Node Id="@41" Category="CodeSchema_Class" Bounds="517.123333333333,415,123.263333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteArtist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteArtist" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/DeleteArtist.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=29)" />
-    <Node Id="@42" Category="CodeSchema_Class" Bounds="931.57,135,122.06,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteBand" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteBand" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/DeleteBand.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=27)" />
-    <Node Id="@43" Category="CodeSchema_Class" Bounds="856.806666666666,415,126.966666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteGenre" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteGenre" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/DeleteGenre.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=28)" />
-    <Node Id="@44" Category="CodeSchema_Class" Bounds="187.65,640,128.196666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteImage" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteImage" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Image/DeleteImage.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=28)" />
-    <Node Id="@45" Category="CodeSchema_Class" Bounds="886.57,640,131.73,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeletePlaylist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeletePlaylist" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/DeletePlaylist.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=31)" />
-    <Node Id="@46" Category="CodeSchema_Class" Bounds="460.8,190,151.936666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeletePlayQueue" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeletePlayQueue" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueue/DeletePlayQueue.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=32)" />
-    <Node Id="@47" Category="CodeSchema_Class" Bounds="181.93,415,122.476666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteSong" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteSong" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/DeleteSong.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=27)" />
-    <Node Id="@48" Category="CodeSchema_Class" Bounds="1179.64166666667,499.5,92.75,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Genre" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Genre" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Genre.cs StartLineNumber=4 StartCharacterOffset=17 EndLineNumber=4 EndCharacterOffset=22)" />
-    <Node Id="@49" Category="CodeSchema_Class" Bounds="211.83,135,145.533333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GenreController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GenreController" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/GenreController.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=32)" />
-    <Node Id="@50" Category="CodeSchema_Class" Bounds="508.806666666667,585,114.403333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetAlbum" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetAlbum" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/GetAlbum.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=25)" />
-    <Node Id="@51" Category="CodeSchema_Class" Bounds="385.846666666667,640,119.496666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetAlbums" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetAlbums" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/GetAlbums.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=26)" />
-    <Node Id="@52" Category="CodeSchema_Class" Bounds="497.366666666666,360,107.623333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetArtist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetArtist" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/GetArtist.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=26)" />
-    <Node Id="@53" Category="CodeSchema_Class" Bounds="374.406666666666,415,112.716666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetArtists" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetArtists" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/GetArtists.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=27)" />
-    <Node Id="@54" Category="CodeSchema_Class" Bounds="913.016666666667,80,106.42,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetBand" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetBand" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/GetBand.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=24)" />
-    <Node Id="@55" Category="CodeSchema_Class" Bounds="790.056666666667,135,111.513333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetBands" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetBands" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/GetBands.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=25)" />
-    <Node Id="@56" Category="CodeSchema_Class" Bounds="833.346666666666,360,111.326666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetGenre" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetGenre" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/GetGenre.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=25)" />
-    <Node Id="@57" Category="CodeSchema_Class" Bounds="710.386666666666,415,116.42,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetGenres" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetGenres" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/GetGenres.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=26)" />
-    <Node Id="@58" Category="CodeSchema_Class" Bounds="162.96,585,112.556666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetImage" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetImage" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Image/GetImage.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=25)" />
-    <Node Id="@59" Category="CodeSchema_Class" Bounds="40,640,117.65,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetImages" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetImages" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Image/GetImages.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=26)" />
-    <Node Id="@6" Category="CodeSchema_Namespace" Bounds="1143.63,67.4999999999997,351.43,645" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.Core.Entities" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.Core.Entities" />
-    <Node Id="@60" Category="CodeSchema_Class" Bounds="858.346666666667,585,116.09,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetPlaylist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetPlaylist" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/GetPlaylist.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=28)" />
-    <Node Id="@61" Category="CodeSchema_Class" Bounds="735.386666666667,640,121.183333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetPlaylists" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetPlaylists" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/GetPlaylists.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=29)" />
-    <Node Id="@62" Category="CodeSchema_Class" Bounds="583.76,80,136.296666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetPlayQueue" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetPlayQueue" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueue/GetPlayQueue.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=29)" />
-    <Node Id="@63" Category="CodeSchema_Class" Bounds="460.8,135,141.39,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetPlayQueues" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetPlayQueues" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueue/GetPlayQueues.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=30)" />
-    <Node Id="@64" Category="CodeSchema_Class" Bounds="162.96,360,106.836666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSong" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSong" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSong.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=24)" />
-    <Node Id="@65" Category="CodeSchema_Class" Bounds="40,415,111.93,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongs" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongs" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSongs.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=25)" />
-    <Node Id="@66" Category="CodeSchema_Class" Bounds="1179.02666666667,443.5,93.98,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Image" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Image" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Image.cs StartLineNumber=4 StartCharacterOffset=17 EndLineNumber=4 EndCharacterOffset=22)" />
-    <Node Id="@67" Category="CodeSchema_Class" Bounds="40,190,146.763333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ImageController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ImageController" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ImageController.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=32)" />
-    <Node Id="@68" Category="CodeSchema_Class" Bounds="1177.26,387.5,97.5133333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Playlist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Playlist" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Playlist.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=25)" />
-    <Node Id="@69" Category="CodeSchema_Class" Bounds="40,245,150.296666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="PlaylistController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="PlaylistController" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlaylistController.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=35)" />
-    <Node Id="@70" Category="CodeSchema_Class" Bounds="1167.15666666667,331.5,117.72,25" CodeSchemaProperty_IsPublic="True" CommonLabel="PlayQueue" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="PlayQueue" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/PlayQueue.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=26)" />
-    <Node Id="@71" Category="CodeSchema_Class" Bounds="220.296666666667,245,170.503333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="PlayQueueController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="PlayQueueController" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueueController.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=36)" />
-    <Node Id="@73" Category="CodeSchema_Class" Bounds="385.846666666667,585,92.96,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
-    <Node Id="@74" Category="CodeSchema_Class" Bounds="374.406666666666,360,92.96,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
-    <Node Id="@75" Category="CodeSchema_Class" Bounds="790.056666666667,80,92.96,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
-    <Node Id="@76" Category="CodeSchema_Class" Bounds="710.386666666666,360,92.96,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
-    <Node Id="@77" Category="CodeSchema_Class" Bounds="40,585,92.9600000000001,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Image/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
-    <Node Id="@78" Category="CodeSchema_Class" Bounds="735.386666666667,585,92.96,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
-    <Node Id="@79" Category="CodeSchema_Class" Bounds="460.8,80,92.96,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueue/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
-    <Node Id="@8" Category="CodeSchema_Namespace" Bounds="20,40,390.8,250" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers" />
-    <Node Id="@80" Category="CodeSchema_Class" Bounds="40,360,92.9599999999999,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
-    <Node Id="@81" Category="CodeSchema_Class" Bounds="1181.88666666667,275.5,88.2600000000002,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Song" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Song" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Song.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=21)" />
-    <Node Id="@82" Category="CodeSchema_Class" Bounds="1164.47333333333,219.5,123.086666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SongAlbum" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SongAlbum" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/SongAlbum.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=26)" />
-    <Node Id="@83" Category="CodeSchema_Class" Bounds="1167.86333333333,163.5,116.306666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SongArtist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SongArtist" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/SongArtist.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=27)" />
-    <Node Id="@84" Category="CodeSchema_Class" Bounds="210.626666666667,80,141.043333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SongController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SongController" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/SongController.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=31)" />
-    <Node Id="@85" Category="CodeSchema_Class" Bounds="1163.63,107.5,124.773333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SongPlaylist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SongPlaylist" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/SongPlaylist.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=29)" />
+    <Node Id="(@1 @11 @49)" Category="CodeSchema_Class" Bounds="40,754,122.476666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteSong" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteSong" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/DeleteSong.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=27)" />
+    <Node Id="(@1 @11 @68)" Category="CodeSchema_Class" Bounds="305.676666666666,698,111.93,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongs" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongs" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/GetSongs.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=25)" />
+    <Node Id="(@1 @11 Type=AddSong)" Category="CodeSchema_Class" Bounds="305.676666666666,643,110.133333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AddSong" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AddSong" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/AddSong.cs StartLineNumber=12 StartCharacterOffset=17 EndLineNumber=12 EndCharacterOffset=24)" />
+    <Node Id="(@1 @11 Type=GetArtistsDescending)" Category="CodeSchema_Class" Bounds="40,864,174.940000000001,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetArtistsDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetArtistsDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/GetArtistsDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=37)" />
+    <Node Id="(@1 @11 Type=SearchArtists)" Category="CodeSchema_Class" Bounds="193.376666666667,809,129.403333333332,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SearchArtists" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SearchArtists" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/SearchArtists.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=30)" />
+    <Node Id="(@1 @13 Type=GetArtists)" Category="CodeSchema_Class" Bounds="716.016666666666,979,112.716666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetArtists" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetArtists" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/GetArtists.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=27)" />
+    <Node Id="(@1 @13 Type=GetBandsDescending)" Category="CodeSchema_Class" Bounds="609.743333333334,1145,173.736666666668,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetBandsDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetBandsDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/GetBandsDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=35)" />
+    <Node Id="(@1 @13 Type=SearchBands)" Category="CodeSchema_Class" Bounds="451.543333333335,1145,128.199999999999,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SearchBands" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SearchBands" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/SearchBands.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=28)" />
+    <Node Id="(@1 @15 @68)" Category="CodeSchema_Class" Bounds="756.986666666666,643,111.93,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongs" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongs" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/GetSongs.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=25)" />
+    <Node Id="(@1 @15 Type=GetGenresDescending)" Category="CodeSchema_Class" Bounds="487.606666666667,864,178.643333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetGenresDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetGenresDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/GetGenresDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=36)" />
+    <Node Id="(@1 @15 Type=SearchGenres)" Category="CodeSchema_Class" Bounds="487.606666666667,809,133.106666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SearchGenres" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SearchGenres" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/SearchGenres.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=29)" />
+    <Node Id="(@1 @15 Type=SongQuantity)" Category="CodeSchema_Class" Bounds="650.713333333333,809,133.84,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SongQuantity" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SongQuantity" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/SongQuantity.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=29)" />
+    <Node Id="(@1 @19 @49)" Category="CodeSchema_Class" Bounds="938.916666666666,754,122.476666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteSong" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteSong" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/DeleteSong.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=27)" />
+    <Node Id="(@1 @19 @68)" Category="CodeSchema_Class" Bounds="1213.06,698,111.93,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongs" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongs" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/GetSongs.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=25)" />
+    <Node Id="(@1 @19 Type=AddSong)" Category="CodeSchema_Class" Bounds="1213.06,643,110.133333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AddSong" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AddSong" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/AddSong.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=24)" />
+    <Node Id="(@1 @19 Type=GetPlaylistsByDate)" Category="CodeSchema_Class" Bounds="1106.78666666667,809,158.733333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetPlaylistsByDate" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetPlaylistsByDate" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/GetPlaylistsByDate.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=35)" />
+    <Node Id="(@1 @19 Type=GetPlaylistsByDateDescending)" Category="CodeSchema_Class" Bounds="1152.32333333333,864,220.956666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetPlaylistsByDateDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetPlaylistsByDateDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/GetPlaylistsByDateDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=45)" />
+    <Node Id="(@1 @19 Type=GetPlaylistsDescending)" Category="CodeSchema_Class" Bounds="938.916666666666,864,183.406666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetPlaylistsDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetPlaylistsDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/GetPlaylistsDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=39)" />
+    <Node Id="(@1 @19 Type=SearchPlaylists)" Category="CodeSchema_Class" Bounds="938.916666666666,809,137.869999999999,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SearchPlaylists" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SearchPlaylists" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/SearchPlaylists.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=32)" />
+    <Node Id="(@1 @21 Type=GetPreviousQueue)" Category="CodeSchema_Class" Bounds="222.050000000001,1145,159.493333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetPreviousQueue" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetPreviousQueue" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueue/GetPreviousQueue.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=33)" />
+    <Node Id="(@1 @21 Type=RandomSong)" Category="CodeSchema_Class" Bounds="40,1090,132.766666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="RandomSong" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="RandomSong" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueue/RandomSong.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=27)" />
+    <Node Id="(@1 @23 Type=GetAlbum)" Category="CodeSchema_Class" Bounds="891.806666666665,135,114.403333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetAlbum" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetAlbum" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetAlbum.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=25)" />
+    <Node Id="(@1 @23 Type=GetArtists)" Category="CodeSchema_Class" Bounds="749.089999999998,135,112.716666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetArtists" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetArtists" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetArtists.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=27)" />
+    <Node Id="(@1 @23 Type=GetBand)" Category="CodeSchema_Class" Bounds="749.089999999998,80,106.42,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetBand" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetBand" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetBand.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=24)" />
+    <Node Id="(@1 @23 Type=GetSongsByDate)" Category="CodeSchema_Class" Bounds="947.883333333331,191,149.48,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongsByDate" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongsByDate" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSongsByDate.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=31)" />
+    <Node Id="(@1 @23 Type=GetSongsByDateDescending)" Category="CodeSchema_Class" Bounds="484.199999999999,356,211.703333333335,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongsByDateDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongsByDateDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSongsByDateDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=41)" />
+    <Node Id="(@1 @23 Type=GetSongsByLength)" Category="CodeSchema_Class" Bounds="484.199999999999,301,161.256666666668,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongsByLength" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongsByLength" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSongsByLength.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=33)" />
+    <Node Id="(@1 @23 Type=GetSongsByLengthDescending)" Category="CodeSchema_Class" Bounds="484.199999999999,411,223.48,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongsByLengthDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongsByLengthDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSongsByLengthDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=43)" />
+    <Node Id="(@1 @23 Type=GetSongsByPlayTimes)" Category="CodeSchema_Class" Bounds="879.609999999999,301,177.056666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongsByPlayTimes" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongsByPlayTimes" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSongsByPlayTimes.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=36)" />
+    <Node Id="(@1 @23 Type=GetSongsByPlayTimesDescending)" Category="CodeSchema_Class" Bounds="737.679999999998,411,239.279999999999,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongsByPlayTimesDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongsByPlayTimesDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSongsByPlayTimesDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=46)" />
+    <Node Id="(@1 @23 Type=GetSongsByScore)" Category="CodeSchema_Class" Bounds="484.199999999999,246,154.013333333332,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongsByScore" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongsByScore" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSongsByScore.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=32)" />
+    <Node Id="(@1 @23 Type=GetSongsByScoreDescending)" Category="CodeSchema_Class" Bounds="725.903333333334,356,216.236666666668,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongsByScoreDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongsByScoreDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSongsByScoreDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=42)" />
+    <Node Id="(@1 @23 Type=GetSongsDescending)" Category="CodeSchema_Class" Bounds="675.456666666667,301,174.153333333332,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongsDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongsDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSongsDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=35)" />
+    <Node Id="(@1 @23 Type=IncreasePlayTimes)" Category="CodeSchema_Class" Bounds="668.213333333331,246,156.893333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="IncreasePlayTimes" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="IncreasePlayTimes" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/IncreasePlayTimes.cs StartLineNumber=10 StartCharacterOffset=17 EndLineNumber=10 EndCharacterOffset=34)" />
+    <Node Id="(@1 @23 Type=SearchSongs)" Category="CodeSchema_Class" Bounds="789.266666666665,191,128.616666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SearchSongs" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SearchSongs" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/SearchSongs.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=28)" />
+    <Node Id="(@1 @23 Type=SetScore)" Category="CodeSchema_Class" Bounds="885.509999999998,80,107.113333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SetScore" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SetScore" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/SetScore.cs StartLineNumber=10 StartCharacterOffset=17 EndLineNumber=10 EndCharacterOffset=25)" />
+    <Node Id="(@1 @9 @49)" Category="CodeSchema_Class" Bounds="1439.82,135,122.476666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteSong" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteSong" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/DeleteSong.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=27)" />
+    <Node Id="(@1 @9 @68)" Category="CodeSchema_Class" Bounds="1579.95333333333,80,111.93,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongs" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongs" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/GetSongs.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=25)" />
+    <Node Id="(@1 @9 Type=AddSong)" Category="CodeSchema_Class" Bounds="1439.82,80,110.133333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AddSong" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AddSong" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/AddSong.cs StartLineNumber=12 StartCharacterOffset=21 EndLineNumber=12 EndCharacterOffset=28)" />
+    <Node Id="(@1 @9 Type=GetAlbumsByDate)" Category="CodeSchema_Class" Bounds="1167.36333333333,246,157.046666666665,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetAlbumsByDate" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetAlbumsByDate" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/GetAlbumsByDate.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=32)" />
+    <Node Id="(@1 @9 Type=GetAlbumsByDateDescending)" Category="CodeSchema_Class" Bounds="1413.23,301,219.27,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetAlbumsByDateDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetAlbumsByDateDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/GetAlbumsByDateDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=42)" />
+    <Node Id="(@1 @9 Type=GetAlbumsByPublicationDate)" Category="CodeSchema_Class" Bounds="1167.36333333333,301,215.866666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetAlbumsByPublicationDate" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetAlbumsByPublicationDate" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/GetAlbumsByPublicationDate.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=43)" />
+    <Node Id="(@1 @9 Type=GetAlbumsByPublicationDateDescending)" Category="CodeSchema_Class" Bounds="1167.36333333333,356,278.09,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetAlbumsByPublicationDateDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetAlbumsByPublicationDateDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/GetAlbumsByPublicationDateDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=53)" />
+    <Node Id="(@1 @9 Type=GetAlbumsDescending)" Category="CodeSchema_Class" Bounds="1354.41,246,181.720000000001,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetAlbumsDescending" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetAlbumsDescending" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/GetAlbumsDescending.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=36)" />
+    <Node Id="(@1 @9 Type=SearchAlbums)" Category="CodeSchema_Class" Bounds="1487.56333333333,191,136.183333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SearchAlbums" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SearchAlbums" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/SearchAlbums.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=29)" />
+    <Node Id="(@1 Namespace=MusicPlayer.UWP.Controllers.ZMisc Type=(Name=ICreateResultData GenericParameterCount=1) Member=GetEntity)" Category="CodeSchema_Method" Bounds="1314.655,1019,84.2833333333333,25.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="GetEntity" />
+    <Node Id="(@3 @5 Type=ErrorViewModel)" Category="CodeSchema_Class" Bounds="1801.88333333333,753.375,145.986666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ErrorViewModel" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ErrorViewModel" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/ErrorViewModel.cs StartLineNumber=4 StartCharacterOffset=17 EndLineNumber=4 EndCharacterOffset=31)" />
+    <Node Id="@10" Category="CodeSchema_Namespace" Bounds="1147.36333333333,40,564.519999999999,361" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Album" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Album" />
+    <Node Id="@12" Category="CodeSchema_Namespace" Bounds="20,603,417.606666666667,306" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Artist" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Artist" />
+    <Node Id="@14" Category="CodeSchema_Namespace" Bounds="431.543333333335,939,417.189999999999,251" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Band" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Band" />
+    <Node Id="@16" Category="CodeSchema_Namespace" Bounds="467.606666666667,603,421.309999999999,306" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Genre" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Genre" />
+    <Node Id="@18" Category="CodeSchema_Namespace" Bounds="878.733333333334,939,326.506666666668,196" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Image" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Image" />
+    <Node Id="@2" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2018 17:24:51" Bounds="0,0,1731.88333333333,1210" CodeSchemaProperty_StrongName="MusicPlayer.UWP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" CommonLabel="MusicPlayer.UWP" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" FilePath="$(33f2107c-7c77-4ac8-8814-9cafbbfdc4fc.OutputPath)" Group="Expanded" Label="MusicPlayer.UWP.exe" LayoutSettings="ForceDirected" />
+    <Node Id="@20" Category="CodeSchema_Namespace" Bounds="918.916666666666,603,486.049999999999,306" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Playlist" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Playlist" />
+    <Node Id="@22" Category="CodeSchema_Namespace" Bounds="20,939,381.543333333335,251" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.PlayQueue" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.PlayQueue" />
+    <Node Id="@24" Category="CodeSchema_Namespace" Bounds="464.199999999999,40,653.163333333332,416" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.Song" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.Song" />
+    <Node Id="@25" Category="CodeSchema_Namespace" Bounds="1235.24,939,243.113333333333,145.96" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers.ZMisc" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers.ZMisc" />
+    <Node Id="@26" Category="CodeSchema_Interface" Bounds="257.509999999998,304,139.683333333334,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsInternal="True" CommonLabel="IController&lt;T&gt;" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IController&lt;T&gt;" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ZMisc/ControllerInterfaces/IController.cs StartLineNumber=8 StartCharacterOffset=14 EndLineNumber=8 EndCharacterOffset=25)" />
+    <Node Id="@27" Category="CodeSchema_Interface" Bounds="1267.855,979,177.883333333333,85.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsInternal="True" CommonLabel="ICreateResultData&lt;T&gt;" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Icon="CodeSchema_Interface" Label="ICreateResultData&lt;T&gt;" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ZMisc/ICreateResultData.cs StartLineNumber=2 StartCharacterOffset=14 EndLineNumber=2 EndCharacterOffset=31)" />
+    <Node Id="@28" Category="CodeSchema_Class" Bounds="1962.12333333333,641.6875,95.8266666666677,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Album" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Album" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Album.cs StartLineNumber=5 StartCharacterOffset=17 EndLineNumber=5 EndCharacterOffset=22)" />
+    <Node Id="@29" Category="CodeSchema_Class" Bounds="50.9466666666658,80,148.610000000001,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AlbumController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AlbumController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/AlbumController.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=32)" />
+    <Node Id="@30" Category="CodeSchema_Class" Bounds="1842.51333333333,641.6875,89.0466666666671,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Artist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Artist" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Artist.cs StartLineNumber=5 StartCharacterOffset=17 EndLineNumber=5 EndCharacterOffset=23)" />
+    <Node Id="@31" Category="CodeSchema_Class" Bounds="54.3366666666661,360,141.83,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ArtistController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ArtistController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ArtistController.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=33)" />
+    <Node Id="@32" Category="CodeSchema_Class" Bounds="1843.115,698.375,87.8433333333342,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Band" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Band" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Band.cs StartLineNumber=4 StartCharacterOffset=17 EndLineNumber=4 EndCharacterOffset=21)" />
+    <Node Id="@33" Category="CodeSchema_Class" Bounds="54.9383333333326,136,140.626666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="BandController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="BandController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/BandController.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=31)" />
+    <Node Id="@34" Category="CodeSchema_Class" Bounds="1327.40666666666,191,130.156666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateAlbum" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateAlbum" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/CreateAlbum.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=28)" />
+    <Node Id="@35" Category="CodeSchema_Class" Bounds="40,809,123.376666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateArtist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateArtist" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/CreateArtist.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=29)" />
+    <Node Id="@36" Category="CodeSchema_Class" Bounds="603.603333333334,1090,122.173333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateBand" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateBand" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/CreateBand.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=27)" />
+    <Node Id="@37" Category="CodeSchema_Class" Bounds="644.573333333334,754,127.08,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateGenre" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateGenre" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/CreateGenre.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=28)" />
+    <Node Id="@38" Category="CodeSchema_Class" Bounds="1056.93,1090,128.310000000001,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateImage" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateImage" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Image/CreateImage.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=28)" />
+    <Node Id="@39" Category="CodeSchema_Class" Bounds="1253.12333333333,754,131.843333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreatePlaylist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreatePlaylist" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/CreatePlaylist.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=31)" />
+    <Node Id="@4" Category="CodeSchema_Assembly" AssemblyTimestamp="12/17/2018 17:24:03" Bounds="1761.88333333333,391.625,504.528333333334,426.75" CodeSchemaProperty_StrongName="MusicPlayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" CommonLabel="MusicPlayer.Core" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" FilePath="$(ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPath)" Group="Expanded" Label="MusicPlayer.Core.dll" />
+    <Node Id="@40" Category="CodeSchema_Class" Bounds="40,1145,152.050000000001,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreatePlayQueue" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreatePlayQueue" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueue/CreatePlayQueue.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=32)" />
+    <Node Id="@41" Category="CodeSchema_Class" Bounds="636.676666666664,191,122.59,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateSong" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateSong" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/CreateSong.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=27)" />
+    <Node Id="@42" Category="CodeSchema_Class" Bounds="1167.36333333333,191,130.043333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteAlbum" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteAlbum" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/DeleteAlbum.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=28)" />
+    <Node Id="@43" Category="CodeSchema_Class" Bounds="192.476666666666,754,123.263333333332,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteArtist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteArtist" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/DeleteArtist.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=29)" />
+    <Node Id="@44" Category="CodeSchema_Class" Bounds="451.543333333335,1090,122.059999999999,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteBand" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteBand" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/DeleteBand.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=27)" />
+    <Node Id="@45" Category="CodeSchema_Class" Bounds="487.606666666667,754,126.966666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteGenre" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteGenre" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/DeleteGenre.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=28)" />
+    <Node Id="@46" Category="CodeSchema_Class" Bounds="898.733333333334,1090,128.196666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteImage" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteImage" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Image/DeleteImage.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=28)" />
+    <Node Id="@47" Category="CodeSchema_Class" Bounds="1091.39333333333,754,131.73,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeletePlaylist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeletePlaylist" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/DeletePlaylist.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=31)" />
+    <Node Id="@48" Category="CodeSchema_Class" Bounds="202.766666666666,1090,151.936666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeletePlayQueue" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeletePlayQueue" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueue/DeletePlayQueue.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=32)" />
+    <Node Id="@50" Category="CodeSchema_Class" Bounds="484.199999999999,191,122.476666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DeleteSong" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DeleteSong" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/DeleteSong.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=27)" />
+    <Node Id="@51" Category="CodeSchema_Class" Bounds="2133.66166666666,585,92.75,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Genre" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Genre" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Genre.cs StartLineNumber=4 StartCharacterOffset=17 EndLineNumber=4 EndCharacterOffset=22)" />
+    <Node Id="@52" Category="CodeSchema_Class" Bounds="52.4849999999997,248,145.533333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GenreController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GenreController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/GenreController.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=32)" />
+    <Node Id="@53" Category="CodeSchema_Class" Bounds="1169.91,80,114.403333333332,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetAlbum" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetAlbum" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/GetAlbum.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=25)" />
+    <Node Id="@54" Category="CodeSchema_Class" Bounds="1167.36333333333,136,119.496666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetAlbums" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetAlbums" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/GetAlbums.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=26)" />
+    <Node Id="@55" Category="CodeSchema_Class" Bounds="42.5466666666671,643,107.623333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetArtist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetArtist" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/GetArtist.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=26)" />
+    <Node Id="@56" Category="CodeSchema_Class" Bounds="40,699,112.716666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetArtists" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetArtists" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/GetArtists.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=27)" />
+    <Node Id="@57" Category="CodeSchema_Class" Bounds="454.090000000001,979,106.42,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetBand" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetBand" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/GetBand.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=24)" />
+    <Node Id="@58" Category="CodeSchema_Class" Bounds="451.543333333335,1035,111.513333333332,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetBands" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetBands" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/GetBands.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=25)" />
+    <Node Id="@59" Category="CodeSchema_Class" Bounds="490.153333333333,699,111.326666666668,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetGenre" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetGenre" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/GetGenre.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=25)" />
+    <Node Id="@6" Category="CodeSchema_Namespace" Bounds="1781.88333333333,431.625,464.528333333334,366.75" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.Core.Entities" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.Core.Entities" LayoutSettings="TopToBottom" />
+    <Node Id="@60" Category="CodeSchema_Class" Bounds="487.606666666667,643,116.42,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetGenres" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetGenres" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/GetGenres.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=26)" />
+    <Node Id="@61" Category="CodeSchema_Class" Bounds="901.280000000001,1035,112.556666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetImage" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetImage" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Image/GetImage.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=25)" />
+    <Node Id="@62" Category="CodeSchema_Class" Bounds="898.733333333334,979,117.650000000001,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetImages" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetImages" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Image/GetImages.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=26)" />
+    <Node Id="@63" Category="CodeSchema_Class" Bounds="941.463333333333,643,116.09,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetPlaylist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetPlaylist" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/GetPlaylist.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=28)" />
+    <Node Id="@64" Category="CodeSchema_Class" Bounds="938.916666666666,699,121.183333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetPlaylists" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetPlaylists" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/GetPlaylists.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=29)" />
+    <Node Id="@65" Category="CodeSchema_Class" Bounds="42.5466666666671,1035,136.296666666665,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetPlayQueue" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetPlayQueue" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueue/GetPlayQueue.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=29)" />
+    <Node Id="@66" Category="CodeSchema_Class" Bounds="40,979,141.389999999999,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetPlayQueues" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetPlayQueues" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueue/GetPlayQueues.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=30)" />
+    <Node Id="@67" Category="CodeSchema_Class" Bounds="486.746666666666,80,106.836666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSong" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSong" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSong.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=24)" />
+    <Node Id="@69" Category="CodeSchema_Class" Bounds="484.199999999999,136,111.93,25" CodeSchemaProperty_IsPublic="True" CommonLabel="GetSongs" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="GetSongs" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/GetSongs.cs StartLineNumber=9 StartCharacterOffset=17 EndLineNumber=9 EndCharacterOffset=25)" />
+    <Node Id="@70" Category="CodeSchema_Interface" Bounds="251.449999999999,80,151.803333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IAlbumController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IAlbumController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ZMisc/ControllerInterfaces/IAlbumController.cs StartLineNumber=7 StartCharacterOffset=21 EndLineNumber=7 EndCharacterOffset=37)" />
+    <Node Id="@71" Category="CodeSchema_Interface" Bounds="254.839999999998,416,145.023333333334,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IArtistController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IArtistController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ZMisc/ControllerInterfaces/IArtistController.cs StartLineNumber=7 StartCharacterOffset=21 EndLineNumber=7 EndCharacterOffset=38)" />
+    <Node Id="@72" Category="CodeSchema_Interface" Bounds="255.441666666666,136,143.82,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IBandController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IBandController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ZMisc/ControllerInterfaces/IBandController.cs StartLineNumber=7 StartCharacterOffset=21 EndLineNumber=7 EndCharacterOffset=36)" />
+    <Node Id="@73" Category="CodeSchema_Interface" Bounds="252.988333333332,248,148.726666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IGenreController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IGenreController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ZMisc/ControllerInterfaces/IGenreController.cs StartLineNumber=6 StartCharacterOffset=21 EndLineNumber=6 EndCharacterOffset=37)" />
+    <Node Id="@74" Category="CodeSchema_Interface" Bounds="252.373333333332,472,149.956666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IImageController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IImageController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ZMisc/ControllerInterfaces/IImageController.cs StartLineNumber=6 StartCharacterOffset=21 EndLineNumber=6 EndCharacterOffset=37)" />
+    <Node Id="@75" Category="CodeSchema_Class" Bounds="1963.04666666666,698.375,93.9799999999996,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Image" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Image" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Image.cs StartLineNumber=4 StartCharacterOffset=17 EndLineNumber=4 EndCharacterOffset=22)" />
+    <Node Id="@76" Category="CodeSchema_Class" Bounds="51.869999999999,416,146.763333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ImageController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ImageController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ImageController.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=32)" />
+    <Node Id="@77" Category="CodeSchema_Interface" Bounds="250.606666666665,192,153.490000000002,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IPlaylistController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IPlaylistController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ZMisc/ControllerInterfaces/IPlaylistController.cs StartLineNumber=6 StartCharacterOffset=21 EndLineNumber=6 EndCharacterOffset=40)" />
+    <Node Id="@78" Category="CodeSchema_Interface" Bounds="240.503333333332,360,173.696666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IPlayQueueController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IPlayQueueController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ZMisc/ControllerInterfaces/IPlayQueueController.cs StartLineNumber=6 StartCharacterOffset=21 EndLineNumber=6 EndCharacterOffset=41)" />
+    <Node Id="@79" Category="CodeSchema_Interface" Bounds="255.233333333332,528,144.236666666668,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ISongController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ISongController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/ZMisc/ControllerInterfaces/ISongController.cs StartLineNumber=7 StartCharacterOffset=21 EndLineNumber=7 EndCharacterOffset=36)" />
+    <Node Id="@8" Category="CodeSchema_Namespace" Bounds="20,40,414.199999999999,533" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Controllers" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Controllers" />
+    <Node Id="@80" Category="CodeSchema_Class" Bounds="1844.28,528.3125,97.5133333333324,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Playlist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Playlist" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Playlist.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=25)" />
+    <Node Id="@81" Category="CodeSchema_Class" Bounds="50.1033333333326,192,150.296666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="PlaylistController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="PlaylistController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlaylistController.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=35)" />
+    <Node Id="@82" Category="CodeSchema_Class" Bounds="2025.17666666666,471.625,117.719999999999,25" CodeSchemaProperty_IsPublic="True" CommonLabel="PlayQueue" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="PlayQueue" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/PlayQueue.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=26)" />
+    <Node Id="@83" Category="CodeSchema_Class" Bounds="40.0000000000001,304,170.503333333332,25" CodeSchemaProperty_IsPublic="True" CommonLabel="PlayQueueController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="PlayQueueController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueueController.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=36)" />
+    <Node Id="@85" Category="CodeSchema_Class" Bounds="1316.86,80,92.9599999999991,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Album/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
+    <Node Id="@86" Category="CodeSchema_Class" Bounds="182.716666666667,643,92.9599999999991,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Artist/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
+    <Node Id="@87" Category="CodeSchema_Class" Bounds="593.056666666667,979,92.9599999999991,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Band/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
+    <Node Id="@88" Category="CodeSchema_Class" Bounds="634.026666666667,643,92.9599999999991,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Genre/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
+    <Node Id="@89" Category="CodeSchema_Class" Bounds="1046.38333333333,979,92.9599999999991,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Image/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
+    <Node Id="@90" Category="CodeSchema_Class" Bounds="1090.1,643,92.9599999999991,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Playlist/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
+    <Node Id="@91" Category="CodeSchema_Class" Bounds="211.389999999999,979,92.9599999999991,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/PlayQueue/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
+    <Node Id="@92" Category="CodeSchema_Class" Bounds="626.129999999999,80,92.9599999999991,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Result" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Result" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/Song/Result.cs StartLineNumber=2 StartCharacterOffset=17 EndLineNumber=2 EndCharacterOffset=23)" />
+    <Node Id="@93" Category="CodeSchema_Class" Bounds="1971.90666666666,528.3125,88.2600000000002,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Song" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Song" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/Song.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=21)" />
+    <Node Id="@94" Category="CodeSchema_Class" Bounds="1948.49333333333,585,123.086666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SongAlbum" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SongAlbum" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/SongAlbum.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=26)" />
+    <Node Id="@95" Category="CodeSchema_Class" Bounds="1801.88333333333,585,116.306666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SongArtist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SongArtist" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/SongArtist.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=27)" />
+    <Node Id="@96" Category="CodeSchema_Class" Bounds="54.7299999999997,472,141.043333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SongController" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SongController" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Controllers/SongController.cs StartLineNumber=8 StartCharacterOffset=17 EndLineNumber=8 EndCharacterOffset=31)" />
+    <Node Id="@97" Category="CodeSchema_Class" Bounds="1869.65,471.625,124.773333333334,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SongPlaylist" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SongPlaylist" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Entities/SongPlaylist.cs StartLineNumber=7 StartCharacterOffset=17 EndLineNumber=7 EndCharacterOffset=29)" />
   </Nodes>
   <Links>
-    <Link Source="@10" Target="@32" Category="Contains" FetchingParent="@10" />
-    <Link Source="@10" Target="@40" Category="Contains" FetchingParent="@10" />
-    <Link Source="@10" Target="@50" Category="Contains" FetchingParent="@10" />
-    <Link Source="@10" Target="@51" Category="Contains" FetchingParent="@10" />
-    <Link Source="@10" Target="@73" Category="Contains" FetchingParent="@10" />
-    <Link Source="@12" Target="@33" Category="Contains" FetchingParent="@12" />
-    <Link Source="@12" Target="@41" Category="Contains" FetchingParent="@12" />
-    <Link Source="@12" Target="@52" Category="Contains" FetchingParent="@12" />
-    <Link Source="@12" Target="@53" Category="Contains" FetchingParent="@12" />
-    <Link Source="@12" Target="@74" Category="Contains" FetchingParent="@12" />
-    <Link Source="@14" Target="@34" Category="Contains" FetchingParent="@14" />
-    <Link Source="@14" Target="@42" Category="Contains" FetchingParent="@14" />
-    <Link Source="@14" Target="@54" Category="Contains" FetchingParent="@14" />
-    <Link Source="@14" Target="@55" Category="Contains" FetchingParent="@14" />
-    <Link Source="@14" Target="@75" Category="Contains" FetchingParent="@14" />
-    <Link Source="@16" Target="@35" Category="Contains" FetchingParent="@16" />
-    <Link Source="@16" Target="@43" Category="Contains" FetchingParent="@16" />
-    <Link Source="@16" Target="@56" Category="Contains" FetchingParent="@16" />
-    <Link Source="@16" Target="@57" Category="Contains" FetchingParent="@16" />
-    <Link Source="@16" Target="@76" Category="Contains" FetchingParent="@16" />
-    <Link Source="@18" Target="@36" Category="Contains" FetchingParent="@18" />
-    <Link Source="@18" Target="@44" Category="Contains" FetchingParent="@18" />
-    <Link Source="@18" Target="@58" Category="Contains" FetchingParent="@18" />
-    <Link Source="@18" Target="@59" Category="Contains" FetchingParent="@18" />
-    <Link Source="@18" Target="@77" Category="Contains" FetchingParent="@18" />
+    <Link Source="@10" Target="(@1 @9 @49)" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="(@1 @9 @68)" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="(@1 @9 Type=AddSong)" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="(@1 @9 Type=GetAlbumsByDate)" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="(@1 @9 Type=GetAlbumsByDateDescending)" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="(@1 @9 Type=GetAlbumsByPublicationDate)" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="(@1 @9 Type=GetAlbumsByPublicationDateDescending)" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="(@1 @9 Type=GetAlbumsDescending)" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="(@1 @9 Type=SearchAlbums)" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="@34" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="@42" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="@53" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="@54" Category="Contains" FetchingParent="@10" />
+    <Link Source="@10" Target="@85" Category="Contains" FetchingParent="@10" />
+    <Link Source="@12" Target="(@1 @11 @49)" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="(@1 @11 @68)" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="(@1 @11 Type=AddSong)" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="(@1 @11 Type=GetArtistsDescending)" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="(@1 @11 Type=SearchArtists)" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@35" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@43" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@55" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@56" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="@86" Category="Contains" FetchingParent="@12" />
+    <Link Source="@14" Target="(@1 @13 Type=GetArtists)" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="(@1 @13 Type=GetBandsDescending)" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="(@1 @13 Type=SearchBands)" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@36" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@44" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@57" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@58" Category="Contains" FetchingParent="@14" />
+    <Link Source="@14" Target="@87" Category="Contains" FetchingParent="@14" />
+    <Link Source="@16" Target="(@1 @15 @68)" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="(@1 @15 Type=GetGenresDescending)" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="(@1 @15 Type=SearchGenres)" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="(@1 @15 Type=SongQuantity)" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@37" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@45" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@59" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@60" Category="Contains" FetchingParent="@16" />
+    <Link Source="@16" Target="@88" Category="Contains" FetchingParent="@16" />
+    <Link Source="@18" Target="@38" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@46" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@61" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@62" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@89" Category="Contains" FetchingParent="@18" />
     <Link Source="@2" Target="@10" Category="Contains" FetchingParent="@2" />
     <Link Source="@2" Target="@12" Category="Contains" FetchingParent="@2" />
     <Link Source="@2" Target="@14" Category="Contains" FetchingParent="@2" />
@@ -108,349 +186,368 @@
     <Link Source="@2" Target="@20" Category="Contains" FetchingParent="@2" />
     <Link Source="@2" Target="@22" Category="Contains" FetchingParent="@2" />
     <Link Source="@2" Target="@24" Category="Contains" FetchingParent="@2" />
-    <Link Source="@2" Target="@4" Category="CodeMap_ProjectReference" Bounds="1093.63,380,21,0" />
+    <Link Source="@2" Target="@25" Category="Contains" FetchingParent="@2" />
+    <Link Source="@2" Target="@4" Category="CodeMap_ProjectReference" Bounds="1731.88330078125,605,21,0" />
     <Link Source="@2" Target="@8" Category="Contains" FetchingParent="@2" />
-    <Link Source="@20" Target="@37" Category="Contains" FetchingParent="@20" />
-    <Link Source="@20" Target="@45" Category="Contains" FetchingParent="@20" />
-    <Link Source="@20" Target="@60" Category="Contains" FetchingParent="@20" />
-    <Link Source="@20" Target="@61" Category="Contains" FetchingParent="@20" />
-    <Link Source="@20" Target="@78" Category="Contains" FetchingParent="@20" />
-    <Link Source="@22" Target="@38" Category="Contains" FetchingParent="@22" />
-    <Link Source="@22" Target="@46" Category="Contains" FetchingParent="@22" />
-    <Link Source="@22" Target="@62" Category="Contains" FetchingParent="@22" />
-    <Link Source="@22" Target="@63" Category="Contains" FetchingParent="@22" />
-    <Link Source="@22" Target="@79" Category="Contains" FetchingParent="@22" />
-    <Link Source="@24" Target="@39" Category="Contains" FetchingParent="@24" />
-    <Link Source="@24" Target="@47" Category="Contains" FetchingParent="@24" />
-    <Link Source="@24" Target="@64" Category="Contains" FetchingParent="@24" />
-    <Link Source="@24" Target="@65" Category="Contains" FetchingParent="@24" />
-    <Link Source="@24" Target="@80" Category="Contains" FetchingParent="@24" />
-    <Link Source="@26" Target="@25" Category="InheritsFrom" Bounds="1247.60925292969,420.691925048828,139.707763671875,246.808074951172" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@26" Target="@66" Category="References" Bounds="1169.44128417969,473.132019042969,35.523193359375,194.367980957031" IsSourceVirtualized="True" Weight="4">
+    <Link Source="@20" Target="(@1 @19 @49)" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="(@1 @19 @68)" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="(@1 @19 Type=AddSong)" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="(@1 @19 Type=GetPlaylistsByDate)" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="(@1 @19 Type=GetPlaylistsByDateDescending)" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="(@1 @19 Type=GetPlaylistsDescending)" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="(@1 @19 Type=SearchPlaylists)" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@39" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@47" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@63" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@64" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@90" Category="Contains" FetchingParent="@20" />
+    <Link Source="@22" Target="(@1 @21 Type=GetPreviousQueue)" Category="Contains" FetchingParent="@22" />
+    <Link Source="@22" Target="(@1 @21 Type=RandomSong)" Category="Contains" FetchingParent="@22" />
+    <Link Source="@22" Target="@40" Category="Contains" FetchingParent="@22" />
+    <Link Source="@22" Target="@48" Category="Contains" FetchingParent="@22" />
+    <Link Source="@22" Target="@65" Category="Contains" FetchingParent="@22" />
+    <Link Source="@22" Target="@66" Category="Contains" FetchingParent="@22" />
+    <Link Source="@22" Target="@91" Category="Contains" FetchingParent="@22" />
+    <Link Source="@24" Target="(@1 @23 Type=GetAlbum)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=GetArtists)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=GetBand)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=GetSongsByDate)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=GetSongsByDateDescending)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=GetSongsByLength)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=GetSongsByLengthDescending)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=GetSongsByPlayTimes)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=GetSongsByPlayTimesDescending)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=GetSongsByScore)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=GetSongsByScoreDescending)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=GetSongsDescending)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=IncreasePlayTimes)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=SearchSongs)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="(@1 @23 Type=SetScore)" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="@41" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="@50" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="@67" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="@69" Category="Contains" FetchingParent="@24" />
+    <Link Source="@24" Target="@92" Category="Contains" FetchingParent="@24" />
+    <Link Source="@25" Target="@27" Category="Contains" FetchingParent="@25" />
+    <Link Source="@27" Target="(@1 Namespace=MusicPlayer.UWP.Controllers.ZMisc Type=(Name=ICreateResultData GenericParameterCount=1) Member=GetEntity)" Category="Contains" FetchingParent="@27" />
+    <Link Source="@28" Target="@75" Category="References" Bounds="2010.03662109375,666.6875,0,22.6875" IsSourceVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@27" Target="@32" Category="References" Bounds="330.7177734375,215,83.8988342285156,471.879821777344" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@28" Target="@94" Category="References" Bounds="1980.78674316406,615.649780273438,12.0504150390625,26.0377197265625" IsSourceVirtualized="True" Weight="4" />
+    <Link Source="@29" Target="@26" Category="Implements" Bounds="152.616775512695,105,138.714828491211,195.054382324219" Weight="1" />
+    <Link Source="@29" Target="@34" Category="CodeSchema_Calls" Bounds="131.470184326172,20.9423007965088,1193.19766235352,164.165716171265" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="References" />
     </Link>
-    <Link Source="@27" Target="@40" Category="References" Bounds="356.920257568359,215,319.339447021484,416.857177734375" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@29" Target="@42" Category="CodeSchema_Calls" Bounds="189.460525512695,29.1330432891846,978.38151550293,153.74107170105" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@27" Target="@50" Category="References" Bounds="212.147613525391,214.999694824219,294.926422119141,363.383728027344" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@29" Target="@53" Category="CodeSchema_Calls" Bounds="150.773590087891,23.6727199554443,1020.0505065918,56.3272800445557" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@27" Target="@51" Category="References" Bounds="339.452484130859,215,95.7963256835938,416.880676269531" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@29" Target="@54" Category="CodeSchema_Calls" Bounds="170.091888427734,26.4029750823975,998.420806884766,101.197420120239" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="References" />
     </Link>
-    <Link Source="@27" Target="@73" Category="References" Bounds="341.474395751953,215,94.1588134765625,361.775817871094" IsSourceVirtualized="True" Weight="31" />
-    <Link Source="@28" Target="@25" Category="InheritsFrom" Bounds="1243.67150878906,420.099243164063,140.306518554688,191.400756835938" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@28" Target="@30" Category="References" Bounds="1226.01666666667,589.5,0,22" IsSourceVirtualized="True" Weight="4">
+    <Link Source="@29" Target="@70" Category="Implements" Bounds="199.556671142578,92.5,42.3933258056641,0" Weight="1" />
+    <Link Source="@29" Target="@85" Category="References" Bounds="112.173194885254,18.2121315002441,1203.79616546631,61.7878684997559" IsSourceVirtualized="True" Weight="31" />
+    <Link Source="@30" Target="@32" Category="References" Bounds="1887.03662109375,666.6875,0,22.6875" IsSourceVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@28" Target="@66" Category="References" Bounds="1169.60229492188,473.081817626953,35.5914306640625,138.418182373047" IsSourceVirtualized="True" Weight="4">
+    <Link Source="@30" Target="@75" Category="References" Bounds="1914.15905761719,666.6875,60.58154296875,27.9204711914063" IsSourceVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@29" Target="@33" Category="References" Bounds="147.291915893555,160,227.676193237305,301.917083740234" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@30" Target="@95" Category="References" Bounds="1852.63012695313,618.748107910156,17.20703125,22.9393920898438" IsSourceVirtualized="True" Weight="4" />
+    <Link Source="@31" Target="@26" Category="Implements" Bounds="170.36328125,331.536773681641,102.721740722656,28.4632263183594" Weight="1" />
+    <Link Source="@31" Target="@35" Category="CodeSchema_Calls" Bounds="-18.9374217987061,385,88.1210842132568,415.76953125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="References" />
     </Link>
-    <Link Source="@29" Target="@41" Category="References" Bounds="176.882263183594,116.310722351074,342.772216796875,291.697242736816" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@31" Target="@43" Category="CodeSchema_Calls" Bounds="172.499557495117,385,42.8393707275391,360.862976074219" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@29" Target="@52" Category="References" Bounds="161.391372680664,160,358.705490112305,191.206085205078" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@31" Target="@55" Category="CodeSchema_Calls" Bounds="-2.27647233009338,385,101.903249979019,249.408447265625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@29" Target="@53" Category="References" Bounds="151.991729736328,160,223.231323242188,246.800231933594" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@31" Target="@56" Category="CodeSchema_Calls" Bounds="-15.3302907943726,385,99.7355108261108,305.73974609375" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="References" />
     </Link>
-    <Link Source="@29" Target="@74" Category="References" Bounds="156.691558837891,160,220.136749267578,191.268859863281" IsSourceVirtualized="True" Weight="31" />
-    <Link Source="@30" Target="@25" Category="InheritsFrom" Bounds="1240.93151855469,418.993896484375,137.57421875,136.506103515625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@31" Target="@71" Category="Implements" Bounds="170.36328125,385,102.721740722656,28.4632263183594" Weight="1" />
+    <Link Source="@31" Target="@86" Category="References" Bounds="190.907180786133,385,69.9779510498047,250.696411132813" IsSourceVirtualized="True" Weight="31" />
+    <Link Source="@33" Target="@26" Category="Implements" Bounds="160.326522827148,161,129.871932983398,139.17919921875" Weight="1" />
+    <Link Source="@33" Target="@36" Category="CodeSchema_Calls" Bounds="-35.5582237243652,161,640.958797454834,920.390014648438" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="References" />
     </Link>
-    <Link Source="@31" Target="@34" Category="References" Bounds="168.622711181641,9.27890777587891,622.546295166016,172.414512634277" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@31" Target="@42" Category="References" Bounds="138.753219604492,4.81224203109741,790.280410766602,124.30416727066" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@33" Target="@44" Category="CodeSchema_Calls" Bounds="161.755859375,161,330.090637207031,921.07568359375" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@31" Target="@54" Category="References" Bounds="128.796722412109,3.32268118858337,782.454986572266,76.6773188114166" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@33" Target="@57" Category="CodeSchema_Calls" Bounds="-38.3319511413574,161,492.349010467529,810.124755859375" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@31" Target="@55" Category="References" Bounds="158.666213989258,7.79032611846924,632.547653198242,118.884905815125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@33" Target="@58" Category="CodeSchema_Calls" Bounds="-41.1065101623535,161,493.829288482666,865.582641601563" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="References" />
     </Link>
-    <Link Source="@31" Target="@75" Category="References" Bounds="148.709716796875,6.30143690109253,641.185852050781,73.6985630989075" IsSourceVirtualized="True" Weight="31" />
-    <Link Source="@32" Target="@26" Category="References" Bounds="514.591125488281,684.732116699219,654.895202636719,83.8115844726563" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
+    <Link Source="@33" Target="@72" Category="Implements" Bounds="195.565002441406,148.5,50.3766632080078,0" Weight="1" />
+    <Link Source="@33" Target="@87" Category="References" Bounds="167.250854492188,161,424.783142089844,810.692993164063" IsSourceVirtualized="True" Weight="31" />
+    <Link Source="@34" Target="@27" Category="Implements" Bounds="1157.4599609375,216,328.699462890625,755.924682617188" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@34" Target="@28" Category="CodeSchema_ReturnTypeLink" Bounds="1427.80078125,216,532.154541015625,418.792785644531" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
       <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_ReturnTypeLink" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@33" Target="@28" Category="References" Bounds="491.910003662109,495,700.888580322266,167.754455566406" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="10">
+    <Link Source="@35" Target="@27" Category="Implements" Bounds="142.371322631836,834,1146.02296447754,358.06640625" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@35" Target="@30" Category="CodeSchema_ReturnTypeLink" Bounds="137.372817993164,540.615783691406,1696.18394470215,268.384216308594" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="10">
       <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_ReturnTypeLink" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@34" Target="@30" Category="References" Bounds="898.983276367188,215,280.037109375,334.066650390625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
+    <Link Source="@36" Target="@27" Category="Implements" Bounds="725.357788085938,1071.78820800781,566.51904296875,128.39501953125" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@36" Target="@32" Category="CodeSchema_ReturnTypeLink" Bounds="723.389953613281,711.689086914063,1110.80352783203,497.08349609375" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
       <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_ReturnTypeLink" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@35" Target="@48" Category="References" Bounds="817.894287109375,495,353.488403320313,33.5973510742188" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7">
+    <Link Source="@37" Target="@27" Category="Implements" Bounds="755.7109375,779,512.76513671875,191.791625976563" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@37" Target="@51" Category="CodeSchema_ReturnTypeLink" Bounds="749.639770507813,560.601867675781,1378.26257324219,193.398132324219" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7">
       <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_ReturnTypeLink" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@36" Target="@66" Category="References" Bounds="159.294540405273,471.535278320313,1039.56507873535,293.79052734375" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="6">
+    <Link Source="@38" Target="@27" Category="Implements" Bounds="1152.61901855469,1055.69262695313,106.8984375,34.307373046875" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@38" Target="@75" Category="CodeSchema_ReturnTypeLink" Bounds="1171.21887207031,725.500427246094,826.088256835938,422.860168457031" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="6">
       <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_ReturnTypeLink" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@37" Target="@68" Category="References" Bounds="865.623474121094,417.852172851563,332.570861816406,321.217956542969" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="8">
+    <Link Source="@39" Target="@27" Category="Implements" Bounds="1351.01330566406,779,69.9385986328125,192.924682617188" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@39" Target="@80" Category="CodeSchema_ReturnTypeLink" Bounds="1364.4130859375,547.2685546875,470.869140625,206.7314453125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="8">
       <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_ReturnTypeLink" />
-    </Link>
-    <Link Source="@38" Target="@70" Category="References" Bounds="612.185485839844,267.490692138672,549.963073730469,59.3548889160156" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_ReturnTypeLink" />
-    </Link>
-    <Link Source="@39" Target="@81" Category="References" Bounds="162.589996337891,301.955047607422,1013.28182983398,231.478790283203" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="13">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_ReturnTypeLink" />
+      <Category Ref="References" />
     </Link>
     <Link Source="@4" Target="@6" Category="Contains" FetchingParent="@4" />
-    <Link Source="@40" Target="@26" Category="References" Bounds="632.465148925781,665,536.992126464844,99.2147216796875" IsSourceVirtualized="True" Weight="6" />
-    <Link Source="@41" Target="@28" Category="References" Bounds="503.660705566406,395.878540039063,682.669494628906,264.518676757813" IsSourceVirtualized="True" Weight="6" />
-    <Link Source="@42" Target="@30" Category="References" Bounds="1019.99450683594,160,160.925415039063,388.000732421875" IsSourceVirtualized="True" Weight="6" />
-    <Link Source="@43" Target="@48" Category="References" Bounds="968.2626953125,440,204.979614257813,56.9398498535156" IsSourceVirtualized="True" Weight="6" />
-    <Link Source="@44" Target="@66" Category="References" Bounds="283.35205078125,471.579925537109,907.171752929688,290.770782470703" IsSourceVirtualized="True" Weight="6" />
-    <Link Source="@45" Target="@68" Category="References" Bounds="891.379211425781,417.86328125,304.195495605469,279.604309082031" IsSourceVirtualized="True" Weight="6" />
-    <Link Source="@46" Target="@70" Category="References" Bounds="593.348327636719,215,569.670104980469,111.102661132813" IsSourceVirtualized="True" Weight="6" />
-    <Link Source="@47" Target="@81" Category="References" Bounds="167.158401489258,296.181701660156,1006.36454772949,118.856201171875" IsSourceVirtualized="True" Weight="6" />
-    <Link Source="@48" Target="@25" Category="InheritsFrom" Bounds="1245.06970214844,417.436920166016,125.083862304688,82.0630798339844" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@40" Target="@27" Category="Implements" Bounds="170.292190551758,1071.80908203125,1125.06071472168,141.272705078125" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@40" Target="@82" Category="CodeSchema_ReturnTypeLink" Bounds="148.621017456055,445.057952880859,1872.64179992676,776.595855712891" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
       <Category Ref="CodeSchema_Calls" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@49" Target="@35" Category="References" Bounds="323.696685791016,160,385.419158935547,303.091522216797" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+    <Link Source="@41" Target="@27" Category="Implements" Bounds="733.836059570313,178.78987121582,749.602905273438,791.713729858398" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@41" Target="@93" Category="CodeSchema_ReturnTypeLink" Bounds="731.345947265625,216,1252.28784179688,353.081115722656" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="13">
       <Category Ref="CodeSchema_Calls" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@49" Target="@43" Category="References" Bounds="326.721374511719,12.2552061080933,528.140258789063,396.283612251282" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@42" Target="@28" Category="References" Bounds="1273.27612304688,216,705.49365234375,460.869995117188" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@43" Target="@30" Category="References" Bounds="190.55908203125,663.852294921875,1643.17041015625,260.417358398438" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@44" Target="@32" Category="References" Bounds="549.770751953125,724.642211914063,1345.00439453125,491.221923828125" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@45" Target="@51" Category="References" Bounds="589.929626464844,557.863586425781,1539.06011962891,196.136413574219" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@46" Target="@75" Category="References" Bounds="997.686401367188,725.498413085938,1011.36511230469,426.767944335938" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@47" Target="@80" Category="References" Bounds="1198.58825683594,544.553283691406,636.693603515625,209.446716308594" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@48" Target="@82" Category="References" Bounds="323.225189208984,442.389251708984,1699.46548461914,776.904205322266" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@50" Target="@93" Category="References" Bounds="581.146606445313,216,1388.4990234375,318.103942871094" IsSourceVirtualized="True" Weight="6" />
+    <Link Source="@52" Target="@26" Category="Implements" Bounds="170.36328125,273,102.721740722656,28.4632263183594" Weight="1" />
+    <Link Source="@52" Target="@37" Category="CodeSchema_Calls" Bounds="181.405044555664,273,464.800704956055,472.437194824219" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@52" Target="@45" Category="CodeSchema_Calls" Bounds="151.977493286133,273,336.797653198242,472.586181640625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@49" Target="@56" Category="References" Bounds="320.024108886719,10.7671880722046,514.910217285156,340.756218910217" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@52" Target="@59" Category="CodeSchema_Calls" Bounds="161.786682128906,273,334.941680908203,418.149963378906" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@49" Target="@57" Category="References" Bounds="330.423980712891,160,380.039703369141,247.170288085938" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@52" Target="@60" Category="CodeSchema_Calls" Bounds="171.59587097168,273,327.446060180664,361.131774902344" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="References" />
     </Link>
-    <Link Source="@49" Target="@76" Category="References" Bounds="337.151306152344,160,371.427001953125,193.415405273438" IsSourceVirtualized="True" Weight="31" />
-    <Link Source="@50" Target="@26" Category="References" Bounds="619.218566894531,609.897216796875,550.227966308594,152.878845214844" IsSourceVirtualized="True" Weight="5" />
-    <Link Source="@50" Target="@73" Category="References" Bounds="487.806666666667,597.50050368517,21.0000000000001,1.13686837721616E-13" IsSourceVirtualized="True" Weight="19" />
-    <Link Source="@51" Target="@26" Category="References" Bounds="500.276397705078,665,669.200653076172,102.112731933594" IsSourceVirtualized="True" Weight="3" />
-    <Link Source="@51" Target="@73" Category="References" Bounds="437.452820958739,618.74951752861,5.12665422100361,21.2510861565597" IsSourceVirtualized="True" Weight="21" />
-    <Link Source="@52" Target="@28" Category="References" Bounds="604.989990234375,302.663238525391,575.848999023438,301.440155029297" IsSourceVirtualized="True" Weight="5" />
-    <Link Source="@52" Target="@74" Category="References" Bounds="476.366666666665,372.499966826685,21.0000000000013,1.01206613862814E-05" IsSourceVirtualized="True" Weight="19" />
-    <Link Source="@53" Target="@28" Category="References" Bounds="482.038787841797,440,707.523590087891,221.57275390625" IsSourceVirtualized="True" Weight="3" />
-    <Link Source="@53" Target="@74" Category="References" Bounds="424.722732307345,393.858261877567,3.79719601702737,21.141841807603" IsSourceVirtualized="True" Weight="21" />
-    <Link Source="@54" Target="@30" Category="References" Bounds="1009.943359375,105,171.871459960938,442.676696777344" IsSourceVirtualized="True" Weight="5" />
-    <Link Source="@54" Target="@75" Category="References" Bounds="892.016666666668,92.4996496702387,21.0000000000001,0" IsSourceVirtualized="True" Weight="19" />
-    <Link Source="@55" Target="@30" Category="References" Bounds="896.546752929688,160,283.448486328125,388.455444335938" IsSourceVirtualized="True" Weight="3" />
-    <Link Source="@55" Target="@75" Category="References" Bounds="840.141851196267,113.874300368739,3.56315263706017,21.1254493015001" IsSourceVirtualized="True" Weight="21" />
-    <Link Source="@56" Target="@48" Category="References" Bounds="933.0693359375,385,241.814453125,110.7099609375" IsSourceVirtualized="True" Weight="5" />
-    <Link Source="@56" Target="@76" Category="References" Bounds="812.346666666666,372.499849670239,21.0000000000002,0" IsSourceVirtualized="True" Weight="19" />
-    <Link Source="@57" Target="@48" Category="References" Bounds="821.611267089844,440,350.999572753906,57.6857604980469" IsSourceVirtualized="True" Weight="3" />
-    <Link Source="@57" Target="@76" Category="References" Bounds="761.409803652765,393.801894729842,4.5209587700906,21.198054940397" IsSourceVirtualized="True" Weight="21" />
-    <Link Source="@58" Target="@66" Category="References" Bounds="270.710357666016,471.607330322266,915.647552490234,113.396392822266" IsSourceVirtualized="True" Weight="5" />
-    <Link Source="@58" Target="@77" Category="References" Bounds="141.96,597.50047843741,20.9999999999999,0" IsSourceVirtualized="True" Weight="19" />
-    <Link Source="@59" Target="@66" Category="References" Bounds="152.743728637695,471.55615234375,1041.94743347168,292.282104492188" IsSourceVirtualized="True" Weight="3" />
-    <Link Source="@59" Target="@77" Category="References" Bounds="91.2567236840227,618.781991624418,4.7625995990259,21.2185868129918" IsSourceVirtualized="True" Weight="19" />
-    <Link Source="@6" Target="@25" Category="Contains" FetchingParent="@6" />
-    <Link Source="@6" Target="@26" Category="Contains" FetchingParent="@6" />
+    <Link Source="@52" Target="@73" Category="Implements" Bounds="198.018325805664,260.5,45.4700012207031,0" Weight="1" />
+    <Link Source="@52" Target="@88" Category="References" Bounds="23.9905281066895,273,609.571605682373,362.329162597656" IsSourceVirtualized="True" Weight="31" />
+    <Link Source="@53" Target="@28" Category="References" Bounds="1269.43017578125,105,696.24560546875,569.119201660156" IsSourceVirtualized="True" Weight="5" />
+    <Link Source="@53" Target="@85" Category="References" Bounds="1284.31335449219,92.5,23.546630859375,0" IsSourceVirtualized="True" Weight="19" />
+    <Link Source="@54" Target="@28" Category="References" Bounds="1266.91320800781,161,691.388061523438,474.854248046875" IsSourceVirtualized="True" Weight="3" />
+    <Link Source="@54" Target="@85" Category="References" Bounds="1257.51977539063,108.421836853027,67.0880126953125,27.5781631469727" IsSourceVirtualized="True" Weight="21" />
+    <Link Source="@55" Target="@30" Category="References" Bounds="127.047302246094,532.381408691406,1706.51751708984,122.959167480469" IsSourceVirtualized="True" Weight="5" />
+    <Link Source="@55" Target="@86" Category="References" Bounds="150.169998168945,655.5,23.5466613769531,0" IsSourceVirtualized="True" Weight="19" />
+    <Link Source="@56" Target="@30" Category="References" Bounds="152.716659545898,537.87451171875,1680.84303283691,171.953002929688" IsSourceVirtualized="True" Weight="3" />
+    <Link Source="@56" Target="@86" Category="References" Bounds="126.009750366211,671.49609375,65.2423095703125,27.50390625" IsSourceVirtualized="True" Weight="21" />
+    <Link Source="@57" Target="@32" Category="References" Bounds="542.056884765625,724.711120605469,1315.36743164063,486.019958496094" IsSourceVirtualized="True" Weight="5" />
+    <Link Source="@57" Target="@87" Category="References" Bounds="560.510009765625,991.5,23.546630859375,0" IsSourceVirtualized="True" Weight="19" />
+    <Link Source="@58" Target="@32" Category="References" Bounds="563.019897460938,724.668884277344,1313.01696777344,488.628723144531" IsSourceVirtualized="True" Weight="3" />
+    <Link Source="@58" Target="@87" Category="References" Bounds="536.817138671875,1007.50964355469,64.9149169921875,27.4903564453125" IsSourceVirtualized="True" Weight="21" />
+    <Link Source="@59" Target="@51" Category="References" Bounds="577.032287597656,506.403106689453,1554.24871826172,192.596893310547" IsSourceVirtualized="True" Weight="5" />
+    <Link Source="@59" Target="@88" Category="References" Bounds="575.881408691406,671.455200195313,66.2501831054688,27.5447998046875" IsSourceVirtualized="True" Weight="19" />
+    <Link Source="@6" Target="(@3 @5 Type=ErrorViewModel)" Category="Contains" FetchingParent="@6" />
     <Link Source="@6" Target="@28" Category="Contains" FetchingParent="@6" />
     <Link Source="@6" Target="@30" Category="Contains" FetchingParent="@6" />
-    <Link Source="@6" Target="@48" Category="Contains" FetchingParent="@6" />
-    <Link Source="@6" Target="@66" Category="Contains" FetchingParent="@6" />
-    <Link Source="@6" Target="@68" Category="Contains" FetchingParent="@6" />
-    <Link Source="@6" Target="@70" Category="Contains" FetchingParent="@6" />
-    <Link Source="@6" Target="@81" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="@32" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="@51" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="@75" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="@80" Category="Contains" FetchingParent="@6" />
     <Link Source="@6" Target="@82" Category="Contains" FetchingParent="@6" />
-    <Link Source="@6" Target="@83" Category="Contains" FetchingParent="@6" />
-    <Link Source="@6" Target="@85" Category="Contains" FetchingParent="@6" />
-    <Link Source="@60" Target="@68" Category="References" Bounds="968.96630859375,417.892456054688,221.374267578125,167.107543945313" IsSourceVirtualized="True" Weight="5" />
-    <Link Source="@60" Target="@78" Category="References" Bounds="837.346666666667,597.500344512793,21,1.37018616896967E-06" IsSourceVirtualized="True" Weight="19" />
-    <Link Source="@61" Target="@68" Category="References" Bounds="851.62451171875,417.876495361328,341.33203125,222.123809814453" IsSourceVirtualized="True" Weight="3" />
-    <Link Source="@61" Target="@78" Category="References" Bounds="787.310585887095,618.717969440108,5.46055630779813,21.2824714527833" IsSourceVirtualized="True" Weight="21" />
-    <Link Source="@62" Target="@70" Category="References" Bounds="690.759521484375,18.120735168457,474.009033203125,306.99925994873" IsSourceVirtualized="True" Weight="5" />
-    <Link Source="@62" Target="@79" Category="References" Bounds="562.76,92.4993408928916,20.9999999999998,0" IsSourceVirtualized="True" Weight="19" />
-    <Link Source="@63" Target="@70" Category="References" Bounds="596.713439941406,160,567.170959472656,165.537017822266" IsSourceVirtualized="True" Weight="3" />
-    <Link Source="@63" Target="@79" Category="References" Bounds="516.40992308026,113.236350284038,9.58167783501096,21.7630906088534" IsSourceVirtualized="True" Weight="19" />
-    <Link Source="@64" Target="@80" Category="References" Bounds="141.96,372.499961694369,21.0000000000002,4.59733075786062E-06" IsSourceVirtualized="True" Weight="19" />
-    <Link Source="@64" Target="@81" Category="References" Bounds="246.400848388672,296.180267333984,926.723907470703,63.8197326660156" IsSourceVirtualized="True" Weight="5" />
-    <Link Source="@65" Target="@80" Category="References" Bounds="90.1651884473498,393.86905942034,3.64413365388255,21.1310190170697" IsSourceVirtualized="True" Weight="21" />
-    <Link Source="@65" Target="@81" Category="References" Bounds="132.756744384766,300.774108886719,1041.61019897461,231.21875" IsSourceVirtualized="True" Weight="3" />
-    <Link Source="@66" Target="@25" Category="InheritsFrom" Bounds="1264.12268066406,415.305206298828,85.9512939453125,28.1947937011719" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@6" Target="@93" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="@94" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="@95" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="@97" Category="Contains" FetchingParent="@6" />
+    <Link Source="@60" Target="@51" Category="References" Bounds="579.81982421875,503.899230957031,1552.69067382813,139.100769042969" IsSourceVirtualized="True" Weight="3" />
+    <Link Source="@60" Target="@88" Category="References" Bounds="604.026672363281,655.5,21,0" IsSourceVirtualized="True" Weight="21" />
+    <Link Source="@61" Target="@75" Category="References" Bounds="1013.81311035156,725.503356933594,971.750732421875,420.395324707031" IsSourceVirtualized="True" Weight="5" />
+    <Link Source="@61" Target="@89" Category="References" Bounds="987.760314941406,1007.44177246094,66.5851440429688,27.5582275390625" IsSourceVirtualized="True" Weight="19" />
+    <Link Source="@62" Target="@75" Category="References" Bounds="993.721008300781,725.508178710938,980.101623535156,348.13720703125" IsSourceVirtualized="True" Weight="3" />
+    <Link Source="@62" Target="@89" Category="References" Bounds="1016.38336181641,991.5,20.9999389648438,0" IsSourceVirtualized="True" Weight="19" />
+    <Link Source="@63" Target="@80" Category="References" Bounds="1010.13128662109,536.40771484375,825.149597167969,106.59228515625" IsSourceVirtualized="True" Weight="5" />
+    <Link Source="@63" Target="@90" Category="References" Bounds="1057.55334472656,655.5,23.546630859375,0" IsSourceVirtualized="True" Weight="19" />
+    <Link Source="@64" Target="@80" Category="References" Bounds="1058.60705566406,541.838073730469,776.674438476563,158.598205566406" IsSourceVirtualized="True" Weight="3" />
+    <Link Source="@64" Target="@90" Category="References" Bounds="1030.10473632813,671.40380859375,67.54736328125,27.59619140625" IsSourceVirtualized="True" Weight="21" />
+    <Link Source="@65" Target="@82" Category="References" Bounds="178.701675415039,439.690521240234,1845.62437438965,777.240875244141" IsSourceVirtualized="True" Weight="5" />
+    <Link Source="@65" Target="@91" Category="References" Bounds="143.546569824219,1007.20062255859,73.0602111816406,27.7993774414063" IsSourceVirtualized="True" Weight="19" />
+    <Link Source="@66" Target="@82" Category="References" Bounds="156.795715332031,436.954528808594,1869.31353759766,777.614685058594" IsSourceVirtualized="True" Weight="3" />
+    <Link Source="@66" Target="@91" Category="References" Bounds="181.389999389648,991.5,21,0" IsSourceVirtualized="True" Weight="19" />
+    <Link Source="@67" Target="@92" Category="References" Bounds="593.583312988281,92.5,23.5466918945313,0" IsSourceVirtualized="True" Weight="19" />
+    <Link Source="@67" Target="@93" Category="References" Bounds="577.254333496094,105,1491.58477783203,421.183471679688" IsSourceVirtualized="True" Weight="5" />
+    <Link Source="@69" Target="@92" Category="References" Bounds="569.728637695313,108.504936218262,65.0282592773438,27.4950637817383" IsSourceVirtualized="True" Weight="21" />
+    <Link Source="@69" Target="@93" Category="References" Bounds="573.195922851563,161,1398.24279785156,370.28173828125" IsSourceVirtualized="True" Weight="3" />
+    <Link Source="@76" Target="@26" Category="Implements" Bounds="148.54296875,332.705505371094,140.552764892578,83.2944946289063" Weight="1" />
+    <Link Source="@76" Target="@38" Category="CodeSchema_Calls" Bounds="173.876770019531,441,885.406555175781,640.260131835938" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="References" />
     </Link>
-    <Link Source="@67" Target="@36" Category="References" Bounds="-7.71806526184082,215,75.8690586090088,472.114685058594" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@67" Target="@44" Category="References" Bounds="-3.35987114906311,215,189.476570367813,418.280151367188" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@76" Target="@46" Category="CodeSchema_Calls" Bounds="-15.9269466400146,441,1047.40057945251,777.021728515625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@67" Target="@58" Category="References" Bounds="-1.916956782341,215,162.986430048943,363.488464355469" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@76" Target="@61" Category="CodeSchema_Calls" Bounds="160.202560424805,441,869.943923950195,590.319946289063" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@67" Target="@59" Category="References" Bounds="-6.26136302947998,215,77.8306226730347,416.895141601563" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@76" Target="@62" Category="CodeSchema_Calls" Bounds="-13.159234046936,441,912.412957191467,529.857727050781" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="References" />
     </Link>
-    <Link Source="@67" Target="@77" Category="References" Bounds="-4.80836725234985,215,79.7958931922913,361.462158203125" IsSourceVirtualized="True" Weight="31" />
-    <Link Source="@68" Target="@25" Category="InheritsFrom" Bounds="1274.77331542969,400,34.6300048828125,0" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@69" Target="@37" Category="References" Bounds="-0.481074810028076,246.661880493164,736.561091899872,440.19401550293" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@69" Target="@45" Category="References" Bounds="152.113098144531,270,912.041809082031,364.980224609375" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_FieldWrite" />
-    </Link>
-    <Link Source="@69" Target="@60" Category="References" Bounds="148.460998535156,270,708.087707519531,308.442321777344" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_FieldWrite" />
-    </Link>
-    <Link Source="@69" Target="@61" Category="References" Bounds="141.156768798828,270,594.862396240234,361.8837890625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@69" Target="@78" Category="References" Bounds="144.808883666992,270,593.324417114258,306.200256347656" IsSourceVirtualized="True" Weight="31" />
-    <Link Source="@70" Target="@25" Category="InheritsFrom" Bounds="1264.12268066406,356.5,85.9512939453125,28.1947937011719" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@70" Target="@81" Category="References" Bounds="1226.01666666667,309.5,0,22" IsSourceVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_ReturnTypeLink" />
-    </Link>
-    <Link Source="@71" Target="@38" Category="References" Bounds="390.664886474609,266.154571533203,61.425048828125,2.93728637695313" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@71" Target="@46" Category="References" Bounds="359.404449462891,215.054183959961,95.4340209960938,29.9458160400391" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_FieldWrite" />
-    </Link>
-    <Link Source="@71" Target="@62" Category="References" Bounds="348.60888671875,111.666038513184,234.341674804688,133.333961486816" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_FieldWrite" />
-    </Link>
-    <Link Source="@71" Target="@63" Category="References" Bounds="354.006683349609,168.219985961914,108.062377929688,76.7800140380859" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@71" Target="@79" Category="References" Bounds="343.211090087891,37.5998191833496,203.825286865234,207.40018081665" IsSourceVirtualized="True" Weight="31" />
-    <Link Source="@73" Target="@25" Category="CodeSchema_Calls" Bounds="465.542907714844,38.0075302124023,1001.72735595703,546.992469787598" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@73" Target="@26" Category="References" Bounds="464.819976806641,529.139099121094,713.320892333984,130.437255859375" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="13">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="InheritsFrom" />
-    </Link>
-    <Link Source="@74" Target="@25" Category="CodeSchema_Calls" Bounds="446.46044921875,296.347015380859,869.234741210938,84.4664611816406" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@74" Target="@28" Category="References" Bounds="452.312713623047,385,726.307891845703,220.614501953125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="17">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="InheritsFrom" />
-    </Link>
-    <Link Source="@75" Target="@25" Category="CodeSchema_Calls" Bounds="864.090454101563,21.7054100036621,454.052124023438,357.894535064697" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@75" Target="@30" Category="References" Bounds="869.800354003906,105,312.330505371094,442.575500488281" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="11">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="InheritsFrom" />
-    </Link>
-    <Link Source="@76" Target="@25" Category="CodeSchema_Calls" Bounds="793.919860839844,385,534.769714355469,43.1143188476563" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@76" Target="@48" Category="References" Bounds="786.460083007813,385,391.472534179688,107.677673339844" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="InheritsFrom" />
-    </Link>
-    <Link Source="@77" Target="@25" Category="CodeSchema_Calls" Bounds="114.5166015625,35.8430595397949,1356.12194824219,549.156940460205" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@77" Target="@66" Category="References" Bounds="118.957504272461,470.289245605469,1063.59815979004,114.710754394531" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="InheritsFrom" />
-    </Link>
-    <Link Source="@78" Target="@25" Category="CodeSchema_Calls" Bounds="817.228271484375,413.655853271484,526.998291015625,171.344146728516" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@78" Target="@68" Category="References" Bounds="814.70556640625,417.489471435547,368.444091796875,167.510528564453" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="InheritsFrom" />
-    </Link>
-    <Link Source="@79" Target="@25" Category="CodeSchema_Calls" Bounds="535.13671875,16.0771064758301,784.151977539063,363.225505828857" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@79" Target="@70" Category="References" Bounds="538.889465332031,105,625.615417480469,220.496978759766" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="InheritsFrom" />
-    </Link>
-    <Link Source="@8" Target="@27" Category="Contains" FetchingParent="@8" />
+    <Link Source="@76" Target="@74" Category="Implements" Bounds="170.36328125,441,102.721740722656,28.4632263183594" Weight="1" />
+    <Link Source="@76" Target="@89" Category="References" Bounds="187.545013427734,441,859.049102783203,529.979187011719" IsSourceVirtualized="True" Weight="31" />
+    <Link Source="@8" Target="@26" Category="Contains" FetchingParent="@8" />
     <Link Source="@8" Target="@29" Category="Contains" FetchingParent="@8" />
     <Link Source="@8" Target="@31" Category="Contains" FetchingParent="@8" />
-    <Link Source="@8" Target="@49" Category="Contains" FetchingParent="@8" />
-    <Link Source="@8" Target="@67" Category="Contains" FetchingParent="@8" />
-    <Link Source="@8" Target="@69" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@33" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@52" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@70" Category="Contains" FetchingParent="@8" />
     <Link Source="@8" Target="@71" Category="Contains" FetchingParent="@8" />
-    <Link Source="@8" Target="@84" Category="Contains" FetchingParent="@8" />
-    <Link Source="@80" Target="@25" Category="CodeSchema_Calls" Bounds="118.898750305176,296.349548339844,1198.05474090576,83.7422790527344" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@80" Target="@81" Category="References" Bounds="118.781723022461,298.561859130859,1055.14710998535,61.4381408691406" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="27">
+    <Link Source="@8" Target="@72" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@73" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@74" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@76" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@77" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@78" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@79" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@81" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@83" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@96" Category="Contains" FetchingParent="@8" />
+    <Link Source="@80" Target="@97" Category="References" Bounds="1867.03662109375,499.747955322266,22.16015625,28.5645446777344" IsSourceVirtualized="True" Weight="4" />
+    <Link Source="@81" Target="@26" Category="Implements" Bounds="147.807464599609,217,148.679046630859,82.3951110839844" Weight="1" />
+    <Link Source="@81" Target="@39" Category="CodeSchema_Calls" Bounds="166.935501098633,217,1083.30534362793,531.273376464844" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@81" Target="@47" Category="CodeSchema_Calls" Bounds="157.953582763672,217,936.067169189453,528.205383300781" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@81" Target="@63" Category="CodeSchema_Calls" Bounds="157.553115844727,181.8701171875,785.090744018555,452.724792480469" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@81" Target="@64" Category="CodeSchema_Calls" Bounds="173.724456787109,184.600524902344,766.485748291016,505.942932128906" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@81" Target="@77" Category="Implements" Bounds="200.399993896484,204.5,40.7066802978516,0" Weight="1" />
+    <Link Source="@81" Target="@90" Category="References" Bounds="175.917419433594,217,916.485900878906,417.269104003906" IsSourceVirtualized="True" Weight="31" />
+    <Link Source="@82" Target="@93" Category="References" Bounds="2054.3115234375,496.625,29.72509765625,28.1739501953125" IsSourceVirtualized="True" Weight="4">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@83" Target="@26" Category="Implements" Bounds="210.503326416016,316.5,37.5066680908203,0" Weight="1" />
+    <Link Source="@83" Target="@40" Category="CodeSchema_Calls" Bounds="-32.7856903076172,328.999908447266,79.0819778442383,807.908294677734" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@83" Target="@48" Category="CodeSchema_Calls" Bounds="-30.0142555236816,328.999938964844,231.908145904541,753.588317871094" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@83" Target="@65" Category="CodeSchema_Calls" Bounds="-27.243766784668,328.999969482422,78.8454284667969,698.011260986328" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@83" Target="@66" Category="CodeSchema_Calls" Bounds="-24.4741458892822,328.999969482422,78.728494644165,642.428619384766" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@83" Target="@78" Category="Implements" Bounds="170.36328125,329,102.721740722656,28.4632263183594" Weight="1" />
+    <Link Source="@83" Target="@91" Category="References" Bounds="-21.7053680419922,329,232.017593383789,642.728820800781" IsSourceVirtualized="True" Weight="31" />
+    <Link Source="@85" Target="@28" Category="References" Bounds="1382.02404785156,105,579.64111328125,529.116882324219" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="13">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="InheritsFrom" />
     </Link>
-    <Link Source="@81" Target="@25" Category="InheritsFrom" Bounds="1245.06970214844,300.5,125.083862304688,82.0630798339844" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@86" Target="@30" Category="References" Bounds="255.544479370117,535.129821777344,1578.01789855957,142.843383789063" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="17">
       <Category Ref="CodeSchema_Calls" />
+      <Category Ref="InheritsFrom" />
     </Link>
-    <Link Source="@81" Target="@26" Category="References" Bounds="1252.53369140625,300.5,40.1612548828125,362.105346679688" IsSourceVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_ReturnTypeLink" />
-    </Link>
-    <Link Source="@81" Target="@28" Category="References" Bounds="1252.53369140625,300.5,40.0518798828125,306.111511230469" IsSourceVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_ReturnTypeLink" />
-    </Link>
-    <Link Source="@81" Target="@48" Category="References" Bounds="1252.53369140625,300.5,40.011474609375,194.415557861328" IsSourceVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_ReturnTypeLink" />
-    </Link>
-    <Link Source="@81" Target="@66" Category="References" Bounds="1252.53369140625,300.5,40.43310546875,138.570831298828" IsSourceVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_ReturnTypeLink" />
-    </Link>
-    <Link Source="@82" Target="@25" Category="InheritsFrom" Bounds="1239.53015136719,244.5,138.421630859375,136.618988037109" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@87" Target="@32" Category="References" Bounds="679.278564453125,724.786254882813,1159.80090332031,296.251159667969" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="11">
       <Category Ref="CodeSchema_Calls" />
+      <Category Ref="InheritsFrom" />
     </Link>
-    <Link Source="@82" Target="@26" Category="References" Bounds="1246.9189453125,244.5,45.0316162109375,418.145324707031" IsSourceVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_ReturnTypeLink" />
-    </Link>
-    <Link Source="@82" Target="@81" Category="References" Bounds="1226.01666666667,244.5,0,22" IsSourceVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_ReturnTypeLink" />
-    </Link>
-    <Link Source="@83" Target="@25" Category="InheritsFrom" Bounds="1249.61975097656,188.5,136.069580078125,191.083709716797" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@88" Target="@51" Category="References" Bounds="709.158020019531,555.124389648438,1420.95477294922,87.8756103515625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7">
       <Category Ref="CodeSchema_Calls" />
+      <Category Ref="InheritsFrom" />
     </Link>
-    <Link Source="@83" Target="@28" Category="References" Bounds="1253.55651855469,188.5,41.801513671875,418.016540527344" IsSourceVirtualized="True" Weight="4">
+    <Link Source="@89" Target="@75" Category="References" Bounds="1127.63354492188,725.517395019531,834.452758789063,253.482604980469" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@90" Target="@80" Category="References" Bounds="1168.20617675781,539.122863769531,667.075073242188,103.877136230469" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@91" Target="@82" Category="References" Bounds="286.75439453125,434.177490234375,1741.20092773438,644.121826171875" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@92" Target="@93" Category="References" Bounds="695.717224121094,105,1378.54595947266,420.9140625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="27">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@93" Target="@51" Category="References" Bounds="2059.30517578125,551.118347167969,93.159423828125,29.266357421875" IsSourceVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@83" Target="@81" Category="References" Bounds="1253.55651855469,188.5,44.7100830078125,83.257568359375" IsSourceVirtualized="True" Weight="4">
+    <Link Source="@93" Target="@75" Category="References" Bounds="2054.40502929688,553.3125,48.631591796875,142.378967285156" IsSourceVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@84" Target="@39" Category="References" Bounds="-9.2759256362915,105,243.211548805237,356.793060302734" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@93" Target="@94" Category="References" Bounds="2033.23620605469,553.3125,11.35400390625,26.62255859375" IsSourceVirtualized="True" Weight="4" />
+    <Link Source="@93" Target="@95" Category="References" Bounds="1902.89465332031,553.3125,78.742919921875,28.6137084960938" IsSourceVirtualized="True" Weight="4" />
+    <Link Source="@93" Target="@97" Category="References" Bounds="1956.53332519531,501.893127441406,39.65771484375,26.4193725585938" IsSourceVirtualized="True" Weight="4" />
+    <Link Source="@94" Target="@28" Category="References" Bounds="2027.23620605469,610,12.0504150390625,26.0377197265625" IsSourceVirtualized="True" Weight="4">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@84" Target="@47" Category="References" Bounds="150.357162475586,105,103.761276245117,303.699462890625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@94" Target="@93" Category="References" Bounds="1985.97424316406,558.929870605469,9.5089111328125,26.0701293945313" IsSourceVirtualized="True" Weight="4">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@95" Target="@30" Category="References" Bounds="1889.1435546875,610,24.635986328125,25.8786010742188" IsSourceVirtualized="True" Weight="4">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@95" Target="@93" Category="References" Bounds="1860.03662109375,550.546997070313,103.055053710938,34.4530029296875" IsSourceVirtualized="True" Weight="4">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@96" Target="@26" Category="Implements" Bounds="158.363006591797,332.371002197266,127.172271728516,139.628997802734" Weight="1" />
+    <Link Source="@96" Target="@41" Category="CodeSchema_Calls" Bounds="166.623947143555,218.554489135742,485.813735961914,306.000198364258" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@96" Target="@50" Category="CodeSchema_Calls" Bounds="168.809494018555,221.153350830078,331.163925170898,250.846649169922" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@84" Target="@64" Category="References" Bounds="250.448669433594,105,176.925323486328,251.471496582031" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@96" Target="@67" Category="CodeSchema_Calls" Bounds="150.331481933594,109.974449157715,349.609680175781,362.025550842285" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_FieldWrite" />
+      <Category Ref="References" />
     </Link>
-    <Link Source="@84" Target="@65" Category="References" Bounds="-7.36780738830566,105,248.031045913696,301.647979736328" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@96" Target="@69" Category="CodeSchema_Calls" Bounds="159.570495605469,165.39323425293,343.021881103516,306.60676574707" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="References" />
     </Link>
-    <Link Source="@84" Target="@80" Category="References" Bounds="5.3040246963501,105,242.086813926697,253.254638671875" IsSourceVirtualized="True" Weight="31" />
-    <Link Source="@85" Target="@25" Category="InheritsFrom" Bounds="1247.79113769531,132.5,139.965576171875,246.738891601563" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@85" Target="@68" Category="References" Bounds="1159.60021972656,132.5,40.1688232421875,251.727935791016" IsSourceVirtualized="True" Weight="4">
+    <Link Source="@96" Target="@79" Category="Implements" Bounds="170.36328125,497,102.721740722656,28.4631958007813" Weight="1" />
+    <Link Source="@96" Target="@92" Category="References" Bounds="183.848175048828,110.877044677734,462.337677001953,410.927154541016" IsSourceVirtualized="True" Weight="31" />
+    <Link Source="@97" Target="@80" Category="References" Bounds="1917.39465332031,496.625,14.6419677734375,26.2325439453125" IsSourceVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@85" Target="@81" Category="References" Bounds="1154.68676757813,132.5,45.082275390625,139.229797363281" IsSourceVirtualized="True" Weight="4">
+    <Link Source="@97" Target="@93" Category="References" Bounds="1983.63537597656,496.625,52.5313720703125,24.5769653320313" IsSourceVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
   </Links>
@@ -461,11 +558,15 @@
     <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
     <Category Id="CodeSchema_FieldReference" Label="Field Reference" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References Fields" />
     <Category Id="CodeSchema_FieldWrite" Label="Field Write" BasedOn="CodeSchema_FieldReference" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Written By" OutgoingActionLabel="Writes Fields" />
+    <Category Id="CodeSchema_Interface" Label="Interface" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Interface" NavigationActionLabel="Interfaces" />
+    <Category Id="CodeSchema_Member" Label="Member" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Field" NavigationActionLabel="Members" />
+    <Category Id="CodeSchema_Method" Label="Method" BasedOn="CodeSchema_Member" CanBeDataDriven="True" DefaultAction="Link:Forward:CodeSchema_Calls" Icon="CodeSchema_Method" NavigationActionLabel="Methods" />
     <Category Id="CodeSchema_Namespace" Label="Namespace" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Type" Icon="CodeSchema_Namespace" NavigationActionLabel="Namespaces" />
     <Category Id="CodeSchema_ReturnTypeLink" Label="Return" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Return types" OutgoingActionLabel="Return types" />
     <Category Id="CodeSchema_Type" Label="Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Types" />
     <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
     <Category Id="File" Label="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="File" NavigationActionLabel="Files" />
+    <Category Id="Implements" Label="Implements" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Implemented by" OutgoingActionLabel="Implements" />
     <Category Id="InheritsFrom" Label="Inherits From" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Inherited By" OutgoingActionLabel="Inherits From" />
     <Category Id="References" Label="References" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
   </Categories>
@@ -476,8 +577,10 @@
     <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsAbstract" Label="Is Abstract" Description="Flag to indicate member is 'Abstract' does not provide a full implementation" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsGeneric" Label="Is Generic" Description="Flag to indicate the member is 'Generic'" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsInternal" Label="Is Internal" Description="Flag to indicate the method is 'Internal'" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsStatic" Label="Is Static" Description="Flag to indicate the member is a static member" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsVirtual" Label="Is Virtual" Description="Flag to indicate the method can be overridden" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_StrongName" Label="StrongName" Description="StrongName" DataType="System.String" />
     <Property Id="CommonLabel" DataType="System.String" />
     <Property Id="DataVirtualized" Label="Data Virtualized" Description="If true, the graph can contain nodes and links that represent data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
@@ -485,13 +588,14 @@
     <Property Id="DelayedChildNodesState" Label="Delayed Child Nodes State" Description="Unspecified if the delayed child nodes state is not specified. NotFetched if the group contains child nodes that are not fetched into the graph yet. Fetched if the group has all its delayed child nodes already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
     <Property Id="DelayedCrossGroupLinksState" Label="Delayed Cross-Group Links State" Description="Unspecified if the delayed cross-group links state is not specified. NotFetched if delayed cross-group links on this node are not fetched into the graph yet. Fetched if all delayed cross-group links have already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
     <Property Id="Expression" DataType="System.String" />
+    <Property Id="FetchedChildrenCount" DataType="System.Int32" />
     <Property Id="FetchingParent" DataType="Microsoft.VisualStudio.GraphModel.GraphNodeId" />
     <Property Id="FilePath" Label="File Path" Description="File Path" DataType="System.String" />
     <Property Id="FilterState" DataType="System.String" />
     <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
     <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
     <Property Id="GroupLabel" DataType="System.String" />
-    <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
+    <Property Id="Icon" Label="Icon" DataType="System.String" />
     <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
     <Property Id="IsContainment" DataType="System.Boolean" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
@@ -499,6 +603,7 @@
     <Property Id="IsTargetVirtualized" Label="Link Target Virtualized" Description="If true, the link target end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
     <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
     <Property Id="Layout" DataType="System.String" />
+    <Property Id="LayoutSettings" DataType="Microsoft.VisualStudio.Diagrams.View.GroupLayoutStyle" />
     <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
     <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
     <Property Id="SourceLocation" Label="Start Line Number" DataType="Microsoft.VisualStudio.GraphModel.CodeSchema.SourceLocation" />
@@ -512,6 +617,7 @@
   <QualifiedNames>
     <Name Id="Assembly" Label="Assembly" ValueType="Uri" />
     <Name Id="GenericParameterCount" Label="Generic Parameter Count" ValueType="System.String" />
+    <Name Id="Member" Label="Member" ValueType="System.Object" />
     <Name Id="Name" Label="Name" ValueType="System.String" />
     <Name Id="Namespace" Label="Namespace" ValueType="System.String" />
     <Name Id="Type" Label="Type" ValueType="System.Object" />
@@ -541,67 +647,79 @@
     <Alias n="22" Id="(@1 @21)" />
     <Alias n="23" Id="Namespace=MusicPlayer.UWP.Controllers.Song" />
     <Alias n="24" Id="(@1 @23)" />
-    <Alias n="25" Id="(@3 @5 Type=(Name=BaseEntity GenericParameterCount=1))" />
-    <Alias n="26" Id="(@3 @5 Type=Album)" />
-    <Alias n="27" Id="(@1 @7 Type=AlbumController)" />
-    <Alias n="28" Id="(@3 @5 Type=Artist)" />
-    <Alias n="29" Id="(@1 @7 Type=ArtistController)" />
-    <Alias n="30" Id="(@3 @5 Type=Band)" />
-    <Alias n="31" Id="(@1 @7 Type=BandController)" />
-    <Alias n="32" Id="(@1 @9 Type=CreateAlbum)" />
-    <Alias n="33" Id="(@1 @11 Type=CreateArtist)" />
-    <Alias n="34" Id="(@1 @13 Type=CreateBand)" />
-    <Alias n="35" Id="(@1 @15 Type=CreateGenre)" />
-    <Alias n="36" Id="(@1 @17 Type=CreateImage)" />
-    <Alias n="37" Id="(@1 @19 Type=CreatePlaylist)" />
-    <Alias n="38" Id="(@1 @21 Type=CreatePlayQueue)" />
-    <Alias n="39" Id="(@1 @23 Type=CreateSong)" />
-    <Alias n="40" Id="(@1 @9 Type=DeleteAlbum)" />
-    <Alias n="41" Id="(@1 @11 Type=DeleteArtist)" />
-    <Alias n="42" Id="(@1 @13 Type=DeleteBand)" />
-    <Alias n="43" Id="(@1 @15 Type=DeleteGenre)" />
-    <Alias n="44" Id="(@1 @17 Type=DeleteImage)" />
-    <Alias n="45" Id="(@1 @19 Type=DeletePlaylist)" />
-    <Alias n="46" Id="(@1 @21 Type=DeletePlayQueue)" />
-    <Alias n="47" Id="(@1 @23 Type=DeleteSong)" />
-    <Alias n="48" Id="(@3 @5 Type=Genre)" />
-    <Alias n="49" Id="(@1 @7 Type=GenreController)" />
-    <Alias n="50" Id="(@1 @9 Type=GetAlbum)" />
-    <Alias n="51" Id="(@1 @9 Type=GetAlbums)" />
-    <Alias n="52" Id="(@1 @11 Type=GetArtist)" />
-    <Alias n="53" Id="(@1 @11 Type=GetArtists)" />
-    <Alias n="54" Id="(@1 @13 Type=GetBand)" />
-    <Alias n="55" Id="(@1 @13 Type=GetBands)" />
-    <Alias n="56" Id="(@1 @15 Type=GetGenre)" />
-    <Alias n="57" Id="(@1 @15 Type=GetGenres)" />
-    <Alias n="58" Id="(@1 @17 Type=GetImage)" />
-    <Alias n="59" Id="(@1 @17 Type=GetImages)" />
-    <Alias n="60" Id="(@1 @19 Type=GetPlaylist)" />
-    <Alias n="61" Id="(@1 @19 Type=GetPlaylists)" />
-    <Alias n="62" Id="(@1 @21 Type=GetPlayQueue)" />
-    <Alias n="63" Id="(@1 @21 Type=GetPlayQueues)" />
-    <Alias n="64" Id="(@1 @23 Type=GetSong)" />
-    <Alias n="65" Id="(@1 @23 Type=GetSongs)" />
-    <Alias n="66" Id="(@3 @5 Type=Image)" />
-    <Alias n="67" Id="(@1 @7 Type=ImageController)" />
-    <Alias n="68" Id="(@3 @5 Type=Playlist)" />
-    <Alias n="69" Id="(@1 @7 Type=PlaylistController)" />
-    <Alias n="70" Id="(@3 @5 Type=PlayQueue)" />
-    <Alias n="71" Id="(@1 @7 Type=PlayQueueController)" />
-    <Alias n="72" Id="Type=Result" />
-    <Alias n="73" Id="(@1 @9 @72)" />
-    <Alias n="74" Id="(@1 @11 @72)" />
-    <Alias n="75" Id="(@1 @13 @72)" />
-    <Alias n="76" Id="(@1 @15 @72)" />
-    <Alias n="77" Id="(@1 @17 @72)" />
-    <Alias n="78" Id="(@1 @19 @72)" />
-    <Alias n="79" Id="(@1 @21 @72)" />
-    <Alias n="80" Id="(@1 @23 @72)" />
-    <Alias n="81" Id="(@3 @5 Type=Song)" />
-    <Alias n="82" Id="(@3 @5 Type=SongAlbum)" />
-    <Alias n="83" Id="(@3 @5 Type=SongArtist)" />
-    <Alias n="84" Id="(@1 @7 Type=SongController)" />
-    <Alias n="85" Id="(@3 @5 Type=SongPlaylist)" />
+    <Alias n="25" Id="(@1 Namespace=MusicPlayer.UWP.Controllers.ZMisc)" />
+    <Alias n="26" Id="(@1 @7 Type=(Name=IController GenericParameterCount=1))" />
+    <Alias n="27" Id="(@1 Namespace=MusicPlayer.UWP.Controllers.ZMisc Type=(Name=ICreateResultData GenericParameterCount=1))" />
+    <Alias n="28" Id="(@3 @5 Type=Album)" />
+    <Alias n="29" Id="(@1 @7 Type=AlbumController)" />
+    <Alias n="30" Id="(@3 @5 Type=Artist)" />
+    <Alias n="31" Id="(@1 @7 Type=ArtistController)" />
+    <Alias n="32" Id="(@3 @5 Type=Band)" />
+    <Alias n="33" Id="(@1 @7 Type=BandController)" />
+    <Alias n="34" Id="(@1 @9 Type=CreateAlbum)" />
+    <Alias n="35" Id="(@1 @11 Type=CreateArtist)" />
+    <Alias n="36" Id="(@1 @13 Type=CreateBand)" />
+    <Alias n="37" Id="(@1 @15 Type=CreateGenre)" />
+    <Alias n="38" Id="(@1 @17 Type=CreateImage)" />
+    <Alias n="39" Id="(@1 @19 Type=CreatePlaylist)" />
+    <Alias n="40" Id="(@1 @21 Type=CreatePlayQueue)" />
+    <Alias n="41" Id="(@1 @23 Type=CreateSong)" />
+    <Alias n="42" Id="(@1 @9 Type=DeleteAlbum)" />
+    <Alias n="43" Id="(@1 @11 Type=DeleteArtist)" />
+    <Alias n="44" Id="(@1 @13 Type=DeleteBand)" />
+    <Alias n="45" Id="(@1 @15 Type=DeleteGenre)" />
+    <Alias n="46" Id="(@1 @17 Type=DeleteImage)" />
+    <Alias n="47" Id="(@1 @19 Type=DeletePlaylist)" />
+    <Alias n="48" Id="(@1 @21 Type=DeletePlayQueue)" />
+    <Alias n="49" Id="Type=DeleteSong" />
+    <Alias n="50" Id="(@1 @23 @49)" />
+    <Alias n="51" Id="(@3 @5 Type=Genre)" />
+    <Alias n="52" Id="(@1 @7 Type=GenreController)" />
+    <Alias n="53" Id="(@1 @9 Type=GetAlbum)" />
+    <Alias n="54" Id="(@1 @9 Type=GetAlbums)" />
+    <Alias n="55" Id="(@1 @11 Type=GetArtist)" />
+    <Alias n="56" Id="(@1 @11 Type=GetArtists)" />
+    <Alias n="57" Id="(@1 @13 Type=GetBand)" />
+    <Alias n="58" Id="(@1 @13 Type=GetBands)" />
+    <Alias n="59" Id="(@1 @15 Type=GetGenre)" />
+    <Alias n="60" Id="(@1 @15 Type=GetGenres)" />
+    <Alias n="61" Id="(@1 @17 Type=GetImage)" />
+    <Alias n="62" Id="(@1 @17 Type=GetImages)" />
+    <Alias n="63" Id="(@1 @19 Type=GetPlaylist)" />
+    <Alias n="64" Id="(@1 @19 Type=GetPlaylists)" />
+    <Alias n="65" Id="(@1 @21 Type=GetPlayQueue)" />
+    <Alias n="66" Id="(@1 @21 Type=GetPlayQueues)" />
+    <Alias n="67" Id="(@1 @23 Type=GetSong)" />
+    <Alias n="68" Id="Type=GetSongs" />
+    <Alias n="69" Id="(@1 @23 @68)" />
+    <Alias n="70" Id="(@1 @7 Type=IAlbumController)" />
+    <Alias n="71" Id="(@1 @7 Type=IArtistController)" />
+    <Alias n="72" Id="(@1 @7 Type=IBandController)" />
+    <Alias n="73" Id="(@1 @7 Type=IGenreController)" />
+    <Alias n="74" Id="(@1 @7 Type=IImageController)" />
+    <Alias n="75" Id="(@3 @5 Type=Image)" />
+    <Alias n="76" Id="(@1 @7 Type=ImageController)" />
+    <Alias n="77" Id="(@1 @7 Type=IPlaylistController)" />
+    <Alias n="78" Id="(@1 @7 Type=IPlayQueueController)" />
+    <Alias n="79" Id="(@1 @7 Type=ISongController)" />
+    <Alias n="80" Id="(@3 @5 Type=Playlist)" />
+    <Alias n="81" Id="(@1 @7 Type=PlaylistController)" />
+    <Alias n="82" Id="(@3 @5 Type=PlayQueue)" />
+    <Alias n="83" Id="(@1 @7 Type=PlayQueueController)" />
+    <Alias n="84" Id="Type=Result" />
+    <Alias n="85" Id="(@1 @9 @84)" />
+    <Alias n="86" Id="(@1 @11 @84)" />
+    <Alias n="87" Id="(@1 @13 @84)" />
+    <Alias n="88" Id="(@1 @15 @84)" />
+    <Alias n="89" Id="(@1 @17 @84)" />
+    <Alias n="90" Id="(@1 @19 @84)" />
+    <Alias n="91" Id="(@1 @21 @84)" />
+    <Alias n="92" Id="(@1 @23 @84)" />
+    <Alias n="93" Id="(@3 @5 Type=Song)" />
+    <Alias n="94" Id="(@3 @5 Type=SongAlbum)" />
+    <Alias n="95" Id="(@3 @5 Type=SongArtist)" />
+    <Alias n="96" Id="(@1 @7 Type=SongController)" />
+    <Alias n="97" Id="(@3 @5 Type=SongPlaylist)" />
   </IdentifierAliases>
   <Styles>
     <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
@@ -738,13 +856,13 @@
       <Setter Property="StrokeDashArray" Value="2 2" />
       <Setter Property="DrawArrow" Value="true" />
     </Style>
-    <Style TargetType="Link" IsEnabled="false" GroupLabel="Calls" ValueLabel="True">
+    <Style TargetType="Link" GroupLabel="Calls" ValueLabel="True">
       <Condition Expression="HasCategory('CodeSchema_Calls')" />
       <Setter Property="Stroke" Value="#FFFF00FF" />
       <Setter Property="StrokeDashArray" Value="2 0" />
       <Setter Property="DrawArrow" Value="true" />
     </Style>
-    <Style TargetType="Link" IsEnabled="false" GroupLabel="Function Pointer" ValueLabel="True">
+    <Style TargetType="Link" GroupLabel="Function Pointer" ValueLabel="True">
       <Condition Expression="HasCategory('CodeSchema_FunctionPointer')" />
       <Setter Property="Stroke" Value="#FFFF00FF" />
       <Setter Property="StrokeDashArray" Value="2 2" />
@@ -794,10 +912,10 @@
       <Condition Expression="IsCurrentCallstackFrame" />
       <Setter Property="IndicatorWest" Value="WestIndicator" />
     </Style>
-    <Style TargetType="Link" IsEnabled="false" GroupLabel="Return" ValueLabel="True" Visibility="Hidden">
+    <Style TargetType="Link" GroupLabel="Return" ValueLabel="True" Visibility="Hidden">
       <Condition Expression="HasCategory('CodeSchema_ReturnTypeLink')" />
     </Style>
-    <Style TargetType="Link" IsEnabled="false" GroupLabel="References" ValueLabel="True" Visibility="Hidden">
+    <Style TargetType="Link" GroupLabel="References" ValueLabel="True" Visibility="Hidden">
       <Condition Expression="HasCategory('References')" />
     </Style>
     <Style TargetType="Link" GroupLabel="Uses Attribute" ValueLabel="True" Visibility="Hidden">

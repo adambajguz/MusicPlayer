@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
   <Class Name="MusicPlayer.UWP.CQRS.CommandDispatcher">
-    <Position X="6" Y="6.5" Width="4.75" />
+    <Position X="18.75" Y="11.25" Width="4.75" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CQRS\CommandDispatcher.cs</FileName>
@@ -9,7 +9,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="MusicPlayer.UWP.CQRS.QueryDispatcher">
-    <Position X="6" Y="8.75" Width="4" />
+    <Position X="14.25" Y="11.25" Width="4" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAABAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CQRS\QueryDispatcher.cs</FileName>
@@ -17,7 +17,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="MusicPlayer.UWP.AppStart.IocConfig">
-    <Position X="10.5" Y="9.5" Width="4.25" />
+    <Position X="6" Y="12" Width="4.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
       <FileName>AppStart\IocConfig.cs</FileName>
@@ -26,7 +26,7 @@
   <Class Name="MusicPlayer.UWP.Controllers.AlbumController" BaseTypeListCollapsed="true">
     <Position X="6" Y="0.5" Width="6" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAEAAEAAAAEAAEAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAACAAAAABBAAAEAgEAEAEEgAEAAAgAACAEgAAA=</HashCode>
       <FileName>Controllers\AlbumController.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -34,29 +34,29 @@
   <Class Name="MusicPlayer.UWP.Controllers.ArtistController" BaseTypeListCollapsed="true">
     <Position X="12.25" Y="0.5" Width="6.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAEAAEAAAAEAAEAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAACAAAAAABAAAEAAEAEAEEAAEAAAgAAAAEgAAA=</HashCode>
       <FileName>Controllers\ArtistController.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="MusicPlayer.UWP.Controllers.BandController" BaseTypeListCollapsed="true">
-    <Position X="12.25" Y="6.75" Width="6" />
+    <Position X="12.25" Y="7.75" Width="6" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAEAAEAAAAEAAEAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAABAAAEAQEAAAAEAAEAAAgAAAAEgAAA=</HashCode>
       <FileName>Controllers\BandController.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="MusicPlayer.UWP.Controllers.GenreController" BaseTypeListCollapsed="true">
-    <Position X="6" Y="3.5" Width="6" />
+    <Position X="6" Y="5.25" Width="6" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAEAAEAAAAEAAEAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAABAAAEAAEAAAEEAAEAAAgAAAAEgAAA=</HashCode>
       <FileName>Controllers\GenreController.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="MusicPlayer.UWP.Controllers.ImageController" BaseTypeListCollapsed="true">
-    <Position X="18.75" Y="6.75" Width="6" />
+    <Position X="6" Y="9.25" Width="6" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAABAAAEAAEAAAAEAAEAAAgAAAAAAAAA=</HashCode>
       <FileName>Controllers\ImageController.cs</FileName>
@@ -66,23 +66,23 @@
   <Class Name="MusicPlayer.UWP.Controllers.PlaylistController" BaseTypeListCollapsed="true">
     <Position X="18.75" Y="0.5" Width="6" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAEAAEAAAAEAAEAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAACAAAAABBAAAEAAEAEAEEgAEAAAgAAAAEgAAA=</HashCode>
       <FileName>Controllers\PlaylistController.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="MusicPlayer.UWP.Controllers.PlayQueueController" BaseTypeListCollapsed="true">
-    <Position X="12.25" Y="3.5" Width="6.25" />
+    <Position X="12.25" Y="4.5" Width="6.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAEAAEAAAAEAAEAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAAAAAAAAABAAAEAAEAAAAEAAEAAAgAAAAAAAAA=</HashCode>
       <FileName>Controllers\PlayQueueController.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="MusicPlayer.UWP.Controllers.SongController" BaseTypeListCollapsed="true">
-    <Position X="18.75" Y="3.5" Width="6" />
+    <Position X="18.75" Y="5" Width="6" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAEAAEAAAAEAAEAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAACAACACBBAAAGAQEAAQAUlAEAAAggCAAEAAAA=</HashCode>
       <FileName>Controllers\SongController.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
