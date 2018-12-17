@@ -77,9 +77,9 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetSong.Query, Result>(new GetSong.Query() { ID = id });
         }
 
-        public async Task<Artist.Result> GetArtist(int songId)
+        public async Task<List<Artist.Result>> GetArtists(int songId)
         {
-            return await _queryDispatcher.Dispatch<GetArtist.Query, Artist.Result>(new GetArtist.Query() { ID = songId });
+            return await _queryDispatcher.Dispatch<GetArtists.Query, List<Artist.Result>>(new GetArtists.Query() { ID = songId });
         }
 
         public async Task<Album.Result> GetAlbum(int songId)
