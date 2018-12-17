@@ -1,139 +1,488 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
-  <Class Name="MusicPlayer.UWP.Controllers.Album.CreateAlbum">
-    <Position X="0.5" Y="0.5" Width="4.25" />
+  <Class Name="MusicPlayer.UWP.Controllers.Song.CreateSong">
+    <Position X="0.5" Y="0.5" Width="2.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Class Name="MusicPlayer.UWP.Controllers.Album.CreateAlbum.Command">
+      <Class Name="MusicPlayer.UWP.Controllers.Song.CreateSong.Command" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Controllers\Album\CreateAlbum.cs</NewMemberFileName>
+          <NewMemberFileName>Controllers\Song\CreateSong.cs</NewMemberFileName>
         </TypeIdentifier>
         <Lollipop Position="0.2" />
       </Class>
-      <Class Name="MusicPlayer.UWP.Controllers.Album.CreateAlbum.Handler">
+      <Class Name="MusicPlayer.UWP.Controllers.Song.CreateSong.Handler" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Controllers\Album\CreateAlbum.cs</NewMemberFileName>
+          <NewMemberFileName>Controllers\Song\CreateSong.cs</NewMemberFileName>
         </TypeIdentifier>
         <Lollipop Position="0.2" />
       </Class>
-      <Class Name="MusicPlayer.UWP.Controllers.Album.CreateAlbum.Validator">
+      <Class Name="MusicPlayer.UWP.Controllers.Song.CreateSong.Validator" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Controllers\Album\CreateAlbum.cs</NewMemberFileName>
+          <NewMemberFileName>Controllers\Song\CreateSong.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
-      <Class Name="MusicPlayer.UWP.Controllers.Album.CreateAlbum.Data">
+      <Class Name="MusicPlayer.UWP.Controllers.Song.CreateSong.Data" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Controllers\Album\CreateAlbum.cs</NewMemberFileName>
+          <NewMemberFileName>Controllers\Song\CreateSong.cs</NewMemberFileName>
         </TypeIdentifier>
         <Lollipop Position="0.2" />
       </Class>
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controllers\Album\CreateAlbum.cs</FileName>
+      <FileName>Controllers\Song\CreateSong.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.UWP.Controllers.Album.DeleteAlbum">
-    <Position X="5" Y="0.5" Width="3" />
+  <Class Name="MusicPlayer.UWP.Controllers.Song.DeleteSong">
+    <Position X="3.25" Y="0.5" Width="2.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Class Name="MusicPlayer.UWP.Controllers.Album.DeleteAlbum.Command">
+      <Class Name="MusicPlayer.UWP.Controllers.Song.DeleteSong.Command" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Controllers\Album\DeleteAlbum.cs</NewMemberFileName>
+          <NewMemberFileName>Controllers\Song\DeleteSong.cs</NewMemberFileName>
         </TypeIdentifier>
         <Lollipop Position="0.2" />
       </Class>
-      <Class Name="MusicPlayer.UWP.Controllers.Album.DeleteAlbum.Handler">
+      <Class Name="MusicPlayer.UWP.Controllers.Song.DeleteSong.Handler" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Controllers\Album\DeleteAlbum.cs</NewMemberFileName>
+          <NewMemberFileName>Controllers\Song\DeleteSong.cs</NewMemberFileName>
         </TypeIdentifier>
         <Lollipop Position="0.2" />
       </Class>
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controllers\Album\DeleteAlbum.cs</FileName>
+      <FileName>Controllers\Song\DeleteSong.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.UWP.Controllers.Album.GetAlbum">
-    <Position X="5.25" Y="5.25" Width="3" />
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetAlbum">
+    <Position X="3.25" Y="3.5" Width="2.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Class Name="MusicPlayer.UWP.Controllers.Album.GetAlbum.Query">
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetAlbum.Query" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Controllers\Album\GetAlbum.cs</NewMemberFileName>
+          <NewMemberFileName>Controllers\Song\GetAlbum.cs</NewMemberFileName>
         </TypeIdentifier>
         <Lollipop Position="0.2" />
       </Class>
-      <Class Name="MusicPlayer.UWP.Controllers.Album.GetAlbum.Handler">
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetAlbum.Handler" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Controllers\Album\GetAlbum.cs</NewMemberFileName>
+          <NewMemberFileName>Controllers\Song\GetAlbum.cs</NewMemberFileName>
         </TypeIdentifier>
         <Lollipop Position="0.2" />
       </Class>
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controllers\Album\GetAlbum.cs</FileName>
+      <FileName>Controllers\Song\GetAlbum.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.UWP.Controllers.Album.GetAlbums">
-    <Position X="8.25" Y="0.5" Width="3.25" />
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetArtists">
+    <Position X="9.25" Y="3.5" Width="2.75" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Class Name="MusicPlayer.UWP.Controllers.Album.GetAlbums.Query">
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetArtists.Query" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Controllers\Album\GetAlbums.cs</NewMemberFileName>
+          <NewMemberFileName>Controllers\Song\GetArtists.cs</NewMemberFileName>
         </TypeIdentifier>
         <Lollipop Position="0.2" />
       </Class>
-      <Class Name="MusicPlayer.UWP.Controllers.Album.GetAlbums.HandlerList">
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetArtists.Handler" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Controllers\Album\GetAlbums.cs</NewMemberFileName>
+          <NewMemberFileName>Controllers\Song\GetArtists.cs</NewMemberFileName>
         </TypeIdentifier>
         <Lollipop Position="0.2" />
       </Class>
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controllers\Album\GetAlbums.cs</FileName>
+      <FileName>Controllers\Song\GetArtists.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MusicPlayer.UWP.Controllers.Album.Result">
-    <Position X="8.5" Y="5.25" Width="1.5" />
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetBand">
+    <Position X="9.25" Y="6.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetBand.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetBand.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetBand.Handler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetBand.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controllers\Album\Result.cs</FileName>
+      <FileName>Controllers\Song\GetBand.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="MusicPlayer.UWP.Controllers.ZMisc.ICreateResultData&lt;T&gt;">
-    <Position X="8.5" Y="6.75" Width="1.75" />
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetSong">
+    <Position X="0.5" Y="5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSong.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSong.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSong.Handler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSong.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controllers\ZMisc\ICreateResultData.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\GetSong.cs</FileName>
     </TypeIdentifier>
-  </Interface>
-  <Interface Name="MusicPlayer.UWP.Controllers.IAlbumController">
-    <Position X="0.5" Y="8.5" Width="4.5" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongs">
+    <Position X="6" Y="6.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongs.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongs.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongs.HandlerList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongs.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controllers\ZMisc\ControllerInterfaces\IAlbumController.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\GetSongs.cs</FileName>
     </TypeIdentifier>
-  </Interface>
-  <Interface Name="MusicPlayer.UWP.Controllers.IController&lt;T&gt;">
-    <Position X="8.5" Y="8" Width="2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByDate">
+    <Position X="12.25" Y="6.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByDate.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByDate.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByDate.HandlerList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByDate.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
-      <FileName>Controllers\ZMisc\ControllerInterfaces\IController.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\GetSongsByDate.cs</FileName>
     </TypeIdentifier>
-  </Interface>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByDateDescending">
+    <Position X="12.25" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByDateDescending.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByDateDescending.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByDateDescending.HandlerList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByDateDescending.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\GetSongsByDateDescending.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByLength">
+    <Position X="15.25" Y="0.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByLength.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByLength.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByLength.HandlerList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByLength.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\GetSongsByLength.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByLengthDescending">
+    <Position X="6" Y="0.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByLengthDescending.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByLengthDescending.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByLengthDescending.HandlerList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByLengthDescending.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\GetSongsByLengthDescending.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByPlayTimes">
+    <Position X="15.25" Y="6.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByPlayTimes.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByPlayTimes.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByPlayTimes.HandlerList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByPlayTimes.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\GetSongsByPlayTimes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByPlayTimesDescending">
+    <Position X="18.5" Y="4.25" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByPlayTimesDescending.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByPlayTimesDescending.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByPlayTimesDescending.HandlerList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByPlayTimesDescending.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\GetSongsByPlayTimesDescending.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByScore">
+    <Position X="12.25" Y="3.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByScore.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByScore.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByScore.HandlerList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByScore.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\GetSongsByScore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByScoreDescending">
+    <Position X="15.25" Y="3.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByScoreDescending.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByScoreDescending.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsByScoreDescending.HandlerList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsByScoreDescending.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\GetSongsByScoreDescending.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsDescending">
+    <Position X="6" Y="3.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsDescending.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsDescending.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.GetSongsDescending.HandlerList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\GetSongsDescending.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\GetSongsDescending.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.IncreasePlayTimes">
+    <Position X="18.5" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.IncreasePlayTimes.Command" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\IncreasePlayTimes.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.IncreasePlayTimes.Handler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\IncreasePlayTimes.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.IncreasePlayTimes.Validator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\IncreasePlayTimes.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\IncreasePlayTimes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.Result">
+    <Position X="18.5" Y="7.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.SearchSongs">
+    <Position X="9.25" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.SearchSongs.Query" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\SearchSongs.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.SearchSongs.HandlerList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\SearchSongs.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\SearchSongs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Controllers.Song.SetScore">
+    <Position X="3.25" Y="6.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.SetScore.Command" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\SetScore.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.SetScore.Handler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\SetScore.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="MusicPlayer.UWP.Controllers.Song.SetScore.Validator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Song\SetScore.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Song\SetScore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
