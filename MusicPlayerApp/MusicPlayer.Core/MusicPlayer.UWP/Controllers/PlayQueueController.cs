@@ -26,11 +26,16 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetPlayQueue.Query, Result>(new GetPlayQueue.Query() { ID = id });
         }
 
-        public async Task Create(string name, string description)
+        public async Task<Song.Result> RandomSong()
+        {
+            return await _queryDispatcher.Dispatch<RandomSong.Query, Song.Result>(new RandomSong.Query());
+        }
+
+        public async Task Create(int songId)
         {
             await _commandDispatcher.Dispatch<CreatePlayQueue.Command>(new CreatePlayQueue.Command
             {
-                _data = new CreatePlayQueue.Data()
+                _data = new CreatePlayQueue.Data(songId)
 
             });
 

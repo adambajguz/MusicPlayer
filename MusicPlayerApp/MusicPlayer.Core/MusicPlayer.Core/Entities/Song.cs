@@ -7,12 +7,9 @@ namespace MusicPlayer.Core.Entities
 {
     public class Song : BaseEntity<int>
     {
-        public virtual Artist Artist { get; set; }
-
-        public virtual Album Album { get; set; }
-
+        public int? ImageId { get; set; }
         public virtual Image Image { get; set; }
-
+        public int GenreId { get; set; }
         public virtual Genre Genre { get; set; }
 
         public int Score { get; set; }
@@ -29,6 +26,10 @@ namespace MusicPlayer.Core.Entities
 
         public DateTime DBCreationDate { get; set; }
 
-        public uint PlayTimes { get; set; } 
+        public uint PlayTimes { get; set; }
+
+        public ICollection<SongAlbum> SongAlbums { get; set; }
+        public ICollection<SongArtist> SongArtists { get; set; }
+        public ICollection<SongPlaylist> SongPlaylists { get; set; }
     }
 }

@@ -6,6 +6,6 @@ namespace MusicPlayer.UWP.Controllers
 {
     public interface IPlayQueueController
     {
-        Task Create(string name, string description);
+        Task Create(int songId);
     }
 }

@@ -12,5 +12,7 @@ namespace MusicPlayer.Core.Entities
         public DateTime DBCreationDate { get; set; }
 
         public string Description { get; set; }
+
+        public ICollection<SongPlaylist> SongPlaylists { get; set; }
     }
 }

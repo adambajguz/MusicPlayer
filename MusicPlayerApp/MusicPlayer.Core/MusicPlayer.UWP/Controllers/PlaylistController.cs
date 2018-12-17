@@ -21,6 +21,31 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetPlaylists.Query, List<Result>>(new GetPlaylists.Query());
         }
 
+        public async Task<List<Result>> GetAllDescending()
+        {
+            return await _queryDispatcher.Dispatch<GetPlaylistsDescending.Query, List<Result>>(new GetPlaylistsDescending.Query());
+        }
+
+        public async Task<List<Result>> GetAllByDate()
+        {
+            return await _queryDispatcher.Dispatch<GetPlaylistsByDate.Query, List<Result>>(new GetPlaylistsByDate.Query());
+        }
+
+        public async Task<List<Result>> GetAllByDateDescending()
+        {
+            return await _queryDispatcher.Dispatch<GetPlaylistsByDateDescending.Query, List<Result>>(new GetPlaylistsByDateDescending.Query());
+        }
+
+        public async Task<List<Result>> GetSongs(int albumId)
+        {
+            return await _queryDispatcher.Dispatch<GetSongs.Query, List<Result>>(new GetSongs.Query() { ID = albumId });
+        }
+
+        public async Task<List<Result>> Search(string name)
+        {
+            return await _queryDispatcher.Dispatch<SearchPlaylists.Query, List<Result>>(new SearchPlaylists.Query() { Name = name });
+        }
+
         public async Task<Result> Get(int id)
         {
             return await _queryDispatcher.Dispatch<GetPlaylist.Query, Result>(new GetPlaylist.Query() { ID = id });
@@ -36,11 +61,29 @@ namespace MusicPlayer.UWP.Controllers
 
         }
 
+        public async Task AddSong(int playlistId, int songId)
+        {
+            await _commandDispatcher.Dispatch<AddSong.Command>(new AddSong.Command
+            {
+                _data = new AddSong.Data(playlistId, songId)
+
+            });
+        }
+
         public async Task Delete(int id)
         {
             await _commandDispatcher.Dispatch<DeletePlaylist.Command>(new DeletePlaylist.Command
             {
                 ID = id
+            });
+        }
+
+        public async Task DeleteSong(int songId, int playlistId)
+        {
+            await _commandDispatcher.Dispatch<DeleteSong.Command>(new DeleteSong.Command
+            {
+                SongId = songId,
+                PlaylistId = playlistId
             });
         }
     }

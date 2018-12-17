@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MusicPlayer.Core.Entities
 {
     public class Album : BaseEntity<int>
     {
-        public virtual Image CoverImage { get; set; }
+        public int ImageId { get; set; }
+        public virtual Image Image { get; set; }
 
         public string Title { get; set; }
 
@@ -13,5 +15,7 @@ namespace MusicPlayer.Core.Entities
         public DateTime PublicationDate { get; set; }
 
         public DateTime DBCreationDate { get; set; }
+
+        public ICollection<SongAlbum> SongAlbums { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MusicPlayer.Data.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -72,7 +72,7 @@ namespace MusicPlayer.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CoverImageId = table.Column<int>(nullable: true),
+                    ImageId = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     PublicationDate = table.Column<DateTime>(nullable: false),
@@ -82,11 +82,11 @@ namespace MusicPlayer.Data.Migrations
                 {
                     table.PrimaryKey("PK_Albums", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Albums_Images_CoverImageId",
-                        column: x => x.CoverImageId,
+                        name: "FK_Albums_Images_ImageId",
+                        column: x => x.ImageId,
                         principalTable: "Images",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -96,7 +96,7 @@ namespace MusicPlayer.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     BandId = table.Column<int>(nullable: true),
-                    PhotoId = table.Column<int>(nullable: true),
+                    ImageId = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Surname = table.Column<string>(nullable: true),
                     Pseudonym = table.Column<string>(nullable: true),
@@ -113,11 +113,11 @@ namespace MusicPlayer.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Artists_Images_PhotoId",
-                        column: x => x.PhotoId,
+                        name: "FK_Artists_Images_ImageId",
+                        column: x => x.ImageId,
                         principalTable: "Images",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -126,10 +126,8 @@ namespace MusicPlayer.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ArtistId = table.Column<int>(nullable: true),
-                    AlbumId = table.Column<int>(nullable: true),
                     ImageId = table.Column<int>(nullable: true),
-                    GenreId = table.Column<int>(nullable: true),
+                    GenreId = table.Column<int>(nullable: false),
                     Score = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     CreationDate = table.Column<DateTime>(nullable: false),
@@ -143,23 +141,11 @@ namespace MusicPlayer.Data.Migrations
                 {
                     table.PrimaryKey("PK_Songs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Songs_Albums_AlbumId",
-                        column: x => x.AlbumId,
-                        principalTable: "Albums",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Songs_Artists_ArtistId",
-                        column: x => x.ArtistId,
-                        principalTable: "Artists",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
                         name: "FK_Songs_Genres_GenreId",
                         column: x => x.GenreId,
                         principalTable: "Genres",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Songs_Images_ImageId",
                         column: x => x.ImageId,
@@ -174,7 +160,7 @@ namespace MusicPlayer.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    SongId = table.Column<int>(nullable: true)
+                    SongId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -184,7 +170,7 @@ namespace MusicPlayer.Data.Migrations
                         column: x => x.SongId,
                         principalTable: "Songs",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -193,8 +179,8 @@ namespace MusicPlayer.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    SongId = table.Column<int>(nullable: true),
-                    AlbumId = table.Column<int>(nullable: true),
+                    SongId = table.Column<int>(nullable: false),
+                    AlbumId = table.Column<int>(nullable: false),
                     TrackNumber = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -220,8 +206,8 @@ namespace MusicPlayer.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    SongId = table.Column<int>(nullable: true),
-                    ArtistId = table.Column<int>(nullable: true)
+                    SongId = table.Column<int>(nullable: false),
+                    ArtistId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -231,7 +217,7 @@ namespace MusicPlayer.Data.Migrations
                         column: x => x.ArtistId,
                         principalTable: "Artists",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_SongArtists_Songs_SongId",
                         column: x => x.SongId,
@@ -246,8 +232,8 @@ namespace MusicPlayer.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    SongId = table.Column<int>(nullable: true),
-                    PlaylistId = table.Column<int>(nullable: true),
+                    SongId = table.Column<int>(nullable: false),
+                    PlaylistId = table.Column<int>(nullable: false),
                     Order = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -268,9 +254,9 @@ namespace MusicPlayer.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Albums_CoverImageId",
+                name: "IX_Albums_ImageId",
                 table: "Albums",
-                column: "CoverImageId");
+                column: "ImageId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Artists_BandId",
@@ -278,9 +264,9 @@ namespace MusicPlayer.Data.Migrations
                 column: "BandId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Artists_PhotoId",
+                name: "IX_Artists_ImageId",
                 table: "Artists",
-                column: "PhotoId");
+                column: "ImageId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PlayQueues_SongId",
@@ -318,16 +304,6 @@ namespace MusicPlayer.Data.Migrations
                 column: "SongId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Songs_AlbumId",
-                table: "Songs",
-                column: "AlbumId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Songs_ArtistId",
-                table: "Songs",
-                column: "ArtistId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Songs_GenreId",
                 table: "Songs",
                 column: "GenreId");
@@ -353,22 +329,22 @@ namespace MusicPlayer.Data.Migrations
                 name: "SongPlaylists");
 
             migrationBuilder.DropTable(
-                name: "Playlists");
-
-            migrationBuilder.DropTable(
-                name: "Songs");
-
-            migrationBuilder.DropTable(
                 name: "Albums");
 
             migrationBuilder.DropTable(
                 name: "Artists");
 
             migrationBuilder.DropTable(
-                name: "Genres");
+                name: "Playlists");
+
+            migrationBuilder.DropTable(
+                name: "Songs");
 
             migrationBuilder.DropTable(
                 name: "Bands");
+
+            migrationBuilder.DropTable(
+                name: "Genres");
 
             migrationBuilder.DropTable(
                 name: "Images");

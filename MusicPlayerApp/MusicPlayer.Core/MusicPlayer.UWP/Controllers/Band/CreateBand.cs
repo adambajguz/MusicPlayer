@@ -45,11 +45,6 @@ namespace MusicPlayer.UWP.Controllers.Band
         {
             private Core.Entities.Band band;
 
-            //public string name { get; set; }
-            //public DateTime CreationData { get; set; }
-            //public DateTime? EndDate { get; set; }
-            //public string Description { get; set; }
-
             public Data(string name, DateTime creationData, DateTime? endDate, string description)
             {
                 band = new Core.Entities.Band();
@@ -64,18 +59,6 @@ namespace MusicPlayer.UWP.Controllers.Band
             {
                 return band;
             }
-
-            //public Core.Entities.Band ToBandEntity()
-            //{
-            //    var Band = new Core.Entities.Band
-            //    {
-            //        name = name,
-            //        CreationData=CreationData,
-            //        EndDate=EndDate,
-            //        Description=Description
-            //    };
-            //    return Band;
-            //}
         }
     }
 }

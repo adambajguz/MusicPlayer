@@ -7,6 +7,7 @@ namespace MusicPlayer.Core.Entities
 {
     public class PlayQueue : BaseEntity<int>
     {
+        public int SongId { get; set; }
         public virtual Song Song { get; set; }
 
     }

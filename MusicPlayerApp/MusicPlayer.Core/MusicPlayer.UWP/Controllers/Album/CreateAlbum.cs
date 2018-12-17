@@ -36,7 +36,9 @@ namespace MusicPlayer.UWP.Controllers.Album
 
             public Validator()
             {
-                //RuleFor(x => x._data.Value).GreaterThan(0);
+                RuleFor(x => x._data.GetEntity().Title).NotEmpty();
+                RuleFor(x => x._data.GetEntity().ImageId).NotNull();
+                RuleFor(x => x._data.GetEntity().PublicationDate).NotEmpty();
             }
         }
 
@@ -45,11 +47,11 @@ namespace MusicPlayer.UWP.Controllers.Album
         {
             private Core.Entities.Album album;
 
-            public Data(string title, string description, DateTime publicationDate)
+            public Data(string title, string description, DateTime publicationDate, int imageId)
             {
                 album = new Core.Entities.Album();
 
-                //Album.CoverImage = x.CoverImage;
+                album.ImageId = imageId;
                 album.Title = title;
                 album.Description = description;
                 album.PublicationDate = publicationDate;
