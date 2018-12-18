@@ -1,0 +1,2 @@
+// in nuget Update-database -StartupProject MusicPlayer.Migrations.Startup
+    // with MusicPlayer.Data selected as Default Project
