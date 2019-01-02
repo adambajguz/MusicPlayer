@@ -1,30 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using Autofac;
+﻿using Autofac;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using MusicPlayer.Core.CQRS;
 using MusicPlayer.Core.Data;
 using MusicPlayer.Data;
-using Microsoft.Extensions.DependencyInjection;
 using MusicPlayer.UWP.AppStart;
-using MusicPlayer.UWP.Controllers;
-using Windows.UI.ViewManagement;
-using Windows.UI;
+using System;
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Core;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace MusicPlayer.UWP
 {
@@ -32,7 +19,7 @@ namespace MusicPlayer.UWP
     /// Zapewnia zachowanie specyficzne dla aplikacji, aby uzupełnić domyślną klasę aplikacji.
     /// </summary>
     /// 
-    
+
     //http://blog.rogatnev.net/2018/01/04/Specification-pattern.html?fbclid=IwAR2PxLelsTM5XiG9ntKjVWqnA2ULr5LsYqcM0ZaZU4CXMSlOwdQJC9DKTg4
     sealed partial class App : Application
     {
@@ -72,10 +59,10 @@ namespace MusicPlayer.UWP
             }
 
 
-   //         ImageController ImgController = new ImageController(queryDispatcher, commandDispatcher);
+            //         ImageController ImgController = new ImageController(queryDispatcher, commandDispatcher);
             //ImgController.Create("sciezka4").Wait();
-  //          AlbumController albumController = new AlbumController(queryDispatcher, commandDispatcher);
-  //          albumController.Create("tytul", "opis", DateTime.UtcNow, 1).Wait();
+            //          AlbumController albumController = new AlbumController(queryDispatcher, commandDispatcher);
+            //          albumController.Create("tytul", "opis", DateTime.UtcNow, 1).Wait();
             //ImgController.Get(0).Wait();
 
             //GenreController GenreController = new GenreController(queryDispatcher, commandDispatcher);
@@ -99,7 +86,7 @@ namespace MusicPlayer.UWP
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 
-            //CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+            CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = false;
             //ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
 
             // Nie powtarzaj inicjowania aplikacji, gdy w oknie znajduje się już zawartość,
