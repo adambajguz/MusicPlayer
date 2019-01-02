@@ -9,8 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ProgressRing IsActive="True" />
-        <ProgressRing HorizontalAlignment="Left" Margin="525,364,0,0" VerticalAlignment="Top"/>
+        <ProgressRing x:Name="progress" IsActive="True" />
 
     </Grid>
 </Page>

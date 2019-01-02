@@ -9,7 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <CalendarView/>
-
+        <ProgressRing x:Name="progress" IsActive="True" />
     </Grid>
 </Page>

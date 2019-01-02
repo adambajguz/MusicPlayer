@@ -49,9 +49,13 @@ namespace MusicPlayer.UWP
 
         private async void Callback(Controllers.Genre.Result genre, List<Controllers.Genre.Result> genres)
         {
+            progress.IsActive = false;
+
             string c = genres.Count.ToString();
             MessageDialog message = new MessageDialog(c + genre.Name, "OUTPUT:");
             await message.ShowAsync();
+
+
         }
     }
 }

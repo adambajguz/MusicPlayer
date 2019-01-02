@@ -43,6 +43,9 @@ namespace MusicPlayer.UWP
             Controllers.Genre.Result genre = await GenreController.Get(1);
             List<Controllers.Genre.Result>  genres = await GenreController.GetAll();
 
+            progress.IsActive = false;
+        
+
             string c = genres.Count.ToString();
             MessageDialog message = new MessageDialog(c + genre.Name, "OUTPUT:");
             await message.ShowAsync();
