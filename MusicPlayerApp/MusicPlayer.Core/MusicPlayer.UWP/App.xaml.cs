@@ -22,6 +22,9 @@ using MusicPlayer.Data;
 using Microsoft.Extensions.DependencyInjection;
 using MusicPlayer.UWP.AppStart;
 using MusicPlayer.UWP.Controllers;
+using Windows.UI.ViewManagement;
+using Windows.UI;
+using Windows.ApplicationModel.Core;
 
 namespace MusicPlayer.UWP
 {
@@ -40,6 +43,7 @@ namespace MusicPlayer.UWP
         /// </summary>
         public App()
         {
+
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
@@ -68,10 +72,10 @@ namespace MusicPlayer.UWP
             }
 
 
-            ImageController ImgController = new ImageController(queryDispatcher, commandDispatcher);
+   //         ImageController ImgController = new ImageController(queryDispatcher, commandDispatcher);
             //ImgController.Create("sciezka4").Wait();
-            AlbumController albumController = new AlbumController(queryDispatcher, commandDispatcher);
-            albumController.Create("tytul", "opis", DateTime.UtcNow, 1).Wait();
+  //          AlbumController albumController = new AlbumController(queryDispatcher, commandDispatcher);
+  //          albumController.Create("tytul", "opis", DateTime.UtcNow, 1).Wait();
             //ImgController.Get(0).Wait();
 
             //GenreController GenreController = new GenreController(queryDispatcher, commandDispatcher);
@@ -94,11 +98,13 @@ namespace MusicPlayer.UWP
         /// <param name="e">Szczegóły dotyczące żądania uruchomienia i procesu.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
+
+            //CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+            //ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
 
             // Nie powtarzaj inicjowania aplikacji, gdy w oknie znajduje się już zawartość,
             // upewnij się tylko, że okno jest aktywne
-            if (rootFrame == null)
+            if (!(Window.Current.Content is Frame rootFrame))
             {
                 // Utwórz ramkę, która będzie pełnić funkcję kontekstu nawigacji, i przejdź do pierwszej strony
                 rootFrame = new Frame();
