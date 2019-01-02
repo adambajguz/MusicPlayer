@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -19,6 +20,9 @@ namespace MusicPlayer.UWP
         public GenresPage()
         {
             this.InitializeComponent();
+
+            LoadingProgress.Visibility = Visibility.Visible;
+            PageContent.Visibility = Visibility.Collapsed;
 
             GenreController = App.GenreController;
 
@@ -49,12 +53,15 @@ namespace MusicPlayer.UWP
 
         private async void Callback(Controllers.Genre.Result genre, List<Controllers.Genre.Result> genres)
         {
-            progress.IsActive = false;
+            LoadingProgress.Visibility = Visibility.Collapsed;
+            LoadingProgress.IsActive = false;
+            PageContent.Visibility = Visibility.Visible;
 
             string c = genres.Count.ToString();
             MessageDialog message = new MessageDialog(c + genre.Name, "OUTPUT:");
             await message.ShowAsync();
 
+            gridGenresView.ItemsSource = genres;
 
         }
     }
