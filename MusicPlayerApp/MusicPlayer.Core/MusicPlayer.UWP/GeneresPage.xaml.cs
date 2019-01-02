@@ -20,9 +20,9 @@ namespace MusicPlayer.UWP
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class BlankPage2 : Page
+    public sealed partial class GenresPage : Page
     {
-        public BlankPage2()
+        public GenresPage()
         {
             this.InitializeComponent();
         }

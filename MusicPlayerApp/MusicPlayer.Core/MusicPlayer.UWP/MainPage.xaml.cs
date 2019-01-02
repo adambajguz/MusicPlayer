@@ -37,9 +37,9 @@ namespace MusicPlayer.UWP
         // List of ValueTuple holding the Navigation Tag and the relative Navigation Page
         private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
-            ("library", typeof(BlankPage2)),
-            ("playlists", typeof(BlankPage1)),
-            ("genres", typeof(BlankPage1)),
+            ("library", typeof(LibraryPage)),
+            ("playlists", typeof(LibraryPage)),
+            ("genres", typeof(GenresPage)),
         };
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)

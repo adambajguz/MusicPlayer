@@ -96,11 +96,11 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppStart\IocConfig.cs" />
-    <Compile Include="BlankPage1.xaml.cs">
-      <DependentUpon>BlankPage1.xaml</DependentUpon>
+    <Compile Include="GeneresPage.xaml.cs">
+      <DependentUpon>GeneresPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BlankPage2.xaml.cs">
-      <DependentUpon>BlankPage2.xaml</DependentUpon>
+    <Compile Include="LibraryPage.xaml.cs">
+      <DependentUpon>LibraryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\Album\AddSong.cs" />
@@ -283,11 +283,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="BlankPage1.xaml">
+    <Page Include="GeneresPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BlankPage2.xaml">
+    <Page Include="LibraryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
