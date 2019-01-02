@@ -5,6 +5,7 @@ using MusicPlayer.Core.CQRS;
 using MusicPlayer.Core.Data;
 using MusicPlayer.Data;
 using MusicPlayer.UWP.AppStart;
+using MusicPlayer.UWP.Controllers;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -24,6 +25,14 @@ namespace MusicPlayer.UWP
     sealed partial class App : Application
     {
         public static IContainer ApplicationContainer { get; private set; }
+
+        public static ICommandDispatcher CommandDispatcher { get; private set; }
+        public static  IQueryDispatcher QueryDispatcher { get; private set; }
+
+
+        public static GenreController GenreController { get; private set; }
+       
+
         /// <summary>
         /// Inicjuje pojedynczy obiekt aplikacji. Jest to pierwszy wiersz napisanego kodu
         /// wykonywanego i jest logicznym odpowiednikiem metod main() lub WinMain().
@@ -39,11 +48,11 @@ namespace MusicPlayer.UWP
 
             ApplicationContainer = IocConfig.RegisterDependencies(services);
 
-            var container = IocConfig.RegisterDependencies(services);
+            IContainer container = IocConfig.RegisterDependencies(services);
 
-            var scop = container.BeginLifetimeScope();
-            var commandDispatcher = scop.Resolve<ICommandDispatcher>();
-            var queryDispatcher = scop.Resolve<IQueryDispatcher>();
+            ILifetimeScope scop = container.BeginLifetimeScope();
+            CommandDispatcher = scop.Resolve<ICommandDispatcher>();
+            QueryDispatcher = scop.Resolve<IQueryDispatcher>();
 
             //sprawdzam
             using (var scope = container.BeginLifetimeScope())
@@ -57,6 +66,9 @@ namespace MusicPlayer.UWP
                 //var app = scope.Resolve<IQueryDispatcher>();
                 //app.WriteInformation("injected!");
             }
+
+            GenreController = new GenreController(App.QueryDispatcher, App.CommandDispatcher);
+
 
 
             //         ImageController ImgController = new ImageController(queryDispatcher, commandDispatcher);

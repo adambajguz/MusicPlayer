@@ -1,17 +1,10 @@
-﻿using System;
+﻿using MusicPlayer.UWP.Controllers;
+using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+using System.Threading.Tasks;
+using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,9 +15,43 @@ namespace MusicPlayer.UWP
     /// </summary>
     public sealed partial class GenresPage : Page
     {
+        GenreController GenreController;
         public GenresPage()
         {
             this.InitializeComponent();
+
+            GenreController = App.GenreController;
+
+            var mainTask = Task.Factory.StartNew(() =>
+            {
+                Test();
+            });
+        }
+
+        private async void Test()
+        {
+            string test;
+            Controllers.Genre.Result genre;
+            List<Controllers.Genre.Result> genres;
+
+            test = GenreController.GetAll().ToString();
+            genre = await GenreController.Get(1);
+            genres = await GenreController.GetAll();
+
+            await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+            () =>
+            {
+                Callback(genre, genres);
+            });
+
+           
+        }
+
+        private async void Callback(Controllers.Genre.Result genre, List<Controllers.Genre.Result> genres)
+        {
+            string c = genres.Count.ToString();
+            MessageDialog message = new MessageDialog(c + genre.Name, "OUTPUT:");
+            await message.ShowAsync();
         }
     }
 }
