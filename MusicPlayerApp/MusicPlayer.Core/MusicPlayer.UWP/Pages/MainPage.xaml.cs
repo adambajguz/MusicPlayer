@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MusicPlayer.Core.Extensions;
+using MusicPlayer.UWP.Pages.Genre;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Windows.System;
@@ -10,7 +12,7 @@ using Windows.UI.Xaml.Navigation;
 
 //Szablon elementu Pusta strona jest udokumentowany na stronie https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x415
 
-namespace MusicPlayer.UWP
+namespace MusicPlayer.UWP.Pages
 {
     /// <summary>
     /// Pusta strona, która może być używana samodzielnie lub do której można nawigować wewnątrz ramki.
@@ -34,12 +36,21 @@ namespace MusicPlayer.UWP
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
 
+
+        public const string LibraryTag = "library";
+        public const string PlaylistsTag = "playlists";
+        public const string GenresTag = "genres";
+        public const string GenresAddEditTag = "genresAddEdit";
+
+
         // List of ValueTuple holding the Navigation Tag and the relative Navigation Page
         private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
-            ("library", typeof(LibraryPage)),
-            ("playlists", typeof(LibraryPage)),
-            ("genres", typeof(GenresPage)),
+            (LibraryTag, typeof(LibraryPage)),
+            (PlaylistsTag, typeof(LibraryPage)),
+            (GenresTag, typeof(GenresPage)),
+            (GenresAddEditTag, typeof(AddEditGenrePage)),
+
         };
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
@@ -62,7 +73,7 @@ namespace MusicPlayer.UWP
             // If navigation occurs on SelectionChanged, this isn't needed.
             // Because we use ItemInvoked to navigate, we need to call Navigate
             // here to load the home page.
-            NavView_Navigate("library", new EntranceNavigationTransitionInfo());
+            NavView_Navigate(LibraryTag, new EntranceNavigationTransitionInfo());
 
             // Add keyboard accelerators for backwards navigation.
             var goBack = new KeyboardAccelerator { Key = VirtualKey.GoBack };
@@ -107,7 +118,7 @@ namespace MusicPlayer.UWP
             //}
         }
 
-        private void NavView_Navigate(string navItemTag, NavigationTransitionInfo transitionInfo)
+        public void NavView_Navigate(string navItemTag, NavigationTransitionInfo transitionInfo)
         {
             Type _page = null;
             if (navItemTag == "settings")
@@ -172,12 +183,16 @@ namespace MusicPlayer.UWP
             {
                 var item = _pages.FirstOrDefault(p => p.Page == e.SourcePageType);
 
-                NavView.SelectedItem = NavView.MenuItems
-                    .OfType<NavigationViewItem>()
-                    .First(n => n.Tag.Equals(item.Tag));
 
-                NavView.Header =
-                    ((NavigationViewItem)NavView.SelectedItem)?.Content?.ToString();
+                object menuItemToSelect = NavView.MenuItems.OfType<NavigationViewItem>()
+                                             .FirstOrDefault(n => n.Tag.Equals(item.Tag));
+
+                if (menuItemToSelect.IsNotNull())
+                {
+                    NavView.SelectedItem = menuItemToSelect;
+
+                    NavView.Header = ((NavigationViewItem)NavView.SelectedItem)?.Content?.ToString();
+                }
             }
         }
 

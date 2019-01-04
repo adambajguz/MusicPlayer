@@ -5,7 +5,7 @@ using MusicPlayer.Core.CQRS;
 using MusicPlayer.Core.Data;
 using MusicPlayer.Data;
 using MusicPlayer.UWP.AppStart;
-using MusicPlayer.UWP.Controllers;
+using MusicPlayer.UWP.Pages;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -27,11 +27,8 @@ namespace MusicPlayer.UWP
         public static IContainer ApplicationContainer { get; private set; }
 
         public static ICommandDispatcher CommandDispatcher { get; private set; }
-        public static  IQueryDispatcher QueryDispatcher { get; private set; }
+        public static IQueryDispatcher QueryDispatcher { get; private set; }
 
-
-        public static GenreController GenreController { get; private set; }
-       
 
         /// <summary>
         /// Inicjuje pojedynczy obiekt aplikacji. Jest to pierwszy wiersz napisanego kodu
@@ -66,8 +63,6 @@ namespace MusicPlayer.UWP
                 //var app = scope.Resolve<IQueryDispatcher>();
                 //app.WriteInformation("injected!");
             }
-
-            GenreController = new GenreController(App.QueryDispatcher, App.CommandDispatcher);
 
 
 

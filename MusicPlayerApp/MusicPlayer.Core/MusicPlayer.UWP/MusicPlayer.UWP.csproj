@@ -96,10 +96,13 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppStart\IocConfig.cs" />
-    <Compile Include="GeneresPage.xaml.cs">
+    <Compile Include="Pages\Genre\AddEditGenrePage.xaml.cs">
+      <DependentUpon>AddEditGenrePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Genre\GeneresPage.xaml.cs">
       <DependentUpon>GeneresPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LibraryPage.xaml.cs">
+    <Compile Include="Pages\Library\LibraryPage.xaml.cs">
       <DependentUpon>LibraryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AlbumController.cs" />
@@ -207,11 +210,12 @@
     <Compile Include="Controllers\Song\Result.cs" />
     <Compile Include="CQRS\CommandDispatcher.cs" />
     <Compile Include="CQRS\QueryDispatcher.cs" />
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DependencyObjectExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SettingsPage.xaml.cs">
+    <Compile Include="Pages\Settings\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -283,19 +287,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="GeneresPage.xaml">
+    <Page Include="Pages\Genre\AddEditGenrePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LibraryPage.xaml">
+    <Page Include="Pages\Genre\GeneresPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Pages\Library\LibraryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SettingsPage.xaml">
+    <Page Include="Pages\Settings\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

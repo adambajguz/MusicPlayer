@@ -9,6 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ProgressRing x:Name="progress" IsActive="True" />
+
     </Grid>
 </Page>
