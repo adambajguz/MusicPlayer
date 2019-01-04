@@ -8,8 +8,26 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <DatePicker HorizontalAlignment="Left" Margin="527,410,0,0" VerticalAlignment="Top"/>
+    <Grid x:Name="PageContent" Visibility="Visible" 
+              RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
+              RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Name: "/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Description: "/>
+
+        <TextBox Grid.Row="0" Grid.Column="1" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" />
+        <RichEditBox Grid.Row="1" Grid.Column="1" IsSpellCheckEnabled="True" Height="200" />
 
     </Grid>
 </Page>

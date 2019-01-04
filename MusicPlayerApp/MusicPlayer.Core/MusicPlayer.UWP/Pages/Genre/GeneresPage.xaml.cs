@@ -98,8 +98,7 @@ namespace MusicPlayer.UWP.Pages
                 switch (sortOption)
                 {
                     case "Add":
-                        mainPage.NavView_Navigate(MainPage.GenresAddEditTag, new EntranceNavigationTransitionInfo());
-                                             
+                        mainPage.NavView_Navigate(MainPage.GenresAddEditTag, new EntranceNavigationTransitionInfo());         
                         break;
 
                     case "Edit":

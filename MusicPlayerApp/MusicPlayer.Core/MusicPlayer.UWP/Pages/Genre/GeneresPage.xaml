@@ -49,13 +49,7 @@
 
             <ListView Grid.Row="1" x:Name="gridGenresView"
                       IsItemClickEnabled="True" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
-                      Margin="8,8,8,8"  >
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <ItemsStackPanel AreStickyGroupHeadersEnabled="True"/>
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-
+                      Margin="8,8,8,8" >
                 <ListView.ItemTemplate>
                     <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="controller:Result">
                         <StackPanel Orientation="Horizontal" Padding="12" BorderThickness="2">
