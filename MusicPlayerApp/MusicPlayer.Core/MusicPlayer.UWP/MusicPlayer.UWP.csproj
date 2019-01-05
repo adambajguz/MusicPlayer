@@ -96,12 +96,16 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppStart\IocConfig.cs" />
-    <Compile Include="Pages\Genre\AddEditGenrePage.xaml.cs">
-      <DependentUpon>AddEditGenrePage.xaml</DependentUpon>
+    <Compile Include="Pages\Genre\GenreEditPage.xaml.cs">
+      <DependentUpon>GenreEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Genre\GenreAddPage.xaml.cs">
+      <DependentUpon>GenreAddPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Genre\GeneresPage.xaml.cs">
       <DependentUpon>GeneresPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\WriteOnce.cs" />
     <Compile Include="Pages\Library\LibraryPage.xaml.cs">
       <DependentUpon>LibraryPage.xaml</DependentUpon>
     </Compile>
@@ -287,7 +291,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Pages\Genre\AddEditGenrePage.xaml">
+    <Page Include="Pages\Genre\GenreEditPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Genre\GenreAddPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

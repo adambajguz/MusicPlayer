@@ -47,7 +47,7 @@
             </CommandBar>
 
 
-            <ListView Grid.Row="1" x:Name="gridGenresView"
+            <ListView Grid.Row="1" x:Name="GenresListView"
                       IsItemClickEnabled="True" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
                       Margin="8,8,8,8" >
                 <ListView.ItemTemplate>

@@ -69,7 +69,7 @@ namespace MusicPlayer.UWP.Pages
             MessageDialog message = new MessageDialog(c + genre.Name, "OUTPUT:");
             await message.ShowAsync();
 
-            gridGenresView.ItemsSource = genres;
+            GenresListView.ItemsSource = genres;
         }
 
         private void MenuFlyoutItem_Click(object sender, RoutedEventArgs e)
@@ -98,10 +98,14 @@ namespace MusicPlayer.UWP.Pages
                 switch (sortOption)
                 {
                     case "Add":
-                        mainPage.NavView_Navigate(MainPage.GenresAddEditTag, new EntranceNavigationTransitionInfo());         
+                        mainPage.NavView_Navigate(MainPage.GenreAddTag, new EntranceNavigationTransitionInfo(), null);         
+
                         break;
 
                     case "Edit":
+                        Controllers.Genre.Result selectedGenre = GenresListView.SelectedItem as Controllers.Genre.Result;
+
+                        mainPage.NavView_Navigate(MainPage.GenreEditTag, new EntranceNavigationTransitionInfo(), selectedGenre.Id);
 
                         break;
 

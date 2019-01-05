@@ -40,7 +40,8 @@ namespace MusicPlayer.UWP.Pages
         public const string LibraryTag = "library";
         public const string PlaylistsTag = "playlists";
         public const string GenresTag = "genres";
-        public const string GenresAddEditTag = "genresAddEdit";
+        public const string GenreAddTag = "genreAdd";
+        public const string GenreEditTag = "genreEdit";
 
 
         // List of ValueTuple holding the Navigation Tag and the relative Navigation Page
@@ -49,7 +50,8 @@ namespace MusicPlayer.UWP.Pages
             (LibraryTag, typeof(LibraryPage)),
             (PlaylistsTag, typeof(LibraryPage)),
             (GenresTag, typeof(GenresPage)),
-            (GenresAddEditTag, typeof(AddEditGenrePage)),
+            (GenreAddTag, typeof(GenreAddPage)),
+            (GenreEditTag, typeof(GenreEditPage)),
 
         };
 
@@ -73,7 +75,7 @@ namespace MusicPlayer.UWP.Pages
             // If navigation occurs on SelectionChanged, this isn't needed.
             // Because we use ItemInvoked to navigate, we need to call Navigate
             // here to load the home page.
-            NavView_Navigate(LibraryTag, new EntranceNavigationTransitionInfo());
+            NavView_Navigate(LibraryTag, new EntranceNavigationTransitionInfo(), null);
 
             // Add keyboard accelerators for backwards navigation.
             var goBack = new KeyboardAccelerator { Key = VirtualKey.GoBack };
@@ -95,12 +97,12 @@ namespace MusicPlayer.UWP.Pages
         {
             if (args.IsSettingsInvoked == true)
             {
-                NavView_Navigate("settings", args.RecommendedNavigationTransitionInfo);
+                NavView_Navigate("settings", args.RecommendedNavigationTransitionInfo, null);
             }
             else if (args.InvokedItemContainer != null)
             {
                 var navItemTag = args.InvokedItemContainer.Tag.ToString();
-                NavView_Navigate(navItemTag, args.RecommendedNavigationTransitionInfo);
+                NavView_Navigate(navItemTag, args.RecommendedNavigationTransitionInfo, null);
             }
         }
 
@@ -118,7 +120,7 @@ namespace MusicPlayer.UWP.Pages
             //}
         }
 
-        public void NavView_Navigate(string navItemTag, NavigationTransitionInfo transitionInfo)
+        public void NavView_Navigate(string navItemTag, NavigationTransitionInfo transitionInfo, object parameter)
         {
             Type _page = null;
             if (navItemTag == "settings")
@@ -137,7 +139,7 @@ namespace MusicPlayer.UWP.Pages
             // Only navigate if the selected page isn't currently loaded.
             if (!(_page is null) && !Type.Equals(preNavPageType, _page))
             {
-                ContentFrame.Navigate(_page, null, transitionInfo);
+                ContentFrame.Navigate(_page, parameter, transitionInfo);
             }
         }
 

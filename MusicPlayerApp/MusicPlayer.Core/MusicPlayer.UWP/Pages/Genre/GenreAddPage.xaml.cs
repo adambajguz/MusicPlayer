@@ -20,11 +20,16 @@ namespace MusicPlayer.UWP.Pages.Genre
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AddEditGenrePage : Page
+    public sealed partial class GenreAddPage : Page
     {
-        public AddEditGenrePage()
+        public GenreAddPage()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+
         }
     }
 }
