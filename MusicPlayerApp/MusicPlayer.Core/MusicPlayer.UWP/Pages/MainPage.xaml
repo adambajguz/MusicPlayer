@@ -1,12 +1,11 @@
 ﻿<Page
-    x:Class="MusicPlayer.UWP.MainPage"
+    x:Class="MusicPlayer.UWP.Pages.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MusicPlayer.UWP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d" >
     <Page.Resources>
         <Style TargetType="MediaPlayerElement">
             <Setter Property="Template">
@@ -34,28 +33,23 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+        <Grid.Resources>
 
-        <NavigationView x:Name="Nav" Grid.Row="0" RequestedTheme="Default" AlwaysShowHeader="False">
+            <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground" BackgroundSource="HostBackdrop" TintColor="{ThemeResource SystemChromeLowColor}" TintOpacity="0.6" FallbackColor="{ThemeResource SystemChromeLowColor}" />
+            <AcrylicBrush x:Key="NavigationViewDefaultPaneBackground" BackgroundSource="Backdrop" TintColor="{ThemeResource SystemChromeLowColor}" TintOpacity="0.6" FallbackColor="{ThemeResource SystemChromeLowColor}" />
+        </Grid.Resources>
+
+        <NavigationView x:Name="NavView" Grid.Row="0" RequestedTheme="Default" AlwaysShowHeader="False"
+                        Loaded="NavView_Loaded"
+                        ItemInvoked="NavView_ItemInvoked"
+                        BackRequested="NavView_BackRequested">
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Library" Content="Biblioteka" x:Name="LibraryPageItem" />
-                <NavigationViewItem Icon="Memo" Content="Playlisty" x:Name="PlaylistPageItem" />
-                <NavigationViewItem Icon="MusicInfo" Content="Gatunki" x:Name="GenresPageItem" />
+                <NavigationViewItem Icon="Library" Content="Biblioteka" x:Name="LibraryPageItem" Tag="library" />
+                <NavigationViewItem Icon="Memo" Content="Playlisty" x:Name="PlaylistPageItem" Tag="playlists" />
+                <NavigationViewItem Icon="MusicInfo" Content="Gatunki" x:Name="GenresPageItem" Tag="genres" />
             </NavigationView.MenuItems>
-            <Frame x:Name="PageContentFrame">
-                <Pivot Title="Biblioteka">
-                    <PivotItem Header="Zespoły">
-                        <Grid/>
-                    </PivotItem>
-                    <PivotItem Header="Artyści">
-                        <Grid/>
-                    </PivotItem>
-                    <PivotItem Header="Albumy">
-                        <Grid/>
-                    </PivotItem>
-                    <PivotItem Header="Utwory">
-                        <Grid/>
-                    </PivotItem>
-                </Pivot>
+            
+            <Frame x:Name="ContentFrame" NavigationFailed="ContentFrame_NavigationFailed">
             </Frame>
 
 
@@ -72,10 +66,10 @@
 
             <Image Width="{Binding ActualHeight, ElementName=AudioPlayer}" Height="{Binding ActualHeight, ElementName=AudioPlayer}" Grid.Column="0" Source="/Assets/StoreLogo.png" Margin="10,0,8,0" />
 
-            <MediaPlayerElement Name="AudioPlayer" AutoPlay="False" Grid.Column="1"
+            <MediaPlayerElement Name="AudioPlayer" AutoPlay="False" Grid.Column="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}"
                             AreTransportControlsEnabled="True" UseLayoutRounding="False" d:LayoutRounding="Auto" 
                             Source="ms-appx:///Assets/sample.mp3" Margin="0,8,0,8" PosterSource="/Assets/Wide310x150Logo.png">
-
+    
                 <MediaPlayerElement.TransportControls>
                     <MediaTransportControls IsNextTrackButtonVisible="True" IsPreviousTrackButtonVisible="True" IsSeekBarVisible="True" IsFullWindowButtonVisible="True" IsFullWindowEnabled="True" IsRepeatButtonVisible="True"
                                         IsZoomEnabled="False" IsPlaybackRateEnabled="True" IsPlaybackRateButtonVisible="True"
