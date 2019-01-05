@@ -156,6 +156,8 @@ namespace MusicPlayer.UWP.Pages
             args.Handled = true;
         }
 
+        public bool GoBack() => On_BackRequested();
+
         private bool On_BackRequested()
         {
             if (!ContentFrame.CanGoBack)

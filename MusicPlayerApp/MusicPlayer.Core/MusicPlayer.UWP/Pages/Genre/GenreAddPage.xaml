@@ -19,15 +19,15 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Name: "/>
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Description: "/>
 
-        <TextBox Grid.Row="0" Grid.Column="1" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" />
-        <RichEditBox Grid.Row="1" Grid.Column="1" IsSpellCheckEnabled="True" Height="200" />
-
+        <TextBox x:Name="NameTextBox" Grid.Row="0" Grid.Column="1" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" />
+        <RichEditBox x:Name="DescriptionRichBox" Grid.Row="1" Grid.Column="1" IsSpellCheckEnabled="True" Height="200" />
+        <Button  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Create" HorizontalAlignment="Center" Click="Button_Click"/>
     </Grid>
 </Page>

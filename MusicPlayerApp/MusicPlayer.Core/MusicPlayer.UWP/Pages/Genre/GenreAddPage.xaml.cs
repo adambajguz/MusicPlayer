@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicPlayer.UWP.Controllers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,14 +23,31 @@ namespace MusicPlayer.UWP.Pages.Genre
     /// </summary>
     public sealed partial class GenreAddPage : Page
     {
+        private readonly MainPage mainPage;
+        private GenreController genreController;
+
         public GenreAddPage()
         {
             this.InitializeComponent();
+            genreController = new GenreController(App.QueryDispatcher, App.CommandDispatcher);
+
+            var frame = (Frame)Window.Current.Content;
+            mainPage = (MainPage)frame.Content;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
+        }
+
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            String name = NameTextBox.Text;
+            String description = "description";
+            await genreController.Create(name, description);
+
+            mainPage.GoBack();
         }
     }
 }

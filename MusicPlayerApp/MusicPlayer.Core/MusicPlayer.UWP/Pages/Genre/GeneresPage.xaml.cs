@@ -18,8 +18,8 @@ namespace MusicPlayer.UWP.Pages
     public sealed partial class GenresPage : Page
     {
         private readonly MainPage mainPage;
+        private GenreController genreController;
 
-        GenreController GenreController;
         public GenresPage()
         {
             this.InitializeComponent();
@@ -32,7 +32,7 @@ namespace MusicPlayer.UWP.Pages
             LoadingProgress.Visibility = Visibility.Visible;
             PageContent.Visibility = Visibility.Collapsed;
 
-            GenreController = new GenreController(App.QueryDispatcher, App.CommandDispatcher);
+            genreController = new GenreController(App.QueryDispatcher, App.CommandDispatcher);
 
             var mainTask = Task.Factory.StartNew(() =>
             {
@@ -46,9 +46,9 @@ namespace MusicPlayer.UWP.Pages
             Controllers.Genre.Result genre;
             List<Controllers.Genre.Result> genres;
 
-            test = GenreController.GetAll().ToString();
-            genre = await GenreController.Get(1);
-            genres = await GenreController.GetAll();
+            test = genreController.GetAll().ToString();
+            genre = await genreController.Get(1);
+            genres = await genreController.GetAll();
 
             await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
             () =>
