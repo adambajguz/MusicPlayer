@@ -50,11 +50,28 @@ namespace MusicPlayer.UWP.Controllers
             });
         }
 
-        public async Task Create(string name, string surname, string pseudonym, DateTime birthdate, string description)
+        public async Task Create(string name, string surname, string pseudonym, DateTime birthdate, string description, int bandId, int imageId)
         {
             await _commandDispatcher.Dispatch<CreateArtist.Command>(new CreateArtist.Command
             {
-                _data = new CreateArtist.Data(name, surname, pseudonym, birthdate, description)
+                _data = new CreateArtist.Data(name, surname, pseudonym, birthdate, description, bandId, imageId)
+
+            });
+
+        }
+
+        public async Task Update(int id,string name, string surname, string pseudonym, DateTime birthdate, string description, int bandId, int imageId)
+        {
+            await _commandDispatcher.Dispatch<UpdateArtist.Command>(new UpdateArtist.Command
+            {
+                ID = id,
+                Surname=surname,
+                Name=name,
+                Pseudonym=pseudonym,
+                Birthdate=birthdate,
+                Description=description,
+                BandId=bandId,
+                ImageId=imageId
 
             });
 

@@ -52,6 +52,20 @@ namespace MusicPlayer.UWP.Controllers
 
         }
 
+        public async Task Update(int id, string name, DateTime creationDate, DateTime? endDate, string description)
+        {
+            await _commandDispatcher.Dispatch<UpdateBand.Command>(new UpdateBand.Command
+            {
+                ID = id,
+                Name=name,
+                CreationDate=creationDate,
+                EndDate=endDate,
+                Description=description
+
+            });
+
+        }
+
         public async Task Delete(int id)
         {
             await _commandDispatcher.Dispatch<DeleteBand.Command>(new DeleteBand.Command

@@ -56,6 +56,18 @@ namespace MusicPlayer.UWP.Controllers
 
         }
 
+        public async Task Update(int id, string name, string description)
+        {
+            await _commandDispatcher.Dispatch<UpdateGenre.Command>(new UpdateGenre.Command
+            {
+                ID = id,
+                Name = name,
+                Description = description
+
+            });
+
+        }
+
         public async Task Delete(int id)
         {
             await _commandDispatcher.Dispatch<DeleteGenre.Command>(new DeleteGenre.Command
