@@ -1,14 +1,13 @@
 ﻿using MusicPlayer.UWP.Controllers;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Windows.UI.Core;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace MusicPlayer.UWP.Pages
 {
@@ -19,6 +18,7 @@ namespace MusicPlayer.UWP.Pages
     {
         private readonly MainPage mainPage;
         private GenreController genreController;
+        private ObservableRangeCollection<Controllers.Genre.Result> genres = new ObservableRangeCollection<Controllers.Genre.Result>();
 
         public GenresPage()
         {
@@ -34,55 +34,70 @@ namespace MusicPlayer.UWP.Pages
 
             genreController = new GenreController(App.QueryDispatcher, App.CommandDispatcher);
 
+            genres.CollectionChanged += Genres_CollectionChanged;
+
+
             var mainTask = Task.Factory.StartNew(() =>
             {
-                Test();
+                WaitedLoad();
             });
         }
 
-        private async void Test()
+        private async void WaitedLoad()
         {
-            string test;
-            Controllers.Genre.Result genre;
-            List<Controllers.Genre.Result> genres;
-
-            test = genreController.GetAll().ToString();
-            genre = await genreController.Get(1);
-            genres = await genreController.GetAll();
+            List<Controllers.Genre.Result> temp = await genreController.GetAll();
+            genres.AddRange(temp);
 
             await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
             () =>
             {
-                Callback(genre, genres);
+                LoadingProgress.Visibility = Visibility.Collapsed;
+                LoadingProgress.IsActive = false;
+                PageContent.Visibility = Visibility.Visible;
+
+                GenresListView.ItemsSource = genres;
             });
 
 
         }
 
-        private async void Callback(Controllers.Genre.Result genre, List<Controllers.Genre.Result> genres)
+        private void Genres_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            LoadingProgress.Visibility = Visibility.Collapsed;
-            LoadingProgress.IsActive = false;
-            PageContent.Visibility = Visibility.Visible;
-
-            string c = genres.Count.ToString();
-            MessageDialog message = new MessageDialog(c + genre.Name, "OUTPUT:");
-            await message.ShowAsync();
-
-            GenresListView.ItemsSource = genres;
+            var x = e.NewItems;
         }
 
-        private void MenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        //private async void Callback(Controllers.Genre.Result , List<Controllers.Genre.Result> genres)
+        //{
+        //    LoadingProgress.Visibility = Visibility.Collapsed;
+        //    LoadingProgress.IsActive = false;
+        //    PageContent.Visibility = Visibility.Visible;
+
+        //    string c = genres.Count.ToString();
+        //    MessageDialog message = new MessageDialog(c + genre.Name, "OUTPUT:");
+        //    await message.ShowAsync();
+
+        //    GenresListView.ItemsSource = genres;
+        //}
+
+        private async void MenuFlyoutItem_Click(object sender, RoutedEventArgs e)
         {
             if (sender is MenuFlyoutItem selectedItem)
             {
+                List<Controllers.Genre.Result> temp;
+                genres.Clear();
+
                 string sortOption = selectedItem.Tag.ToString();
                 switch (sortOption)
                 {
                     case "az":
+                        temp = await genreController.GetAll();
+                        genres.AddRange(temp);
 
                         break;
+
                     case "za":
+                        temp = await genreController.GetAllDescending();
+                        genres.AddRange(temp);
 
                         break;
 
@@ -94,26 +109,128 @@ namespace MusicPlayer.UWP.Pages
         {
             if (sender is AppBarButton selectedItem)
             {
-                string sortOption = selectedItem.Tag.ToString();
-                switch (sortOption)
+                switch (selectedItem.Tag.ToString())
                 {
                     case "Add":
-                        mainPage.NavView_Navigate(MainPage.GenreAddTag, new EntranceNavigationTransitionInfo(), null);         
-
-                        break;
-
-                    case "Edit":
-                        Controllers.Genre.Result selectedGenre = GenresListView.SelectedItem as Controllers.Genre.Result;
-
-                        mainPage.NavView_Navigate(MainPage.GenreEditTag, new EntranceNavigationTransitionInfo(), selectedGenre.Id);
+                        mainPage.NavView_Navigate(MainPage.GenreAddTag, new EntranceNavigationTransitionInfo(), null);
 
                         break;
 
                     case "Remove":
+                        DisplayDeleteListDialog(GenresListView.SelectedItems);
 
                         break;
 
                 }
+            }
+        }
+
+        private void GenresListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Controllers.Genre.Result clicked = e.ClickedItem as Controllers.Genre.Result;
+
+            mainPage.NavView_Navigate(MainPage.GenreDetailsTag, new EntranceNavigationTransitionInfo(), clicked.Id);
+        }
+
+        private void GenresListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (GenresListView.SelectedItems.Count > 1)
+                DeleteSelected.IsEnabled = false;
+
+        }
+
+
+        private async void ListItemBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is AppBarButton selectedItem)
+            {
+                if (int.TryParse(selectedItem.Tag.ToString(), out int id))
+                {
+                    // parsing successful
+
+                    Controllers.Genre.Result selectedGenre = await genreController.Get(id);
+
+                    switch (selectedItem.Name.ToString())
+                    {
+                        case "IDetails":
+                            mainPage.NavView_Navigate(MainPage.GenreDetailsTag, new EntranceNavigationTransitionInfo(), selectedGenre.Id);
+
+                            break;
+
+                        case "IEdit":
+                            mainPage.NavView_Navigate(MainPage.GenreEditTag, new EntranceNavigationTransitionInfo(), selectedGenre.Id);
+
+                            break;
+
+                        case "IRemove":
+                            DisplayDeleteSingleDialog(selectedGenre);
+
+                            break;
+                    }
+                }
+
+                
+            }
+        }
+
+        private async void DisplayDeleteSingleDialog(Controllers.Genre.Result genreToDelete)
+        {
+            ContentDialog deleteFileDialog = new ContentDialog
+            {
+                Title = "Delete '" + genreToDelete.Name + "' permanently?",
+                Content = "If you delete this genre, you won't be able to recover it. Do you want to delete it?",
+                PrimaryButtonText = "Delete",
+                CloseButtonText = "Cancel"
+            };
+
+            ContentDialogResult result = await deleteFileDialog.ShowAsync();
+
+
+            if (result == ContentDialogResult.Primary)
+            {       
+                // Delete
+
+                await genreController.Delete(genreToDelete.Id);
+
+                List<Controllers.Genre.Result> temp = await genreController.GetAll();
+                genres.Clear();
+                genres.AddRange(temp);
+
+            }
+            else
+            {
+                // The user clicked the CLoseButton, pressed ESC, Gamepad B, or the system back button.
+                // Do nothing.
+            }
+        }
+
+        private async void DisplayDeleteListDialog(IList<object> genresToDelete)
+        {
+            ContentDialog deleteFileDialog = new ContentDialog
+            {
+                Title = "Delete selected genres permanently?",
+                Content = "If you delete these genres, you won't be able to recover them. Do you want to delete them?",
+                PrimaryButtonText = "Delete",
+                CloseButtonText = "Cancel"
+            };
+
+            ContentDialogResult result = await deleteFileDialog.ShowAsync();
+
+
+            if (result == ContentDialogResult.Primary)
+            {
+                // Delete
+                foreach(Controllers.Genre.Result genre in genresToDelete)
+                    await genreController.Delete(genre.Id);
+                
+                List<Controllers.Genre.Result> temp = await genreController.GetAll();
+                genres.Clear();
+                genres.AddRange(temp);
+            }
+            else
+            {
+                // The user clicked the CLoseButton, pressed ESC, Gamepad B, or the system back button.
+                // Do nothing.
             }
         }
     }

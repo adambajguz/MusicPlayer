@@ -7,12 +7,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Windows10version1809="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)"
+    xmlns:helpers="using:MyProject.Helpers"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <RelativePanel>
 
-        <ProgressRing x:Name="LoadingProgress" Visibility="Visible" Width="50" Height="50" IsActive="True"
+        <ProgressRing x:Name="LoadingProgress" Visibility="Collapsed" Width="50" Height="50" IsActive="True"
               RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
 
         <!--<ProgressBar x:Name="LoadingProgress" Visibility="Visible" Width="300" IsIndeterminate="True" ShowPaused="False" ShowError="False"
@@ -31,12 +32,11 @@
 
             <CommandBar Grid.Row="0" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" OverflowButtonVisibility="Auto">
                 <AppBarButton Icon="Add" Label="Add" Tag="Add" Click="AppBarButton_Click"/>
-                <AppBarButton Icon="Edit" Label="Edit" Tag="Edit" Click="AppBarButton_Click"/>
-                <AppBarButton Icon="Delete" Label="Remove" Tag="Remove" Click="AppBarButton_Click"/>
+                <AppBarButton Icon="Delete" x:Name="DeleteSelected" IsEnabled="False" Label="Remove selected" Tag="Remove" Click="AppBarButton_Click"/>
 
                 <AppBarSeparator/>
 
-                <AppBarButton Icon="Sort" IsCompact="True" ToolTipService.ToolTip="Sort" AutomationProperties.Name="Sort">
+                <AppBarButton Icon="Sort" Label="Sort"  IsCompact="True" ToolTipService.ToolTip="Sort" AutomationProperties.Name="Sort">
                     <AppBarButton.Flyout>
                         <MenuFlyout x:Name="SortMenu">
                             <MenuFlyoutItem Text="A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
@@ -48,14 +48,42 @@
 
 
             <ListView Grid.Row="1" x:Name="GenresListView"
-                      IsItemClickEnabled="True" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
-                      Margin="8,8,8,8" >
+                      IsItemClickEnabled="False" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
+                      Margin="8,8,8,8" SelectionChanged="GenresListView_SelectionChanged" >
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
                 <ListView.ItemTemplate>
-                    <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="controller:Result">
-                        <StackPanel Orientation="Horizontal" Padding="12" BorderThickness="2">
+                    <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="controller:Result" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                           
+
+                            <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right"  Grid.Column="1">
+                                <AppBarButton Icon="PreviewLink" x:Name="IDetails" Label="Details" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" />
+                                <AppBarButton Icon="Edit" x:Name="IEdit" Label="Edit" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                                <AppBarButton Icon="Delete" x:Name="IRemove" Label="Remove" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                            </CommandBar>
+
+                        </Grid>
+
+                        <!--<StackPanel Orientation="Horizontal" Padding="12" BorderThickness="2" HorizontalAlignment="Stretch">
                             <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold"/>
-                            <TextBlock Text="{x:Bind Description}" VerticalAlignment="Center" Margin="12,0,0,0"/>
-                        </StackPanel>
+                            <Button x:Name="Details" Width="40" Height="40" HorizontalAlignment="Right"
+                                    Tag="{x:Bind Id}" Click="Details_Click">
+                                <SymbolIcon Symbol="ShowResults" Margin="0"/>
+                            </Button>
+                            -->
+                        <!--<TextBlock Text="{x:Bind Description}" VerticalAlignment="Center" Margin="12,0,0,0"/>-->
+                        <!--
+                        </StackPanel>-->
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

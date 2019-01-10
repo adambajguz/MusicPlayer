@@ -102,6 +102,10 @@
     <Compile Include="Controllers\Genre\UpdateGenre.cs" />
     <Compile Include="Controllers\Playlist\UpdatePlaylist.cs" />
     <Compile Include="Controllers\Song\UpdateSong.cs" />
+    <Compile Include="Pages\DependencyObjectExtensions.cs" />
+    <Compile Include="Pages\Genre\GenreDetailsPage.xaml.cs">
+      <DependentUpon>GenreDetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Genre\GenreEditPage.xaml.cs">
       <DependentUpon>GenreEditPage.xaml</DependentUpon>
     </Compile>
@@ -111,6 +115,7 @@
     <Compile Include="Pages\Genre\GeneresPage.xaml.cs">
       <DependentUpon>GeneresPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ObservableRangeCollection.cs" />
     <Compile Include="Pages\WriteOnce.cs" />
     <Compile Include="Pages\Library\LibraryPage.xaml.cs">
       <DependentUpon>LibraryPage.xaml</DependentUpon>
@@ -297,6 +302,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Pages\Genre\GenreDetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Genre\GenreEditPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

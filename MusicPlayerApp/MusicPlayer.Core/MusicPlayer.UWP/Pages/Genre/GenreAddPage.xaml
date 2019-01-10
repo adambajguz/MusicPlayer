@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid x:Name="PageContent" Visibility="Visible" 
+    <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
               RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
         <Grid.ColumnDefinitions>
@@ -18,16 +18,36 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
+        <TextBlock Text="New Genre" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Name: "/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Description: "/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Name: " Margin="8,0,8,8"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Description: " Margin="8,0,8,8"/>
 
-        <TextBox x:Name="NameTextBox" Grid.Row="0" Grid.Column="1" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" />
-        <RichEditBox x:Name="DescriptionRichBox" Grid.Row="1" Grid.Column="1" IsSpellCheckEnabled="True" Height="200" />
-        <Button  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Create" HorizontalAlignment="Center" Click="Button_Click"/>
+        <TextBox x:Name="NameTextBox" Grid.Row="1" Grid.Column="1" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
+        <RichEditBox x:Name="DescriptionRichBox" Grid.Row="2" Grid.Column="1" IsSpellCheckEnabled="True" Height="200" Margin="8,0,8,8" />
+        
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
+            <Button Click="SaveButton_Click" Margin="8,8,8,8" >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="Save" Margin="8,0,0,0"/>
+                    <TextBlock Text="Create" Margin="15,0,8,0"/>
+                </StackPanel>
+            </Button>
+            <Button Click="CancelButton_Click" Margin="8,8,8,8" ToolTipService.ToolTip="Discard changes" >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="Cancel" Margin="8,0,0,0"/>
+                    <TextBlock Text="Cancel" Margin="15,0,8,0"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <PivotItem Header="PivotItem -1">
+            <Grid/>
+        </PivotItem>
     </Grid>
 </Page>
