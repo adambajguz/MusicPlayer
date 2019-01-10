@@ -96,6 +96,12 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppStart\IocConfig.cs" />
+    <Compile Include="Controllers\Album\UpdateAlbum.cs" />
+    <Compile Include="Controllers\Artist\UpdateArtist.cs" />
+    <Compile Include="Controllers\Band\UpdateBand.cs" />
+    <Compile Include="Controllers\Genre\UpdateGenre.cs" />
+    <Compile Include="Controllers\Playlist\UpdatePlaylist.cs" />
+    <Compile Include="Controllers\Song\UpdateSong.cs" />
     <Compile Include="Pages\Genre\GenreEditPage.xaml.cs">
       <DependentUpon>GenreEditPage.xaml</DependentUpon>
     </Compile>

@@ -45,14 +45,12 @@ namespace MusicPlayer.UWP.Controllers.Song
         {
             private Core.Entities.Song song;
 
-            public Data(int score, string title, DateTime creationDate, string filePath)
+            public Data(int score, string title, DateTime creationDate, string filePath, int imageId, int genreId)
             {
                 song = new Core.Entities.Song();
 
-                //song.Artist = Artist;
-                //song.Album = Album;
-                //song.Image = Image;
-                //song.Genre = Genre;
+                song.ImageId = imageId;
+                song.GenreId = genreId;
                 song.Score = score;
                 song.Title = title;
                 song.CreationDate = creationDate;
