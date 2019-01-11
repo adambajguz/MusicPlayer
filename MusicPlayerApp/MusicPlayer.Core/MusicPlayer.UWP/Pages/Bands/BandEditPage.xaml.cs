@@ -36,9 +36,12 @@ namespace MusicPlayer.UWP.Pages.Genre
             CreationDateCalendar.Date = band.CreationData;
 
             if (band.EndDate != null)
+            {
                 EndDateCalendar.Date = band.EndDate;
+                EndDateToggle.IsOn = true;
+            }
             else
-                EndDateToggle.IsOn = false;
+                EndDateCalendar.Visibility = Visibility.Collapsed;
         }
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
