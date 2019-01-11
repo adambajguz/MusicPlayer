@@ -53,7 +53,9 @@ namespace MusicPlayer.UWP.Pages
         public const string BandEditTag = "bandEdit";
 
         public const string ArtistsTag = "artists";
-
+        public const string ArtistDetailsTag = "artistDetails";
+        public const string ArtistAddTag = "artistAdd";
+        public const string ArtistEditTag = "artistEdit";
 
 
         // List of ValueTuple holding the Navigation Tag and the relative Navigation Page
@@ -71,6 +73,9 @@ namespace MusicPlayer.UWP.Pages
             (BandEditTag, typeof(BandEditPage)),
 
             (ArtistsTag, typeof(ArtistsPage)),
+            (ArtistDetailsTag, typeof(ArtistDetailsPage)),
+            (ArtistAddTag, typeof(ArtistAddPage)),
+            (ArtistEditTag, typeof(ArtistEditPage)),
 
             (GenresTag, typeof(GenresPage)),
             (GenreDetailsTag, typeof(GenreDetailsPage)),

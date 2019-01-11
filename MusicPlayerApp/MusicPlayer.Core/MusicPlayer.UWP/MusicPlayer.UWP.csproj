@@ -102,6 +102,18 @@
     <Compile Include="Controllers\Genre\UpdateGenre.cs" />
     <Compile Include="Controllers\Playlist\UpdatePlaylist.cs" />
     <Compile Include="Controllers\Song\UpdateSong.cs" />
+    <Compile Include="Pages\Artists\ArtistAddPage.xaml.cs">
+      <DependentUpon>ArtistAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Artists\ArtistDetailsPage.xaml.cs">
+      <DependentUpon>ArtistDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Artists\ArtistEditPage.xaml.cs">
+      <DependentUpon>ArtistEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Artists\ArtistsPage.xaml.cs">
+      <DependentUpon>ArtistsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Bands\BandAddPage.xaml.cs">
       <DependentUpon>BandAddPage.xaml</DependentUpon>
     </Compile>
@@ -113,9 +125,6 @@
     </Compile>
     <Compile Include="Pages\Playlists\PlaylistsPage.xaml.cs">
       <DependentUpon>PlaylistsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Artists\ArtistsPage.xaml.cs">
-      <DependentUpon>ArtistsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Albums\AlbumsPage.xaml.cs">
       <DependentUpon>AlbumsPage.xaml</DependentUpon>
@@ -323,6 +332,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Pages\Artists\ArtistAddPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Artists\ArtistDetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Artists\ArtistEditPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Artists\ArtistsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Bands\BandAddPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -336,10 +361,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Playlists\PlaylistsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Artists\ArtistsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
