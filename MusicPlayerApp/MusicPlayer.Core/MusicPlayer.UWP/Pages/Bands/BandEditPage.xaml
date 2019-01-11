@@ -24,7 +24,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Edit Genre" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+        <TextBlock Text="Edit Band" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Name: " Margin="8,0,8,8"/>
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Description: " Margin="8,0,8,8"/>

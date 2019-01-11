@@ -112,7 +112,7 @@ namespace MusicPlayer.UWP.Pages
                 switch (selectedItem.Tag.ToString())
                 {
                     case "Add":
-                        mainPage.NavView_Navigate(MainPage.GenreAddTag, new EntranceNavigationTransitionInfo(), null);
+                        mainPage.NavView_Navigate(MainPage.BandAddTag, new EntranceNavigationTransitionInfo(), null);
 
                         break;
 
@@ -125,12 +125,6 @@ namespace MusicPlayer.UWP.Pages
             }
         }
 
-        private void GenresListView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Controllers.Genre.Result clicked = e.ClickedItem as Controllers.Genre.Result;
-
-            mainPage.NavView_Navigate(MainPage.GenreDetailsTag, new EntranceNavigationTransitionInfo(), clicked.Id);
-        }
 
         private void GenresListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -153,12 +147,12 @@ namespace MusicPlayer.UWP.Pages
                     switch (selectedItem.Name.ToString())
                     {
                         case "IDetails":
-                            mainPage.NavView_Navigate(MainPage.GenreDetailsTag, new EntranceNavigationTransitionInfo(), selectedBand.Id);
+                            mainPage.NavView_Navigate(MainPage.BandDetailsTag, new EntranceNavigationTransitionInfo(), selectedBand.Id);
 
                             break;
 
                         case "IEdit":
-                            mainPage.NavView_Navigate(MainPage.GenreEditTag, new EntranceNavigationTransitionInfo(), selectedBand.Id);
+                            mainPage.NavView_Navigate(MainPage.BandEditTag, new EntranceNavigationTransitionInfo(), selectedBand.Id);
 
                             break;
 
@@ -233,5 +227,6 @@ namespace MusicPlayer.UWP.Pages
                 // Do nothing.
             }
         }
+
     }
 }

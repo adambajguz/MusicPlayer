@@ -125,13 +125,7 @@ namespace MusicPlayer.UWP.Pages
             }
         }
 
-        private void GenresListView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Controllers.Genre.Result clicked = e.ClickedItem as Controllers.Genre.Result;
-
-            mainPage.NavView_Navigate(MainPage.GenreDetailsTag, new EntranceNavigationTransitionInfo(), clicked.Id);
-        }
-
+  
         private void GenresListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (GenresListView.SelectedItems.Count > 1)

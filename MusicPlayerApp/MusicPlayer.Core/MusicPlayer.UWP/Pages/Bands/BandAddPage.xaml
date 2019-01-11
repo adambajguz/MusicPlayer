@@ -22,17 +22,29 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Text="New Genre" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Name: " Margin="8,0,8,8"/>
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Description: " Margin="8,0,8,8"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Description: " Margin="8,0,8,8"/>
 
         <TextBox x:Name="NameTextBox" Grid.Row="1" Grid.Column="1" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
-        <RichEditBox x:Name="DescriptionRichBox" Grid.Row="2" Grid.Column="1" IsSpellCheckEnabled="True" Height="200" Margin="8,0,8,8" />
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1">
+            <CalendarDatePicker PlaceholderText="Pick a date" Header="Band creation:" x:Name="CreationDateCalendar" Margin="8,0,8,8" />
+            <ToggleSwitch Header="Band end:" OffContent="Band still alive" Margin="12,0,0,0" IsFocusEngagementEnabled="True" IsAccessKeyScope="True" AllowFocusOnInteraction="False" Toggled="ToggleSwitch_Toggled">
+            </ToggleSwitch> 
+            <CalendarDatePicker PlaceholderText="Pick a date" Header="&#160;" x:Name="EndDateCalendar" Margin="8,0,8,8" />
+
+        </StackPanel>
+       
         
-        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
+        <RichEditBox x:Name="DescriptionRichBox" Grid.Row="3" Grid.Column="1" IsSpellCheckEnabled="True" Height="200" Margin="8,0,8,8" />
+        
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
             <Button Click="SaveButton_Click" Margin="8,8,8,8" >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="Save" Margin="8,0,0,0"/>

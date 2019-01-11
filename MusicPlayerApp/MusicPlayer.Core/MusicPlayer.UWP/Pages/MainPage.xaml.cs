@@ -48,6 +48,9 @@ namespace MusicPlayer.UWP.Pages
         public const string GenreEditTag = "genreEdit";
 
         public const string BandsTag = "bands";
+        public const string BandDetailsTag = "bandDetails";
+        public const string BandAddTag = "bandAdd";
+        public const string BandEditTag = "bandEdit";
 
         public const string ArtistsTag = "artists";
 
@@ -63,6 +66,9 @@ namespace MusicPlayer.UWP.Pages
             (PlaylistsTag, typeof(PlaylistsPage)),
 
             (BandsTag, typeof(BandsPage)),
+            (BandDetailsTag, typeof(BandDetailsPage)),
+            (BandAddTag, typeof(BandAddPage)),
+            (BandEditTag, typeof(BandEditPage)),
 
             (ArtistsTag, typeof(ArtistsPage)),
 
