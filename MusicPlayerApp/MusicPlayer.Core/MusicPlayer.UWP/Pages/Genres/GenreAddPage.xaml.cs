@@ -35,7 +35,7 @@ namespace MusicPlayer.UWP.Pages.Genre
             string name = NameTextBox.Text;
 
             string description = string.Empty;
-            DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.AdjustCrlf, out description);
+            DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
 
             await genreController.Create(name, description);
 

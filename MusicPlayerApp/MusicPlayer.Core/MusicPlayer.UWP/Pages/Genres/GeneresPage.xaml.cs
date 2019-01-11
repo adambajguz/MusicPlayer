@@ -128,9 +128,10 @@ namespace MusicPlayer.UWP.Pages
   
         private void GenresListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (GenresListView.SelectedItems.Count > 1)
+            if (GenresListView.SelectedItems.Count > 0)
+                DeleteSelected.IsEnabled = true;
+            else
                 DeleteSelected.IsEnabled = false;
-
         }
 
 

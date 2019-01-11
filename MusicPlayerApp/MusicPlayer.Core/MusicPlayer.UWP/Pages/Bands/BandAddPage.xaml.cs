@@ -36,11 +36,11 @@ namespace MusicPlayer.UWP.Pages.Genre
         {
             string name = NameTextBox.Text;
 
-            DateTime creation = CreationDateCalendar.Date.Value.DateTime;
-            DateTime? end = EndDateCalendar.Date.Value.DateTime;
+            DateTime creation = CreationDateCalendar.Date.HasValue ? CreationDateCalendar.Date.Value.DateTime : DateTime.Now;
+            DateTime? end = EndDateToggle.IsOn && EndDateCalendar.Date.HasValue ? (DateTime?)EndDateCalendar.Date.Value.DateTime : (DateTime?)null;
 
             string description = string.Empty;
-            DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.AdjustCrlf, out description);
+            DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
 
             await bandController.Create(name, creation, end, description);
 
