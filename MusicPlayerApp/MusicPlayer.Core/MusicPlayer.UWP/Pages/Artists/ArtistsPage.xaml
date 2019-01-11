@@ -1,9 +1,9 @@
 ﻿<Page
-    x:Class="MusicPlayer.UWP.Pages.ArtistsPage"
+    x:Class="MusicPlayer.UWP.Pages.Artist.ArtistsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:MusicPlayer.UWP"
-    xmlns:controller="using:MusicPlayer.UWP.Controllers.Band"
+    xmlns:local="using:MusicPlayer.UWP.Pages.Artist"
+    xmlns:controller="using:MusicPlayer.UWP.Controllers.Artist"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Windows10version1809="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)"
@@ -28,7 +28,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            
+
             <CommandBar Grid.Row="0" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" OverflowButtonVisibility="Collapsed">
                 <AppBarButton Icon="Add" Label="Add" Tag="Add" Click="AppBarButton_Click"/>
                 <AppBarButton Icon="Delete" x:Name="DeleteSelected" IsEnabled="False" Label="Remove selected" Tag="Remove" Click="AppBarButton_Click"/>
@@ -62,7 +62,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="{x:Bind name}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                            <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
 
 
                             <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right"  Grid.Column="1">

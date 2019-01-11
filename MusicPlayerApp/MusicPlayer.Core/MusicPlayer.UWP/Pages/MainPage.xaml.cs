@@ -1,4 +1,6 @@
 ﻿using MusicPlayer.Core.Extensions;
+using MusicPlayer.UWP.Pages.Artist;
+using MusicPlayer.UWP.Pages.Band;
 using MusicPlayer.UWP.Pages.Genre;
 using System;
 using System.Collections.Generic;

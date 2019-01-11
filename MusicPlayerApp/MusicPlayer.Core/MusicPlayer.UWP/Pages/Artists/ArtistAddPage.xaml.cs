@@ -5,7 +5,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
 
-namespace MusicPlayer.UWP.Pages.Genre
+namespace MusicPlayer.UWP.Pages.Artist
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -13,12 +13,12 @@ namespace MusicPlayer.UWP.Pages.Genre
     public sealed partial class ArtistAddPage : Page
     {
         private readonly MainPage mainPage;
-        private BandController bandController;
+        private ArtistController artistController;
 
         public ArtistAddPage()
         {
             this.InitializeComponent();
-            bandController = new BandController(App.QueryDispatcher, App.CommandDispatcher);
+            artistController = new ArtistController(App.QueryDispatcher, App.CommandDispatcher);
 
             var frame = (Frame)Window.Current.Content;
             mainPage = (MainPage)frame.Content;
@@ -42,7 +42,7 @@ namespace MusicPlayer.UWP.Pages.Genre
             string description = string.Empty;
             DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
 
-            await bandController.Create(name, creation, end, description);
+            //await artistController.Create(name, creation, end, description);
 
             mainPage.GoBack();
         }

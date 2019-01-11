@@ -9,7 +9,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 
 
-namespace MusicPlayer.UWP.Pages
+namespace MusicPlayer.UWP.Pages.Artist
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -17,8 +17,8 @@ namespace MusicPlayer.UWP.Pages
     public sealed partial class ArtistsPage : Page
     {
         private readonly MainPage mainPage;
-        private BandController bandController;
-        private ObservableRangeCollection<Controllers.Band.Result> bands = new ObservableRangeCollection<Controllers.Band.Result>();
+        private ArtistController artistController;
+        private ObservableRangeCollection<Controllers.Artist.Result> bands = new ObservableRangeCollection<Controllers.Artist.Result>();
 
         public ArtistsPage()
         {
@@ -32,7 +32,7 @@ namespace MusicPlayer.UWP.Pages
             LoadingProgress.Visibility = Visibility.Visible;
             PageContent.Visibility = Visibility.Collapsed;
 
-            bandController = new BandController(App.QueryDispatcher, App.CommandDispatcher);
+            artistController = new ArtistController(App.QueryDispatcher, App.CommandDispatcher);
 
             bands.CollectionChanged += Genres_CollectionChanged;
 
@@ -45,7 +45,7 @@ namespace MusicPlayer.UWP.Pages
 
         private async void WaitedLoad()
         {
-            List<Controllers.Band.Result> temp = await bandController.GetAll();
+            List<Controllers.Artist.Result> temp = await artistController.GetAll();
             bands.AddRange(temp);
 
             await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
@@ -83,20 +83,20 @@ namespace MusicPlayer.UWP.Pages
         {
             if (sender is MenuFlyoutItem selectedItem)
             {
-                List<Controllers.Band.Result> temp;
+                List<Controllers.Artist.Result> temp;
                 bands.Clear();
 
                 string sortOption = selectedItem.Tag.ToString();
                 switch (sortOption)
                 {
                     case "az":
-                        temp = await bandController.GetAll();
+                        temp = await artistController.GetAll();
                         bands.AddRange(temp);
 
                         break;
 
                     case "za":
-                        temp = await bandController.GetAllDescending();
+                        temp = await artistController.GetAllDescending();
                         bands.AddRange(temp);
 
                         break;
@@ -143,7 +143,7 @@ namespace MusicPlayer.UWP.Pages
                 {
                     // parsing successful
 
-                    Controllers.Band.Result selectedBand = await bandController.Get(id);
+                    Controllers.Artist.Result selectedBand = await artistController.Get(id);
 
                     switch (selectedItem.Name.ToString())
                     {
@@ -168,11 +168,11 @@ namespace MusicPlayer.UWP.Pages
             }
         }
 
-        private async void DisplayDeleteSingleDialog(Controllers.Band.Result bandToDelete)
+        private async void DisplayDeleteSingleDialog(Controllers.Artist.Result bandToDelete)
         {
             ContentDialog deleteFileDialog = new ContentDialog
             {
-                Title = "Delete '" + bandToDelete.name + "' permanently?",
+                Title = "Delete '" + bandToDelete.Name + "' permanently?",
                 Content = "If you delete this band, you won't be able to recover it. Do you want to delete it?",
                 PrimaryButtonText = "Delete",
                 CloseButtonText = "Cancel"
@@ -185,9 +185,9 @@ namespace MusicPlayer.UWP.Pages
             {
                 // Delete
 
-                await bandController.Delete(bandToDelete.Id);
+                await artistController.Delete(bandToDelete.Id);
 
-                List<Controllers.Band.Result> temp = await bandController.GetAll();
+                List<Controllers.Artist.Result> temp = await artistController.GetAll();
                 bands.Clear();
                 bands.AddRange(temp);
 
@@ -215,10 +215,10 @@ namespace MusicPlayer.UWP.Pages
             if (result == ContentDialogResult.Primary)
             {
                 // Delete
-                foreach (Controllers.Band.Result genre in genresToDelete)
-                    await bandController.Delete(genre.Id);
+                foreach (Controllers.Artist.Result genre in genresToDelete)
+                    await artistController.Delete(genre.Id);
 
-                List<Controllers.Band.Result> temp = await bandController.GetAll();
+                List<Controllers.Artist.Result> temp = await artistController.GetAll();
                 bands.Clear();
                 bands.AddRange(temp);
             }

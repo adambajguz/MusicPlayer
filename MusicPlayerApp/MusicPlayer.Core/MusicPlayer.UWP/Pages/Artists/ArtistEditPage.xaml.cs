@@ -4,7 +4,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace MusicPlayer.UWP.Pages.Genre
+namespace MusicPlayer.UWP.Pages.Artist
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -14,13 +14,13 @@ namespace MusicPlayer.UWP.Pages.Genre
         private WriteOnce<int> elementID = new WriteOnce<int>();
 
         private readonly MainPage mainPage;
-        private BandController bandController;
+        private ArtistController artistController;
 
         public ArtistEditPage()
         {
             this.InitializeComponent();
 
-            bandController = new BandController(App.QueryDispatcher, App.CommandDispatcher);
+            artistController = new ArtistController(App.QueryDispatcher, App.CommandDispatcher);
 
             var frame = (Frame)Window.Current.Content;
             mainPage = (MainPage)frame.Content;
@@ -29,19 +29,19 @@ namespace MusicPlayer.UWP.Pages.Genre
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             elementID.Value = (int)e.Parameter;
-            Controllers.Band.Result band = await bandController.Get(elementID.Value);
-            NameTextBox.Text = band.name;
-            DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, band.Description);
+            Controllers.Artist.Result artist = await artistController.Get(elementID.Value);
+            NameTextBox.Text = artist.Name;
+            DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, artist.Description);
 
-            CreationDateCalendar.Date = band.CreationData;
+            //CreationDateCalendar.Date = artist.CreationData;
 
-            if (band.EndDate != null)
-            {
-                EndDateCalendar.Date = band.EndDate;
-                EndDateToggle.IsOn = true;
-            }
-            else
-                EndDateCalendar.Visibility = Visibility.Collapsed;
+            //if (artist.EndDate != null)
+            //{
+            //    EndDateCalendar.Date = artist.EndDate;
+            //    EndDateToggle.IsOn = true;
+            //}
+            //else
+            //    EndDateCalendar.Visibility = Visibility.Collapsed;
         }
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -54,7 +54,7 @@ namespace MusicPlayer.UWP.Pages.Genre
             string description = string.Empty;
             DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
 
-            await bandController.Update(elementID.Value, name, creation, end, description);
+            //await artistController.Update(elementID.Value, name, creation, end, description);
 
             mainPage.GoBack();
         }
