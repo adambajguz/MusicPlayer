@@ -42,11 +42,19 @@
         <NavigationView x:Name="NavView" Grid.Row="0" RequestedTheme="Default" AlwaysShowHeader="False"
                         Loaded="NavView_Loaded"
                         ItemInvoked="NavView_ItemInvoked"
-                        BackRequested="NavView_BackRequested">
+                        BackRequested="NavView_BackRequested" IsSettingsVisible="False">
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Library" Content="Biblioteka" x:Name="LibraryPageItem" Tag="library" />
-                <NavigationViewItem Icon="Memo" Content="Playlisty" x:Name="PlaylistPageItem" Tag="playlists" />
-                <NavigationViewItem Icon="MusicInfo" Content="Gatunki" x:Name="GenresPageItem" Tag="genres" />
+                <NavigationViewItemHeader>Library</NavigationViewItemHeader>
+                <NavigationViewItem Icon="Audio" Content="Songs" x:Name="SongsPageItem" Tag="songs" />
+                <NavigationViewItem Icon="Library" Content="Albums" x:Name="AlbumsPageItem" Tag="albums" />
+                <NavigationViewItem Icon="Memo" Content="Playlists" x:Name="PlaylistPageItem" Tag="playlists" />
+                <NavigationViewItemSeparator/>
+                
+                <NavigationViewItem Icon="ContactInfo" Content="Bands" x:Name="BandsPageItem" Tag="bands" />
+                <NavigationViewItem Icon="ContactPresence" Content="Artists" x:Name="ArtistsPageItem" Tag="artists" />
+                <NavigationViewItemSeparator/>
+
+                <NavigationViewItem Icon="MusicInfo" Content="Genres" x:Name="GenresPageItem" Tag="genres" />
             </NavigationView.MenuItems>
             
             <Frame x:Name="ContentFrame" NavigationFailed="ContentFrame_NavigationFailed">

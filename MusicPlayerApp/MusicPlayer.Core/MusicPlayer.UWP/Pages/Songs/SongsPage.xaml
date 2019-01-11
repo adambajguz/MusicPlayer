@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="MusicPlayer.UWP.Pages.LibraryPage"
+    x:Class="MusicPlayer.UWP.Pages.SongsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MusicPlayer.UWP"
@@ -9,17 +9,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Pivot Title="Biblioteka">
-            <PivotItem Header="Zespoły">
+        <Pivot>
+            <PivotItem Header="Songs">
                 <Grid/>
             </PivotItem>
-            <PivotItem Header="Artyści">
-                <Grid/>
-            </PivotItem>
-            <PivotItem Header="Albumy">
-                <Grid/>
-            </PivotItem>
-            <PivotItem Header="Utwory">
+            <PivotItem Header="Albums">
                 <Grid/>
             </PivotItem>
         </Pivot>

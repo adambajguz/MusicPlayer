@@ -36,25 +36,40 @@ namespace MusicPlayer.UWP.Pages
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
 
+        public const string SongsTag = "songs";
 
-        public const string LibraryTag = "library";
+        public const string AlbumsTag = "albums";
+
         public const string PlaylistsTag = "playlists";
+
         public const string GenresTag = "genres";
         public const string GenreDetailsTag = "genreDetails";
         public const string GenreAddTag = "genreAdd";
         public const string GenreEditTag = "genreEdit";
 
+        public const string BandsTag = "bands";
+
+        public const string ArtistsTag = "artists";
+
+
 
         // List of ValueTuple holding the Navigation Tag and the relative Navigation Page
         private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
-            (LibraryTag, typeof(LibraryPage)),
-            (PlaylistsTag, typeof(LibraryPage)),
+            (SongsTag, typeof(SongsPage)),
+
+            (AlbumsTag, typeof(AlbumsPage)),
+
+            (PlaylistsTag, typeof(PlaylistsPage)),
+
+            (BandsTag, typeof(BandsPage)),
+
+            (ArtistsTag, typeof(ArtistsPage)),
+
             (GenresTag, typeof(GenresPage)),
             (GenreDetailsTag, typeof(GenreDetailsPage)),
             (GenreAddTag, typeof(GenreAddPage)),
             (GenreEditTag, typeof(GenreEditPage)),
-
         };
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
@@ -77,7 +92,7 @@ namespace MusicPlayer.UWP.Pages
             // If navigation occurs on SelectionChanged, this isn't needed.
             // Because we use ItemInvoked to navigate, we need to call Navigate
             // here to load the home page.
-            NavView_Navigate(LibraryTag, new EntranceNavigationTransitionInfo(), null);
+            NavView_Navigate(SongsTag, new EntranceNavigationTransitionInfo(), null);
 
             // Add keyboard accelerators for backwards navigation.
             var goBack = new KeyboardAccelerator { Key = VirtualKey.GoBack };
