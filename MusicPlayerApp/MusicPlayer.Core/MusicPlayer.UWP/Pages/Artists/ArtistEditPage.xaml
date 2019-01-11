@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MusicPlayer.UWP.Pages.Artist"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controllerBand="using:MusicPlayer.UWP.Controllers.Band"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -12,9 +13,8 @@
               RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
-
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -24,27 +24,38 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="New Band" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+        <TextBlock Text="Edit Artist" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Name: " Margin="8,0,8,8"/>
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Description: " Margin="8,0,8,8"/>
+        <TextBox Header="Name:" x:Name="NameTextBox" Grid.Row="1" Grid.Column="0" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
 
-        <TextBox x:Name="NameTextBox" Grid.Row="1" Grid.Column="1" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
+        <TextBox Header="Surname:" x:Name="SurnameTextBox" Grid.Row="1" Grid.Column="2" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
+        <TextBox Header="Pseudonym:" x:Name="PseudonymTextBox" Grid.Row="2" Grid.Column="0" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
 
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1">
-            <CalendarDatePicker PlaceholderText="Pick a date" Header="Band creation:" x:Name="CreationDateCalendar" Margin="8,0,8,8" />
+        <DatePicker Grid.Row="3" Grid.Column="0" Header="Birthday:" x:Name="BirthdayDatePicker" Margin="8,0,8,8" HorizontalAlignment="Left" />
 
-            <ToggleSwitch Header="Band end:" x:Name="EndDateToggle" OffContent="" OnContent="" Width="64" 
-                         Margin="24,0,0,8" Toggled="ToggleSwitch_Toggled"/>
-            <CalendarDatePicker PlaceholderText="Pick a date" Header="&#160;" x:Name="EndDateCalendar" Margin="0,0,8,8" />
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0"  HorizontalAlignment="Stretch" Margin="8,18,8,8" >
+            <ToggleSwitch Header="Band:" x:Name="BandToogle" OffContent="" OnContent="" Width="64" Toggled="ToggleSwitch_Toggled"/>
+            
+            <ComboBox x:Name="BandComboBox" Header="&#160;" HorizontalAlignment="Stretch" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="controllerBand:Result">
+                        <StackPanel>
+                            <TextBlock Text="{x:Bind name}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
         </StackPanel>
 
 
-        <RichEditBox x:Name="DescriptionRichBox" Grid.Row="3" Grid.Column="1" IsSpellCheckEnabled="True" Height="200" Margin="8,0,8,8" />
 
-        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
+
+        <RichEditBox Header="Description:" x:Name="DescriptionRichBox" Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="2" IsSpellCheckEnabled="True" Height="200" Margin="8,18,8,8" />
+
+        <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
             <Button Click="SaveButton_Click" Margin="8,8,8,8" >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="Save" Margin="8,0,0,0"/>

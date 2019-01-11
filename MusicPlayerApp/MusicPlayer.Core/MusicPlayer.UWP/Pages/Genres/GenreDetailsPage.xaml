@@ -26,7 +26,7 @@
         <TextBlock Text="Genere Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
         <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
-        <RichEditBox x:Name="DescriptionRichBox" Grid.Row="2" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,0,8,8" />
+        <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="2" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
         
         <StackPanel Grid.Row="3"  Orientation="Horizontal" HorizontalAlignment="Right">
               <Button Click="CancelButton_Click" Margin="8,8,8,8" >

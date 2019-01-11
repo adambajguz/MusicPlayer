@@ -45,7 +45,7 @@ namespace MusicPlayer.UWP.Controllers.Artist
         {
             private Core.Entities.Artist artist;
 
-            public Data(string name, string surname, string pseudonym, DateTime birthdate, string description, int bandId, int imageId)
+            public Data(string name, string surname, string pseudonym, DateTime birthdate, string description, int? bandId, int imageId)
             {
                 artist = new Core.Entities.Artist();
 
