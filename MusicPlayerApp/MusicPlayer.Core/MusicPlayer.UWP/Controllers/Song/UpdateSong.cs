@@ -15,7 +15,7 @@ namespace MusicPlayer.UWP.Controllers.Song
         {
             public int ID { get; set; }
            public int GenreId { get; set; }
-            public int ImageId { get; set; }
+            public int? ImageId { get; set; }
             public int Score { get; set; }
             public string Title { get; set; }
             public DateTime CreationDate { get; set; }
