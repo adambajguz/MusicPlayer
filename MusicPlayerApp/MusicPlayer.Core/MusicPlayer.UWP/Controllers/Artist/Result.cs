@@ -5,8 +5,8 @@
         public Result(Core.Entities.Artist x)
         {
             Id = x.Id;
-            Band = x.Band;
-            Photo = x.Photo;
+            BandId = x.BandId;
+            ImageId = x.ImageId;
             Name = x.Name;
             Surname = x.Surname;
             Pseudonym = x.Pseudonym;
