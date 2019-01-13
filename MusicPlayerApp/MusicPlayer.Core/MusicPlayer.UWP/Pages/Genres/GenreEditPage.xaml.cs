@@ -30,6 +30,13 @@ namespace MusicPlayer.UWP.Pages.Genre
         {
             elementID.Value = (int)e.Parameter;
             Controllers.Genre.Result genre = await genreController.Get(elementID.Value);
+
+            if (genre == null)
+            {
+                mainPage.GoBack();
+                return;
+            }
+
             NameTextBox.Text = genre.Name;
             DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, genre.Description);
         }

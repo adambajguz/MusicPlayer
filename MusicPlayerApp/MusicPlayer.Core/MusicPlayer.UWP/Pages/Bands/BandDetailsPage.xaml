@@ -5,6 +5,7 @@
     xmlns:local="using:MusicPlayer.UWP.Pages.Band"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controller="using:MusicPlayer.UWP.Controllers.Artist"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -22,6 +23,8 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Text="Band Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
@@ -29,15 +32,85 @@
         <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
         <TextBlock x:Name="CreationEndTextBox" Grid.Row="2" Margin="8,0,8,8" FontSize="14" FontWeight="Bold" FontStyle="Italic" />
         <RichEditBox x:Name="DescriptionRichBox" Header="Description: " Grid.Row="3" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
-        
-        <StackPanel Grid.Row="4"  Orientation="Horizontal" HorizontalAlignment="Right">
-              <Button Click="CancelButton_Click" Margin="8,8,8,8" >
+
+        <TextBlock Text="Members" Grid.Row="4" Margin="8,10,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <CommandBar Grid.Row="0" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" OverflowButtonVisibility="Collapsed">
+                <AppBarButton Icon="Add" Label="Add" Tag="Add" Click="AppBarButton_Click"/>
+                <AppBarButton Icon="Delete" x:Name="DeleteSelected" IsEnabled="False" Label="Remove selected" Tag="Remove" Click="AppBarButton_Click"/>
+
+                <!--<AppBarSeparator/>-->
+
+                <!--<AppBarButton Icon="Sort" Label="Sort"  IsCompact="True" ToolTipService.ToolTip="Sort" AutomationProperties.Name="Sort">
+                    <AppBarButton.Flyout>
+                        <MenuFlyout x:Name="SortMenu">
+                            <MenuFlyoutItem Text="A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Z..A" Tag="za" Click="MenuFlyoutItem_Click"/>
+                        </MenuFlyout>
+                    </AppBarButton.Flyout>
+                </AppBarButton>-->
+            </CommandBar>
+
+
+            <ListView Grid.Row="1" x:Name="GenresListView"
+                      IsItemClickEnabled="False" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
+                      Margin="8,8,8,8" SelectionChanged="GenresListView_SelectionChanged" >
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="controller:Result" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+
+
+                            <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right"  Grid.Column="1">
+                                <AppBarButton Icon="PreviewLink" x:Name="IDetails" Label="Details" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" />
+                                <AppBarButton Icon="Edit" x:Name="IEdit" Label="Edit" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                                <AppBarButton Icon="Delete" x:Name="IRemove" Label="Remove" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                            </CommandBar>
+
+                        </Grid>
+
+                        <!--<StackPanel Orientation="Horizontal" Padding="12" BorderThickness="2" HorizontalAlignment="Stretch">
+                            <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold"/>
+                            <Button x:Name="Details" Width="40" Height="40" HorizontalAlignment="Right"
+                                    Tag="{x:Bind Id}" Click="Details_Click">
+                                <SymbolIcon Symbol="ShowResults" Margin="0"/>
+                            </Button>
+                            -->
+                        <!--<TextBlock Text="{x:Bind Description}" VerticalAlignment="Center" Margin="12,0,0,0"/>-->
+                        <!--
+                        </StackPanel>-->
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Click="CancelButton_Click" Margin="8,8,8,8" >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="Back" Margin="8,0,0,0"/>
                     <TextBlock Text="Go back" Margin="15,0,8,0"/>
                 </StackPanel>
             </Button>
         </StackPanel>
-      
+
     </Grid>
 </Page>

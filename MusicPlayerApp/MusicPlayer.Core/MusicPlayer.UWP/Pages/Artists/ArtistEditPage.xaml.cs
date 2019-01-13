@@ -50,6 +50,13 @@ namespace MusicPlayer.UWP.Pages.Artist
             elementID.Value = (int)e.Parameter;
             Controllers.Artist.Result artist = await artistController.Get(elementID.Value);
 
+            if (artist == null)
+            {
+                mainPage.GoBack();
+                return;
+            }
+
+
             NameTextBox.Text = artist.Name;
             SurnameTextBox.Text = artist.Surname;
             PseudonymTextBox.Text = artist.Pseudonym;

@@ -18,7 +18,7 @@ namespace MusicPlayer.UWP.Pages.Artist
     {
         private readonly MainPage mainPage;
         private ArtistController artistController;
-        private ObservableRangeCollection<Controllers.Artist.Result> bands = new ObservableRangeCollection<Controllers.Artist.Result>();
+        private ObservableRangeCollection<Controllers.Artist.Result> artists = new ObservableRangeCollection<Controllers.Artist.Result>();
 
         public ArtistsPage()
         {
@@ -34,7 +34,7 @@ namespace MusicPlayer.UWP.Pages.Artist
 
             artistController = new ArtistController(App.QueryDispatcher, App.CommandDispatcher);
 
-            bands.CollectionChanged += Genres_CollectionChanged;
+            artists.CollectionChanged += Artists_CollectionChanged;
 
 
             var mainTask = Task.Factory.StartNew(() =>
@@ -46,7 +46,7 @@ namespace MusicPlayer.UWP.Pages.Artist
         private async void WaitedLoad()
         {
             List<Controllers.Artist.Result> temp = await artistController.GetAll();
-            bands.AddRange(temp);
+            artists.AddRange(temp);
 
             await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
             () =>
@@ -55,13 +55,13 @@ namespace MusicPlayer.UWP.Pages.Artist
                 LoadingProgress.IsActive = false;
                 PageContent.Visibility = Visibility.Visible;
 
-                GenresListView.ItemsSource = bands;
+                ArtistsListView.ItemsSource = artists;
             });
 
 
         }
 
-        private void Genres_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        private void Artists_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             var x = e.NewItems;
         }
@@ -84,20 +84,20 @@ namespace MusicPlayer.UWP.Pages.Artist
             if (sender is MenuFlyoutItem selectedItem)
             {
                 List<Controllers.Artist.Result> temp;
-                bands.Clear();
+                artists.Clear();
 
                 string sortOption = selectedItem.Tag.ToString();
                 switch (sortOption)
                 {
                     case "az":
                         temp = await artistController.GetAll();
-                        bands.AddRange(temp);
+                        artists.AddRange(temp);
 
                         break;
 
                     case "za":
                         temp = await artistController.GetAllDescending();
-                        bands.AddRange(temp);
+                        artists.AddRange(temp);
 
                         break;
 
@@ -117,7 +117,7 @@ namespace MusicPlayer.UWP.Pages.Artist
                         break;
 
                     case "Remove":
-                        DisplayDeleteListDialog(GenresListView.SelectedItems);
+                        DisplayDeleteListDialog(ArtistsListView.SelectedItems);
 
                         break;
 
@@ -126,9 +126,9 @@ namespace MusicPlayer.UWP.Pages.Artist
         }
 
 
-        private void GenresListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ArtistsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (GenresListView.SelectedItems.Count > 0)
+            if (ArtistsListView.SelectedItems.Count > 0)
                 DeleteSelected.IsEnabled = true;
             else
                 DeleteSelected.IsEnabled = false;
@@ -143,22 +143,22 @@ namespace MusicPlayer.UWP.Pages.Artist
                 {
                     // parsing successful
 
-                    Controllers.Artist.Result selectedBand = await artistController.Get(id);
+                    Controllers.Artist.Result selectedArtist = await artistController.Get(id);
 
                     switch (selectedItem.Name.ToString())
                     {
                         case "IDetails":
-                            mainPage.NavView_Navigate(MainPage.ArtistDetailsTag, new EntranceNavigationTransitionInfo(), selectedBand.Id);
+                            mainPage.NavView_Navigate(MainPage.ArtistDetailsTag, new EntranceNavigationTransitionInfo(), selectedArtist.Id);
 
                             break;
 
                         case "IEdit":
-                            mainPage.NavView_Navigate(MainPage.ArtistEditTag, new EntranceNavigationTransitionInfo(), selectedBand.Id);
+                            mainPage.NavView_Navigate(MainPage.ArtistEditTag, new EntranceNavigationTransitionInfo(), selectedArtist.Id);
 
                             break;
 
                         case "IRemove":
-                            DisplayDeleteSingleDialog(selectedBand);
+                            DisplayDeleteSingleDialog(selectedArtist);
 
                             break;
                     }
@@ -173,7 +173,7 @@ namespace MusicPlayer.UWP.Pages.Artist
             ContentDialog deleteFileDialog = new ContentDialog
             {
                 Title = "Delete '" + bandToDelete.Name + "' permanently?",
-                Content = "If you delete this band, you won't be able to recover it. Do you want to delete it?",
+                Content = "If you delete this artist, you won't be able to recover him. Do you want to delete him?",
                 PrimaryButtonText = "Delete",
                 CloseButtonText = "Cancel"
             };
@@ -187,10 +187,8 @@ namespace MusicPlayer.UWP.Pages.Artist
 
                 await artistController.Delete(bandToDelete.Id);
 
-                List<Controllers.Artist.Result> temp = await artistController.GetAll();
-                bands.Clear();
-                bands.AddRange(temp);
-
+                artists.Clear();
+                artists.AddRange(await artistController.GetAll());
             }
             else
             {
@@ -203,8 +201,8 @@ namespace MusicPlayer.UWP.Pages.Artist
         {
             ContentDialog deleteFileDialog = new ContentDialog
             {
-                Title = "Delete selected bands permanently?",
-                Content = "If you delete these bands, you won't be able to recover them. Do you want to delete them?",
+                Title = "Delete selected artists permanently?",
+                Content = "If you delete these artists, you won't be able to recover them. Do you want to delete them?",
                 PrimaryButtonText = "Delete",
                 CloseButtonText = "Cancel"
             };
@@ -218,9 +216,8 @@ namespace MusicPlayer.UWP.Pages.Artist
                 foreach (Controllers.Artist.Result genre in genresToDelete)
                     await artistController.Delete(genre.Id);
 
-                List<Controllers.Artist.Result> temp = await artistController.GetAll();
-                bands.Clear();
-                bands.AddRange(temp);
+                artists.Clear();
+                artists.AddRange(await artistController.GetAll());
             }
             else
             {

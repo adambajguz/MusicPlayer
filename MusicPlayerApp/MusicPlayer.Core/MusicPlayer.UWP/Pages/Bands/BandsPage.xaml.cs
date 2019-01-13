@@ -34,7 +34,7 @@ namespace MusicPlayer.UWP.Pages.Band
 
             bandController = new BandController(App.QueryDispatcher, App.CommandDispatcher);
 
-            bands.CollectionChanged += Genres_CollectionChanged;
+            bands.CollectionChanged += Bands_CollectionChanged;
 
 
             var mainTask = Task.Factory.StartNew(() =>
@@ -55,13 +55,13 @@ namespace MusicPlayer.UWP.Pages.Band
                 LoadingProgress.IsActive = false;
                 PageContent.Visibility = Visibility.Visible;
 
-                GenresListView.ItemsSource = bands;
+                BandsListView.ItemsSource = bands;
             });
 
 
         }
 
-        private void Genres_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        private void Bands_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             var x = e.NewItems;
         }
@@ -117,7 +117,7 @@ namespace MusicPlayer.UWP.Pages.Band
                         break;
 
                     case "Remove":
-                        DisplayDeleteListDialog(GenresListView.SelectedItems);
+                        DisplayDeleteListDialog(BandsListView.SelectedItems);
 
                         break;
 
@@ -126,9 +126,9 @@ namespace MusicPlayer.UWP.Pages.Band
         }
 
 
-        private void GenresListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void BandsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (GenresListView.SelectedItems.Count > 0)
+            if (BandsListView.SelectedItems.Count > 0)
                 DeleteSelected.IsEnabled = true;
             else
                 DeleteSelected.IsEnabled = false;

@@ -46,9 +46,9 @@
             </CommandBar>
 
 
-            <ListView Grid.Row="1" x:Name="GenresListView"
+            <ListView Grid.Row="1" x:Name="ArtistsListView"
                       IsItemClickEnabled="False" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
-                      Margin="8,8,8,8" SelectionChanged="GenresListView_SelectionChanged" >
+                      Margin="8,8,8,8" SelectionChanged="ArtistsListView_SelectionChanged" >
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch" />

@@ -30,6 +30,13 @@ namespace MusicPlayer.UWP.Pages.Band
         {
             elementID.Value = (int)e.Parameter;
             Controllers.Band.Result band = await bandController.Get(elementID.Value);
+
+            if (band == null)
+            {
+                mainPage.GoBack();
+                return;
+            }
+
             NameTextBox.Text = band.name;
             DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, band.Description);
 
