@@ -63,6 +63,9 @@ namespace MusicPlayer.UWP.Pages
         public const string ArtistAddTag = "artistAdd";
         public const string ArtistEditTag = "artistEdit";
 
+        public const string PlayQueueTag = "queue";
+
+
 
         // List of ValueTuple holding the Navigation Tag and the relative Navigation Page
         private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
@@ -90,6 +93,9 @@ namespace MusicPlayer.UWP.Pages
             (GenreDetailsTag, typeof(GenreDetailsPage)),
             (GenreAddTag, typeof(GenreAddPage)),
             (GenreEditTag, typeof(GenreEditPage)),
+
+            (PlayQueueTag, typeof(GenresPage)),
+
         };
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
