@@ -2,6 +2,7 @@
 using MusicPlayer.UWP.Pages.Artist;
 using MusicPlayer.UWP.Pages.Band;
 using MusicPlayer.UWP.Pages.Genre;
+using MusicPlayer.UWP.Pages.Songs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,9 @@ namespace MusicPlayer.UWP.Pages
         }
 
         public const string SongsTag = "songs";
+        public const string SongDetailsTag = "songDetails";
+        public const string SongAddTag = "songAdd";
+        public const string SongEditTag = "songEdit";
 
         public const string AlbumsTag = "albums";
 
@@ -64,6 +68,9 @@ namespace MusicPlayer.UWP.Pages
         private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
             (SongsTag, typeof(SongsPage)),
+            (SongDetailsTag, typeof(SongDetailsPage)),
+            (SongAddTag, typeof(SongAddPage)),
+            (SongEditTag, typeof(SongEditPage)),
 
             (AlbumsTag, typeof(AlbumsPage)),
 

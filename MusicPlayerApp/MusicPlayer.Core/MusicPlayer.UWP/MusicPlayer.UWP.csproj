@@ -146,10 +146,19 @@
       <DependentUpon>GeneresPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ObservableRangeCollection.cs" />
-    <Compile Include="Pages\WriteOnce.cs" />
+    <Compile Include="Pages\Songs\SongAddPage.xaml.cs">
+      <DependentUpon>SongAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Songs\SongDetailsPage.xaml.cs">
+      <DependentUpon>SongDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Songs\SongEditPage.xaml.cs">
+      <DependentUpon>SongEditPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Songs\SongsPage.xaml.cs">
       <DependentUpon>SongsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\WriteOnce.cs" />
     <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\Album\AddSong.cs" />
     <Compile Include="Controllers\Album\CreateAlbum.cs" />
@@ -388,9 +397,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Songs\SongsPage.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Pages\Songs\SongAddPage.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Songs\SongDetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Songs\SongEditPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Songs\SongsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
