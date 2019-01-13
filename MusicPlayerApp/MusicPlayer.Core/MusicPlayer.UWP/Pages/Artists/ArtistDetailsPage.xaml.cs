@@ -63,11 +63,6 @@ namespace MusicPlayer.UWP.Pages.Artist
             DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, artist.Description);
         }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            mainPage.GoBack();
-        }
-
         private void BandHyperlink_Click(object sender, RoutedEventArgs e)
         {
             mainPage.NavView_Navigate(MainPage.BandDetailsTag, new EntranceNavigationTransitionInfo(), bandID.Value);

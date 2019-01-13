@@ -41,9 +41,5 @@ namespace MusicPlayer.UWP.Pages.Genre
             DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, genre.Description);
         }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            mainPage.GoBack();
-        }
     }
 }

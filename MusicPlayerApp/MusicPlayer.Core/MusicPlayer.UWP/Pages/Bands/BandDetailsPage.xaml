@@ -24,7 +24,6 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Text="Band Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
@@ -102,15 +101,6 @@
             </ListView>
         </Grid>
 
-
-        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Click="CancelButton_Click" Margin="8,8,8,8" >
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="Back" Margin="8,0,0,0"/>
-                    <TextBlock Text="Go back" Margin="15,0,8,0"/>
-                </StackPanel>
-            </Button>
-        </StackPanel>
 
     </Grid>
 </Page>

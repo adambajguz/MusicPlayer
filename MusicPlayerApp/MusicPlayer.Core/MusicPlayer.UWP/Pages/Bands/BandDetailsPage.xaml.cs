@@ -60,12 +60,6 @@ namespace MusicPlayer.UWP.Pages.Band
             DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, band.Description);
         }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            mainPage.GoBack();
-        }
-
-
       
         private void Genres_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
