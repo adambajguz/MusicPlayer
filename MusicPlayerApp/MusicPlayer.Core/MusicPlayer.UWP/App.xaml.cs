@@ -5,6 +5,7 @@ using MusicPlayer.Core.CQRS;
 using MusicPlayer.Core.Data;
 using MusicPlayer.Data;
 using MusicPlayer.UWP.AppStart;
+using MusicPlayer.UWP.Controllers;
 using MusicPlayer.UWP.Pages;
 using System;
 using Windows.ApplicationModel;
@@ -66,7 +67,7 @@ namespace MusicPlayer.UWP
 
 
 
-            //         ImageController ImgController = new ImageController(queryDispatcher, commandDispatcher);
+            //         ImageController ImgController = new ImageController(QueryDispatcher, CommandDispatcher);
             //ImgController.Create("sciezka4").Wait();
             //          AlbumController albumController = new AlbumController(queryDispatcher, commandDispatcher);
             //          albumController.Create("tytul", "opis", DateTime.UtcNow, 1).Wait();

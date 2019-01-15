@@ -50,7 +50,7 @@ namespace MusicPlayer.UWP.Controllers
             });
         }
 
-        public async Task Create(string name, string surname, string pseudonym, DateTime birthdate, string description, int bandId, int imageId)
+        public async Task Create(string name, string surname, string pseudonym, DateTime birthdate, string description, int? bandId, int imageId)
         {
             await _commandDispatcher.Dispatch<CreateArtist.Command>(new CreateArtist.Command
             {
@@ -60,7 +60,7 @@ namespace MusicPlayer.UWP.Controllers
 
         }
 
-        public async Task Update(int id,string name, string surname, string pseudonym, DateTime birthdate, string description, int bandId, int imageId)
+        public async Task Update(int id,string name, string surname, string pseudonym, DateTime birthdate, string description, int? bandId, int imageId)
         {
             await _commandDispatcher.Dispatch<UpdateArtist.Command>(new UpdateArtist.Command
             {

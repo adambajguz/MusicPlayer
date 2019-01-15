@@ -19,7 +19,7 @@ namespace MusicPlayer.UWP.Controllers.Artist
             public string Pseudonym { get; set; }
             public DateTime Birthdate { get; set; }
             public string Description { get; set; }
-            public int BandId { get; set; }
+            public int? BandId { get; set; }
             public int ImageId { get; set; }
         }
 

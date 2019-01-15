@@ -1,22 +1,11 @@
 ﻿using MusicPlayer.UWP.Controllers;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace MusicPlayer.UWP.Pages.Genre
+namespace MusicPlayer.UWP.Pages.Genres
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -41,12 +30,21 @@ namespace MusicPlayer.UWP.Pages.Genre
         }
 
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            String name = NameTextBox.Text;
-            String description = "description";
+            string name = NameTextBox.Text;
+
+            string description = string.Empty;
+            DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
+
             await genreController.Create(name, description);
 
+            mainPage.GoBack();
+        }
+
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
             mainPage.GoBack();
         }
     }

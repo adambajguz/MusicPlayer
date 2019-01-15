@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="MusicPlayer.UWP.Pages.Artists.ArtistDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MusicPlayer.UWP.Pages.Artists"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
+              RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
+              RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Artist Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+
+        <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
+        <TextBlock x:Name="BirthdayTextBox" Grid.Row="2" Margin="8,0,8,8" FontSize="14" FontWeight="Bold" FontStyle="Italic" />
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="8,0,8,8">
+            <TextBlock Text="Band: " TextDecorations="None" Margin="0,0,8,0"/>
+            <HyperlinkButton x:Name="BandHyperlink" Content="abc" Padding="0,0,0,0" Click="BandHyperlink_Click" />
+        </StackPanel>
+  
+        <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="5" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
+      
+    </Grid>
+</Page>

@@ -5,8 +5,8 @@
         public Result(Core.Entities.Song x)
         {
             Id = x.Id;
-            Image = x.Image;
-            Genre = x.Genre;
+            ImageId = x.ImageId;
+            GenreId = x.GenreId;
             Score = x.Score;
             Title = x.Title;
             CreationDate = x.CreationDate;

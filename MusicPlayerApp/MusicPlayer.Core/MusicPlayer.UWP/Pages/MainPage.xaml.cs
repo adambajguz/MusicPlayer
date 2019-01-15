@@ -1,5 +1,8 @@
 ﻿using MusicPlayer.Core.Extensions;
-using MusicPlayer.UWP.Pages.Genre;
+using MusicPlayer.UWP.Pages.Artists;
+using MusicPlayer.UWP.Pages.Bands;
+using MusicPlayer.UWP.Pages.Genres;
+using MusicPlayer.UWP.Pages.Songs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,22 +39,62 @@ namespace MusicPlayer.UWP.Pages
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
 
+        public const string SongsTag = "songs";
+        public const string SongDetailsTag = "songDetails";
+        public const string SongAddTag = "songAdd";
+        public const string SongEditTag = "songEdit";
 
-        public const string LibraryTag = "library";
+        public const string AlbumsTag = "albums";
+
         public const string PlaylistsTag = "playlists";
+
         public const string GenresTag = "genres";
+        public const string GenreDetailsTag = "genreDetails";
         public const string GenreAddTag = "genreAdd";
         public const string GenreEditTag = "genreEdit";
+
+        public const string BandsTag = "bands";
+        public const string BandDetailsTag = "bandDetails";
+        public const string BandAddTag = "bandAdd";
+        public const string BandEditTag = "bandEdit";
+
+        public const string ArtistsTag = "artists";
+        public const string ArtistDetailsTag = "artistDetails";
+        public const string ArtistAddTag = "artistAdd";
+        public const string ArtistEditTag = "artistEdit";
+
+        public const string PlayQueueTag = "queue";
+
 
 
         // List of ValueTuple holding the Navigation Tag and the relative Navigation Page
         private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
-            (LibraryTag, typeof(LibraryPage)),
-            (PlaylistsTag, typeof(LibraryPage)),
+            (SongsTag, typeof(SongsPage)),
+            (SongDetailsTag, typeof(SongDetailsPage)),
+            (SongAddTag, typeof(SongAddPage)),
+            (SongEditTag, typeof(SongEditPage)),
+
+            (AlbumsTag, typeof(AlbumsPage)),
+
+            (PlaylistsTag, typeof(PlaylistsPage)),
+
+            (BandsTag, typeof(BandsPage)),
+            (BandDetailsTag, typeof(BandDetailsPage)),
+            (BandAddTag, typeof(BandAddPage)),
+            (BandEditTag, typeof(BandEditPage)),
+
+            (ArtistsTag, typeof(ArtistsPage)),
+            (ArtistDetailsTag, typeof(ArtistDetailsPage)),
+            (ArtistAddTag, typeof(ArtistAddPage)),
+            (ArtistEditTag, typeof(ArtistEditPage)),
+
             (GenresTag, typeof(GenresPage)),
+            (GenreDetailsTag, typeof(GenreDetailsPage)),
             (GenreAddTag, typeof(GenreAddPage)),
             (GenreEditTag, typeof(GenreEditPage)),
+
+            (PlayQueueTag, typeof(GenresPage)),
 
         };
 
@@ -75,7 +118,7 @@ namespace MusicPlayer.UWP.Pages
             // If navigation occurs on SelectionChanged, this isn't needed.
             // Because we use ItemInvoked to navigate, we need to call Navigate
             // here to load the home page.
-            NavView_Navigate(LibraryTag, new EntranceNavigationTransitionInfo(), null);
+            NavView_Navigate(SongsTag, new EntranceNavigationTransitionInfo(), null);
 
             // Add keyboard accelerators for backwards navigation.
             var goBack = new KeyboardAccelerator { Key = VirtualKey.GoBack };
