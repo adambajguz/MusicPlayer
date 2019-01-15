@@ -9,7 +9,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 
 
-namespace MusicPlayer.UWP.Pages.Band
+namespace MusicPlayer.UWP.Pages.Bands
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.

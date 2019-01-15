@@ -6,7 +6,7 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 
-namespace MusicPlayer.UWP.Pages.Artist
+namespace MusicPlayer.UWP.Pages.Artists
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.

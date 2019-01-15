@@ -1,7 +1,7 @@
 ﻿using MusicPlayer.Core.Extensions;
-using MusicPlayer.UWP.Pages.Artist;
-using MusicPlayer.UWP.Pages.Band;
-using MusicPlayer.UWP.Pages.Genre;
+using MusicPlayer.UWP.Pages.Artists;
+using MusicPlayer.UWP.Pages.Bands;
+using MusicPlayer.UWP.Pages.Genres;
 using MusicPlayer.UWP.Pages.Songs;
 using System;
 using System.Collections.Generic;

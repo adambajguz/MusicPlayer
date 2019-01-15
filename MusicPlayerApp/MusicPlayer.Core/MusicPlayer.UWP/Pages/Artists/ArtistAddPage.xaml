@@ -1,8 +1,8 @@
 ﻿<Page
-    x:Class="MusicPlayer.UWP.Pages.Artist.ArtistAddPage"
+    x:Class="MusicPlayer.UWP.Pages.Artists.ArtistAddPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:MusicPlayer.UWP.Pages.Artist"
+    xmlns:local="using:MusicPlayer.UWP.Pages.Artists"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:controllerBand="using:MusicPlayer.UWP.Controllers.Band"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"

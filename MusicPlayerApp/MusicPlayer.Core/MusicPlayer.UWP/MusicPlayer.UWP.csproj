@@ -105,6 +105,7 @@
     <Compile Include="Pages\Artists\ArtistAddPage.xaml.cs">
       <DependentUpon>ArtistAddPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Artists\ArtistData.cs" />
     <Compile Include="Pages\Artists\ArtistDetailsPage.xaml.cs">
       <DependentUpon>ArtistDetailsPage.xaml</DependentUpon>
     </Compile>

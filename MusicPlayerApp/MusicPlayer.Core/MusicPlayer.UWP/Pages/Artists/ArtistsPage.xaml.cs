@@ -9,8 +9,10 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 
 
-namespace MusicPlayer.UWP.Pages.Artist
+namespace MusicPlayer.UWP.Pages.Artists
 {
+
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -18,7 +20,9 @@ namespace MusicPlayer.UWP.Pages.Artist
     {
         private readonly MainPage mainPage;
         private ArtistController artistController;
-        private ObservableRangeCollection<Controllers.Artist.Result> artists = new ObservableRangeCollection<Controllers.Artist.Result>();
+        private BandController bandController;
+
+        private ObservableRangeCollection<ArtistData> artists = new ObservableRangeCollection<ArtistData>();
 
         public ArtistsPage()
         {
@@ -33,6 +37,7 @@ namespace MusicPlayer.UWP.Pages.Artist
             PageContent.Visibility = Visibility.Collapsed;
 
             artistController = new ArtistController(App.QueryDispatcher, App.CommandDispatcher);
+            bandController = new BandController(App.QueryDispatcher, App.CommandDispatcher);
 
             artists.CollectionChanged += Artists_CollectionChanged;
 
@@ -46,7 +51,8 @@ namespace MusicPlayer.UWP.Pages.Artist
         private async void WaitedLoad()
         {
             List<Controllers.Artist.Result> temp = await artistController.GetAll();
-            artists.AddRange(temp);
+            List<ArtistData> artistsList = await LoadArtists(temp);
+
 
             await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
             () =>
@@ -55,10 +61,32 @@ namespace MusicPlayer.UWP.Pages.Artist
                 LoadingProgress.IsActive = false;
                 PageContent.Visibility = Visibility.Visible;
 
+                artists.Clear();
+                artists.AddRange(artistsList);
                 ArtistsListView.ItemsSource = artists;
             });
 
+        }
 
+        private async Task<List<ArtistData>> LoadArtists(List<Controllers.Artist.Result> list)
+        {
+            List<ArtistData> artistsList = new List<ArtistData>();
+
+            artists.Clear();
+
+            foreach (var artist in list)
+            {
+                String bandName = "";
+                if (artist.BandId != null)
+                {
+                    Controllers.Band.Result band = await bandController.Get((int)artist.BandId);
+                    bandName = band.name;
+                }
+
+                artistsList.Add(new ArtistData(artist, bandName));
+            }
+
+            return artistsList;
         }
 
         private void Artists_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -84,6 +112,8 @@ namespace MusicPlayer.UWP.Pages.Artist
             if (sender is MenuFlyoutItem selectedItem)
             {
                 List<Controllers.Artist.Result> temp;
+                List<ArtistData> artistsList;
+
                 artists.Clear();
 
                 string sortOption = selectedItem.Tag.ToString();
@@ -91,13 +121,15 @@ namespace MusicPlayer.UWP.Pages.Artist
                 {
                     case "az":
                         temp = await artistController.GetAll();
-                        artists.AddRange(temp);
+                        artistsList = await LoadArtists(temp);
+                        artists.AddRange(artistsList);
 
                         break;
 
                     case "za":
                         temp = await artistController.GetAllDescending();
-                        artists.AddRange(temp);
+                        artistsList = await LoadArtists(temp);
+                        artists.AddRange(artistsList);
 
                         break;
 
@@ -187,8 +219,11 @@ namespace MusicPlayer.UWP.Pages.Artist
 
                 await artistController.Delete(bandToDelete.Id);
 
+
+                List<Controllers.Artist.Result> temp = await artistController.GetAll();
+                List<ArtistData> artistsList = await LoadArtists(temp);
                 artists.Clear();
-                artists.AddRange(await artistController.GetAll());
+                artists.AddRange(artistsList);
             }
             else
             {
@@ -216,8 +251,11 @@ namespace MusicPlayer.UWP.Pages.Artist
                 foreach (Controllers.Artist.Result genre in genresToDelete)
                     await artistController.Delete(genre.Id);
 
+
+                List<Controllers.Artist.Result> temp = await artistController.GetAll();
+                List<ArtistData> artistsList = await LoadArtists(temp);
                 artists.Clear();
-                artists.AddRange(await artistController.GetAll());
+                artists.AddRange(artistsList);
             }
             else
             {
