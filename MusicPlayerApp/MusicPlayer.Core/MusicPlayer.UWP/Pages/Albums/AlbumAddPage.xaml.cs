@@ -1,5 +1,7 @@
 ﻿using MusicPlayer.UWP.Controllers;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -13,36 +15,53 @@ namespace MusicPlayer.UWP.Pages.Albums
     public sealed partial class AlbumAddPage : Page
     {
         private readonly MainPage mainPage;
-        private BandController bandController;
+        private AlbumController albumController;
+        private SongController songController;
+
+        private ObservableRangeCollection<Controllers.Song.Result> AllSongs = new ObservableRangeCollection<Controllers.Song.Result>();
 
         public AlbumAddPage()
         {
             this.InitializeComponent();
-            bandController = new BandController(App.QueryDispatcher, App.CommandDispatcher);
+            albumController = new AlbumController(App.QueryDispatcher, App.CommandDispatcher);
+            songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
 
             var frame = (Frame)Window.Current.Content;
             mainPage = (MainPage)frame.Content;
 
-            EndDateCalendar.Visibility = Visibility.Collapsed;
+            LoadSongs();
         }
+
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
         }
+        private async void LoadSongs()
+        {
+            List<Controllers.Song.Result> temp = await songController.GetAll();
 
+            AllSongs.AddRange(temp);
+
+            SongsListView.ItemsSource = AllSongs;
+            AllSongs.CollectionChanged += AllBands_CollectionChanged;
+        }
+
+        private void AllBands_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            var x = e.NewItems;
+        }
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string name = NameTextBox.Text;
 
             DateTime creation = CreationDateCalendar.Date.HasValue ? CreationDateCalendar.Date.Value.DateTime : DateTime.Now;
-            DateTime? end = EndDateToggle.IsOn && EndDateCalendar.Date.HasValue ? (DateTime?)EndDateCalendar.Date.Value.DateTime : (DateTime?)null;
 
             string description = string.Empty;
             DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
 
-            await bandController.Create(name, creation, end, description);
+            await albumController.Create(name, description, creation, 1);
 
             mainPage.GoBack();
         }
@@ -53,15 +72,6 @@ namespace MusicPlayer.UWP.Pages.Albums
             mainPage.GoBack();
         }
 
-        private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (sender is ToggleSwitch toggleSwitch)
-            {
-                if (toggleSwitch.IsOn == true)
-                    EndDateCalendar.Visibility = Visibility.Visible;
-                else
-                    EndDateCalendar.Visibility = Visibility.Collapsed;
-            }
-        }
+    
     }
 }

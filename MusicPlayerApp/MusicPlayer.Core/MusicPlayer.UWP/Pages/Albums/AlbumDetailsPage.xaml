@@ -26,13 +26,13 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Band Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+        <TextBlock Text="Album Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
         <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
         <TextBlock x:Name="CreationEndTextBox" Grid.Row="2" Margin="8,0,8,8" FontSize="14" FontWeight="Bold" FontStyle="Italic" />
         <RichEditBox x:Name="DescriptionRichBox" Header="Description: " Grid.Row="3" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
 
-        <TextBlock Text="Members" Grid.Row="4" Margin="8,10,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+        <TextBlock Text="Songs" Grid.Row="4" Margin="8,10,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

@@ -24,7 +24,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="New Band" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+        <TextBlock Text="Edit Album" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
         <TextBox x:Name="NameTextBox" Header="Name:" Grid.Row="1" Grid.Column="1" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
 
