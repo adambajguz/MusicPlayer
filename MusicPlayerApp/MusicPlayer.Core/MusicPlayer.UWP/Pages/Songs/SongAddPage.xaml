@@ -41,7 +41,7 @@
             
             <StackPanel  Margin="24,0,0,0">
                 <TextBlock Text="Song score:"/>
-                <RatingControl x:Name="Rating"  Margin="8,0,8,0" HorizontalAlignment="Left"  />
+                <RatingControl x:Name="ScoreRating" Margin="8,0,8,0" HorizontalAlignment="Left"  />
             </StackPanel>
             
             <ComboBox x:Name="GenreComboBox" Header="Genre" Margin="24,0,0,0" >

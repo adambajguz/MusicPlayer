@@ -1,4 +1,5 @@
 ﻿using MusicPlayer.Core.Extensions;
+using MusicPlayer.UWP.Pages.Albums;
 using MusicPlayer.UWP.Pages.Artists;
 using MusicPlayer.UWP.Pages.Bands;
 using MusicPlayer.UWP.Pages.Genres;
@@ -45,6 +46,10 @@ namespace MusicPlayer.UWP.Pages
         public const string SongEditTag = "songEdit";
 
         public const string AlbumsTag = "albums";
+        public const string AlbumDetailsTag = "albumDetails";
+        public const string AlbumAddTag = "albumAdd";
+        public const string AlbumEditTag = "albumEdit";
+
 
         public const string PlaylistsTag = "playlists";
 
@@ -76,6 +81,9 @@ namespace MusicPlayer.UWP.Pages
             (SongEditTag, typeof(SongEditPage)),
 
             (AlbumsTag, typeof(AlbumsPage)),
+            (AlbumDetailsTag, typeof(AlbumDetailsPage)),
+            (AlbumAddTag, typeof(AlbumAddPage)),
+            (AlbumEditTag, typeof(AlbumEditPage)),
 
             (PlaylistsTag, typeof(PlaylistsPage)),
 

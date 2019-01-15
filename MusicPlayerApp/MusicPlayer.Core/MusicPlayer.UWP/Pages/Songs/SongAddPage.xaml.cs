@@ -90,8 +90,13 @@ namespace MusicPlayer.UWP.Pages.Songs
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string name = NameTextBox.Text;
-            
-            await songController.Create(0, name, DateTime.Now, "", null, 1);
+            int score = Convert.ToInt32(ScoreRating.Value);
+            string filePath = FileTextBox.Text;
+            DateTime creation = CreationDateCalendar.Date.HasValue ? CreationDateCalendar.Date.Value.DateTime : DateTime.Now;
+
+            Controllers.Genre.Result selectedGenre = (Controllers.Genre.Result)GenreComboBox.SelectedItem;
+
+            await songController.Create(score, name, creation, filePath, null, selectedGenre.Id);
 
             mainPage.GoBack();
         }
