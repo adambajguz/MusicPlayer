@@ -38,8 +38,20 @@
                 <AppBarButton Icon="Sort" Label="Sort"  IsCompact="True" ToolTipService.ToolTip="Sort" AutomationProperties.Name="Sort">
                     <AppBarButton.Flyout>
                         <MenuFlyout x:Name="SortMenu">
-                            <MenuFlyoutItem Text="A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
-                            <MenuFlyoutItem Text="Z..A" Tag="za" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Title A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Title Z..A" Tag="za" Click="MenuFlyoutItem_Click"/>
+
+                            <MenuFlyoutItem Text="Length 0..9" Tag="len_az" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Length 9..0" Tag="len_za" Click="MenuFlyoutItem_Click"/>
+
+                            <MenuFlyoutItem Text="Play times 0..9" Tag="play_az" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Play times 9..0" Tag="play_za" Click="MenuFlyoutItem_Click"/>
+                            
+                            <MenuFlyoutItem Text="Score 0..9" Tag="score_az" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Score 9..0" Tag="score_za" Click="MenuFlyoutItem_Click"/>
+
+                            <MenuFlyoutItem Text="Date 0..9" Tag="date_az" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Date 9..0" Tag="date_za" Click="MenuFlyoutItem_Click"/>
                         </MenuFlyout>
                     </AppBarButton.Flyout>
                 </AppBarButton>
@@ -55,7 +67,7 @@
                     </Style>
                 </ListView.ItemContainerStyle>
                 <ListView.ItemTemplate>
-                    <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="controller:Result" >
+                    <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="local:SongData" >
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -63,20 +75,26 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{x:Bind Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                <RatingControl IsReadOnly="True" Value="{x:Bind Song.Score}" Margin="6,0,0,0"/>
+
+                                <TextBlock Text="{x:Bind Song.Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                <TextBlock Text="{x:Bind Song.SongArtists}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                <TextBlock Text="{x:Bind Song.SongAlbums}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                <TextBlock Text="{x:Bind Song.Length}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                <TextBlock Text="{x:Bind Song.PlayTimes}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+
                             </StackPanel>
 
 
                             <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right"  Grid.Column="1">
-                                <AppBarButton Icon="PreviewLink" x:Name="IDetails" Label="Details" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" />
-                                <AppBarButton Icon="Edit" x:Name="IEdit" Label="Edit" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
-                                <AppBarButton Icon="Delete" x:Name="IRemove" Label="Remove" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                                <AppBarButton Icon="Play" x:Name="IPlay" Label="Play" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
+                                <AppBarButton Icon="PreviewLink" x:Name="IDetails" Label="Details" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
+                                <AppBarButton Icon="Edit" x:Name="IEdit" Label="" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                                <AppBarButton Icon="Delete" x:Name="IRemove" Label="" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
                             </CommandBar>
 
                         </Grid>
 
-                        
-                        
                         <!--<StackPanel Orientation="Horizontal" Padding="12" BorderThickness="2" HorizontalAlignment="Stretch">
                             <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold"/>
                             <Button x:Name="Details" Width="40" Height="40" HorizontalAlignment="Right"
