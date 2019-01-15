@@ -106,8 +106,8 @@
     <Compile Include="Pages\Albums\AlbumAddPage.xaml.cs">
       <DependentUpon>AlbumAddPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Albums\AlbumBandDetailsPage.xaml.cs">
-      <DependentUpon>AlbumBandDetailsPage.xaml</DependentUpon>
+    <Compile Include="Pages\Albums\AlbumDetailsPage.xaml.cs">
+      <DependentUpon>AlbumDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Albums\AlbumEditPage.xaml.cs">
       <DependentUpon>AlbumEditPage.xaml</DependentUpon>
@@ -357,7 +357,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Albums\AlbumBandDetailsPage.xaml">
+    <Page Include="Pages\Albums\AlbumDetailsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
