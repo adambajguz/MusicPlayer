@@ -17,8 +17,8 @@ namespace MusicPlayer.UWP.Pages.Playlists
     public sealed partial class PlaylistsPage : Page
     {
         private readonly MainPage mainPage;
-        private AlbumController albumController;
-        private ObservableRangeCollection<Controllers.Album.Result> albums = new ObservableRangeCollection<Controllers.Album.Result>();
+        private PlaylistController playlistController;
+        private ObservableRangeCollection<Controllers.Playlist.Result> playlists = new ObservableRangeCollection<Controllers.Playlist.Result>();
 
         public PlaylistsPage()
         {
@@ -32,9 +32,9 @@ namespace MusicPlayer.UWP.Pages.Playlists
             LoadingProgress.Visibility = Visibility.Visible;
             PageContent.Visibility = Visibility.Collapsed;
 
-            albumController = new AlbumController(App.QueryDispatcher, App.CommandDispatcher);
+            playlistController = new PlaylistController(App.QueryDispatcher, App.CommandDispatcher);
 
-            albums.CollectionChanged += Bands_CollectionChanged;
+            playlists.CollectionChanged += Bands_CollectionChanged;
 
 
             var mainTask = Task.Factory.StartNew(() =>
@@ -45,8 +45,8 @@ namespace MusicPlayer.UWP.Pages.Playlists
 
         private async void WaitedLoad()
         {
-            List<Controllers.Album.Result> temp = await albumController.GetAll();
-            albums.AddRange(temp);
+            List<Controllers.Playlist.Result> temp = await playlistController.GetAll();
+            playlists.AddRange(temp);
 
             await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
             () =>
@@ -55,7 +55,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
                 LoadingProgress.IsActive = false;
                 PageContent.Visibility = Visibility.Visible;
 
-                AlbumsListView.ItemsSource = albums;
+                PlaylistListView.ItemsSource = playlists;
             });
 
 
@@ -83,33 +83,33 @@ namespace MusicPlayer.UWP.Pages.Playlists
         {
             if (sender is MenuFlyoutItem selectedItem)
             {
-                List<Controllers.Album.Result> temp;
-                albums.Clear();
+                List<Controllers.Playlist.Result> temp;
+                playlists.Clear();
 
                 string sortOption = selectedItem.Tag.ToString();
                 switch (sortOption)
                 {
                     case "az":
-                        temp = await albumController.GetAll();
-                        albums.AddRange(temp);
+                        temp = await playlistController.GetAll();
+                        playlists.AddRange(temp);
 
                         break;
 
                     case "za":
-                        temp = await albumController.GetAllDescending();
-                        albums.AddRange(temp);
+                        temp = await playlistController.GetAllDescending();
+                        playlists.AddRange(temp);
 
                         break;
 
                     case "pub_az":
-                        temp = await albumController.GetAllByPublicationDate();
-                        albums.AddRange(temp);
+                        temp = await playlistController.GetAllByDate();
+                        playlists.AddRange(temp);
 
                         break;
 
                     case "pub_za":
-                        temp = await albumController.GetAllByPublicationDateDescending();
-                        albums.AddRange(temp);
+                        temp = await playlistController.GetAllByDateDescending();
+                        playlists.AddRange(temp);
 
                         break;
                 }
@@ -128,7 +128,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
                         break;
 
                     case "Remove":
-                        DisplayDeleteListDialog(AlbumsListView.SelectedItems);
+                        DisplayDeleteListDialog(PlaylistListView.SelectedItems);
 
                         break;
 
@@ -139,7 +139,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
 
         private void BandsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (AlbumsListView.SelectedItems.Count > 0)
+            if (PlaylistListView.SelectedItems.Count > 0)
                 DeleteSelected.IsEnabled = true;
             else
                 DeleteSelected.IsEnabled = false;
@@ -154,12 +154,22 @@ namespace MusicPlayer.UWP.Pages.Playlists
                 {
                     // parsing successful
 
-                    Controllers.Album.Result selectedAlbum = await albumController.Get(id);
+                    Controllers.Playlist.Result selectedAlbum = await playlistController.Get(id);
 
                     switch (selectedItem.Name.ToString())
                     {
+
+                        case "IPlay":
+
+                            break;
+
                         case "IDetails":
                             mainPage.NavView_Navigate(MainPage.PlaylistDetailsTag, new EntranceNavigationTransitionInfo(), selectedAlbum.Id);
+
+                            break;
+
+
+                        case "IExport":
 
                             break;
 
@@ -179,12 +189,12 @@ namespace MusicPlayer.UWP.Pages.Playlists
             }
         }
 
-        private async void DisplayDeleteSingleDialog(Controllers.Album.Result albumToDelete)
+        private async void DisplayDeleteSingleDialog(Controllers.Playlist.Result playlistToDelete)
         {
             ContentDialog deleteFileDialog = new ContentDialog
             {
-                Title = "Delete '" + albumToDelete.Title + "' permanently?",
-                Content = "If you delete this album, you won't be able to recover it. Do you want to delete it?",
+                Title = "Delete '" + playlistToDelete.Name + "' permanently?",
+                Content = "If you delete this playlist, you won't be able to recover it. Do you want to delete it?",
                 PrimaryButtonText = "Delete",
                 CloseButtonText = "Cancel"
             };
@@ -196,11 +206,11 @@ namespace MusicPlayer.UWP.Pages.Playlists
             {
                 // Delete
 
-                await albumController.Delete(albumToDelete.Id);
+                await playlistController.Delete(playlistToDelete.Id);
 
-                List<Controllers.Album.Result> temp = await albumController.GetAll();
-                albums.Clear();
-                albums.AddRange(temp);
+                List<Controllers.Playlist.Result> temp = await playlistController.GetAll();
+                playlists.Clear();
+                playlists.AddRange(temp);
 
             }
             else
@@ -214,8 +224,8 @@ namespace MusicPlayer.UWP.Pages.Playlists
         {
             ContentDialog deleteFileDialog = new ContentDialog
             {
-                Title = "Delete selected albums permanently?",
-                Content = "If you delete these albums, you won't be able to recover them. Do you want to delete them?",
+                Title = "Delete selected playlists permanently?",
+                Content = "If you delete these playlists, you won't be able to recover them. Do you want to delete them?",
                 PrimaryButtonText = "Delete",
                 CloseButtonText = "Cancel"
             };
@@ -226,12 +236,12 @@ namespace MusicPlayer.UWP.Pages.Playlists
             if (result == ContentDialogResult.Primary)
             {
                 // Delete
-                foreach (Controllers.Album.Result genre in genresToDelete)
-                    await albumController.Delete(genre.Id);
+                foreach (Controllers.Playlist.Result genre in genresToDelete)
+                    await playlistController.Delete(genre.Id);
 
-                List<Controllers.Album.Result> temp = await albumController.GetAll();
-                albums.Clear();
-                albums.AddRange(temp);
+                List<Controllers.Playlist.Result> temp = await playlistController.GetAll();
+                playlists.Clear();
+                playlists.AddRange(temp);
             }
             else
             {

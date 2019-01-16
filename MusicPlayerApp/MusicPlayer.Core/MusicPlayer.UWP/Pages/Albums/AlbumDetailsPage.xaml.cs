@@ -220,7 +220,7 @@ namespace MusicPlayer.UWP.Pages.Albums
             ContentDialog deleteFileDialog = new ContentDialog
             {
                 Title = "Delete '" + bandToDelete.Title + "' permanently?",
-                Content = "If you delete this band, you won't be able to recover it. Do you want to delete it?",
+                Content = "If you delete this song, you won't be able to recover it. Do you want to delete it?",
                 PrimaryButtonText = "Delete",
                 CloseButtonText = "Cancel"
             };

@@ -19,7 +19,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
         private WriteOnce<int> elementID = new WriteOnce<int>();
 
         private readonly MainPage mainPage;
-        private AlbumController albumController;
+        private PlaylistController playlistController;
         private SongController songController;
 
         private ObservableRangeCollection<Controllers.Song.Result> songs = new ObservableRangeCollection<Controllers.Song.Result>();
@@ -29,7 +29,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
         {
             this.InitializeComponent();
 
-            albumController = new AlbumController(App.QueryDispatcher, App.CommandDispatcher);
+            playlistController = new PlaylistController(App.QueryDispatcher, App.CommandDispatcher);
             songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
 
             songs.CollectionChanged += Genres_CollectionChanged;
@@ -43,20 +43,20 @@ namespace MusicPlayer.UWP.Pages.Playlists
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             elementID.Value = (int)e.Parameter;
-            Controllers.Album.Result album = await albumController.Get(elementID.Value);
+            Controllers.Playlist.Result playlist = await playlistController.Get(elementID.Value);
 
-            if (album == null)
+            if (playlist == null)
             {
                 mainPage.GoBack();
                 return;
             }
 
 
-            NameTextBox.Text = album.Title;
+            NameTextBox.Text = playlist.Name;
 
-            CreationEndTextBox.Text = "Publication date: " + album.PublicationDate.ToLongDateString() + "\nCreation date: " + album.DBCreationDate.ToLongDateString();
+            CreationEndTextBox.Text = "Creation date: " + playlist.DBCreationDate.ToLongDateString();
 
-            DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, album.Description);
+            DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, playlist.Description);
 
 
             LoadSongs();
@@ -64,7 +64,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
 
         private async void LoadSongs()
         {
-            List<Controllers.Song.Result> temp = await albumController.GetSongs(elementID.Value);
+            List<Controllers.Song.Result> temp = await playlistController.GetSongs(elementID.Value);
 
             songs.AddRange(temp);
 
@@ -132,7 +132,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
                         return;
                 }
 
-                List<Controllers.Song.Result> albumSongs = await albumController.GetSongs(elementID.Value);
+                List<Controllers.Song.Result> albumSongs = await playlistController.GetSongs(elementID.Value);
                 List<int> albumSongsIds = new List<int>();
 
                 foreach (Controllers.Song.Result item in albumSongs)
@@ -220,7 +220,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
             ContentDialog deleteFileDialog = new ContentDialog
             {
                 Title = "Delete '" + bandToDelete.Title + "' permanently?",
-                Content = "If you delete this band, you won't be able to recover it. Do you want to delete it?",
+                Content = "If you delete this song, you won't be able to recover it. Do you want to delete it?",
                 PrimaryButtonText = "Delete",
                 CloseButtonText = "Cancel"
             };
@@ -235,7 +235,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
                 await songController.Delete(bandToDelete.Id);
 
                 songs.Clear();
-                songs.AddRange(await albumController.GetSongs(elementID.Value));
+                songs.AddRange(await playlistController.GetSongs(elementID.Value));
             }
             else
             {
@@ -264,7 +264,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
                     await songController.Delete(song.Id);
 
                 songs.Clear();
-                songs.AddRange(await albumController.GetSongs(elementID.Value));
+                songs.AddRange(await playlistController.GetSongs(elementID.Value));
             }
             else
             {

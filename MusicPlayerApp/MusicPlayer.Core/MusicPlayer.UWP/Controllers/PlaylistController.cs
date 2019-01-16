@@ -36,9 +36,9 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetPlaylistsByDateDescending.Query, List<Result>>(new GetPlaylistsByDateDescending.Query());
         }
 
-        public async Task<List<Result>> GetSongs(int albumId)
+        public async Task<List<Song.Result>> GetSongs(int playlistId)
         {
-            return await _queryDispatcher.Dispatch<GetSongs.Query, List<Result>>(new GetSongs.Query() { ID = albumId });
+            return await _queryDispatcher.Dispatch<GetSongs.Query, List<Song.Result>>(new GetSongs.Query() { ID = playlistId });
         }
 
         public async Task<List<Result>> Search(string name)
@@ -51,9 +51,9 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetPlaylist.Query, Result>(new GetPlaylist.Query() { ID = id });
         }
 
-        public async Task Create(string name, string description)
+        public async Task<int> Create(string name, string description)
         {
-            await _commandDispatcher.Dispatch<CreatePlaylist.Command>(new CreatePlaylist.Command
+            return await _commandDispatcher.Dispatch<CreatePlaylist.Command, int>(new CreatePlaylist.Command
             {
                 _data = new CreatePlaylist.Data(name, description)
 

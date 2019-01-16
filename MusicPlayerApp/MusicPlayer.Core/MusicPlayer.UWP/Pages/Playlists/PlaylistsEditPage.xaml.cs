@@ -17,7 +17,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
         private WriteOnce<int> elementID = new WriteOnce<int>();
 
         private readonly MainPage mainPage;
-        private AlbumController albumController;
+        private PlaylistController playlistController;
 
         private ObservableRangeCollection<Controllers.Song.Result> AllSongs = new ObservableRangeCollection<Controllers.Song.Result>();
         private SongController songController;
@@ -26,7 +26,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
         {
             this.InitializeComponent();
 
-            albumController = new AlbumController(App.QueryDispatcher, App.CommandDispatcher);
+            playlistController = new PlaylistController(App.QueryDispatcher, App.CommandDispatcher);
             songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
 
             var frame = (Frame)Window.Current.Content;
@@ -53,7 +53,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             elementID.Value = (int)e.Parameter;
-            Controllers.Album.Result album = await albumController.Get(elementID.Value);
+            Controllers.Playlist.Result album = await playlistController.Get(elementID.Value);
 
             if (album == null)
             {
@@ -61,13 +61,12 @@ namespace MusicPlayer.UWP.Pages.Playlists
                 return;
             }
 
-            NameTextBox.Text = album.Title;
+            NameTextBox.Text = album.Name;
             DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, album.Description);
 
-            CreationDateCalendar.Date = album.PublicationDate;
-           
+          
 
-            var selected = await albumController.GetSongs(album.Id);
+            var selected = await playlistController.GetSongs(album.Id);
 
             foreach (Controllers.Song.Result item in SongsListView.Items)
                 foreach (var x in selected)
@@ -82,17 +81,15 @@ namespace MusicPlayer.UWP.Pages.Playlists
         {
             string name = NameTextBox.Text;
 
-            DateTime creation = CreationDateCalendar.Date.HasValue ? CreationDateCalendar.Date.Value.DateTime : DateTime.Now;
-
             string description = string.Empty;
             DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
 
-            await albumController.Update(elementID.Value, name, description, creation, 1);
+            await playlistController.Update(elementID.Value, name, description);
 
-            Controllers.Album.Result album = await albumController.Get(elementID.Value);
+            Controllers.Playlist.Result playlist = await playlistController.Get(elementID.Value);
 
             {
-                var selected = await albumController.GetSongs(album.Id);
+                var selected = await playlistController.GetSongs(playlist.Id);
 
                 List<int> selectedSongsIds = new List<int>();
                 List<int> DBSongsIds = new List<int>();
@@ -106,14 +103,14 @@ namespace MusicPlayer.UWP.Pages.Playlists
                 {
                     List<int> toRemove = new List<int>(DBSongsIds.Except(selectedSongsIds));
                     foreach (int i in toRemove)
-                        await albumController.DeleteSong(i, elementID.Value);
+                        await playlistController.DeleteSong(i, elementID.Value);
                 }
 
                 {
                     int s = DBSongsIds.Count;
                     List<int> toAdd = new List<int>(selectedSongsIds.Except(DBSongsIds));
                     foreach (int i in toAdd)
-                        await albumController.AddSong(elementID.Value, i, ++s);
+                        await playlistController.AddSong(elementID.Value, i);
                 }
             }
 

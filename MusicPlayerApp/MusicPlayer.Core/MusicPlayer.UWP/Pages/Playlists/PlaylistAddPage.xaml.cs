@@ -15,7 +15,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
     public sealed partial class PlaylistAddPage : Page
     {
         private readonly MainPage mainPage;
-        private AlbumController albumController;
+        private PlaylistController playlistController;
         private SongController songController;
 
         private ObservableRangeCollection<Controllers.Song.Result> AllSongs = new ObservableRangeCollection<Controllers.Song.Result>();
@@ -23,7 +23,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
         public PlaylistAddPage()
         {
             this.InitializeComponent();
-            albumController = new AlbumController(App.QueryDispatcher, App.CommandDispatcher);
+            playlistController = new PlaylistController(App.QueryDispatcher, App.CommandDispatcher);
             songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
 
             var frame = (Frame)Window.Current.Content;
@@ -56,16 +56,13 @@ namespace MusicPlayer.UWP.Pages.Playlists
         {
             string name = NameTextBox.Text;
 
-            DateTime creation = CreationDateCalendar.Date.HasValue ? CreationDateCalendar.Date.Value.DateTime : DateTime.Now;
-
             string description = string.Empty;
             DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
 
-            int ID = await albumController.Create(name, description, creation, 1);
+            int ID = await playlistController.Create(name, description);
 
-            int s = 1;
             foreach (Controllers.Song.Result song in SongsListView.SelectedItems)
-                await albumController.AddSong(ID, song.Id, s++);
+                await playlistController.AddSong(ID, song.Id);
 
             mainPage.GoBack();
         }

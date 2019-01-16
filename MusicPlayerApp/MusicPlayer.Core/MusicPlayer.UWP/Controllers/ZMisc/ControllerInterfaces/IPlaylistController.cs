@@ -6,6 +6,6 @@ namespace MusicPlayer.UWP.Controllers
 {
     public interface IPlaylistController
     {
-        Task Create(string name, string description);
+        Task<int> Create(string name, string description);
     }
 }

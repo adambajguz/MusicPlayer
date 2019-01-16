@@ -32,9 +32,6 @@
 
         <TextBox x:Name="NameTextBox" Header="Name:" Grid.Row="1" Grid.Column="0" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
 
-        <CalendarDatePicker PlaceholderText="Pick a date" Header="Album creation:" x:Name="CreationDateCalendar" Margin="8,0,8,8" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1"/>
-
-
         <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="3" Grid.Column="0" IsSpellCheckEnabled="True" Height="200" Margin="8,18,8,8" />
 
         <TextBlock Text="Songs:" Grid.Column="0"  Grid.Row="4" Margin="8,0,8,8" />
