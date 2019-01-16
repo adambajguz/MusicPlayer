@@ -24,6 +24,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
@@ -34,9 +35,9 @@
         <TextBox Header="Surname:" x:Name="SurnameTextBox" Grid.Row="1" Grid.Column="2" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
         <TextBox Header="Pseudonym:" x:Name="PseudonymTextBox" Grid.Row="2" Grid.Column="0" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
 
-        <DatePicker Grid.Row="3" Grid.Column="0" Header="Birthday:" x:Name="BirthdayDatePicker" Margin="8,0,8,8" HorizontalAlignment="Left" />
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0"  HorizontalAlignment="Stretch" Margin="8,18,8,8" Grid.ColumnSpan="2">
+            <DatePicker  Header="Birthday:" x:Name="BirthdayDatePicker" Margin="8,0,28,8" HorizontalAlignment="Left" />
 
-        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0"  HorizontalAlignment="Stretch" Margin="8,18,8,8" >
             <ToggleSwitch Header="Band:" x:Name="BandToogle" OffContent="" OnContent="" Width="64" Toggled="ToggleSwitch_Toggled"/>
             
             <ComboBox x:Name="BandComboBox" Header="&#160;" HorizontalAlignment="Stretch" >
@@ -55,7 +56,7 @@
 
         <RichEditBox Header="Description:" x:Name="DescriptionRichBox" Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="2" IsSpellCheckEnabled="True" Height="200" Margin="8,18,8,8" />
 
-        <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
+        <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
             <Button Click="SaveButton_Click" Margin="8,8,8,8" >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="Save" Margin="8,0,0,0"/>

@@ -14,7 +14,7 @@ namespace MusicPlayer.UWP.Controllers.Playlist
             public Data _data { get; set; }
         }
 
-        public class Handler : ICommandHandler<Command>
+        public class Handler : ICommandHandler<Command, int>
         {
             private readonly IUnitOfWork _uow;
 
@@ -23,11 +23,13 @@ namespace MusicPlayer.UWP.Controllers.Playlist
                 _uow = uow;
             }
 
-            public async Task Execute(Command command)
+            public async Task<int> Execute(Command command)
             {
                 _uow.PlaylistRepository.Insert(command._data.GetEntity());
                 int i = _uow.SaveChanges();
                 await _uow.SaveChangesAsync();
+
+                return command._data.GetEntity().Id;
             }
         }
 

@@ -1,26 +1,42 @@
 ﻿<Page
-    x:Class="MusicPlayer.UWP.Pages.Songs.SongsPage"
+    x:Class="MusicPlayer.UWP.Pages.Playlists.PlaylistDetailsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:MusicPlayer.UWP.Pages.Songs"
-    xmlns:controller="using:MusicPlayer.UWP.Controllers.Song"
+    xmlns:local="using:MusicPlayer.UWP.Pages.Playlists"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Windows10version1809="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)"
+    xmlns:controller="using:MusicPlayer.UWP.Controllers.Song"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <RelativePanel>
-
-        <ProgressRing x:Name="LoadingProgress" Visibility="Collapsed" Width="50" Height="50" IsActive="True"
-              RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
-
-        <!--<ProgressBar x:Name="LoadingProgress" Visibility="Visible" Width="300" IsIndeterminate="True" ShowPaused="False" ShowError="False"
-              RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>-->
-
-        <Grid x:Name="PageContent" Visibility="Visible" 
+    <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
               RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Playlist Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+
+        <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
+
+        <TextBlock x:Name="CreationEndTextBox"  Grid.Row="2" Margin="8,0,8,8" FontSize="14" FontWeight="Bold" FontStyle="Italic" />
+        <RichEditBox x:Name="DescriptionRichBox" Header="Description: " Grid.Row="3" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
+
+
+
+        <TextBlock Text="Songs" Grid.Row="4" Margin="8,10,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+        <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
@@ -46,7 +62,7 @@
 
                             <MenuFlyoutItem Text="Play times 0..9" Tag="play_az" Click="MenuFlyoutItem_Click"/>
                             <MenuFlyoutItem Text="Play times 9..0" Tag="play_za" Click="MenuFlyoutItem_Click"/>
-                            
+
                             <MenuFlyoutItem Text="Score 0..9" Tag="score_az" Click="MenuFlyoutItem_Click"/>
                             <MenuFlyoutItem Text="Score 9..0" Tag="score_za" Click="MenuFlyoutItem_Click"/>
 
@@ -57,40 +73,34 @@
                 </AppBarButton>
             </CommandBar>
 
-
-            <ListView Grid.Row="1" x:Name="ArtistsListView"
+            <ListView Grid.Row="1" x:Name="SongsListView"
                       IsItemClickEnabled="False" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
-                      Margin="8,8,8,8" SelectionChanged="ArtistsListView_SelectionChanged" >
+                      Margin="8,8,8,8"  SelectionChanged="GenresListView_SelectionChanged" >
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                     </Style>
                 </ListView.ItemContainerStyle>
                 <ListView.ItemTemplate>
-                    <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="local:SongData" >
+                    <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="controller:Result" >
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-
                             <StackPanel Orientation="Horizontal">
-                                <RatingControl IsReadOnly="True" Value="{x:Bind Song.Score}" Margin="6,0,0,0"/>
+                                <RatingControl IsReadOnly="True" Value="{x:Bind Score}" Margin="6,0,0,0"/>
 
-                                <TextBlock Text="{x:Bind Song.Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.SongArtists}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.SongAlbums}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.Length}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.PlayTimes}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-
+                                <TextBlock Text="{x:Bind Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                <TextBlock Text="{x:Bind Length}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                <TextBlock Text="{x:Bind PlayTimes}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
                             </StackPanel>
 
-
                             <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right"  Grid.Column="1">
-                                <AppBarButton Icon="Play" x:Name="IPlay" Label="Play" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
-                                <AppBarButton Icon="PreviewLink" x:Name="IDetails" Label="Details" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
-                                <AppBarButton Icon="Edit" x:Name="IEdit" Label="" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
-                                <AppBarButton Icon="Delete" x:Name="IRemove" Label="" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                                <AppBarButton Icon="Play" x:Name="IPlay" Label="Play" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" />
+                                <AppBarButton Icon="PreviewLink" x:Name="IDetails" Label="Details" Tag="{x:Bind Id}" Click="ListItemBarButton_Click"/>
+                                <AppBarButton Icon="Edit" x:Name="IEdit" Label="" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                                <AppBarButton Icon="Delete" x:Name="IRemove" Label="" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
                             </CommandBar>
 
                         </Grid>
@@ -109,8 +119,7 @@
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
-    </RelativePanel>
 
 
-
+    </Grid>
 </Page>

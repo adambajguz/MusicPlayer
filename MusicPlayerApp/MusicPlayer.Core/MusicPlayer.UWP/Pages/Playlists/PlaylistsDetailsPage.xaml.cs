@@ -2,113 +2,88 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using Windows.UI.Core;
+using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
+using Windows.UI.Xaml.Navigation;
 
 
-namespace MusicPlayer.UWP.Pages.Songs
+namespace MusicPlayer.UWP.Pages.Playlists
 {
-
-
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class SongsPage : Page
+    public sealed partial class PlaylistDetailsPage : Page
     {
+        private WriteOnce<int> elementID = new WriteOnce<int>();
+
         private readonly MainPage mainPage;
+        private PlaylistController playlistController;
         private SongController songController;
 
-        private ObservableRangeCollection<SongData> songs = new ObservableRangeCollection<SongData>();
+        private ObservableRangeCollection<Controllers.Song.Result> songs = new ObservableRangeCollection<Controllers.Song.Result>();
 
-        public SongsPage()
+
+        public PlaylistDetailsPage()
         {
             this.InitializeComponent();
 
-            //mainPage = this.FindParent<MainPage>();
+            playlistController = new PlaylistController(App.QueryDispatcher, App.CommandDispatcher);
+            songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
+
+            songs.CollectionChanged += Genres_CollectionChanged;
+
 
             var frame = (Frame)Window.Current.Content;
             mainPage = (MainPage)frame.Content;
-
-            LoadingProgress.Visibility = Visibility.Visible;
-            PageContent.Visibility = Visibility.Collapsed;
-
-            songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
-
-            songs.CollectionChanged += Artists_CollectionChanged;
-
-
-            var mainTask = Task.Factory.StartNew(() =>
-            {
-                WaitedLoad();
-            });
         }
 
-        private async void WaitedLoad()
+
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
-            List<Controllers.Song.Result> temp = await songController.GetAll();
-            List<SongData> songsList = await LoadSongs(temp);
+            elementID.Value = (int)e.Parameter;
+            Controllers.Playlist.Result playlist = await playlistController.Get(elementID.Value);
 
-
-            await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
-            () =>
+            if (playlist == null)
             {
-                LoadingProgress.Visibility = Visibility.Collapsed;
-                LoadingProgress.IsActive = false;
-                PageContent.Visibility = Visibility.Visible;
-
-                songs.Clear();
-                songs.AddRange(songsList);
-                ArtistsListView.ItemsSource = songs;
-            });
-
-        }
-
-        private async Task<List<SongData>> LoadSongs(List<Controllers.Song.Result> list)
-        {
-            List<SongData> songsList = new List<SongData>();
-
-            songs.Clear();
-
-            foreach (var song in list)
-            {
-                var albums = await songController.GetAlbums(song.Id);
-                var artists = await songController.GetArtists(song.Id);
-
-                songsList.Add(new SongData(song, albums, artists));
+                mainPage.GoBack();
+                return;
             }
 
-            return songsList;
+
+            NameTextBox.Text = playlist.Name;
+
+            CreationEndTextBox.Text = "Creation date: " + playlist.DBCreationDate.ToLongDateString();
+
+            DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, playlist.Description);
+
+
+            LoadSongs();
         }
 
-        private void Artists_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        private async void LoadSongs()
+        {
+            List<Controllers.Song.Result> temp = await playlistController.GetSongs(elementID.Value);
+
+            songs.AddRange(temp);
+
+            SongsListView.ItemsSource = songs;
+            songs.CollectionChanged += Genres_CollectionChanged;
+        }
+
+
+        private void Genres_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             var x = e.NewItems;
         }
-
-        //private async void Callback(Controllers.Genre.Result , List<Controllers.Genre.Result> genres)
-        //{
-        //    LoadingProgress.Visibility = Visibility.Collapsed;
-        //    LoadingProgress.IsActive = false;
-        //    PageContent.Visibility = Visibility.Visible;
-
-        //    string c = genres.Count.ToString();
-        //    MessageDialog message = new MessageDialog(c + genre.Name, "OUTPUT:");
-        //    await message.ShowAsync();
-
-        //    GenresListView.ItemsSource = genres;
-        //}
 
         private async void MenuFlyoutItem_Click(object sender, RoutedEventArgs e)
         {
             if (sender is MenuFlyoutItem selectedItem)
             {
                 List<Controllers.Song.Result> temp;
-                List<SongData> songsList;
 
-                songs.Clear();
 
                 string sortOption = selectedItem.Tag.ToString();
                 switch (sortOption)
@@ -157,10 +132,23 @@ namespace MusicPlayer.UWP.Pages.Songs
                         return;
                 }
 
-                songsList = await LoadSongs(temp);
-                songs.AddRange(songsList);
+                List<Controllers.Song.Result> albumSongs = await playlistController.GetSongs(elementID.Value);
+                List<int> albumSongsIds = new List<int>();
+
+                foreach (Controllers.Song.Result item in albumSongs)
+                    albumSongsIds.Add(item.Id);
+
+                List<Controllers.Song.Result> toDisplay = new List<Controllers.Song.Result>();
+                foreach (Controllers.Song.Result item in temp)
+                    if (albumSongsIds.Contains(item.Id))
+                        toDisplay.Add(item);
+
+                songs.Clear();
+                songs.AddRange(toDisplay);
             }
         }
+
+
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
@@ -174,23 +162,20 @@ namespace MusicPlayer.UWP.Pages.Songs
                         break;
 
                     case "Remove":
-                        DisplayDeleteListDialog(ArtistsListView.SelectedItems);
+                        DisplayDeleteListDialog(SongsListView.SelectedItems);
 
                         break;
 
                 }
             }
         }
-
-
-        private void ArtistsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void GenresListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ArtistsListView.SelectedItems.Count > 0)
+            if (SongsListView.SelectedItems.Count > 0)
                 DeleteSelected.IsEnabled = true;
             else
                 DeleteSelected.IsEnabled = false;
         }
-
 
         private async void ListItemBarButton_Click(object sender, RoutedEventArgs e)
         {
@@ -229,11 +214,12 @@ namespace MusicPlayer.UWP.Pages.Songs
             }
         }
 
-        private async void DisplayDeleteSingleDialog(Controllers.Song.Result songToDelete)
+
+        private async void DisplayDeleteSingleDialog(Controllers.Song.Result bandToDelete)
         {
             ContentDialog deleteFileDialog = new ContentDialog
             {
-                Title = "Delete '" + songToDelete.Title + "' permanently?",
+                Title = "Delete '" + bandToDelete.Title + "' permanently?",
                 Content = "If you delete this song, you won't be able to recover it. Do you want to delete it?",
                 PrimaryButtonText = "Delete",
                 CloseButtonText = "Cancel"
@@ -246,13 +232,10 @@ namespace MusicPlayer.UWP.Pages.Songs
             {
                 // Delete
 
-                await songController.Delete(songToDelete.Id);
+                await songController.Delete(bandToDelete.Id);
 
-
-                List<Controllers.Song.Result> temp = await songController.GetAll();
-                List<SongData> songsList = await LoadSongs(temp);
                 songs.Clear();
-                songs.AddRange(songsList);
+                songs.AddRange(await playlistController.GetSongs(elementID.Value));
             }
             else
             {
@@ -277,14 +260,11 @@ namespace MusicPlayer.UWP.Pages.Songs
             if (result == ContentDialogResult.Primary)
             {
                 // Delete
-                foreach (Controllers.Song.Result genre in genresToDelete)
-                    await songController.Delete(genre.Id);
+                foreach (Controllers.Song.Result song in genresToDelete)
+                    await songController.Delete(song.Id);
 
-
-                List<Controllers.Song.Result> temp = await songController.GetAll();
-                List<SongData> songsList = await LoadSongs(temp);
                 songs.Clear();
-                songs.AddRange(songsList);
+                songs.AddRange(await playlistController.GetSongs(elementID.Value));
             }
             else
             {
@@ -292,6 +272,6 @@ namespace MusicPlayer.UWP.Pages.Songs
                 // Do nothing.
             }
         }
-
     }
+
 }

@@ -1,15 +1,100 @@
 ﻿<Page
-    x:Class="MusicPlayer.UWP.Pages.PlaylistsPage"
+    x:Class="MusicPlayer.UWP.Pages.Playlists.PlaylistsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:MusicPlayer.UWP"
+    xmlns:local="using:MusicPlayer.UWP.Pages.Playlists"
+    xmlns:controller="using:MusicPlayer.UWP.Controllers.Playlist"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Windows10version1809="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-       
+    <RelativePanel>
 
-    </Grid>
+        <ProgressRing x:Name="LoadingProgress" Visibility="Collapsed" Width="50" Height="50" IsActive="True"
+              RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+
+        <!--<ProgressBar x:Name="LoadingProgress" Visibility="Visible" Width="300" IsIndeterminate="True" ShowPaused="False" ShowError="False"
+              RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>-->
+
+        <Grid x:Name="PageContent" Visibility="Visible" 
+              RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
+              RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+            <CommandBar Grid.Row="0" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" OverflowButtonVisibility="Collapsed">
+                <AppBarButton Icon="Add" Label="Add" Tag="Add" Click="AppBarButton_Click"/>
+                <AppBarButton Icon="Delete" x:Name="DeleteSelected" IsEnabled="False" Label="Remove selected" Tag="Remove" Click="AppBarButton_Click"/>
+
+                <AppBarSeparator/>
+
+                <AppBarButton Icon="Sort" Label="Sort"  IsCompact="True" ToolTipService.ToolTip="Sort" AutomationProperties.Name="Sort">
+                    <AppBarButton.Flyout>
+                        <MenuFlyout x:Name="SortMenu">
+                            <MenuFlyoutItem Text="Title A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Title Z..A" Tag="za" Click="MenuFlyoutItem_Click"/>
+
+                            <MenuFlyoutItem Text="Creation date 0..9" Tag="pub_az" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Creation date 9..0" Tag="pub_za" Click="MenuFlyoutItem_Click"/>
+                        </MenuFlyout>
+                    </AppBarButton.Flyout>
+                </AppBarButton>
+            </CommandBar>
+
+
+            <ListView Grid.Row="1" x:Name="PlaylistListView"
+                      IsItemClickEnabled="False" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
+                      Margin="8,8,8,8" SelectionChanged="BandsListView_SelectionChanged" >
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="controller:Result" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" />
+                            </StackPanel>
+                            
+                            <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right"  Grid.Column="1">
+                                <AppBarButton Icon="Play" x:Name="IPlay" Label="Play" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" />
+                                <AppBarButton Icon="PreviewLink" x:Name="IDetails" Label="Details" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" />
+                                <AppBarButton Icon="Download" x:Name="IExport" Label="Export to XML" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" />
+                                <AppBarButton Icon="Edit" x:Name="IEdit" Label="" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                                <AppBarButton Icon="Delete" x:Name="IRemove" Label="" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                            </CommandBar>
+
+                        </Grid>
+
+                        <!--<StackPanel Orientation="Horizontal" Padding="12" BorderThickness="2" HorizontalAlignment="Stretch">
+                            <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold"/>
+                            <Button x:Name="Details" Width="40" Height="40" HorizontalAlignment="Right"
+                                    Tag="{x:Bind Id}" Click="Details_Click">
+                                <SymbolIcon Symbol="ShowResults" Margin="0"/>
+                            </Button>
+                            -->
+                        <!--<TextBlock Text="{x:Bind Description}" VerticalAlignment="Center" Margin="12,0,0,0"/>-->
+                        <!--
+                        </StackPanel>-->
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </RelativePanel>
+
+
+
 </Page>

@@ -18,7 +18,12 @@ namespace MusicPlayer.UWP.Pages.Songs
     {
         private readonly MainPage mainPage;
         private SongController songController;
+        private GenreController genreController;
+        private AlbumController albumController;
+        private ArtistController artistController;
 
+        private ObservableRangeCollection<Controllers.Album.Result> AllAlbums = new ObservableRangeCollection<Controllers.Album.Result>();
+        private ObservableRangeCollection<Controllers.Genre.Result> AllGenres = new ObservableRangeCollection<Controllers.Genre.Result>();
         private ObservableRangeCollection<Controllers.Artist.Result> AllArtists = new ObservableRangeCollection<Controllers.Artist.Result>();
 
 
@@ -26,28 +31,51 @@ namespace MusicPlayer.UWP.Pages.Songs
         {
             this.InitializeComponent();
             songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
+            genreController = new GenreController(App.QueryDispatcher, App.CommandDispatcher);
+            albumController = new AlbumController(App.QueryDispatcher, App.CommandDispatcher);
+            artistController = new ArtistController(App.QueryDispatcher, App.CommandDispatcher);
 
             var frame = (Frame)Window.Current.Content;
             mainPage = (MainPage)frame.Content;
 
-            LoadBands();
-
-            ArtistComboBox.Visibility = Visibility.Collapsed;
+            LoadAlbums();
+            LoadGenres();
+            LoadArtists();
         }
 
-        private async void LoadBands()
+        private async void LoadAlbums()
         {
-            ArtistController artistController = new ArtistController(App.QueryDispatcher, App.CommandDispatcher);
+            List<Controllers.Album.Result> temp = await albumController.GetAll();
+            
+            AllAlbums.AddRange(temp);
 
-            List<Controllers.Artist.Result> temp = await artistController.GetAll();
-                    
-            AllArtists.AddRange(temp);
-       
-            ArtistComboBox.ItemsSource = AllArtists;
-            AllArtists.CollectionChanged += AllBands_CollectionChanged;
-
-            ArtistComboBox.SelectedIndex = 0;
+            AlbumsListView.ItemsSource = AllAlbums;
+            AllAlbums.CollectionChanged += AllBands_CollectionChanged;
         }
+
+        private async void LoadGenres()
+        {
+            List<Controllers.Genre.Result> temp = await genreController.GetAll();
+
+            AllGenres.AddRange(temp);
+
+            GenreComboBox.ItemsSource = AllGenres;
+            AllGenres.CollectionChanged += AllBands_CollectionChanged;
+
+            GenreComboBox.SelectedIndex = 0;
+        }
+
+        private async void LoadArtists()
+        {
+            List<Controllers.Artist.Result> temp = await artistController.GetAll();
+
+            AllArtists.AddRange(temp);
+
+            ArtistsListView.ItemsSource = AllArtists;
+            AllArtists.CollectionChanged += AllBands_CollectionChanged;
+        }
+
+
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -62,17 +90,13 @@ namespace MusicPlayer.UWP.Pages.Songs
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string name = NameTextBox.Text;
-            string surname = SurnameTextBox.Text;
-            string pseudonym = PseudonymTextBox.Text;
+            int score = Convert.ToInt32(ScoreRating.Value);
+            string filePath = FileTextBox.Text;
+            DateTime creation = CreationDateCalendar.Date.HasValue ? CreationDateCalendar.Date.Value.DateTime : DateTime.Now;
 
-            DateTime birth = BirthdayDatePicker.SelectedDate != null ? BirthdayDatePicker.Date.DateTime : DateTime.Now;
+            Controllers.Genre.Result selectedGenre = (Controllers.Genre.Result)GenreComboBox.SelectedItem;
 
-            int? bandId = BandToogle.IsOn ? (int?)((Controllers.Band.Result)ArtistComboBox.SelectedItem).Id : null;
-
-            string description = string.Empty;
-            DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
-
-            await songController.Create(0, name, birth, pseudonym, null, 1);
+            int id = await songController.Create(score, name, creation, filePath, null, selectedGenre.Id);
 
             mainPage.GoBack();
         }
@@ -83,16 +107,6 @@ namespace MusicPlayer.UWP.Pages.Songs
             mainPage.GoBack();
         }
 
-
-        private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (sender is ToggleSwitch toggleSwitch)
-            {
-                if (toggleSwitch.IsOn == true)
-                    ArtistComboBox.Visibility = Visibility.Visible;
-                else
-                    ArtistComboBox.Visibility = Visibility.Collapsed;
-            }
-        }
+     
     }
 }

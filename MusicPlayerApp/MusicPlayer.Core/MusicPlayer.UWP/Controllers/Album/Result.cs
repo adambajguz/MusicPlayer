@@ -12,5 +12,13 @@
             DBCreationDate = x.DBCreationDate;
         }
 
+        public string PublicationDateLongString
+        {
+            get
+            {
+                return "(" + PublicationDate.ToLongDateString() + ")";
+            }
+        }
+
     }
 }

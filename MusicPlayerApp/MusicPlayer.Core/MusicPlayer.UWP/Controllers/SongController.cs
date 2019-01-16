@@ -82,6 +82,11 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetArtists.Query, List<Artist.Result>>(new GetArtists.Query() { ID = songId });
         }
 
+        public async Task<List<Album.Result>> GetAlbums(int songId)
+        {
+            return await _queryDispatcher.Dispatch<GetAlbums.Query,  List<Album.Result>>(new GetAlbums.Query() { ID = songId });
+        }
+
         public async Task<Album.Result> GetAlbum(int songId)
         {
             return await _queryDispatcher.Dispatch<GetAlbum.Query, Album.Result>(new GetAlbum.Query() { ID = songId });
@@ -92,9 +97,9 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetBand.Query, Band.Result>(new GetBand.Query() { ID = artistId });
         }
 
-        public async Task Create(int score, string title, DateTime creationDate, string filePath, int? imageId, int genreId)
+        public async Task<int> Create(int score, string title, DateTime creationDate, string filePath, int? imageId, int genreId)
         {
-            await _commandDispatcher.Dispatch<CreateSong.Command>(new CreateSong.Command
+            return await _commandDispatcher.Dispatch<CreateSong.Command, int>(new CreateSong.Command
             {
                 _data = new CreateSong.Data(score, title, creationDate, filePath, imageId,genreId)
 

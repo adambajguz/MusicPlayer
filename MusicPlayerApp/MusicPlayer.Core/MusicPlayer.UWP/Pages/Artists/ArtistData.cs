@@ -22,6 +22,9 @@ namespace MusicPlayer.UWP.Pages.Artists
         {
             get
             {
+                if (BandName == "")
+                    return "";
+
                 return "(" + BandName + ")";
             }
         }        

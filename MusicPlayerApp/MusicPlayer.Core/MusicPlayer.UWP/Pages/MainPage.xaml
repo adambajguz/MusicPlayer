@@ -49,11 +49,9 @@
                 <NavigationViewItem Icon="Library" Content="Albums" x:Name="AlbumsPageItem" Tag="albums" />
                 <NavigationViewItem Icon="Memo" Content="Playlists" x:Name="PlaylistPageItem" Tag="playlists" />
                 <NavigationViewItemSeparator/>
-                
+
                 <NavigationViewItem Icon="ContactInfo" Content="Bands" x:Name="BandsPageItem" Tag="bands" />
                 <NavigationViewItem Icon="ContactPresence" Content="Artists" x:Name="ArtistsPageItem" Tag="artists" />
-                <NavigationViewItemSeparator/>
-
                 <NavigationViewItem Icon="MusicInfo" Content="Genres" x:Name="GenresPageItem" Tag="genres" />
 
                 <NavigationViewItemSeparator/>
@@ -61,10 +59,13 @@
 
 
             </NavigationView.MenuItems>
-            
-            <Frame x:Name="ContentFrame" NavigationFailed="ContentFrame_NavigationFailed">
-            </Frame>
 
+            <!--<ScrollViewer Height="Auto" Width="Auto" VerticalScrollBarVisibility="Auto">-->
+
+            <Frame x:Name="ContentFrame" NavigationFailed="ContentFrame_NavigationFailed" 
+                        ScrollViewer.VerticalScrollBarVisibility="Visible"  >
+            </Frame>
+            <!--</ScrollViewer>-->
 
         </NavigationView>
 
@@ -82,7 +83,7 @@
             <MediaPlayerElement Name="AudioPlayer" AutoPlay="False" Grid.Column="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}"
                             AreTransportControlsEnabled="True" UseLayoutRounding="False" d:LayoutRounding="Auto" 
                             Source="ms-appx:///Assets/sample.mp3" Margin="0,8,0,8" PosterSource="/Assets/Wide310x150Logo.png">
-    
+
                 <MediaPlayerElement.TransportControls>
                     <MediaTransportControls IsNextTrackButtonVisible="True" IsPreviousTrackButtonVisible="True" IsSeekBarVisible="True" IsFullWindowButtonVisible="True" IsFullWindowEnabled="True" IsRepeatButtonVisible="True"
                                         IsZoomEnabled="False" IsPlaybackRateEnabled="True" IsPlaybackRateButtonVisible="True"
