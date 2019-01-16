@@ -1,5 +1,8 @@
 ﻿using MusicPlayer.UWP.Controllers;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -14,41 +17,65 @@ namespace MusicPlayer.UWP.Pages.Albums
         private WriteOnce<int> elementID = new WriteOnce<int>();
 
         private readonly MainPage mainPage;
-        private BandController bandController;
+        private AlbumController albumController;
+
+        private ObservableRangeCollection<Controllers.Song.Result> AllSongs = new ObservableRangeCollection<Controllers.Song.Result>();
+        private SongController songController;
 
         public AlbumEditPage()
         {
             this.InitializeComponent();
 
-            bandController = new BandController(App.QueryDispatcher, App.CommandDispatcher);
+            albumController = new AlbumController(App.QueryDispatcher, App.CommandDispatcher);
+            songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
 
             var frame = (Frame)Window.Current.Content;
             mainPage = (MainPage)frame.Content;
+
+            LoadSongs();
+        }
+
+        private async void LoadSongs()
+        {
+            List<Controllers.Song.Result> temp = await songController.GetAll();
+
+            AllSongs.AddRange(temp);
+
+            SongsListView.ItemsSource = AllSongs;
+            AllSongs.CollectionChanged += AllBands_CollectionChanged;
+        }
+
+        private void AllBands_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            var x = e.NewItems;
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             elementID.Value = (int)e.Parameter;
-            Controllers.Band.Result band = await bandController.Get(elementID.Value);
+            Controllers.Album.Result album = await albumController.Get(elementID.Value);
 
-            if (band == null)
+            if (album == null)
             {
                 mainPage.GoBack();
                 return;
             }
 
-            NameTextBox.Text = band.name;
-            DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, band.Description);
+            NameTextBox.Text = album.Title;
+            DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, album.Description);
 
-            CreationDateCalendar.Date = band.CreationData;
+            CreationDateCalendar.Date = album.PublicationDate;
+           
 
-            if (band.EndDate != null)
-            {
-                EndDateCalendar.Date = band.EndDate;
-                EndDateToggle.IsOn = true;
-            }
-            else
-                EndDateCalendar.Visibility = Visibility.Collapsed;
+            var selected = await albumController.GetSongs(album.Id);
+
+            foreach (Controllers.Song.Result item in SongsListView.Items)
+                foreach (var x in selected)
+                    if (x.Id == item.Id)
+                    {
+                        SongsListView.SelectedItems.Add(item);
+                        break;
+                    }
         }
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -56,12 +83,39 @@ namespace MusicPlayer.UWP.Pages.Albums
             string name = NameTextBox.Text;
 
             DateTime creation = CreationDateCalendar.Date.HasValue ? CreationDateCalendar.Date.Value.DateTime : DateTime.Now;
-            DateTime? end = EndDateToggle.IsOn && EndDateCalendar.Date.HasValue ? (DateTime?)EndDateCalendar.Date.Value.DateTime : (DateTime?)null;
 
             string description = string.Empty;
             DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
 
-            await bandController.Update(elementID.Value, name, creation, end, description);
+            await albumController.Update(elementID.Value, name, description, creation, 1);
+
+            Controllers.Album.Result album = await albumController.Get(elementID.Value);
+
+            {
+                var selected = await albumController.GetSongs(album.Id);
+
+                List<int> selectedSongsIds = new List<int>();
+                List<int> DBSongsIds = new List<int>();
+
+                foreach (Controllers.Song.Result item in SongsListView.SelectedItems)
+                    selectedSongsIds.Add(item.Id);
+
+                foreach (Controllers.Song.Result item in selected)
+                    DBSongsIds.Add(item.Id);
+
+                {
+                    List<int> toRemove = new List<int>(DBSongsIds.Except(selectedSongsIds));
+                    foreach (int i in toRemove)
+                        await albumController.DeleteSong(i, elementID.Value);
+                }
+
+                {
+                    int s = DBSongsIds.Count;
+                    List<int> toAdd = new List<int>(selectedSongsIds.Except(DBSongsIds));
+                    foreach (int i in toAdd)
+                        await albumController.AddSong(elementID.Value, i, ++s);
+                }
+            }
 
             mainPage.GoBack();
         }
@@ -71,15 +125,6 @@ namespace MusicPlayer.UWP.Pages.Albums
             mainPage.GoBack();
         }
 
-        private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (sender is ToggleSwitch toggleSwitch)
-            {
-                if (toggleSwitch.IsOn == true)
-                    EndDateCalendar.Visibility = Visibility.Visible;
-                else
-                    EndDateCalendar.Visibility = Visibility.Collapsed;
-            }
-        }
+     
     }
 }

@@ -61,7 +61,11 @@ namespace MusicPlayer.UWP.Pages.Albums
             string description = string.Empty;
             DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
 
-            await albumController.Create(name, description, creation, 1);
+            int ID = await albumController.Create(name, description, creation, 1);
+
+            int s = 1;
+            foreach (Controllers.Song.Result song in SongsListView.SelectedItems)
+                await albumController.AddSong(ID, song.Id, s++);
 
             mainPage.GoBack();
         }

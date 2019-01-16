@@ -38,8 +38,11 @@
                 <AppBarButton Icon="Sort" Label="Sort"  IsCompact="True" ToolTipService.ToolTip="Sort" AutomationProperties.Name="Sort">
                     <AppBarButton.Flyout>
                         <MenuFlyout x:Name="SortMenu">
-                            <MenuFlyoutItem Text="A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
-                            <MenuFlyoutItem Text="Z..A" Tag="za" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Title A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Title Z..A" Tag="za" Click="MenuFlyoutItem_Click"/>
+
+                            <MenuFlyoutItem Text="Publication date 0..9" Tag="pub_az" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Publication date 9..0" Tag="pub_za" Click="MenuFlyoutItem_Click"/>
                         </MenuFlyout>
                     </AppBarButton.Flyout>
                 </AppBarButton>
@@ -64,8 +67,7 @@
 
                             <StackPanel Grid.Column="0" Orientation="Horizontal">
                                 <TextBlock Text="{x:Bind Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" />
-                                <TextBlock Text="{x:Bind PublicationDate}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold"/>
-                                <TextBlock Text="{x:Bind DBCreationDate}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" />
+                                <TextBlock Text="{x:Bind PublicationDateLongString}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold"/>
                             </StackPanel>
                             
                             <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right"  Grid.Column="1">

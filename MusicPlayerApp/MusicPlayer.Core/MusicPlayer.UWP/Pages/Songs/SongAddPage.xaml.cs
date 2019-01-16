@@ -96,7 +96,7 @@ namespace MusicPlayer.UWP.Pages.Songs
 
             Controllers.Genre.Result selectedGenre = (Controllers.Genre.Result)GenreComboBox.SelectedItem;
 
-            await songController.Create(score, name, creation, filePath, null, selectedGenre.Id);
+            int id = await songController.Create(score, name, creation, filePath, null, selectedGenre.Id);
 
             mainPage.GoBack();
         }

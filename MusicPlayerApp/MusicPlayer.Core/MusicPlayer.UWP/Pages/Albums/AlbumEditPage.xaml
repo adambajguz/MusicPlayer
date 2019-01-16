@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MusicPlayer.UWP.Pages.Albums"
+    xmlns:controllerSongs="using:MusicPlayer.UWP.Controllers.Song"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -21,25 +22,47 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Text="Edit Album" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
-        <TextBox x:Name="NameTextBox" Header="Name:" Grid.Row="1" Grid.Column="1" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
 
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1">
-            <CalendarDatePicker PlaceholderText="Pick a date" Header="Band creation:" x:Name="CreationDateCalendar" Margin="8,0,8,8" />
 
-            <ToggleSwitch Header="Band end:" x:Name="EndDateToggle" OffContent="" OnContent="" Width="64" 
-                         Margin="24,0,0,8" Toggled="ToggleSwitch_Toggled"/>
-            <CalendarDatePicker PlaceholderText="Pick a date" Header="&#160;" x:Name="EndDateCalendar" Margin="0,0,8,8" />
-        </StackPanel>
+        <TextBox x:Name="NameTextBox" Header="Name:" Grid.Row="1" Grid.Column="0" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
+
+        <CalendarDatePicker PlaceholderText="Pick a date" Header="Album creation:" x:Name="CreationDateCalendar" Margin="8,0,8,8" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1"/>
 
 
         <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="3" Grid.Column="0" IsSpellCheckEnabled="True" Height="200" Margin="8,18,8,8" />
 
-        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="1"  Orientation="Horizontal" HorizontalAlignment="Right" >
+        <TextBlock Text="Songs:" Grid.Column="0"  Grid.Row="4" Margin="8,0,8,8" />
+        <ListView Grid.Column="0" Grid.Row="5" x:Name="SongsListView"
+                      IsItemClickEnabled="False" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
+                      Margin="8,8,8,8" >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="controllerSongs:Result" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Bind Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
             <Button Click="SaveButton_Click" Margin="8,8,8,8" >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="Save" Margin="8,0,0,0"/>

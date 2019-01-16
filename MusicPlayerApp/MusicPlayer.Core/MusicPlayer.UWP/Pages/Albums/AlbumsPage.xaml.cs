@@ -101,6 +101,17 @@ namespace MusicPlayer.UWP.Pages.Albums
 
                         break;
 
+                    case "pub_az":
+                        temp = await albumController.GetAllByPublicationDate();
+                        albums.AddRange(temp);
+
+                        break;
+
+                    case "pub_za":
+                        temp = await albumController.GetAllByPublicationDateDescending();
+                        albums.AddRange(temp);
+
+                        break;
                 }
             }
         }

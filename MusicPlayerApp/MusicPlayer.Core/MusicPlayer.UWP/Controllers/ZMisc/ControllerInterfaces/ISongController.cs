@@ -7,6 +7,6 @@ namespace MusicPlayer.UWP.Controllers
 {
     public interface ISongController
     {
-        Task Create(int score, string title, DateTime creationDate, string filePath,int? imageId, int genreId);
+        Task<int> Create(int score, string title, DateTime creationDate, string filePath,int? imageId, int genreId);
     }
 }
