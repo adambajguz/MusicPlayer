@@ -55,7 +55,7 @@
                 <NavigationViewItem Icon="MusicInfo" Content="Genres" x:Name="GenresPageItem" Tag="genres" />
 
                 <NavigationViewItemSeparator/>
-                <NavigationViewItem Icon="MusicInfo" Content="Play Queue" x:Name="PlayQueuePageItem" Tag="queue" />
+                <NavigationViewItem Icon="Next" Content="Play Queue" x:Name="PlayQueuePageItem" Tag="queue" />
 
 
             </NavigationView.MenuItems>
