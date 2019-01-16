@@ -3,6 +3,7 @@ using MusicPlayer.UWP.Pages.Albums;
 using MusicPlayer.UWP.Pages.Artists;
 using MusicPlayer.UWP.Pages.Bands;
 using MusicPlayer.UWP.Pages.Genres;
+using MusicPlayer.UWP.Pages.Playlists;
 using MusicPlayer.UWP.Pages.Songs;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,9 @@ namespace MusicPlayer.UWP.Pages
 
 
         public const string PlaylistsTag = "playlists";
+        public const string PlaylistDetailsTag = "playlistDetails";
+        public const string PlaylistAddTag = "playlistAdd";
+        public const string PlaylistEditTag = "playlistEdit";
 
         public const string GenresTag = "genres";
         public const string GenreDetailsTag = "genreDetails";
@@ -86,6 +90,9 @@ namespace MusicPlayer.UWP.Pages
             (AlbumEditTag, typeof(AlbumEditPage)),
 
             (PlaylistsTag, typeof(PlaylistsPage)),
+            (PlaylistDetailsTag, typeof(PlaylistDetailsPage)),
+            (PlaylistAddTag, typeof(PlaylistAddPage)),
+            (PlaylistEditTag, typeof(PlaylistEditPage)),
 
             (BandsTag, typeof(BandsPage)),
             (BandDetailsTag, typeof(BandDetailsPage)),

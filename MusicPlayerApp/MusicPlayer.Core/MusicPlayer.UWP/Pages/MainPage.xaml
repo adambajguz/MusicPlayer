@@ -52,8 +52,6 @@
 
                 <NavigationViewItem Icon="ContactInfo" Content="Bands" x:Name="BandsPageItem" Tag="bands" />
                 <NavigationViewItem Icon="ContactPresence" Content="Artists" x:Name="ArtistsPageItem" Tag="artists" />
-                <NavigationViewItemSeparator/>
-
                 <NavigationViewItem Icon="MusicInfo" Content="Genres" x:Name="GenresPageItem" Tag="genres" />
 
                 <NavigationViewItemSeparator/>

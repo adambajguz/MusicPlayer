@@ -9,12 +9,12 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 
-namespace MusicPlayer.UWP.Pages.Albums
+namespace MusicPlayer.UWP.Pages.Playlists
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AlbumDetailsPage : Page
+    public sealed partial class PlaylistDetailsPage : Page
     {
         private WriteOnce<int> elementID = new WriteOnce<int>();
 
@@ -25,7 +25,7 @@ namespace MusicPlayer.UWP.Pages.Albums
         private ObservableRangeCollection<Controllers.Song.Result> songs = new ObservableRangeCollection<Controllers.Song.Result>();
 
 
-        public AlbumDetailsPage()
+        public PlaylistDetailsPage()
         {
             this.InitializeComponent();
 
