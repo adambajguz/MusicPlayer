@@ -20,7 +20,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
@@ -41,7 +41,7 @@
         
         <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="3" Grid.Column="0" IsSpellCheckEnabled="True" Height="200" Margin="8,18,8,8" />
 
-        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
+        <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
             <Button Click="SaveButton_Click" Margin="8,8,8,8" >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="Save" Margin="8,0,0,0"/>
