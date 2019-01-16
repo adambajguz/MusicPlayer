@@ -140,7 +140,6 @@
     <Compile Include="Pages\Bands\BandsPage.xaml.cs">
       <DependentUpon>BandsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DependencyObjectExtensions.cs" />
     <Compile Include="Pages\Genres\GenreDetailsPage.xaml.cs">
       <DependentUpon>GenreDetailsPage.xaml</DependentUpon>
     </Compile>
@@ -503,7 +502,9 @@
       <Name>MusicPlayer.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pages\PlayQueue\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
