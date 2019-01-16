@@ -24,6 +24,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -37,7 +38,7 @@
 
 
         <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0"  HorizontalAlignment="Stretch" Margin="8,18,8,8" Grid.ColumnSpan="2" >
-            <DatePicker Header="Birthday:" x:Name="BirthdayDatePicker" Margin="8,0,28,8" HorizontalAlignment="Left" />
+            <DatePicker Header="Birthday:" x:Name="BirthdayDatePicker" Margin="0,0,28,8" HorizontalAlignment="Left" />
 
             <ToggleSwitch Header="Band:" x:Name="BandToogle" OffContent="" OnContent="" Width="64" Toggled="ToggleSwitch_Toggled"/>
 
@@ -53,9 +54,30 @@
         </StackPanel>
 
 
-        <RichEditBox Header="Description:" x:Name="DescriptionRichBox" Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="2" IsSpellCheckEnabled="True" Height="200" Margin="8,18,8,8" />
+        <Grid  Grid.Row="5" Grid.Column="0"   Grid.ColumnSpan="2"
+              RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
+              RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
+            <TextBox Header="Cover photo:" x:Name="ImageFileTextBox" Grid.Column="0" Margin="8,0,8,8" />
+
+            <Button Margin="8,18,8,4" Grid.Column="1" >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="BrowsePhotos" Margin="8,0,0,0"/>
+                    <TextBlock Text="Browse" Margin="15,0,8,0"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+        <RichEditBox Header="Description:" x:Name="DescriptionRichBox" Grid.Row="6" Grid.Column="0"  Grid.ColumnSpan="2" IsSpellCheckEnabled="True" Height="200" Margin="8,18,8,8" />
+
+        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
             <Button Click="SaveButton_Click" Margin="8,8,8,8" >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="Save" Margin="8,0,0,0"/>
