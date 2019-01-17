@@ -80,7 +80,7 @@ namespace MusicPlayer.UWP.Pages.PlayQueue
                 var albums = await songController.GetAlbums(song.Id);
                 var artists = await songController.GetArtists(song.Id);
 
-                songsList.Add(new PlayQueueData(song, albums, artists, pq.SongId));
+                songsList.Add(new PlayQueueData(song, albums, artists, pq.Id));
             }
 
             return songsList;
@@ -150,7 +150,6 @@ namespace MusicPlayer.UWP.Pages.PlayQueue
                 {
                     // parsing successful
 
-                    Controllers.Song.Result selectedSong = await songController.Get(id);
 
                     switch (selectedItem.Name.ToString())
                     {
@@ -159,12 +158,14 @@ namespace MusicPlayer.UWP.Pages.PlayQueue
                             break;
 
                         case "IDetails":
-                            mainPage.NavView_Navigate(MainPage.SongDetailsTag, new EntranceNavigationTransitionInfo(), selectedSong.Id);
+                            mainPage.NavView_Navigate(MainPage.SongDetailsTag, new EntranceNavigationTransitionInfo(), id);
 
                             break;
 
                         case "IRemove":
-                            DisplayDeleteSingleDialog(selectedSong);
+                            Controllers.PlayQueue.Result selected = await playQueueController.Get(id);
+
+                            DisplayDeleteSingleDialog(selected);
 
                             break;
                     }
@@ -174,11 +175,13 @@ namespace MusicPlayer.UWP.Pages.PlayQueue
             }
         }
 
-        private async void DisplayDeleteSingleDialog(Controllers.Song.Result songToDelete)
+        private async void DisplayDeleteSingleDialog(Controllers.PlayQueue.Result queueItemToDelete)
         {
+            var song = await songController.Get(queueItemToDelete.SongId);
+
             ContentDialog deleteFileDialog = new ContentDialog
             {
-                Title = "Delete '" + songToDelete.Title + "' from play queue?",
+                Title = "Delete '" + song.Title + "' from play queue?",
                 Content = "",
                 PrimaryButtonText = "Delete",
                 CloseButtonText = "Cancel"
@@ -191,7 +194,7 @@ namespace MusicPlayer.UWP.Pages.PlayQueue
             {
                 // Delete
 
-                await songController.Delete(songToDelete.Id);
+                await playQueueController.Delete(queueItemToDelete.Id);
 
 
                 List<Controllers.PlayQueue.Result> temp = await playQueueController.GetAll();
@@ -221,8 +224,8 @@ namespace MusicPlayer.UWP.Pages.PlayQueue
             if (result == ContentDialogResult.Primary)
             {
                 // Delete
-                foreach (SongData tmp in songsToDelete)
-                    await songController.Delete(tmp.Song.Id);
+                foreach (PlayQueueData tmp in songsToDelete)
+                    await playQueueController.Delete(tmp.QueueID);
 
 
                 List<Controllers.PlayQueue.Result> temp = await playQueueController.GetAll();
