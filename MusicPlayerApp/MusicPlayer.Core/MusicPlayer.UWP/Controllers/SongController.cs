@@ -67,7 +67,7 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetSongsByScoreDescending.Query, List<Result>>(new GetSongsByScoreDescending.Query());
         }
 
-        public async Task<List<Result>> SearchSongs(string name)
+        public async Task<List<Result>> Search(string name)
         {
             return await _queryDispatcher.Dispatch<SearchSongs.Query, List<Result>>(new SearchSongs.Query() { Name=name });
         }

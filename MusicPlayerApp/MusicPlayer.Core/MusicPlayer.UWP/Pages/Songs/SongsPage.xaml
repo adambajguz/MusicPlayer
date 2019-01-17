@@ -23,19 +23,24 @@
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <CommandBar Grid.Row="0" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" OverflowButtonVisibility="Collapsed">
+            <AutoSuggestBox Grid.Row="0" Grid.Column="0" FontSize="10" Margin="8,6,0,0" QueryIcon="Find"
+                            PlaceholderText="Search song"
+                            QuerySubmitted="AutoSuggestBox_QuerySubmitted" TextChanged="AutoSuggestBox_TextChanged"/>
+
+            <CommandBar Grid.Row="0" Grid.Column="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" Margin="0,2,0,0" OverflowButtonVisibility="Collapsed">
                 <AppBarButton Icon="Add" Label="Add" Tag="Add" Click="AppBarButton_Click"/>
                 <AppBarButton Icon="Delete" x:Name="DeleteSelected" IsEnabled="False" Label="Remove selected" Tag="Remove" Click="AppBarButton_Click"/>
 
                 <AppBarSeparator/>
 
-                <AppBarButton Icon="Sort" Label="Sort"  IsCompact="True" ToolTipService.ToolTip="Sort" AutomationProperties.Name="Sort">
+                <!--<AppBarButton Icon="Sort" Label="Sort"  IsCompact="True" ToolTipService.ToolTip="Sort" AutomationProperties.Name="Sort">
                     <AppBarButton.Flyout>
                         <MenuFlyout x:Name="SortMenu">
                             <MenuFlyoutItem Text="Title A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
@@ -54,11 +59,55 @@
                             <MenuFlyoutItem Text="Date 9..0" Tag="date_za" Click="MenuFlyoutItem_Click"/>
                         </MenuFlyout>
                     </AppBarButton.Flyout>
-                </AppBarButton>
+                </AppBarButton>-->
+
+                <AppBarElementContainer>
+                    <DropDownButton Content="Sort" FontSize="12">
+                        <DropDownButton.Resources>
+                            <!-- Override default brushes to make the DropDownButton 
+                     match other command bar elements. -->
+                            <Style TargetType="DropDownButton">
+                                <Setter Property="Height" Value="38"/>
+                            </Style>
+                            <SolidColorBrush x:Key="ButtonBackground"
+                                 Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPressed"
+                                 Color="{ThemeResource SystemListMediumColor}"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver"
+                                 Color="{ThemeResource SystemListLowColor}"/>
+
+                            <SolidColorBrush x:Key="ButtonBorderBrush"
+                                 Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver"
+                                 Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushChecked"
+                                 Color="Transparent"/>
+                        </DropDownButton.Resources>
+                        <DropDownButton.Flyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem Text="Title A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
+                                <MenuFlyoutItem Text="Title Z..A" Tag="za" Click="MenuFlyoutItem_Click"/>
+
+                                <MenuFlyoutItem Text="Length 0..9" Tag="len_az" Click="MenuFlyoutItem_Click"/>
+                                <MenuFlyoutItem Text="Length 9..0" Tag="len_za" Click="MenuFlyoutItem_Click"/>
+
+                                <MenuFlyoutItem Text="Play times 0..9" Tag="play_az" Click="MenuFlyoutItem_Click"/>
+                                <MenuFlyoutItem Text="Play times 9..0" Tag="play_za" Click="MenuFlyoutItem_Click"/>
+
+                                <MenuFlyoutItem Text="Score 0..9" Tag="score_az" Click="MenuFlyoutItem_Click"/>
+                                <MenuFlyoutItem Text="Score 9..0" Tag="score_za" Click="MenuFlyoutItem_Click"/>
+
+                                <MenuFlyoutItem Text="Date 0..9" Tag="date_az" Click="MenuFlyoutItem_Click"/>
+                                <MenuFlyoutItem Text="Date 9..0" Tag="date_za" Click="MenuFlyoutItem_Click"/>
+                            </MenuFlyout>
+                        </DropDownButton.Flyout>
+                    </DropDownButton>
+                </AppBarElementContainer>
+
             </CommandBar>
 
 
-            <ListView Grid.Row="1" x:Name="ArtistsListView"
+            <ListView Grid.Row="1" Grid.ColumnSpan="2" x:Name="ArtistsListView"
                       IsItemClickEnabled="False" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
                       Margin="8,8,8,8" SelectionChanged="ArtistsListView_SelectionChanged" >
                 <ListView.ItemContainerStyle>
@@ -73,26 +122,34 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
 
-                            <StackPanel Orientation="Horizontal">
-                                <RatingControl IsReadOnly="True" Value="{x:Bind Song.Score}" Margin="6,0,0,0"/>
-
+                            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="0,8,0,0">
+                                <RatingControl x:Name="SongRating" Tag="{x:Bind Song.Id}" 
+                                               PlaceholderValue="{x:Bind Song.Score}" Margin="6,0,0,0" ValueChanged="RatingControl_ValueChanged" />
                                 <TextBlock Text="{x:Bind Song.Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.SongArtists}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.SongAlbums}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.Length}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.PlayTimes}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-
                             </StackPanel>
 
-
-                            <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right"  Grid.Column="1">
+                            <CommandBar  Grid.Row="0" Grid.Column="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right">
                                 <AppBarButton Icon="Play" x:Name="IPlay" Label="Play" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
+                                <AppBarButton Icon="Priority" x:Name="IAddToQueue" Label="Add to queue" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
                                 <AppBarButton Icon="PreviewLink" x:Name="IDetails" Label="Details" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
                                 <AppBarButton Icon="Edit" x:Name="IEdit" Label="" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
                                 <AppBarButton Icon="Delete" x:Name="IRemove" Label="" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
                             </CommandBar>
 
+                            <TextBlock Text="{x:Bind SongArtists}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                            <TextBlock Text="{x:Bind SongAlbums}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,8" >
+                                <TextBlock Text="{x:Bind Song.LengthText}" VerticalAlignment="Center" Margin="6,0,0,0" />
+                                <TextBlock Text="{x:Bind Song.PlayTimesText}" VerticalAlignment="Center" Margin="26,0,0,0" />
+                            </StackPanel>
                         </Grid>
 
                         <!--<StackPanel Orientation="Horizontal" Padding="12" BorderThickness="2" HorizontalAlignment="Stretch">

@@ -20,8 +20,10 @@ namespace MusicPlayer.UWP.Pages.Songs
     {
         private readonly MainPage mainPage;
         private SongController songController;
+        private PlayQueueController playQueueController;
 
         private ObservableRangeCollection<SongData> songs = new ObservableRangeCollection<SongData>();
+        private int? unselectID = null;
 
         public SongsPage()
         {
@@ -36,6 +38,7 @@ namespace MusicPlayer.UWP.Pages.Songs
             PageContent.Visibility = Visibility.Collapsed;
 
             songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
+            playQueueController = new PlayQueueController(App.QueryDispatcher, App.CommandDispatcher);
 
             songs.CollectionChanged += Artists_CollectionChanged;
 
@@ -185,10 +188,21 @@ namespace MusicPlayer.UWP.Pages.Songs
 
         private void ArtistsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (unselectID != null)
+                foreach (SongData x in ArtistsListView.SelectedItems)
+                    if (x.Song.Id == unselectID)
+                    {
+                        unselectID = null;
+                        ArtistsListView.SelectedItems.Remove(x);
+                        break;
+                    }
+
+
             if (ArtistsListView.SelectedItems.Count > 0)
                 DeleteSelected.IsEnabled = true;
             else
                 DeleteSelected.IsEnabled = false;
+
         }
 
 
@@ -196,11 +210,11 @@ namespace MusicPlayer.UWP.Pages.Songs
         {
             if (sender is AppBarButton selectedItem)
             {
+                // DataContext with cast can be used instaed of tags!!!!!!!!
                 if (int.TryParse(selectedItem.Tag.ToString(), out int id))
                 {
                     // parsing successful
 
-                    Controllers.Song.Result selectedSong = await songController.Get(id);
 
                     switch (selectedItem.Name.ToString())
                     {
@@ -208,17 +222,22 @@ namespace MusicPlayer.UWP.Pages.Songs
 
                             break;
 
+                        case "IAddToQueue":
+                            await playQueueController.Create(id);
+                            break;
+
                         case "IDetails":
-                            mainPage.NavView_Navigate(MainPage.SongDetailsTag, new EntranceNavigationTransitionInfo(), selectedSong.Id);
+                            mainPage.NavView_Navigate(MainPage.SongDetailsTag, new EntranceNavigationTransitionInfo(), id);
 
                             break;
 
                         case "IEdit":
-                            mainPage.NavView_Navigate(MainPage.SongEditTag, new EntranceNavigationTransitionInfo(), selectedSong.Id);
+                            mainPage.NavView_Navigate(MainPage.SongEditTag, new EntranceNavigationTransitionInfo(), id);
 
                             break;
 
                         case "IRemove":
+                            Controllers.Song.Result selectedSong = await songController.Get(id);
                             DisplayDeleteSingleDialog(selectedSong);
 
                             break;
@@ -261,7 +280,7 @@ namespace MusicPlayer.UWP.Pages.Songs
             }
         }
 
-        private async void DisplayDeleteListDialog(IList<object> genresToDelete)
+        private async void DisplayDeleteListDialog(IList<object> songsToDelete)
         {
             ContentDialog deleteFileDialog = new ContentDialog
             {
@@ -277,8 +296,8 @@ namespace MusicPlayer.UWP.Pages.Songs
             if (result == ContentDialogResult.Primary)
             {
                 // Delete
-                foreach (Controllers.Song.Result genre in genresToDelete)
-                    await songController.Delete(genre.Id);
+                foreach (SongData tmp in songsToDelete)
+                    await songController.Delete(tmp.Song.Id);
 
 
                 List<Controllers.Song.Result> temp = await songController.GetAll();
@@ -293,5 +312,52 @@ namespace MusicPlayer.UWP.Pages.Songs
             }
         }
 
+        private async void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            String query = args.QueryText;
+
+            List<Controllers.Song.Result> temp = await songController.Search(query);
+            List<SongData> artistsList = await LoadSongs(temp);
+            songs.Clear();
+            songs.AddRange(artistsList);
+        }
+
+        private async void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                List<Controllers.Song.Result> temp;
+                if (sender.Text == "")
+                {
+                    temp = await songController.GetAll();
+                    List<SongData> artistsList = await LoadSongs(temp);
+                    songs.Clear();
+                    songs.AddRange(artistsList);
+                }
+
+                temp = await songController.Search(sender.Text);
+                List<string> suggestions = new List<string>();
+
+                foreach (var item in temp)
+                    suggestions.Add(item.Title);
+
+                sender.ItemsSource = suggestions;
+            }
+        }
+
+        private async void RatingControl_ValueChanged(RatingControl sender, object args)
+        {
+            SongData songData = (SongData)sender.DataContext;
+            int id = songData.Song.Id;
+            unselectID = id;
+
+            int score = Convert.ToInt32(sender.Value);
+
+            await songController.SetScore(id, score);
+
+            //ListViewItem lvi = DependencyObjectExtension.FindParent<ListViewItem>(sender.Parent);
+            //if (lvi != null)
+            //    lvi.IsSelected = false;
+        }
     }
 }

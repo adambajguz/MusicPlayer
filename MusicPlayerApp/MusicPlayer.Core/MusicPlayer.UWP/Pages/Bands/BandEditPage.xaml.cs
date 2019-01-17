@@ -54,6 +54,11 @@ namespace MusicPlayer.UWP.Pages.Bands
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string name = NameTextBox.Text;
+            if (name == "")
+            {
+                DisplayNoNameDialog();
+                return;
+            }
 
             DateTime creation = CreationDateCalendar.Date.HasValue ? CreationDateCalendar.Date.Value.DateTime : DateTime.Now;
             DateTime? end = EndDateToggle.IsOn && EndDateCalendar.Date.HasValue ? (DateTime?)EndDateCalendar.Date.Value.DateTime : (DateTime?)null;
@@ -64,6 +69,18 @@ namespace MusicPlayer.UWP.Pages.Bands
             await bandController.Update(elementID.Value, name, creation, end, description);
 
             mainPage.GoBack();
+        }
+
+        private async void DisplayNoNameDialog()
+        {
+            ContentDialog noWifiDialog = new ContentDialog
+            {
+                Title = "No band name provided!",
+                Content = "Please enter the name of the band and try again.",
+                CloseButtonText = "Ok"
+            };
+
+            ContentDialogResult result = await noWifiDialog.ShowAsync();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

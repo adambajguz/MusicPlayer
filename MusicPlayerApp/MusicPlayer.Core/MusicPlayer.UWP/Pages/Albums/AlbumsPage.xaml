@@ -23,19 +23,26 @@
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
+
+
+            <AutoSuggestBox Grid.Row="0" Grid.Column="0" FontSize="10" Margin="8,6,0,0" QueryIcon="Find"
+                            PlaceholderText="Search album"
+                            QuerySubmitted="AutoSuggestBox_QuerySubmitted" TextChanged="AutoSuggestBox_TextChanged"/>
             
-            <CommandBar Grid.Row="0" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" OverflowButtonVisibility="Collapsed">
+            <CommandBar Grid.Row="0" Grid.Column="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" Margin="0,2,0,0" OverflowButtonVisibility="Collapsed">
+
                 <AppBarButton Icon="Add" Label="Add" Tag="Add" Click="AppBarButton_Click"/>
                 <AppBarButton Icon="Delete" x:Name="DeleteSelected" IsEnabled="False" Label="Remove selected" Tag="Remove" Click="AppBarButton_Click"/>
 
                 <AppBarSeparator/>
 
-                <AppBarButton Icon="Sort" Label="Sort"  IsCompact="True" ToolTipService.ToolTip="Sort" AutomationProperties.Name="Sort">
+                <!--<AppBarButton Icon="Sort" Label="Sort"  IsCompact="True" ToolTipService.ToolTip="Sort" AutomationProperties.Name="Sort">
                     <AppBarButton.Flyout>
                         <MenuFlyout x:Name="SortMenu">
                             <MenuFlyoutItem Text="Title A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
@@ -45,11 +52,45 @@
                             <MenuFlyoutItem Text="Publication date 9..0" Tag="pub_za" Click="MenuFlyoutItem_Click"/>
                         </MenuFlyout>
                     </AppBarButton.Flyout>
-                </AppBarButton>
+                </AppBarButton>-->
+
+                <AppBarElementContainer>
+                    <DropDownButton Content="Sort" FontSize="12">
+                        <DropDownButton.Resources>
+                            <!-- Override default brushes to make the DropDownButton 
+                     match other command bar elements. -->
+                            <Style TargetType="DropDownButton">
+                                <Setter Property="Height" Value="38"/>
+                            </Style>
+                            <SolidColorBrush x:Key="ButtonBackground"
+                                 Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPressed"
+                                 Color="{ThemeResource SystemListMediumColor}"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver"
+                                 Color="{ThemeResource SystemListLowColor}"/>
+
+                            <SolidColorBrush x:Key="ButtonBorderBrush"
+                                 Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver"
+                                 Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushChecked"
+                                 Color="Transparent"/>
+                        </DropDownButton.Resources>
+                        <DropDownButton.Flyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem Text="Title A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
+                                <MenuFlyoutItem Text="Title Z..A" Tag="za" Click="MenuFlyoutItem_Click"/>
+
+                                <MenuFlyoutItem Text="Publication date 0..9" Tag="pub_az" Click="MenuFlyoutItem_Click"/>
+                                <MenuFlyoutItem Text="Publication date 9..0" Tag="pub_za" Click="MenuFlyoutItem_Click"/>
+                            </MenuFlyout>
+                        </DropDownButton.Flyout>
+                    </DropDownButton>
+                </AppBarElementContainer>
             </CommandBar>
 
 
-            <ListView Grid.Row="1" x:Name="AlbumsListView"
+            <ListView Grid.Row="1" Grid.ColumnSpan="2" x:Name="AlbumsListView"
                       IsItemClickEnabled="False" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
                       Margin="8,8,8,8" SelectionChanged="BandsListView_SelectionChanged" >
                 <ListView.ItemContainerStyle>
@@ -69,11 +110,12 @@
                                 <TextBlock Text="{x:Bind Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" />
                                 <TextBlock Text="{x:Bind PublicationDateLongString}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold"/>
                             </StackPanel>
-                            
+
                             <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right"  Grid.Column="1">
                                 <AppBarButton Icon="PreviewLink" x:Name="IDetails" Label="Details" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" />
-                                <AppBarButton Icon="Edit" x:Name="IEdit" Label="Edit" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
-                                <AppBarButton Icon="Delete" x:Name="IRemove" Label="Remove" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                                <AppBarButton Icon="Priority" x:Name="IAddToQueue" Label="Add to queue" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" />
+                                <AppBarButton Icon="Edit" x:Name="IEdit" Label="" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                                <AppBarButton Icon="Delete" x:Name="IRemove" Label="" Tag="{x:Bind Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
                             </CommandBar>
 
                         </Grid>

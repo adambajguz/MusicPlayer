@@ -18,6 +18,8 @@ namespace MusicPlayer.UWP.Pages.Playlists
     {
         private readonly MainPage mainPage;
         private PlaylistController playlistController;
+        private PlayQueueController playQueueController;
+
         private ObservableRangeCollection<Controllers.Playlist.Result> playlists = new ObservableRangeCollection<Controllers.Playlist.Result>();
 
         public PlaylistsPage()
@@ -33,6 +35,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
             PageContent.Visibility = Visibility.Collapsed;
 
             playlistController = new PlaylistController(App.QueryDispatcher, App.CommandDispatcher);
+            playQueueController = new PlayQueueController(App.QueryDispatcher, App.CommandDispatcher);
 
             playlists.CollectionChanged += Bands_CollectionChanged;
 
@@ -163,6 +166,14 @@ namespace MusicPlayer.UWP.Pages.Playlists
 
                             break;
 
+                        case "IAddToQueue":
+                            List<Controllers.Song.Result> albumSongs = await playlistController.GetSongs(selectedAlbum.Id);
+                            albumSongs.Reverse();
+
+                            foreach (Controllers.Song.Result x in albumSongs)
+                                await playQueueController.Create(x.Id);
+                            break;
+
                         case "IDetails":
                             mainPage.NavView_Navigate(MainPage.PlaylistDetailsTag, new EntranceNavigationTransitionInfo(), selectedAlbum.Id);
 
@@ -249,6 +260,35 @@ namespace MusicPlayer.UWP.Pages.Playlists
                 // Do nothing.
             }
         }
+        private async void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            String query = args.QueryText;
 
+            List<Controllers.Playlist.Result> temp = await playlistController.Search(query);
+            playlists.Clear();
+            playlists.AddRange(temp);
+        }
+
+        private async void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                List<Controllers.Playlist.Result> temp;
+                if (sender.Text == "")
+                {
+                    temp = await playlistController.GetAll();
+                    playlists.Clear();
+                    playlists.AddRange(temp);
+                }
+
+                temp = await playlistController.Search(sender.Text);
+                List<string> suggestions = new List<string>();
+
+                foreach (var item in temp)
+                    suggestions.Add(item.Name);
+
+                sender.ItemsSource = suggestions;
+            }
+        }
     }
 }

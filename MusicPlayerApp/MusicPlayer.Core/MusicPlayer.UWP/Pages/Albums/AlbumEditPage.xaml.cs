@@ -81,6 +81,11 @@ namespace MusicPlayer.UWP.Pages.Albums
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string name = NameTextBox.Text;
+            if(name == "")
+            {
+                DisplayNoNameDialog();
+                return;
+            }
 
             DateTime creation = CreationDateCalendar.Date.HasValue ? CreationDateCalendar.Date.Value.DateTime : DateTime.Now;
 
@@ -89,10 +94,8 @@ namespace MusicPlayer.UWP.Pages.Albums
 
             await albumController.Update(elementID.Value, name, description, creation, 1);
 
-            Controllers.Album.Result album = await albumController.Get(elementID.Value);
-
             {
-                var selected = await albumController.GetSongs(album.Id);
+                var selected = await albumController.GetSongs(elementID.Value);
 
                 List<int> selectedSongsIds = new List<int>();
                 List<int> DBSongsIds = new List<int>();
@@ -118,6 +121,18 @@ namespace MusicPlayer.UWP.Pages.Albums
             }
 
             mainPage.GoBack();
+        }
+
+        private async void DisplayNoNameDialog()
+        {
+            ContentDialog noWifiDialog = new ContentDialog
+            {
+                Title = "No album name provided!",
+                Content = "Please enter the name of the album and try again.",
+                CloseButtonText = "Ok"
+            };
+
+            ContentDialogResult result = await noWifiDialog.ShowAsync();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

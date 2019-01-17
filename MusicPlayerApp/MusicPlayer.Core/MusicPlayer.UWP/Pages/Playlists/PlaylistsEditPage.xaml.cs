@@ -80,6 +80,11 @@ namespace MusicPlayer.UWP.Pages.Playlists
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string name = NameTextBox.Text;
+            if(name == "")
+            {
+                DisplayNoNameDialog();
+                return;
+            }
 
             string description = string.Empty;
             DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
@@ -115,6 +120,18 @@ namespace MusicPlayer.UWP.Pages.Playlists
             }
 
             mainPage.GoBack();
+        }
+
+        private async void DisplayNoNameDialog()
+        {
+            ContentDialog noWifiDialog = new ContentDialog
+            {
+                Title = "No playlist name provided!",
+                Content = "Please enter the name of the playlist and try again.",
+                CloseButtonText = "Ok"
+            };
+
+            ContentDialogResult result = await noWifiDialog.ShowAsync();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

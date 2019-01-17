@@ -1,0 +1,94 @@
+﻿<Page
+    x:Class="MusicPlayer.UWP.Pages.PlayQueue.PlayQueuePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MusicPlayer.UWP.Pages.PlayQueue"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Windows10version1809="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <RelativePanel>
+
+        <ProgressRing x:Name="LoadingProgress" Visibility="Collapsed" Width="50" Height="50" IsActive="True"
+              RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+
+        <!--<ProgressBar x:Name="LoadingProgress" Visibility="Visible" Width="300" IsIndeterminate="True" ShowPaused="False" ShowError="False"
+              RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>-->
+
+        <Grid x:Name="PageContent" Visibility="Visible" 
+              RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
+              RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <!--<AutoSuggestBox Grid.Row="0" Grid.Column="0" FontSize="10" Margin="8,6,0,0" QueryIcon="Find"
+                            PlaceholderText="Search song"
+                            QuerySubmitted="AutoSuggestBox_QuerySubmitted" TextChanged="AutoSuggestBox_TextChanged"/>-->
+
+            <CommandBar Grid.Row="0" Grid.Column="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" Margin="0,2,0,0" OverflowButtonVisibility="Collapsed">
+                <AppBarButton Icon="Delete" x:Name="DeleteSelected" IsEnabled="False" Label="Remove from queue" Tag="Remove" Click="AppBarButton_Click"/>
+            </CommandBar>
+
+
+            <ListView Grid.Row="1" Grid.ColumnSpan="2" x:Name="PlayQueueListView"
+                      IsItemClickEnabled="False" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
+                      Margin="8,8,8,8" SelectionChanged="ArtistsListView_SelectionChanged" >
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="local:PlayQueueData" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="0,8,0,0">
+                                <RatingControl x:Name="SongRating" Tag="{x:Bind Song.Id}" 
+                                               PlaceholderValue="{x:Bind Song.Score}" Margin="6,0,0,0" ValueChanged="RatingControl_ValueChanged" />
+                                <TextBlock Text="{x:Bind Song.Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                            </StackPanel>
+
+                            <CommandBar  Grid.Row="0" Grid.Column="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right">
+                                <AppBarButton Icon="PreviewLink" x:Name="IDetails" Label="Details" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
+                                <AppBarButton Icon="Delete" x:Name="IRemove" Label="Remove from queue" Tag="{x:Bind QueueID}" Click="ListItemBarButton_Click" IsCompact="True"/>
+                            </CommandBar>
+
+                            <TextBlock Text="{x:Bind SongArtists}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                            <TextBlock Text="{x:Bind SongAlbums}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,8" >
+                                <TextBlock Text="{x:Bind Song.LengthText}" VerticalAlignment="Center" Margin="6,0,0,0"  />
+                                <TextBlock Text="{x:Bind Song.PlayTimesText}" VerticalAlignment="Center" Margin="26,0,0,0" />
+                            </StackPanel>
+
+
+                        </Grid>
+
+              
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </RelativePanel>
+
+
+
+</Page>

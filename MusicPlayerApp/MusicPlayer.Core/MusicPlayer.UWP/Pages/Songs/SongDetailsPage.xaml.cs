@@ -1,5 +1,7 @@
 ﻿using MusicPlayer.UWP.Controllers;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
@@ -16,7 +18,7 @@ namespace MusicPlayer.UWP.Pages.Songs
         private WriteOnce<int> elementID = new WriteOnce<int>();
 
         private readonly MainPage mainPage;
-        private ArtistController artistController;
+        private SongController songController;
 
         private WriteOnce<int?> bandID = new WriteOnce<int?>();
 
@@ -24,7 +26,7 @@ namespace MusicPlayer.UWP.Pages.Songs
         {
             this.InitializeComponent();
 
-            artistController = new ArtistController(App.QueryDispatcher, App.CommandDispatcher);
+            songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
 
             var frame = (Frame)Window.Current.Content;
             mainPage = (MainPage)frame.Content;
@@ -33,34 +35,79 @@ namespace MusicPlayer.UWP.Pages.Songs
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             elementID.Value = (int)e.Parameter;
-            Controllers.Artist.Result artist = await artistController.Get(elementID.Value);
+            Controllers.Song.Result song = await songController.Get(elementID.Value);
 
-            if(artist == null)
+            if (song == null)
             {
                 mainPage.GoBack();
                 return;
             }
 
 
-            NameTextBox.Text = artist.Name + " " + artist.Surname + " (" + artist.Pseudonym + ")";
+            NameTextBox.Text = song.Title;
 
-            if(artist.BandId != null)
             {
-                BandController bandController = new BandController(App.QueryDispatcher, App.CommandDispatcher);
-                Controllers.Band.Result band = await bandController.Get((int)artist.BandId);
-                bandID.Value = band.Id;
+                // set album string
+                List<Controllers.Album.Result> albumsList = await songController.GetAlbums(song.Id);
 
-                BandHyperlink.Content = band.name;
+                if (albumsList.Count == 0)
+                    AlbumsTextBox.Text = "Single";
+                else
+                {
+                    String str = albumsList.Count > 1 ? "On albums: " : "On album: ";
+
+                    var last = albumsList.Last();
+                    foreach (var album in albumsList)
+                    {
+                        str += album.Title;
+
+                        if (!album.Equals(last))
+                            str += ", ";
+                    }
+
+                    AlbumsTextBox.Text = str;
+                }
             }
-            else
+
+
             {
-                BandHyperlink.Content = "None";
-                BandHyperlink.IsEnabled = false;
+                // set artists string
+                List<Controllers.Artist.Result> artistList = await songController.GetArtists(song.Id);
+
+                if (artistList.Count == 0)
+                    AlbumsTextBox.Text = "No authors";
+                else
+                {
+                    String str = "By: ";
+
+                    var last = artistList.Last();
+                    foreach (var artist in artistList)
+                    {
+                        str += artist.Name + " " + artist.Surname;
+
+                        if (!artist.Equals(last))
+                            str += ", ";
+                    }
+
+                    AlbumsTextBox.Text = str;
+                }
             }
 
-            BirthdayTextBox.Text = artist.Birthdate.ToLongDateString();
+            SongRating.Value = song.Score;
 
-            DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, artist.Description);
+            {
+                GenreController genreController = new GenreController(App.QueryDispatcher, App.CommandDispatcher);
+                Controllers.Genre.Result genre = await genreController.Get(song.GenreId);
+                GenreTextBox.Text = "Genre: " + genre.Name;
+            }
+
+            StatTextBox.Text = song.LengthText + "\t" + song.PlayTimesText +
+                "\n\nBitrate: " + song.bitrate +
+                "\nFile path: " + song.FilePath +
+                "\n\nCreation date: " + song.CreationDate.ToLongDateString() +
+                "\nAdded to library: " + song.DBCreationDate.ToLongDateString();
+
+
         }
 
         private void BandHyperlink_Click(object sender, RoutedEventArgs e)

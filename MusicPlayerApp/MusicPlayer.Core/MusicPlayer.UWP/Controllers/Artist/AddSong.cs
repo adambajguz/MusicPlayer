@@ -40,7 +40,7 @@ namespace MusicPlayer.UWP.Controllers.Artist
             public Validator()
             {
                 RuleFor(x => x._data.GetEntity().SongId).NotNull();
-                RuleFor(x => x._data.GetEntity().Artist).NotNull();
+                RuleFor(x => x._data.GetEntity().ArtistId).NotNull();
             }
         }
 

@@ -140,7 +140,6 @@
     <Compile Include="Pages\Bands\BandsPage.xaml.cs">
       <DependentUpon>BandsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DependencyObjectExtensions.cs" />
     <Compile Include="Pages\Genres\GenreDetailsPage.xaml.cs">
       <DependentUpon>GenreDetailsPage.xaml</DependentUpon>
     </Compile>
@@ -165,6 +164,10 @@
     </Compile>
     <Compile Include="Pages\Playlists\PlaylistsPage.xaml.cs">
       <DependentUpon>PlaylistsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PlayQueue\PlayQueueData.cs" />
+    <Compile Include="Pages\PlayQueue\PlayQueuePage.xaml.cs">
+      <DependentUpon>PlayQueuePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Songs\SongData.cs" />
     <Compile Include="Pages\Songs\SongAddPage.xaml.cs">
@@ -439,6 +442,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Playlists\PlaylistsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PlayQueue\PlayQueuePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -15,7 +15,10 @@ namespace MusicPlayer.UWP.Pages.Songs
         {
             get
             {
-                String str = "";
+                if (Albums.Count == 0)
+                    return "Single";
+
+                String str = Albums.Count > 1 ? "On albums: " : "On album: ";
 
                 var last = Albums.Last();
                 foreach (var album in Albums)
@@ -35,7 +38,10 @@ namespace MusicPlayer.UWP.Pages.Songs
         {
             get
             {
-                String str = "";
+                if (Artists.Count == 0)
+                    return "No authors";
+
+                String str = "By: ";
 
                 var last = Artists.Last();
                 foreach (var artist in Artists)
@@ -52,9 +58,9 @@ namespace MusicPlayer.UWP.Pages.Songs
 
 
     
-        public SongData(Controllers.Song.Result artist, List<Controllers.Album.Result> albums, List<Controllers.Artist.Result> artists)
+        public SongData(Controllers.Song.Result song, List<Controllers.Album.Result> albums, List<Controllers.Artist.Result> artists)
         {
-            this.Song = artist;
+            this.Song = song;
             this.Albums = albums;
             this.Artists = artists;
         }
