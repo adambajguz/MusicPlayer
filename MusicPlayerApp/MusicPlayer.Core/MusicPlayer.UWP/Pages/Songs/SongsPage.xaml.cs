@@ -274,7 +274,7 @@ namespace MusicPlayer.UWP.Pages.Songs
             }
         }
 
-        private async void DisplayDeleteListDialog(IList<object> genresToDelete)
+        private async void DisplayDeleteListDialog(IList<object> songsToDelete)
         {
             ContentDialog deleteFileDialog = new ContentDialog
             {
@@ -290,8 +290,8 @@ namespace MusicPlayer.UWP.Pages.Songs
             if (result == ContentDialogResult.Primary)
             {
                 // Delete
-                foreach (Controllers.Song.Result genre in genresToDelete)
-                    await songController.Delete(genre.Id);
+                foreach (SongData tmp in songsToDelete)
+                    await songController.Delete(tmp.Song.Id);
 
 
                 List<Controllers.Song.Result> temp = await songController.GetAll();

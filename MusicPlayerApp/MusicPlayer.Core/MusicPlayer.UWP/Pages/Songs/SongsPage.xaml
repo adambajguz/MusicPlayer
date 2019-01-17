@@ -33,7 +33,7 @@
             <AutoSuggestBox Grid.Row="0" Grid.Column="0" FontSize="10" Margin="8,6,0,0" QueryIcon="Find"
                             PlaceholderText="Search song"
                             QuerySubmitted="AutoSuggestBox_QuerySubmitted" TextChanged="AutoSuggestBox_TextChanged"/>
-            
+
             <CommandBar Grid.Row="0" Grid.Column="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" Margin="0,2,0,0" OverflowButtonVisibility="Collapsed">
                 <AppBarButton Icon="Add" Label="Add" Tag="Add" Click="AppBarButton_Click"/>
                 <AppBarButton Icon="Delete" x:Name="DeleteSelected" IsEnabled="False" Label="Remove selected" Tag="Remove" Click="AppBarButton_Click"/>
@@ -122,26 +122,34 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
 
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="0,8,0,0">
                                 <RatingControl x:Name="SongRating" Tag="{x:Bind Song.Id}" 
                                                PlaceholderValue="{x:Bind Song.Score}" Margin="6,0,0,0" ValueChanged="RatingControl_ValueChanged" />
-
                                 <TextBlock Text="{x:Bind Song.Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.SongArtists}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.SongAlbums}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.LengthText}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.PlayTimesText}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-
                             </StackPanel>
 
-
-                            <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right"  Grid.Column="1">
+                            <CommandBar  Grid.Row="0" Grid.Column="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right">
                                 <AppBarButton Icon="Play" x:Name="IPlay" Label="Play" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
                                 <AppBarButton Icon="PreviewLink" x:Name="IDetails" Label="Details" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
                                 <AppBarButton Icon="Edit" x:Name="IEdit" Label="" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
                                 <AppBarButton Icon="Delete" x:Name="IRemove" Label="" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
                             </CommandBar>
+
+                            <TextBlock Text="{x:Bind SongArtists}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                            <TextBlock Text="{x:Bind SongAlbums}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,8" >
+                                <TextBlock Text="{x:Bind Song.LengthText}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" />
+                                <TextBlock Text="{x:Bind Song.PlayTimesText}" VerticalAlignment="Center" Margin="26,0,0,0" FontWeight="Bold" />
+                            </StackPanel>
+
 
                         </Grid>
 

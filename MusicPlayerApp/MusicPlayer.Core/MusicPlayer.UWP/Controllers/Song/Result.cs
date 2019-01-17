@@ -21,7 +21,7 @@
         {
             get
             {
-                return Length.ToString(@"mm\:ss"); 
+                return "Length: " + Length.ToString(@"mm\:ss"); 
             }
         }
 
