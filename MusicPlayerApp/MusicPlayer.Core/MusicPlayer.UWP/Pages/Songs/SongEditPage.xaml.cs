@@ -6,6 +6,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
+
 namespace MusicPlayer.UWP.Pages.Songs
 {
     /// <summary>
@@ -16,71 +17,109 @@ namespace MusicPlayer.UWP.Pages.Songs
         private WriteOnce<int> elementID = new WriteOnce<int>();
 
         private readonly MainPage mainPage;
+        private SongController songController;
+        private GenreController genreController;
+        private AlbumController albumController;
         private ArtistController artistController;
 
-        private ObservableRangeCollection<Controllers.Band.Result> AllBands = new ObservableRangeCollection<Controllers.Band.Result>();
+        private ObservableRangeCollection<Controllers.Album.Result> AllAlbums = new ObservableRangeCollection<Controllers.Album.Result>();
+        private ObservableRangeCollection<Controllers.Genre.Result> AllGenres = new ObservableRangeCollection<Controllers.Genre.Result>();
+        private ObservableRangeCollection<Controllers.Artist.Result> AllArtists = new ObservableRangeCollection<Controllers.Artist.Result>();
+
 
         public SongEditPage()
         {
             this.InitializeComponent();
-
+            songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
+            genreController = new GenreController(App.QueryDispatcher, App.CommandDispatcher);
+            albumController = new AlbumController(App.QueryDispatcher, App.CommandDispatcher);
             artistController = new ArtistController(App.QueryDispatcher, App.CommandDispatcher);
 
             var frame = (Frame)Window.Current.Content;
             mainPage = (MainPage)frame.Content;
-            LoadBands();
+
+            LoadAlbums();
+            LoadGenres();
+            LoadArtists();
         }
 
-        private async void LoadBands()
+        private async void LoadAlbums()
         {
-            BandController bandController = new BandController(App.QueryDispatcher, App.CommandDispatcher);
+            List<Controllers.Album.Result> temp = await albumController.GetAll();
 
-            List<Controllers.Band.Result> temp = await bandController.GetAll();
+            AllAlbums.AddRange(temp);
 
-            AllBands.AddRange(temp);
-
-            BandComboBox.ItemsSource = AllBands;
-            AllBands.CollectionChanged += AllBands_CollectionChanged;
-
-            BandComboBox.SelectedIndex = 0;
+            AlbumsListView.ItemsSource = AllAlbums;
+            AllAlbums.CollectionChanged += AllBands_CollectionChanged;
         }
+
+        private async void LoadGenres()
+        {
+            List<Controllers.Genre.Result> temp = await genreController.GetAll();
+
+            AllGenres.AddRange(temp);
+
+            GenreComboBox.ItemsSource = AllGenres;
+            AllGenres.CollectionChanged += AllBands_CollectionChanged;
+
+            GenreComboBox.SelectedIndex = 0;
+        }
+
+        private async void LoadArtists()
+        {
+            List<Controllers.Artist.Result> temp = await artistController.GetAll();
+
+            AllArtists.AddRange(temp);
+
+            ArtistsListView.ItemsSource = AllArtists;
+            AllArtists.CollectionChanged += AllBands_CollectionChanged;
+        }
+
+
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             elementID.Value = (int)e.Parameter;
-            Controllers.Artist.Result artist = await artistController.Get(elementID.Value);
+            Controllers.Song.Result song = await songController.Get(elementID.Value);
 
-            if (artist == null)
+            if (song == null)
             {
                 mainPage.GoBack();
                 return;
             }
 
 
-            NameTextBox.Text = artist.Name;
-            SurnameTextBox.Text = artist.Surname;
-            PseudonymTextBox.Text = artist.Pseudonym;
+            NameTextBox.Text = song.Title;
+            ScoreRating.Value = song.Score;
+            FileTextBox.Text = song.FilePath;
+            CreationDateCalendar.Date = song.CreationDate;
 
-            int? bandID = artist.BandId;
-            if (bandID != null)
+            foreach (Controllers.Genre.Result item in GenreComboBox.Items)
+                if (item.Id == elementID.Value)
+                {
+                    GenreComboBox.SelectedItem = item;
+                    break;
+                }
+
+            // select albums
             {
-                BandToogle.IsOn = true;
+                var selected = await songController.GetAlbums(elementID.Value);
 
-                BandController bandController = new BandController(App.QueryDispatcher, App.CommandDispatcher);
-                Controllers.Band.Result band = await bandController.Get((int)artist.BandId);
-
-                foreach (Controllers.Band.Result item in BandComboBox.Items)
-                    if (item.Id == bandID)
-                        BandComboBox.SelectedItem = item;
+                foreach (Controllers.Album.Result item in AlbumsListView.Items)
+                    foreach (var x in selected)
+                        if (x.Id == item.Id)
+                            AlbumsListView.SelectedItems.Add(item);
             }
-            else
+
+            // select artists
             {
-                BandComboBox.Visibility = Visibility.Collapsed;
+                var selected = await songController.GetArtists(elementID.Value);
+
+                foreach (Controllers.Artist.Result item in ArtistsListView.Items)
+                    foreach (var x in selected)
+                        if (x.Id == item.Id)
+                            AlbumsListView.SelectedItems.Add(item);
             }
-
-            BirthdayDatePicker.Date = artist.Birthdate;
-
-            DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, artist.Description);
         }
 
         private void AllBands_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -91,35 +130,26 @@ namespace MusicPlayer.UWP.Pages.Songs
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string name = NameTextBox.Text;
-            string surname = SurnameTextBox.Text;
-            string pseudonym = PseudonymTextBox.Text;
+            int score = Convert.ToInt32(ScoreRating.Value);
+            string filePath = FileTextBox.Text;
+            DateTime creation = CreationDateCalendar.Date.HasValue ? CreationDateCalendar.Date.Value.DateTime : DateTime.Now;
 
-            DateTime birth = BirthdayDatePicker.SelectedDate != null ? BirthdayDatePicker.Date.DateTime : DateTime.Now;
+            Controllers.Genre.Result selectedGenre = (Controllers.Genre.Result)GenreComboBox.SelectedItem;
 
-            int? bandId = BandToogle.IsOn ? (int?)((Controllers.Band.Result)BandComboBox.SelectedItem).Id : null;
+            int id = await songController.Create(score, name, creation, filePath, null, selectedGenre.Id);
 
-            string description = string.Empty;
-            DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
 
-            await artistController.Update(elementID.Value, name, surname, pseudonym, birth, description, bandId, 1);
+
 
             mainPage.GoBack();
         }
+
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             mainPage.GoBack();
         }
 
-        private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (sender is ToggleSwitch toggleSwitch)
-            {
-                if (toggleSwitch.IsOn == true)
-                    BandComboBox.Visibility = Visibility.Visible;
-                else
-                    BandComboBox.Visibility = Visibility.Collapsed;
-            }
-        }
+
     }
 }

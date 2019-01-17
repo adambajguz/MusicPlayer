@@ -93,6 +93,8 @@ namespace MusicPlayer.UWP.Pages.Songs
                 }
             }
 
+            SongRating.Value = song.Score;
+
             {
                 GenreController genreController = new GenreController(App.QueryDispatcher, App.CommandDispatcher);
                 Controllers.Genre.Result genre = await genreController.Get(song.GenreId);
@@ -100,10 +102,10 @@ namespace MusicPlayer.UWP.Pages.Songs
             }
 
             StatTextBox.Text = song.LengthText + "\t" + song.PlayTimesText +
-                "\n Score: " + song.Score +
-                "\n Bitrate: " + song.bitrate +
-                "\n Creation date: " + song.CreationDate +
-                "\n Added to library " + song.DBCreationDate;
+                "\n\nBitrate: " + song.bitrate +
+                "\nFile path: " + song.FilePath +
+                "\n\nCreation date: " + song.CreationDate.ToLongDateString() +
+                "\nAdded to library: " + song.DBCreationDate.ToLongDateString();
 
 
         }

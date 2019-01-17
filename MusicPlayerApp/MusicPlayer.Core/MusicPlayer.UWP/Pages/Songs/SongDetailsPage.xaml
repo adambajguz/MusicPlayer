@@ -23,6 +23,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Text="Song Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
@@ -30,8 +31,12 @@
         <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
         <TextBlock x:Name="ArtistsTextBox" Grid.Row="2" Margin="8,0,8,8" />
         <TextBlock x:Name="AlbumsTextBox" Grid.Row="3" Margin="8,0,8,8" />
-        <TextBlock x:Name="GenreTextBox" Grid.Row="4" Margin="8,0,8,8" />
-        <TextBlock x:Name="StatTextBox" Grid.Row="5" Margin="8,0,8,8" />
+        <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <TextBlock Text="Score: " Grid.Row="3" Margin="8,0,8,8" />
+            <RatingControl x:Name="SongRating" Grid.Row="4" IsReadOnly="True" />
+        </StackPanel>
+        <TextBlock x:Name="GenreTextBox" Grid.Row="5" Margin="8,0,8,8" />
+        <TextBlock x:Name="StatTextBox" Grid.Row="6" Margin="8,0,8,8" />
   
     </Grid>
 </Page>

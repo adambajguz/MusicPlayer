@@ -89,10 +89,8 @@ namespace MusicPlayer.UWP.Pages.Albums
 
             await albumController.Update(elementID.Value, name, description, creation, 1);
 
-            Controllers.Album.Result album = await albumController.Get(elementID.Value);
-
             {
-                var selected = await albumController.GetSongs(album.Id);
+                var selected = await albumController.GetSongs(elementID.Value);
 
                 List<int> selectedSongsIds = new List<int>();
                 List<int> DBSongsIds = new List<int>();
