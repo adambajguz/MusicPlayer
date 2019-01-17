@@ -215,7 +215,6 @@ namespace MusicPlayer.UWP.Pages.Songs
                 {
                     // parsing successful
 
-                    Controllers.Song.Result selectedSong = await songController.Get(id);
 
                     switch (selectedItem.Name.ToString())
                     {
@@ -224,20 +223,21 @@ namespace MusicPlayer.UWP.Pages.Songs
                             break;
 
                         case "IAddToQueue":
-                            await playQueueController.Create(selectedSong.Id);
+                            await playQueueController.Create(id);
                             break;
 
                         case "IDetails":
-                            mainPage.NavView_Navigate(MainPage.SongDetailsTag, new EntranceNavigationTransitionInfo(), selectedSong.Id);
+                            mainPage.NavView_Navigate(MainPage.SongDetailsTag, new EntranceNavigationTransitionInfo(), id);
 
                             break;
 
                         case "IEdit":
-                            mainPage.NavView_Navigate(MainPage.SongEditTag, new EntranceNavigationTransitionInfo(), selectedSong.Id);
+                            mainPage.NavView_Navigate(MainPage.SongEditTag, new EntranceNavigationTransitionInfo(), id);
 
                             break;
 
                         case "IRemove":
+                            Controllers.Song.Result selectedSong = await songController.Get(id);
                             DisplayDeleteSingleDialog(selectedSong);
 
                             break;
