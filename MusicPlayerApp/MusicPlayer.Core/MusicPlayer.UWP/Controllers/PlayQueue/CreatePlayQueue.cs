@@ -47,6 +47,8 @@ namespace MusicPlayer.UWP.Controllers.PlayQueue
 
             public Data(int songId)
             {
+                playQueue = new Core.Entities.PlayQueue();
+
                 playQueue.SongId = songId;
             }
 
