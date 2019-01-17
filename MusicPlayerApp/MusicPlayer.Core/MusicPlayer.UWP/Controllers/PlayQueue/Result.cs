@@ -5,7 +5,7 @@
         public Result(Core.Entities.PlayQueue x)
         {
             Id = x.Id;
-            Song = x.Song;
+            SongId = x.SongId;
         }
 
     }
