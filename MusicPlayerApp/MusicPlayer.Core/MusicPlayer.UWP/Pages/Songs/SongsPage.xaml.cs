@@ -22,6 +22,7 @@ namespace MusicPlayer.UWP.Pages.Songs
         private SongController songController;
 
         private ObservableRangeCollection<SongData> songs = new ObservableRangeCollection<SongData>();
+        private int? unselectID = null;
 
         public SongsPage()
         {
@@ -185,10 +186,21 @@ namespace MusicPlayer.UWP.Pages.Songs
 
         private void ArtistsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (unselectID != null)
+                foreach (SongData x in ArtistsListView.SelectedItems)
+                    if (x.Song.Id == unselectID)
+                    {
+                        unselectID = null;
+                        ArtistsListView.SelectedItems.Remove(x);
+                        break;
+                    }
+
+
             if (ArtistsListView.SelectedItems.Count > 0)
                 DeleteSelected.IsEnabled = true;
             else
                 DeleteSelected.IsEnabled = false;
+
         }
 
 
@@ -196,6 +208,7 @@ namespace MusicPlayer.UWP.Pages.Songs
         {
             if (sender is AppBarButton selectedItem)
             {
+                // DataContext with cast can be used instaed of tags!!!!!!!!
                 if (int.TryParse(selectedItem.Tag.ToString(), out int id))
                 {
                     // parsing successful
@@ -324,6 +337,21 @@ namespace MusicPlayer.UWP.Pages.Songs
 
                 sender.ItemsSource = suggestions;
             }
+        }
+
+        private async void RatingControl_ValueChanged(RatingControl sender, object args)
+        {
+            SongData songData = (SongData)sender.DataContext;
+            int id = songData.Song.Id;
+            unselectID = id;
+
+            int score = Convert.ToInt32(sender.Value);
+
+            await songController.SetScore(id, score);
+
+            //ListViewItem lvi = DependencyObjectExtension.FindParent<ListViewItem>(sender.Parent);
+            //if (lvi != null)
+            //    lvi.IsSelected = false;
         }
     }
 }

@@ -17,5 +17,21 @@
             PlayTimes = x.PlayTimes;
         }
 
+        public string LengthText
+        {
+            get
+            {
+                return Length.ToString(@"mm\:ss"); 
+            }
+        }
+
+
+        public string PlayTimesText
+        {
+            get
+            {
+                return PlayTimes + " times played";
+            }
+        }
     }
 }

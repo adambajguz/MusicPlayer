@@ -62,6 +62,7 @@ namespace MusicPlayer.UWP.Pages.Albums
             LoadSongs();
         }
 
+
         private async void LoadSongs()
         {
             List<Controllers.Song.Result> temp = await albumController.GetSongs(elementID.Value);

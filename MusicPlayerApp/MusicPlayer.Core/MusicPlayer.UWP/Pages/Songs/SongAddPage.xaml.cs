@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -46,7 +44,7 @@ namespace MusicPlayer.UWP.Pages.Songs
         private async void LoadAlbums()
         {
             List<Controllers.Album.Result> temp = await albumController.GetAll();
-            
+
             AllAlbums.AddRange(temp);
 
             AlbumsListView.ItemsSource = AllAlbums;
@@ -81,7 +79,7 @@ namespace MusicPlayer.UWP.Pages.Songs
         {
 
         }
-    
+
         private void AllBands_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             var x = e.NewItems;
@@ -98,6 +96,21 @@ namespace MusicPlayer.UWP.Pages.Songs
 
             int id = await songController.Create(score, name, creation, filePath, null, selectedGenre.Id);
 
+
+            foreach (Controllers.Album.Result album in AlbumsListView.SelectedItems)
+            {
+                var selected = await albumController.GetSongs(album.Id);
+                int s = selected.Count + 1;
+
+                await albumController.AddSong(album.Id, id, s);
+            }
+
+
+            foreach (Controllers.Artist.Result artist in ArtistsListView.SelectedItems)
+            {
+                await artistController.AddSong(artist.Id, id);
+            }
+
             mainPage.GoBack();
         }
 
@@ -107,6 +120,6 @@ namespace MusicPlayer.UWP.Pages.Songs
             mainPage.GoBack();
         }
 
-     
+
     }
 }

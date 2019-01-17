@@ -40,7 +40,7 @@
         </Grid.Resources>
 
         <NavigationView x:Name="NavView" Grid.Row="0" RequestedTheme="Default" AlwaysShowHeader="False"
-                        Loaded="NavView_Loaded" PaneTitle="Music Player"
+                        Loaded="NavView_Loaded" PaneTitle="Library"
                         ItemInvoked="NavView_ItemInvoked"
                         BackRequested="NavView_BackRequested" IsSettingsVisible="False">
             <NavigationView.MenuItems>

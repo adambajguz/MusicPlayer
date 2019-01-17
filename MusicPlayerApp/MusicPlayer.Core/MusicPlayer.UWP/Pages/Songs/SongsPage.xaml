@@ -124,13 +124,14 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Orientation="Horizontal">
-                                <RatingControl IsReadOnly="True" Value="{x:Bind Song.Score}" Margin="6,0,0,0"/>
+                                <RatingControl x:Name="SongRating" Tag="{x:Bind Song.Id}" 
+                                               PlaceholderValue="{x:Bind Song.Score}" Margin="6,0,0,0" ValueChanged="RatingControl_ValueChanged" />
 
                                 <TextBlock Text="{x:Bind Song.Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
                                 <TextBlock Text="{x:Bind Song.SongArtists}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
                                 <TextBlock Text="{x:Bind Song.SongAlbums}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.Length}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Song.PlayTimes}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                <TextBlock Text="{x:Bind Song.LengthText}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                <TextBlock Text="{x:Bind Song.PlayTimesText}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
 
                             </StackPanel>
 
