@@ -44,6 +44,11 @@ namespace MusicPlayer.UWP.Pages.Genres
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string name = NameTextBox.Text;
+            if (name == "")
+            {
+                DisplayNoNameDialog();
+                return;
+            }
 
             string description = string.Empty;
             DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
@@ -51,6 +56,18 @@ namespace MusicPlayer.UWP.Pages.Genres
             await genreController.Update(elementID.Value, name, description);
 
             mainPage.GoBack();
+        }
+
+        private async void DisplayNoNameDialog()
+        {
+            ContentDialog noWifiDialog = new ContentDialog
+            {
+                Title = "No genre name provided!",
+                Content = "Please enter the name of the genre and try again.",
+                CloseButtonText = "Ok"
+            };
+
+            ContentDialogResult result = await noWifiDialog.ShowAsync();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

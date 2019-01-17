@@ -88,6 +88,12 @@ namespace MusicPlayer.UWP.Pages.Songs
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string name = NameTextBox.Text;
+            if (name == "")
+            {
+                DisplayNoNameDialog();
+                return;
+            }
+
             int score = Convert.ToInt32(ScoreRating.Value);
             string filePath = FileTextBox.Text;
             DateTime creation = CreationDateCalendar.Date.HasValue ? CreationDateCalendar.Date.Value.DateTime : DateTime.Now;
@@ -114,6 +120,17 @@ namespace MusicPlayer.UWP.Pages.Songs
             mainPage.GoBack();
         }
 
+        private async void DisplayNoNameDialog()
+        {
+            ContentDialog noWifiDialog = new ContentDialog
+            {
+                Title = "No song title provided!",
+                Content = "Please enter the title of the song and try again.",
+                CloseButtonText = "Ok"
+            };
+
+            ContentDialogResult result = await noWifiDialog.ShowAsync();
+        }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {

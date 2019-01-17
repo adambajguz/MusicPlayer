@@ -153,9 +153,6 @@ namespace MusicPlayer.UWP.Pages.PlayQueue
 
                     switch (selectedItem.Name.ToString())
                     {
-                        case "IPlay":
-
-                            break;
 
                         case "IDetails":
                             mainPage.NavView_Navigate(MainPage.SongDetailsTag, new EntranceNavigationTransitionInfo(), id);

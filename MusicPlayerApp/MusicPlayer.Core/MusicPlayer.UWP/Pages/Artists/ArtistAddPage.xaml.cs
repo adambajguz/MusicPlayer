@@ -65,6 +65,12 @@ namespace MusicPlayer.UWP.Pages.Artists
             string surname = SurnameTextBox.Text;
             string pseudonym = PseudonymTextBox.Text;
 
+            if(name == "" && surname == "" && pseudonym == "")
+            {
+                DisplayNoNameDialog();
+                return;
+            }
+
             DateTime birth = BirthdayDatePicker.SelectedDate != null ? BirthdayDatePicker.Date.DateTime : DateTime.Now;
 
             int? bandId = BandToogle.IsOn ? (int?)((Controllers.Band.Result)BandComboBox.SelectedItem).Id : null;
@@ -77,6 +83,17 @@ namespace MusicPlayer.UWP.Pages.Artists
             mainPage.GoBack();
         }
 
+        private async void DisplayNoNameDialog()
+        {
+            ContentDialog noWifiDialog = new ContentDialog
+            {
+                Title = "No name/surname/pseudonym provided!",
+                Content = "Artist must have name, surname or pseudonym. Please correct and try again.",
+                CloseButtonText = "Ok"
+            };
+
+            ContentDialogResult result = await noWifiDialog.ShowAsync();
+        }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
