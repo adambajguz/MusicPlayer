@@ -18,6 +18,8 @@ namespace MusicPlayer.UWP.Pages.Playlists
     {
         private readonly MainPage mainPage;
         private PlaylistController playlistController;
+        private PlayQueueController playQueueController;
+
         private ObservableRangeCollection<Controllers.Playlist.Result> playlists = new ObservableRangeCollection<Controllers.Playlist.Result>();
 
         public PlaylistsPage()
@@ -33,6 +35,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
             PageContent.Visibility = Visibility.Collapsed;
 
             playlistController = new PlaylistController(App.QueryDispatcher, App.CommandDispatcher);
+            playQueueController = new PlayQueueController(App.QueryDispatcher, App.CommandDispatcher);
 
             playlists.CollectionChanged += Bands_CollectionChanged;
 
@@ -161,6 +164,14 @@ namespace MusicPlayer.UWP.Pages.Playlists
 
                         case "IPlay":
 
+                            break;
+
+                        case "IAddToQueue":
+                            List<Controllers.Song.Result> albumSongs = await playlistController.GetSongs(selectedAlbum.Id);
+                            albumSongs.Reverse();
+
+                            foreach (Controllers.Song.Result x in albumSongs)
+                                await playQueueController.Create(x.Id);
                             break;
 
                         case "IDetails":

@@ -137,6 +137,7 @@
 
                             <CommandBar  Grid.Row="0" Grid.Column="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right">
                                 <AppBarButton Icon="Play" x:Name="IPlay" Label="Play" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
+                                <AppBarButton Icon="Priority" x:Name="IAddToQueue" Label="Add to queue" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
                                 <AppBarButton Icon="PreviewLink" x:Name="IDetails" Label="Details" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" />
                                 <AppBarButton Icon="Edit" x:Name="IEdit" Label="" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" IsCompact="True"/>
                                 <AppBarButton Icon="Delete" x:Name="IRemove" Label="" Tag="{x:Bind Song.Id}" Click="ListItemBarButton_Click" IsCompact="True"/>

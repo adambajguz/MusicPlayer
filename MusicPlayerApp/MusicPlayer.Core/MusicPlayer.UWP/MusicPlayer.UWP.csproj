@@ -165,6 +165,10 @@
     <Compile Include="Pages\Playlists\PlaylistsPage.xaml.cs">
       <DependentUpon>PlaylistsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PlayQueue\PlayQueueData.cs" />
+    <Compile Include="Pages\PlayQueue\PlayQueuePage.xaml.cs">
+      <DependentUpon>PlayQueuePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Songs\SongData.cs" />
     <Compile Include="Pages\Songs\SongAddPage.xaml.cs">
       <DependentUpon>SongAddPage.xaml</DependentUpon>
@@ -441,6 +445,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\PlayQueue\PlayQueuePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Songs\SongAddPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -502,9 +510,7 @@
       <Name>MusicPlayer.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\PlayQueue\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -4,6 +4,7 @@ using MusicPlayer.UWP.Pages.Artists;
 using MusicPlayer.UWP.Pages.Bands;
 using MusicPlayer.UWP.Pages.Genres;
 using MusicPlayer.UWP.Pages.Playlists;
+using MusicPlayer.UWP.Pages.PlayQueue;
 using MusicPlayer.UWP.Pages.Songs;
 using System;
 using System.Collections.Generic;
@@ -109,7 +110,7 @@ namespace MusicPlayer.UWP.Pages
             (GenreAddTag, typeof(GenreAddPage)),
             (GenreEditTag, typeof(GenreEditPage)),
 
-            (PlayQueueTag, typeof(GenresPage)),
+            (PlayQueueTag, typeof(PlayQueuePage)),
 
         };
 
