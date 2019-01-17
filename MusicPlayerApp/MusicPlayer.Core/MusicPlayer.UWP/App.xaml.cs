@@ -43,6 +43,15 @@ namespace MusicPlayer.UWP
 
             IServiceCollection services = new ServiceCollection();
             services.AddDbContext<DataContext>();
+            /*
+             * An error that sometimes occures when switching pages:
+             * 
+             * System.InvalidOperationException: 'A second operation started on this context before a previous operation completed.
+             * This is usually caused by different threads using the same instance of DbContext, however instance members are not
+             * guaranteed to be thread safe. This could also be caused by a nested query being evaluated on the client, if this
+             * is the case rewrite the query avoiding nested invocations.'
+             * 
+             */
 
             ApplicationContainer = IocConfig.RegisterDependencies(services);
 
