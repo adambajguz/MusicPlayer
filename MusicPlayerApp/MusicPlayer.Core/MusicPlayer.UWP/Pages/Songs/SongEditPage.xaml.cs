@@ -118,7 +118,7 @@ namespace MusicPlayer.UWP.Pages.Songs
                 foreach (Controllers.Artist.Result item in ArtistsListView.Items)
                     foreach (var x in selected)
                         if (x.Id == item.Id)
-                            AlbumsListView.SelectedItems.Add(item);
+                            ArtistsListView.SelectedItems.Add(item);
             }
         }
 
