@@ -58,9 +58,9 @@ namespace MusicPlayer.UWP.Pages.Songs
 
 
     
-        public SongData(Controllers.Song.Result artist, List<Controllers.Album.Result> albums, List<Controllers.Artist.Result> artists)
+        public SongData(Controllers.Song.Result song, List<Controllers.Album.Result> albums, List<Controllers.Artist.Result> artists)
         {
-            this.Song = artist;
+            this.Song = song;
             this.Albums = albums;
             this.Artists = artists;
         }
