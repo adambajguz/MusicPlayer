@@ -40,11 +40,10 @@
         </Grid.Resources>
 
         <NavigationView x:Name="NavView" Grid.Row="0" RequestedTheme="Default" AlwaysShowHeader="False"
-                        Loaded="NavView_Loaded"
+                        Loaded="NavView_Loaded" PaneTitle="Music Player"
                         ItemInvoked="NavView_ItemInvoked"
                         BackRequested="NavView_BackRequested" IsSettingsVisible="False">
             <NavigationView.MenuItems>
-                <NavigationViewItemHeader>Library</NavigationViewItemHeader>
                 <NavigationViewItem Icon="Audio" Content="Songs" x:Name="SongsPageItem" Tag="songs" />
                 <NavigationViewItem Icon="Library" Content="Albums" x:Name="AlbumsPageItem" Tag="albums" />
                 <NavigationViewItem Icon="Memo" Content="Playlists" x:Name="PlaylistPageItem" Tag="playlists" />

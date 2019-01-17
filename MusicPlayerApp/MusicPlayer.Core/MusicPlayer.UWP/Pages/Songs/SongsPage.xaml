@@ -35,7 +35,7 @@
 
                 <AppBarSeparator/>
 
-                <AppBarButton Icon="Sort" Label="Sort"  IsCompact="True" ToolTipService.ToolTip="Sort" AutomationProperties.Name="Sort">
+                <!--<AppBarButton Icon="Sort" Label="Sort"  IsCompact="True" ToolTipService.ToolTip="Sort" AutomationProperties.Name="Sort">
                     <AppBarButton.Flyout>
                         <MenuFlyout x:Name="SortMenu">
                             <MenuFlyoutItem Text="Title A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
@@ -54,7 +54,51 @@
                             <MenuFlyoutItem Text="Date 9..0" Tag="date_za" Click="MenuFlyoutItem_Click"/>
                         </MenuFlyout>
                     </AppBarButton.Flyout>
-                </AppBarButton>
+                </AppBarButton>-->
+
+                <AppBarElementContainer>
+                    <DropDownButton Content="Sort" FontSize="12">
+                        <DropDownButton.Resources>
+                            <!-- Override default brushes to make the DropDownButton 
+                     match other command bar elements. -->
+                            <Style TargetType="DropDownButton">
+                                <Setter Property="Height" Value="38"/>
+                            </Style>
+                            <SolidColorBrush x:Key="ButtonBackground"
+                                 Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPressed"
+                                 Color="{ThemeResource SystemListMediumColor}"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver"
+                                 Color="{ThemeResource SystemListLowColor}"/>
+
+                            <SolidColorBrush x:Key="ButtonBorderBrush"
+                                 Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver"
+                                 Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushChecked"
+                                 Color="Transparent"/>
+                        </DropDownButton.Resources>
+                        <DropDownButton.Flyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem Text="Title A..Z" Tag="az" Click="MenuFlyoutItem_Click"/>
+                                <MenuFlyoutItem Text="Title Z..A" Tag="za" Click="MenuFlyoutItem_Click"/>
+
+                                <MenuFlyoutItem Text="Length 0..9" Tag="len_az" Click="MenuFlyoutItem_Click"/>
+                                <MenuFlyoutItem Text="Length 9..0" Tag="len_za" Click="MenuFlyoutItem_Click"/>
+
+                                <MenuFlyoutItem Text="Play times 0..9" Tag="play_az" Click="MenuFlyoutItem_Click"/>
+                                <MenuFlyoutItem Text="Play times 9..0" Tag="play_za" Click="MenuFlyoutItem_Click"/>
+
+                                <MenuFlyoutItem Text="Score 0..9" Tag="score_az" Click="MenuFlyoutItem_Click"/>
+                                <MenuFlyoutItem Text="Score 9..0" Tag="score_za" Click="MenuFlyoutItem_Click"/>
+
+                                <MenuFlyoutItem Text="Date 0..9" Tag="date_az" Click="MenuFlyoutItem_Click"/>
+                                <MenuFlyoutItem Text="Date 9..0" Tag="date_za" Click="MenuFlyoutItem_Click"/>
+                            </MenuFlyout>
+                        </DropDownButton.Flyout>
+                    </DropDownButton>
+                </AppBarElementContainer>
+
             </CommandBar>
 
 
