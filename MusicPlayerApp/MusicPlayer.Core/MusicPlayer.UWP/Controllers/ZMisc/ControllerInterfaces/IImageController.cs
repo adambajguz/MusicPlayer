@@ -6,6 +6,6 @@ namespace MusicPlayer.UWP.Controllers
 {
     public interface IImageController
     {
-        Task Create(string filePath);
+        Task<int> Create(string filePath);
     }
 }

@@ -26,9 +26,9 @@ namespace MusicPlayer.UWP.Controllers
             return await _queryDispatcher.Dispatch<GetImage.Query, Result>(new GetImage.Query() { ID = id });
         }
 
-        public async Task Create(string filePath)
+        public async Task<int> Create(string filePath)
         {
-            await _commandDispatcher.Dispatch<CreateImage.Command>(new CreateImage.Command
+            return await _commandDispatcher.Dispatch<CreateImage.Command, int>(new CreateImage.Command
             {
                 _data = new CreateImage.Data(filePath)
 

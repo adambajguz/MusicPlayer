@@ -13,7 +13,7 @@ namespace MusicPlayer.UWP.Controllers.Image
             public Data _data { get; set; }
         }
 
-        public class Handler : ICommandHandler<Command>
+        public class Handler : ICommandHandler<Command, int>
         {
             private readonly IUnitOfWork _uow;
 
@@ -22,11 +22,13 @@ namespace MusicPlayer.UWP.Controllers.Image
                 _uow = uow;
             }
 
-            public async Task Execute(Command command)
+            public async Task<int> Execute(Command command)
             {
                 _uow.ImageRepository.Insert(command._data.GetEntity());
                 int i = _uow.SaveChanges();
                 await _uow.SaveChangesAsync();
+
+                return command._data.GetEntity().Id;
             }
         }
 

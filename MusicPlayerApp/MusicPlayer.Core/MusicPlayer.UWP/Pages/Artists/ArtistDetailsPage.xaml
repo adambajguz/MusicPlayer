@@ -12,12 +12,13 @@
               RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width ="*" />
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
 
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -36,6 +37,7 @@
         </StackPanel>
   
         <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="5" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
-      
+        <Image x:Name="PhotoImage" Grid.Row="6"  Height="100" />
+
     </Grid>
 </Page>

@@ -2,9 +2,9 @@
 
 namespace MusicPlayer.Core.NullObjects
 {
-    class ImageNullObject : Image
+    public class ImageNullObject : Image
     {
-        private static readonly string DEFAULT_IMAGE_PATH = "";
+        private static readonly string DEFAULT_IMAGE_PATH = "ms-appx:///Assets/no-photo-available.png";
 
         public ImageNullObject() : base()
         {
