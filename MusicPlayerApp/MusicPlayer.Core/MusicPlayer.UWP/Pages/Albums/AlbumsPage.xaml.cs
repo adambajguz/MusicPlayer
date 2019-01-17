@@ -240,5 +240,35 @@ namespace MusicPlayer.UWP.Pages.Albums
             }
         }
 
+        private async void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            String query = args.QueryText;
+
+            List<Controllers.Album.Result> temp = await albumController.Search(query);
+            albums.Clear();
+            albums.AddRange(temp);
+        }
+
+        private async void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                List<Controllers.Album.Result> temp;
+                if (sender.Text == "")
+                {
+                    temp = await albumController.GetAll();
+                    albums.Clear();
+                    albums.AddRange(temp);
+                }
+
+                temp = await albumController.Search(sender.Text);
+                List<string> suggestions = new List<string>();
+
+                foreach (var item in temp)
+                    suggestions.Add(item.Title);
+
+                sender.ItemsSource = suggestions;
+            }
+        }
     }
 }

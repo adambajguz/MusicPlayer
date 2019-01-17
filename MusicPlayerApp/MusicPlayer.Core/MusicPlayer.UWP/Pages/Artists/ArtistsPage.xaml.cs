@@ -264,5 +264,37 @@ namespace MusicPlayer.UWP.Pages.Artists
             }
         }
 
+        private async void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            String query = args.QueryText;
+
+            List<Controllers.Artist.Result> temp = await artistController.Search(query);
+            List<ArtistData> artistsList = await LoadArtists(temp);
+            artists.Clear();
+            artists.AddRange(artistsList);
+        }
+
+        private async void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                List<Controllers.Artist.Result> temp;
+                if (sender.Text == "")
+                {
+                    temp = await artistController.GetAll();
+                    List<ArtistData> artistsList = await LoadArtists(temp);
+                    artists.Clear();
+                    artists.AddRange(artistsList);
+                }
+
+                temp = await artistController.Search(sender.Text);
+                List<string> suggestions = new List<string>();
+
+                foreach (var item in temp)
+                    suggestions.Add(item.Name);
+
+                sender.ItemsSource = suggestions;
+            }
+        }
     }
 }

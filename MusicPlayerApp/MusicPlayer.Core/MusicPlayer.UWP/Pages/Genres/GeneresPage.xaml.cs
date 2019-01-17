@@ -228,5 +228,36 @@ namespace MusicPlayer.UWP.Pages.Genres
                 // Do nothing.
             }
         }
+
+        private async void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            String query = args.QueryText;
+
+            List<Controllers.Genre.Result> temp = await genreController.Search(query);
+            genres.Clear();
+            genres.AddRange(temp);
+        }
+
+        private async void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                List<Controllers.Genre.Result> temp;
+                if (sender.Text == "")
+                {
+                    temp = await genreController.GetAll();
+                    genres.Clear();
+                    genres.AddRange(temp);
+                }
+
+                temp = await genreController.Search(sender.Text);
+                List<string> suggestions = new List<string>();
+
+                foreach (var item in temp)
+                    suggestions.Add(item.Name);
+
+                sender.ItemsSource = suggestions;
+            }
+        }
     }
 }

@@ -229,5 +229,36 @@ namespace MusicPlayer.UWP.Pages.Bands
             }
         }
 
+
+        private async void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            String query = args.QueryText;
+
+            List<Controllers.Band.Result> temp = await bandController.Search(query);
+            bands.Clear();
+            bands.AddRange(temp);
+        }
+
+        private async void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                List<Controllers.Band.Result> temp;
+                if (sender.Text == "")
+                {
+                    temp = await bandController.GetAll();
+                    bands.Clear();
+                    bands.AddRange(temp);
+                }
+
+                temp = await bandController.Search(sender.Text);
+                List<string> suggestions = new List<string>();
+
+                foreach (var item in temp)
+                    suggestions.Add(item.name);
+
+                sender.ItemsSource = suggestions;
+            }
+        }
     }
 }

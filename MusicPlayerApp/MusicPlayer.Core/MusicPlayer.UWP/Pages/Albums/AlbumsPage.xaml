@@ -23,13 +23,19 @@
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <CommandBar Grid.Row="0" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" OverflowButtonVisibility="Collapsed">
+
+            <AutoSuggestBox Grid.Row="0" Grid.Column="0" FontSize="10" Margin="8,6,0,0" QueryIcon="Find"
+                            PlaceholderText="Search album"
+                            QuerySubmitted="AutoSuggestBox_QuerySubmitted" TextChanged="AutoSuggestBox_TextChanged"/>
+            
+            <CommandBar Grid.Row="0" Grid.Column="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" Margin="0,2,0,0" OverflowButtonVisibility="Collapsed">
 
                 <AppBarButton Icon="Add" Label="Add" Tag="Add" Click="AppBarButton_Click"/>
                 <AppBarButton Icon="Delete" x:Name="DeleteSelected" IsEnabled="False" Label="Remove selected" Tag="Remove" Click="AppBarButton_Click"/>
@@ -84,7 +90,7 @@
             </CommandBar>
 
 
-            <ListView Grid.Row="1" x:Name="AlbumsListView"
+            <ListView Grid.Row="1" Grid.ColumnSpan="2" x:Name="AlbumsListView"
                       IsItemClickEnabled="False" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
                       Margin="8,8,8,8" SelectionChanged="BandsListView_SelectionChanged" >
                 <ListView.ItemContainerStyle>
