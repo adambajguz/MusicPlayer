@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -138,7 +139,64 @@ namespace MusicPlayer.UWP.Pages.Songs
 
             int id = await songController.Create(score, name, creation, filePath, null, selectedGenre.Id);
 
+            //update albums
+            {
+                List<Controllers.Album.Result> selected = await songController.GetAlbums(elementID.Value);
 
+                List<int> selectedAlbumsIds = new List<int>();
+                List<int> DBAlbumsIds = new List<int>();
+
+                foreach (Controllers.Album.Result item in AlbumsListView.SelectedItems)
+                    selectedAlbumsIds.Add(item.Id);
+
+                foreach (Controllers.Album.Result item in selected)
+                    DBAlbumsIds.Add(item.Id);
+
+                {
+                    List<int> toRemove = new List<int>(DBAlbumsIds.Except(selectedAlbumsIds));
+                    foreach (int i in toRemove)
+                        await albumController.DeleteSong(elementID.Value, i);
+                }
+
+                {
+                    List<int> toAdd = new List<int>(selectedAlbumsIds.Except(DBAlbumsIds));
+                    foreach (int i in toAdd)
+                    {
+                        List<Controllers.Song.Result> albumSongs = await albumController.GetSongs(i);
+                        int track = albumSongs.Count + 1;
+                        await albumController.AddSong(i, elementID.Value, track);
+                    }
+                }
+            }
+
+
+            //update artists
+            {
+                List<Controllers.Artist.Result> selected = await songController.GetArtists(elementID.Value);
+
+                List<int> selectedArtistsIds = new List<int>();
+                List<int> DBArtistsIds = new List<int>();
+
+                foreach (Controllers.Artist.Result item in ArtistsListView.SelectedItems)
+                    selectedArtistsIds.Add(item.Id);
+
+                foreach (Controllers.Artist.Result item in selected)
+                    DBArtistsIds.Add(item.Id);
+
+                {
+                    List<int> toRemove = new List<int>(DBArtistsIds.Except(selectedArtistsIds));
+                    foreach (int i in toRemove)
+                        await artistController.DeleteSong(elementID.Value, i);
+                }
+
+                {
+                    List<int> toAdd = new List<int>(selectedArtistsIds.Except(DBArtistsIds));
+                    foreach (int i in toAdd)
+                    {
+                        await artistController.AddSong(i, elementID.Value);
+                    }
+                }
+            }
 
 
             mainPage.GoBack();

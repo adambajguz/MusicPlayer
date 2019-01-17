@@ -144,7 +144,7 @@
             <Button Click="SaveButton_Click" Margin="8,8,8,8" >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="Save" Margin="8,0,0,0"/>
-                    <TextBlock Text="Create" Margin="15,0,8,0"/>
+                    <TextBlock Text="Save" Margin="15,0,8,0"/>
                 </StackPanel>
             </Button>
             <Button Click="CancelButton_Click" Margin="8,8,8,8" ToolTipService.ToolTip="Discard changes" >
