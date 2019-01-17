@@ -25,17 +25,13 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Artist Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+        <TextBlock Text="Song Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
         <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
-        <TextBlock x:Name="BirthdayTextBox" Grid.Row="2" Margin="8,0,8,8" FontSize="14" FontWeight="Bold" FontStyle="Italic" />
-
-        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="8,0,8,8">
-            <TextBlock Text="Band: " TextDecorations="None" Margin="0,0,8,0"/>
-            <HyperlinkButton x:Name="BandHyperlink" Content="abc" Padding="0,0,0,0" Click="BandHyperlink_Click" />
-        </StackPanel>
+        <TextBlock x:Name="ArtistsTextBox" Grid.Row="2" Margin="8,0,8,8" />
+        <TextBlock x:Name="AlbumsTextBox" Grid.Row="3" Margin="8,0,8,8" />
+        <TextBlock x:Name="GenreTextBox" Grid.Row="4" Margin="8,0,8,8" />
+        <TextBlock x:Name="StatTextBox" Grid.Row="5" Margin="8,0,8,8" />
   
-        <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="5" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
-      
     </Grid>
 </Page>
