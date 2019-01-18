@@ -102,8 +102,8 @@ namespace MusicPlayer.UWP.Pages.Albums
 
             int image_id;
             {
-                Controllers.Album.Result artist = await albumController.Get(elementID.Value);
-                image_id = artist.ImageId;
+                Controllers.Album.Result album = await albumController.Get(elementID.Value);
+                image_id = album.ImageId;
 
                 if (ImageFileTextBox.Text == "")
                     await imageController.Update(image_id, new MusicPlayer.Core.NullObjects.ImageNullObject().FilePath);

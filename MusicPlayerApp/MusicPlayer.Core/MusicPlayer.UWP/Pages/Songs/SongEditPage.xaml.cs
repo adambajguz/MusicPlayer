@@ -153,8 +153,8 @@ namespace MusicPlayer.UWP.Pages.Songs
 
             int? image_id = null;
             {
-                Controllers.Album.Result artist = await albumController.Get(elementID.Value);
-                image_id = artist.ImageId;
+                Controllers.Song.Result song = await songController.Get(elementID.Value);
+                image_id = song.ImageId;
 
                 if(image_id != null && ImageFileTextBox.Text != "")
                     await imageController.Update((int)image_id, ImageFileTextBox.Text);
