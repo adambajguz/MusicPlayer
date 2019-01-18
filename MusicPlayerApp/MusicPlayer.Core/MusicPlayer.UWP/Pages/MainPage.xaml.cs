@@ -13,6 +13,7 @@ using System.Linq;
 using Windows.Media.Core;
 using Windows.Storage;
 using Windows.System;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
@@ -50,11 +51,10 @@ namespace MusicPlayer.UWP.Pages
 
         public async void SetAudio(string filePath)
         {
+            StorageFile file = null;
             try
             {
-                StorageFile file = await StorageFile.GetFileFromPathAsync(filePath);
-
-                AudioPlayer.Source = MediaSource.CreateFromStorageFile(file);
+                file = await StorageFile.GetFileFromPathAsync(filePath);
             }
             catch (Exception)
             {
@@ -63,9 +63,16 @@ namespace MusicPlayer.UWP.Pages
                 await Launcher.LaunchUriAsync(new Uri("ms-settings:appsfeatures-app"));
             }
 
+            await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+            () =>
+            {
+                if (file != null)
+                {
+                    AudioPlayer.Source = MediaSource.CreateFromStorageFile(file);
+                    AudioPlayer.MediaPlayer.Play();
+                }
+            });
 
-
-            AudioPlayer.MediaPlayer.Play();
         }
 
         private void PlaybackSession_SeekCompleted(Windows.Media.Playback.MediaPlaybackSession sender, object args)
