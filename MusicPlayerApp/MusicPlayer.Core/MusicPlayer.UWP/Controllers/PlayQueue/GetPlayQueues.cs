@@ -23,7 +23,7 @@ namespace MusicPlayer.UWP.Controllers.PlayQueue
 
             public async Task<List<Result>> Handle(Query query)
             {
-                var result = await _uow.PlayQueueRepository.Query().Select(x => new Result(x)).ToListAsync();
+                var result = await _uow.PlayQueueRepository.Query().Select(x => new Result(x)).OrderByDescending(y => y.Id).ToListAsync();
 
                 return result;
             }

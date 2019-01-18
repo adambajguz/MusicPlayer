@@ -17,6 +17,7 @@ namespace MusicPlayer.UWP.Pages.Albums
         private readonly MainPage mainPage;
         private AlbumController albumController;
         private SongController songController;
+        private ImageController imageController;
 
         private ObservableRangeCollection<Controllers.Song.Result> AllSongs = new ObservableRangeCollection<Controllers.Song.Result>();
 
@@ -25,6 +26,7 @@ namespace MusicPlayer.UWP.Pages.Albums
             this.InitializeComponent();
             albumController = new AlbumController(App.QueryDispatcher, App.CommandDispatcher);
             songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
+            imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
 
             var frame = (Frame)Window.Current.Content;
             mainPage = (MainPage)frame.Content;
@@ -66,7 +68,14 @@ namespace MusicPlayer.UWP.Pages.Albums
             string description = string.Empty;
             DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
 
-            int ID = await albumController.Create(name, description, creation, 1);
+            int image_id;
+            if (ImageFileTextBox.Text == "")
+                image_id = await imageController.Create(new MusicPlayer.Core.NullObjects.ImageNullObject().FilePath);
+            else
+                image_id = await imageController.Create(ImageFileTextBox.Text);
+
+
+            int ID = await albumController.Create(name, description, creation, image_id);
 
             int s = 1;
             foreach (Controllers.Song.Result song in SongsListView.SelectedItems)
@@ -92,6 +101,28 @@ namespace MusicPlayer.UWP.Pages.Albums
             mainPage.GoBack();
         }
 
-    
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var picker = new Windows.Storage.Pickers.FileOpenPicker
+            {
+                ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail,
+                SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary
+            };
+            picker.FileTypeFilter.Add(".jpg");
+            picker.FileTypeFilter.Add(".jpeg");
+            picker.FileTypeFilter.Add(".png");
+
+            Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+            if (file != null)
+            {
+                // Application now has read/write access to the picked file
+
+                ImageFileTextBox.Text = file.Path;
+            }
+            else
+            {
+                //Operation cancelled
+            }
+        }
     }
 }

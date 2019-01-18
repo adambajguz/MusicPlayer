@@ -100,6 +100,7 @@
     <Compile Include="Controllers\Artist\UpdateArtist.cs" />
     <Compile Include="Controllers\Band\UpdateBand.cs" />
     <Compile Include="Controllers\Genre\UpdateGenre.cs" />
+    <Compile Include="Controllers\Image\UpdateImage.cs" />
     <Compile Include="Controllers\Playlist\UpdatePlaylist.cs" />
     <Compile Include="Controllers\Song\GetAlbums.cs" />
     <Compile Include="Controllers\Song\UpdateSong.cs" />
@@ -316,6 +317,7 @@
     <Content Include="Assets\LargeTile.scale-150.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\no-photo-available.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-125.png" />
     <Content Include="Assets\SmallTile.scale-150.png" />

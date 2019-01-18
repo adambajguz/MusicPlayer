@@ -1,8 +1,11 @@
 ﻿using MusicPlayer.UWP.Controllers;
 using System;
+using Windows.Storage;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 
@@ -35,16 +38,44 @@ namespace MusicPlayer.UWP.Pages.Artists
             elementID.Value = (int)e.Parameter;
             Controllers.Artist.Result artist = await artistController.Get(elementID.Value);
 
-            if(artist == null)
+            if (artist == null)
             {
                 mainPage.GoBack();
                 return;
             }
 
+            {
+                var img = new Core.NullObjects.ImageNullObject();
+                PhotoImage.Source = new BitmapImage(new Uri(img.FilePath));
+
+                ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
+
+                Controllers.Image.Result DBimage = await imageController.Get(artist.ImageId);
+                if(DBimage.FilePath != img.FilePath)
+                {
+                    try
+                    {
+                        StorageFile file = await StorageFile.GetFileFromPathAsync(DBimage.FilePath);
+                        var stream = await file.OpenReadAsync();
+                        BitmapImage imageSource = new BitmapImage();
+                        await imageSource.SetSourceAsync(stream);
+
+                        PhotoImage.Source = imageSource;
+                    }
+                    catch (Exception)
+                    {
+                        // prompt user for what action they should do then launch below
+                        // suggestion could be a message prompt
+                        await Launcher.LaunchUriAsync(new Uri("ms-settings:appsfeatures-app"));
+                    }
+
+
+                }
+            }
 
             NameTextBox.Text = artist.Name + " " + artist.Surname + " (" + artist.Pseudonym + ")";
 
-            if(artist.BandId != null)
+            if (artist.BandId != null)
             {
                 BandController bandController = new BandController(App.QueryDispatcher, App.CommandDispatcher);
                 Controllers.Band.Result band = await bandController.Get((int)artist.BandId);

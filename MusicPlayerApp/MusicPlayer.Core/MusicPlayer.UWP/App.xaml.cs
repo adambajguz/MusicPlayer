@@ -1,4 +1,4 @@
-﻿using Autofac;
+﻿    using Autofac;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MusicPlayer.Core.CQRS;
@@ -30,6 +30,11 @@ namespace MusicPlayer.UWP
         public static ICommandDispatcher CommandDispatcher { get; private set; }
         public static IQueryDispatcher QueryDispatcher { get; private set; }
 
+        public static IContainer ApplicationContainer2 { get; private set; }
+
+        public static ICommandDispatcher CommandDispatcher2 { get; private set; }
+        public static IQueryDispatcher QueryDispatcher2 { get; private set; }
+
 
         /// <summary>
         /// Inicjuje pojedynczy obiekt aplikacji. Jest to pierwszy wiersz napisanego kodu
@@ -41,37 +46,74 @@ namespace MusicPlayer.UWP
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            IServiceCollection services = new ServiceCollection();
-            services.AddDbContext<DataContext>();
-            /*
-             * An error that sometimes occures when switching pages:
-             * 
-             * System.InvalidOperationException: 'A second operation started on this context before a previous operation completed.
-             * This is usually caused by different threads using the same instance of DbContext, however instance members are not
-             * guaranteed to be thread safe. This could also be caused by a nested query being evaluated on the client, if this
-             * is the case rewrite the query avoiding nested invocations.'
-             * 
-             */
-
-            ApplicationContainer = IocConfig.RegisterDependencies(services);
-
-            IContainer container = IocConfig.RegisterDependencies(services);
-
-            ILifetimeScope scop = container.BeginLifetimeScope();
-            CommandDispatcher = scop.Resolve<ICommandDispatcher>();
-            QueryDispatcher = scop.Resolve<IQueryDispatcher>();
-
-            //sprawdzam
-            using (var scope = container.BeginLifetimeScope())
             {
-                //var commandDispatcher = scope.Resolve<ICommandDispatcher>();
-                //var queryDispatcher = scope.Resolve<IQueryDispatcher>();
-                var dataContextEntityContext = scope.Resolve<IEntitiesContext>();
-                var dataContextDbContext = scope.Resolve<DbContext>();
-                var uow = scope.Resolve<IUnitOfWork>();
+                IServiceCollection services = new ServiceCollection();
+                services.AddDbContext<DataContext>();
+                /*
+                 * An error that sometimes occures when switching pages:
+                 * 
+                 * System.InvalidOperationException: 'A second operation started on this context before a previous operation completed.
+                 * This is usually caused by different threads using the same instance of DbContext, however instance members are not
+                 * guaranteed to be thread safe. This could also be caused by a nested query being evaluated on the client, if this
+                 * is the case rewrite the query avoiding nested invocations.'
+                 * 
+                 */
 
-                //var app = scope.Resolve<IQueryDispatcher>();
-                //app.WriteInformation("injected!");
+                ApplicationContainer = IocConfig.RegisterDependencies(services);
+
+                IContainer container = IocConfig.RegisterDependencies(services);
+
+                ILifetimeScope scop = container.BeginLifetimeScope();
+                CommandDispatcher = scop.Resolve<ICommandDispatcher>();
+                QueryDispatcher = scop.Resolve<IQueryDispatcher>();
+
+                //sprawdzam
+                using (var scope = container.BeginLifetimeScope())
+                {
+                    //var commandDispatcher = scope.Resolve<ICommandDispatcher>();
+                    //var queryDispatcher = scope.Resolve<IQueryDispatcher>();
+                    var dataContextEntityContext = scope.Resolve<IEntitiesContext>();
+                    var dataContextDbContext = scope.Resolve<DbContext>();
+                    var uow = scope.Resolve<IUnitOfWork>();
+
+                    //var app = scope.Resolve<IQueryDispatcher>();
+                    //app.WriteInformation("injected!");
+                }
+            }
+
+            {
+                IServiceCollection services2 = new ServiceCollection();
+                services2.AddDbContext<DataContext>();
+                /*
+                 * An error that sometimes occures when switching pages:
+                 * 
+                 * System.InvalidOperationException: 'A second operation started on this context before a previous operation completed.
+                 * This is usually caused by different threads using the same instance of DbContext, however instance members are not
+                 * guaranteed to be thread safe. This could also be caused by a nested query being evaluated on the client, if this
+                 * is the case rewrite the query avoiding nested invocations.'
+                 * 
+                 */
+
+                ApplicationContainer2 = IocConfig.RegisterDependencies(services2);
+
+                IContainer container2 = IocConfig.RegisterDependencies(services2);
+
+                ILifetimeScope scop2 = container2.BeginLifetimeScope();
+                CommandDispatcher2 = scop2.Resolve<ICommandDispatcher>();
+                QueryDispatcher2 = scop2.Resolve<IQueryDispatcher>();
+
+                //sprawdzam
+                using (var scope = container2.BeginLifetimeScope())
+                {
+                    //var commandDispatcher = scope.Resolve<ICommandDispatcher>();
+                    //var queryDispatcher = scope.Resolve<IQueryDispatcher>();
+                    var dataContextEntityContext2 = scope.Resolve<IEntitiesContext>();
+                    var dataContextDbContext2 = scope.Resolve<DbContext>();
+                    var uow2 = scope.Resolve<IUnitOfWork>();
+
+                    //var app = scope.Resolve<IQueryDispatcher>();
+                    //app.WriteInformation("injected!");
+                }
             }
 
 

@@ -215,11 +215,11 @@ namespace MusicPlayer.UWP.Pages.Songs
                 {
                     // parsing successful
 
-
+                    Controllers.Song.Result selectedSong = await songController.Get(id);
                     switch (selectedItem.Name.ToString())
                     {
                         case "IPlay":
-
+                            mainPage.SetAudio(selectedSong.FilePath, selectedSong);
                             break;
 
                         case "IAddToQueue":
@@ -237,7 +237,6 @@ namespace MusicPlayer.UWP.Pages.Songs
                             break;
 
                         case "IRemove":
-                            Controllers.Song.Result selectedSong = await songController.Get(id);
                             DisplayDeleteSingleDialog(selectedSong);
 
                             break;
@@ -264,7 +263,11 @@ namespace MusicPlayer.UWP.Pages.Songs
             if (result == ContentDialogResult.Primary)
             {
                 // Delete
-
+                if (songToDelete.ImageId != null)
+                {
+                    ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
+                    await imageController.Delete((int)songToDelete.ImageId);
+                }
                 await songController.Delete(songToDelete.Id);
 
 
@@ -295,9 +298,15 @@ namespace MusicPlayer.UWP.Pages.Songs
 
             if (result == ContentDialogResult.Primary)
             {
+                ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
                 // Delete
                 foreach (SongData tmp in songsToDelete)
+                {
+                    if (tmp.Song.ImageId != null)
+                        await imageController.Delete((int)tmp.Song.ImageId);
+
                     await songController.Delete(tmp.Song.Id);
+                }
 
 
                 List<Controllers.Song.Result> temp = await songController.GetAll();

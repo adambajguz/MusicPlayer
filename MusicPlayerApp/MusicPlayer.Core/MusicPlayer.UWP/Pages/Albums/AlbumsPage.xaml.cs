@@ -161,6 +161,24 @@ namespace MusicPlayer.UWP.Pages.Albums
 
                     switch (selectedItem.Name.ToString())
                     {
+                        case "IPlay":
+                            {
+                                List<Controllers.Song.Result> albumSongs = await albumController.GetSongs(selectedAlbum.Id);
+
+                                bool first = true;
+                                foreach (Controllers.Song.Result x in albumSongs)
+                                {
+                                    if (first)
+                                    {
+                                        mainPage.SetAudio(x.FilePath, x);
+                                        first = false;
+                                    }
+                                    else
+                                        await playQueueController.Create(x.Id);
+
+                                }
+                            }
+                            break;
                         case "IDetails":
                             mainPage.NavView_Navigate(MainPage.AlbumDetailsTag, new EntranceNavigationTransitionInfo(), selectedAlbum.Id);
 
@@ -168,11 +186,13 @@ namespace MusicPlayer.UWP.Pages.Albums
 
 
                         case "IAddToQueue":
-                            List<Controllers.Song.Result> albumSongs = await albumController.GetSongs(selectedAlbum.Id);
-                            albumSongs.Reverse();
+                            {
+                                List<Controllers.Song.Result> albumSongs = await albumController.GetSongs(selectedAlbum.Id);
+                                albumSongs.Reverse();
 
-                            foreach(Controllers.Song.Result x in albumSongs)
-                                await playQueueController.Create(x.Id);
+                                foreach (Controllers.Song.Result x in albumSongs)
+                                    await playQueueController.Create(x.Id);
+                            }
                             break;
 
                         case "IEdit":
@@ -207,6 +227,8 @@ namespace MusicPlayer.UWP.Pages.Albums
             if (result == ContentDialogResult.Primary)
             {
                 // Delete
+                ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
+                await imageController.Delete(albumToDelete.ImageId);
 
                 await albumController.Delete(albumToDelete.Id);
 
@@ -222,7 +244,7 @@ namespace MusicPlayer.UWP.Pages.Albums
             }
         }
 
-        private async void DisplayDeleteListDialog(IList<object> genresToDelete)
+        private async void DisplayDeleteListDialog(IList<object> albumsToDelete)
         {
             ContentDialog deleteFileDialog = new ContentDialog
             {
@@ -237,9 +259,14 @@ namespace MusicPlayer.UWP.Pages.Albums
 
             if (result == ContentDialogResult.Primary)
             {
+                ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
+
                 // Delete
-                foreach (Controllers.Album.Result genre in genresToDelete)
-                    await albumController.Delete(genre.Id);
+                foreach (Controllers.Album.Result album in albumsToDelete)
+                {
+                    await imageController.Delete(album.ImageId);
+                    await albumController.Delete(album.Id);
+                }
 
                 List<Controllers.Album.Result> temp = await albumController.GetAll();
                 albums.Clear();
