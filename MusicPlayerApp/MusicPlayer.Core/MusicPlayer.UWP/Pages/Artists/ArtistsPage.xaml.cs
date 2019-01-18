@@ -248,8 +248,8 @@ namespace MusicPlayer.UWP.Pages.Artists
             if (result == ContentDialogResult.Primary)
             {
                 // Delete
-                foreach (Controllers.Artist.Result genre in genresToDelete)
-                    await artistController.Delete(genre.Id);
+                foreach (ArtistData artist in genresToDelete)
+                    await artistController.Delete(artist.Artist.Id);
 
 
                 List<Controllers.Artist.Result> temp = await artistController.GetAll();
