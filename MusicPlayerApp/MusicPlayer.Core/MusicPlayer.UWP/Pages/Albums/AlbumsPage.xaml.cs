@@ -161,6 +161,24 @@ namespace MusicPlayer.UWP.Pages.Albums
 
                     switch (selectedItem.Name.ToString())
                     {
+                        case "IPlay":
+                            {
+                                List<Controllers.Song.Result> albumSongs = await albumController.GetSongs(selectedAlbum.Id);
+
+                                bool first = true;
+                                foreach (Controllers.Song.Result x in albumSongs)
+                                {
+                                    if (first)
+                                    {
+                                        mainPage.SetAudio(x.FilePath, x);
+                                        first = false;
+                                    }
+                                    else
+                                        await playQueueController.Create(x.Id);
+
+                                }
+                            }
+                            break;
                         case "IDetails":
                             mainPage.NavView_Navigate(MainPage.AlbumDetailsTag, new EntranceNavigationTransitionInfo(), selectedAlbum.Id);
 
@@ -168,11 +186,13 @@ namespace MusicPlayer.UWP.Pages.Albums
 
 
                         case "IAddToQueue":
-                            List<Controllers.Song.Result> albumSongs = await albumController.GetSongs(selectedAlbum.Id);
-                            albumSongs.Reverse();
+                            {
+                                List<Controllers.Song.Result> albumSongs = await albumController.GetSongs(selectedAlbum.Id);
+                                albumSongs.Reverse();
 
-                            foreach(Controllers.Song.Result x in albumSongs)
-                                await playQueueController.Create(x.Id);
+                                foreach (Controllers.Song.Result x in albumSongs)
+                                    await playQueueController.Create(x.Id);
+                            }
                             break;
 
                         case "IEdit":

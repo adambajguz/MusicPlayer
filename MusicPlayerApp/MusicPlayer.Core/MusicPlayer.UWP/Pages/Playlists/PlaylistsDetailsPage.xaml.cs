@@ -180,7 +180,7 @@ namespace MusicPlayer.UWP.Pages.Playlists
                     switch (selectedItem.Name.ToString())
                     {
                         case "IPlay":
-
+                            mainPage.SetAudio(selectedSong.FilePath, selectedSong);
                             break;
 
 

@@ -100,7 +100,7 @@ namespace MusicPlayer.UWP.Pages
                                 BitmapImage tmpImage = new BitmapImage();
                                 StorageFile imfile = await StorageFile.GetFileFromPathAsync(DBimage.FilePath);
                                 var stream = await imfile.OpenReadAsync();
-                                tmpImage.SetSourceAsync(stream);
+                                await tmpImage.SetSourceAsync(stream);
                                 imageSource = tmpImage;
                             }
                             catch (Exception)
@@ -142,7 +142,7 @@ namespace MusicPlayer.UWP.Pages
 
                 SetAudio(song.FilePath, song);
 
-                playQueueController.Delete(elementToPlay.Id);
+                await playQueueController.Delete(elementToPlay.Id);
             }
         }
 

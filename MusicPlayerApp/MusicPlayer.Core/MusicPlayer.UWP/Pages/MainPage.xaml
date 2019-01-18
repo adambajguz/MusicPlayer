@@ -84,10 +84,12 @@
                             Source="ms-appx:///Assets/sample.mp3" Margin="0,8,0,8" PosterSource="/Assets/Wide310x150Logo.png">
 
                 <MediaPlayerElement.TransportControls>
-                    <MediaTransportControls IsNextTrackButtonVisible="True" IsPreviousTrackButtonVisible="True" IsSeekBarVisible="True" IsFullWindowButtonVisible="True" IsFullWindowEnabled="True" IsRepeatButtonVisible="True"
+                    <MediaTransportControls IsNextTrackButtonVisible="False" IsPreviousTrackButtonVisible="False" IsSeekBarVisible="True" IsFullWindowButtonVisible="True" 
+                                            IsFullWindowEnabled="True" IsRepeatButtonVisible="True"
                                         IsZoomEnabled="False" IsPlaybackRateEnabled="True" IsPlaybackRateButtonVisible="True"
-                                        IsRepeatEnabled="True" IsSkipBackwardButtonVisible="True" IsSkipBackwardEnabled="True" IsSkipForwardButtonVisible="True"
-                                        IsSkipForwardEnabled="True" IsTextScaleFactorEnabled="False" IsVolumeEnabled="True" IsSeekEnabled="True" IsZoomButtonVisible="False"/>
+                                        IsRepeatEnabled="True" IsSkipBackwardButtonVisible="True" IsSkipBackwardEnabled="True"
+                                        IsSkipForwardButtonVisible="True" IsSkipForwardEnabled="True" IsTextScaleFactorEnabled="False"
+                                        IsVolumeEnabled="True" IsSeekEnabled="True" IsZoomButtonVisible="False"/>
                 </MediaPlayerElement.TransportControls>
             </MediaPlayerElement>
         </Grid>

@@ -163,15 +163,32 @@ namespace MusicPlayer.UWP.Pages.Playlists
                     {
 
                         case "IPlay":
+                            {
+                                List<Controllers.Song.Result> playlistSongs = await playlistController.GetSongs(selectedAlbum.Id);
 
+                                bool first = true;
+                                foreach (Controllers.Song.Result x in playlistSongs)
+                                {
+                                    if (first)
+                                    {
+                                        mainPage.SetAudio(x.FilePath, x);
+                                        first = false;
+                                    }
+                                    else
+                                        await playQueueController.Create(x.Id);
+
+                                }
+                            }
                             break;
 
                         case "IAddToQueue":
-                            List<Controllers.Song.Result> albumSongs = await playlistController.GetSongs(selectedAlbum.Id);
-                            albumSongs.Reverse();
+                            {
+                                List<Controllers.Song.Result> playlistSongs = await playlistController.GetSongs(selectedAlbum.Id);
+                                playlistSongs.Reverse();
 
-                            foreach (Controllers.Song.Result x in albumSongs)
-                                await playQueueController.Create(x.Id);
+                                foreach (Controllers.Song.Result x in playlistSongs)
+                                    await playQueueController.Create(x.Id);
+                            }
                             break;
 
                         case "IDetails":
