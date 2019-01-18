@@ -1,4 +1,5 @@
 ﻿using MusicPlayer.Core.Extensions;
+using MusicPlayer.UWP.Controllers;
 using MusicPlayer.UWP.Pages.Albums;
 using MusicPlayer.UWP.Pages.Artists;
 using MusicPlayer.UWP.Pages.Bands;
@@ -9,6 +10,8 @@ using MusicPlayer.UWP.Pages.Songs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Windows.Media.Core;
+using Windows.Storage;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -27,13 +30,66 @@ namespace MusicPlayer.UWP.Pages
     //https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
     //https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
     //https://blogs.msdn.microsoft.com/appconsult/2018/05/06/using-the-navigationview-in-your-uwp-applications/
+
     public sealed partial class MainPage : Page
     {
+        private SongController songController;
+        private PlayQueueController playQueueController;
+
         public MainPage()
         {
             this.InitializeComponent();
 
+            playQueueController = new PlayQueueController(App.QueryDispatcher, App.CommandDispatcher);
+            songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
+
+            AudioPlayer.MediaPlayer.MediaEnded += MediaPlayer_MediaEnded;
+            AudioPlayer.MediaPlayer.PlaybackSession.SeekCompleted += PlaybackSession_SeekCompleted;
             //AudioPlayer.MediaPlayer.SeekCompleted
+        }
+
+        public async void SetAudio(string filePath)
+        {
+            try
+            {
+                StorageFile file = await StorageFile.GetFileFromPathAsync(filePath);
+
+                AudioPlayer.Source = MediaSource.CreateFromStorageFile(file);
+            }
+            catch (Exception)
+            {
+                // prompt user for what action they should do then launch below
+                // suggestion could be a message prompt
+                await Launcher.LaunchUriAsync(new Uri("ms-settings:appsfeatures-app"));
+            }
+
+
+
+            AudioPlayer.MediaPlayer.Play();
+        }
+
+        private void PlaybackSession_SeekCompleted(Windows.Media.Playback.MediaPlaybackSession sender, object args)
+        {
+
+        }
+
+        private void MediaPlayer_MediaEnded(Windows.Media.Playback.MediaPlayer sender, object args)
+        {
+            PlayNextFromQueue();
+        }
+
+        private async void PlayNextFromQueue()
+        {
+            List<Controllers.PlayQueue.Result> playQueueList = await playQueueController.GetAll();
+
+            if (playQueueList.Count > 0)
+            {
+                int songId = playQueueList.ElementAt(0).SongId;
+
+                Controllers.Song.Result song = await songController.Get(songId);
+
+                SetAudio(song.FilePath);
+            }
         }
 
 

@@ -67,9 +67,9 @@ namespace MusicPlayer.UWP.Pages.Albums
                 {
                     try
                     {
-                        var file = await StorageFile.GetFileFromPathAsync(DBimage.FilePath);
+                        StorageFile file = await StorageFile.GetFileFromPathAsync(DBimage.FilePath);
                         var stream = await file.OpenReadAsync();
-                        var imageSource = new BitmapImage();
+                        BitmapImage imageSource = new BitmapImage();
                         await imageSource.SetSourceAsync(stream);
 
                         PhotoImage.Source = imageSource;

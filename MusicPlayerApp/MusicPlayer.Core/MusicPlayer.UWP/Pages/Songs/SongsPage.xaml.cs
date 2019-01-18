@@ -215,11 +215,11 @@ namespace MusicPlayer.UWP.Pages.Songs
                 {
                     // parsing successful
 
-
+                    Controllers.Song.Result selectedSong = await songController.Get(id);
                     switch (selectedItem.Name.ToString())
                     {
                         case "IPlay":
-
+                            mainPage.SetAudio(selectedSong.FilePath);
                             break;
 
                         case "IAddToQueue":
@@ -237,7 +237,6 @@ namespace MusicPlayer.UWP.Pages.Songs
                             break;
 
                         case "IRemove":
-                            Controllers.Song.Result selectedSong = await songController.Get(id);
                             DisplayDeleteSingleDialog(selectedSong);
 
                             break;
