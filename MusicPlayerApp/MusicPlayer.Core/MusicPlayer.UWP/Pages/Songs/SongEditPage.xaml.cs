@@ -160,7 +160,7 @@ namespace MusicPlayer.UWP.Pages.Songs
                     await imageController.Update((int)image_id, ImageFileTextBox.Text);
             }
 
-            int id = await songController.Create(score, name, creation, filePath, image_id, selectedGenre.Id);
+            await songController.Update(elementID.Value, score, name, creation, filePath, image_id, selectedGenre.Id);
 
             //update albums
             {
