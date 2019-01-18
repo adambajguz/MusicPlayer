@@ -200,11 +200,11 @@ namespace MusicPlayer.UWP.Pages.Artists
             }
         }
 
-        private async void DisplayDeleteSingleDialog(Controllers.Artist.Result bandToDelete)
+        private async void DisplayDeleteSingleDialog(Controllers.Artist.Result artistToDelete)
         {
             ContentDialog deleteFileDialog = new ContentDialog
             {
-                Title = "Delete '" + bandToDelete.Name + "' permanently?",
+                Title = "Delete '" + artistToDelete.Name + "' permanently?",
                 Content = "If you delete this artist, you won't be able to recover him. Do you want to delete him?",
                 PrimaryButtonText = "Delete",
                 CloseButtonText = "Cancel"
@@ -216,8 +216,10 @@ namespace MusicPlayer.UWP.Pages.Artists
             if (result == ContentDialogResult.Primary)
             {
                 // Delete
+                ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
+                await imageController.Delete(artistToDelete.ImageId);
 
-                await artistController.Delete(bandToDelete.Id);
+                await artistController.Delete(artistToDelete.Id);
 
 
                 List<Controllers.Artist.Result> temp = await artistController.GetAll();
@@ -247,9 +249,15 @@ namespace MusicPlayer.UWP.Pages.Artists
 
             if (result == ContentDialogResult.Primary)
             {
+                ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
+
                 // Delete
                 foreach (ArtistData artist in genresToDelete)
+                {
+                    await imageController.Delete(artist.Artist.ImageId);
                     await artistController.Delete(artist.Artist.Id);
+
+                }
 
 
                 List<Controllers.Artist.Result> temp = await artistController.GetAll();

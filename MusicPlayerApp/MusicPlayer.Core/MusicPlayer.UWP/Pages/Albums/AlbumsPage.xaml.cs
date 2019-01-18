@@ -207,6 +207,8 @@ namespace MusicPlayer.UWP.Pages.Albums
             if (result == ContentDialogResult.Primary)
             {
                 // Delete
+                ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
+                await imageController.Delete(albumToDelete.ImageId);
 
                 await albumController.Delete(albumToDelete.Id);
 
@@ -222,7 +224,7 @@ namespace MusicPlayer.UWP.Pages.Albums
             }
         }
 
-        private async void DisplayDeleteListDialog(IList<object> genresToDelete)
+        private async void DisplayDeleteListDialog(IList<object> albumsToDelete)
         {
             ContentDialog deleteFileDialog = new ContentDialog
             {
@@ -237,9 +239,14 @@ namespace MusicPlayer.UWP.Pages.Albums
 
             if (result == ContentDialogResult.Primary)
             {
+                ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
+
                 // Delete
-                foreach (Controllers.Album.Result genre in genresToDelete)
-                    await albumController.Delete(genre.Id);
+                foreach (Controllers.Album.Result album in albumsToDelete)
+                {
+                    await imageController.Delete(album.ImageId);
+                    await albumController.Delete(album.Id);
+                }
 
                 List<Controllers.Album.Result> temp = await albumController.GetAll();
                 albums.Clear();

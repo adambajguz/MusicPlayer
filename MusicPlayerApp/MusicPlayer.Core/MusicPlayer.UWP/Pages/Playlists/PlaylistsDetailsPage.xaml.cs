@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
@@ -163,21 +162,10 @@ namespace MusicPlayer.UWP.Pages.Playlists
 
                         break;
 
-                    case "Remove":
-                        DisplayDeleteListDialog(SongsListView.SelectedItems);
-
-                        break;
-
                 }
             }
         }
-        private void GenresListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (SongsListView.SelectedItems.Count > 0)
-                DeleteSelected.IsEnabled = true;
-            else
-                DeleteSelected.IsEnabled = false;
-        }
+
 
         private async void ListItemBarButton_Click(object sender, RoutedEventArgs e)
         {
@@ -210,10 +198,6 @@ namespace MusicPlayer.UWP.Pages.Playlists
 
                             break;
 
-                        case "IRemove":
-                            DisplayDeleteSingleDialog(selectedSong);
-
-                            break;
                     }
                 }
 
@@ -221,64 +205,6 @@ namespace MusicPlayer.UWP.Pages.Playlists
             }
         }
 
-
-        private async void DisplayDeleteSingleDialog(Controllers.Song.Result bandToDelete)
-        {
-            ContentDialog deleteFileDialog = new ContentDialog
-            {
-                Title = "Delete '" + bandToDelete.Title + "' permanently?",
-                Content = "If you delete this song, you won't be able to recover it. Do you want to delete it?",
-                PrimaryButtonText = "Delete",
-                CloseButtonText = "Cancel"
-            };
-
-            ContentDialogResult result = await deleteFileDialog.ShowAsync();
-
-
-            if (result == ContentDialogResult.Primary)
-            {
-                // Delete
-
-                await songController.Delete(bandToDelete.Id);
-
-                songs.Clear();
-                songs.AddRange(await playlistController.GetSongs(elementID.Value));
-            }
-            else
-            {
-                // The user clicked the CLoseButton, pressed ESC, Gamepad B, or the system back button.
-                // Do nothing.
-            }
-        }
-
-        private async void DisplayDeleteListDialog(IList<object> genresToDelete)
-        {
-            ContentDialog deleteFileDialog = new ContentDialog
-            {
-                Title = "Delete selected songs permanently?",
-                Content = "If you delete these songs, you won't be able to recover them. Do you want to delete them?",
-                PrimaryButtonText = "Delete",
-                CloseButtonText = "Cancel"
-            };
-
-            ContentDialogResult result = await deleteFileDialog.ShowAsync();
-
-
-            if (result == ContentDialogResult.Primary)
-            {
-                // Delete
-                foreach (Controllers.Song.Result song in genresToDelete)
-                    await songController.Delete(song.Id);
-
-                songs.Clear();
-                songs.AddRange(await playlistController.GetSongs(elementID.Value));
-            }
-            else
-            {
-                // The user clicked the CLoseButton, pressed ESC, Gamepad B, or the system back button.
-                // Do nothing.
-            }
-        }
     }
 
 }
