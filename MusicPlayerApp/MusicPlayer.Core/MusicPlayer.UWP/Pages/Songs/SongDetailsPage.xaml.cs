@@ -2,9 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Windows.Storage;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 
@@ -42,6 +45,46 @@ namespace MusicPlayer.UWP.Pages.Songs
                 mainPage.GoBack();
                 return;
             }
+
+            {
+                var img = new Core.NullObjects.ImageNullObject();
+                PhotoImage.Source = new BitmapImage(new Uri(img.FilePath));
+
+                ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
+                {
+                    Controllers.Image.Result DBimage = null;
+                    if (song.ImageId != null)
+                        DBimage = await imageController.Get((int)song.ImageId);
+                    else
+                    {
+                        Controllers.Album.Result firstAlbum = await songController.GetAlbum(song.Id);
+                        DBimage = await imageController.Get(firstAlbum.ImageId);
+                    }
+
+                    if (DBimage != null && DBimage.FilePath != img.FilePath)
+                    {
+                        try
+                        {
+                            var file = await StorageFile.GetFileFromPathAsync(DBimage.FilePath);
+                            var stream = await file.OpenReadAsync();
+                            var imageSource = new BitmapImage();
+                            await imageSource.SetSourceAsync(stream);
+
+                            PhotoImage.Source = imageSource;
+                        }
+                        catch (Exception)
+                        {
+                            // prompt user for what action they should do then launch below
+                            // suggestion could be a message prompt
+                            await Launcher.LaunchUriAsync(new Uri("ms-settings:appsfeatures-app"));
+                        }
+
+
+                    }
+                }
+
+            }
+
 
 
             NameTextBox.Text = song.Title;
