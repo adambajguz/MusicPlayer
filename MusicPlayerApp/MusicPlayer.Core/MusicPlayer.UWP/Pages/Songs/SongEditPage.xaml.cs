@@ -91,8 +91,11 @@ namespace MusicPlayer.UWP.Pages.Songs
                 return;
             }
 
-            Controllers.Image.Result image = await imageController.Get(album.ImageId);
-            ImageFileTextBox.Text = image.FilePath;
+            if (song.ImageId != null)
+            {
+                Controllers.Image.Result image = await imageController.Get((int)song.ImageId);
+                ImageFileTextBox.Text = image.FilePath;
+            }
 
             NameTextBox.Text = song.Title;
             ScoreRating.Value = song.Score;
@@ -153,9 +156,8 @@ namespace MusicPlayer.UWP.Pages.Songs
                 Controllers.Album.Result artist = await albumController.Get(elementID.Value);
                 image_id = artist.ImageId;
 
-                if (ImageFileTextBox.Text != "")
-                else
-                    await imageController.Update(image_id, ImageFileTextBox.Text);
+                if(image_id != null && ImageFileTextBox.Text != "")
+                    await imageController.Update((int)image_id, ImageFileTextBox.Text);
             }
 
             int id = await songController.Create(score, name, creation, filePath, image_id, selectedGenre.Id);
