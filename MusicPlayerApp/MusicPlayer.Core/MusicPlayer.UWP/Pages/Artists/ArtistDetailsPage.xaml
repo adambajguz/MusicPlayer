@@ -12,6 +12,7 @@
               RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width ="2*" />
             <ColumnDefinition Width ="*" />
 
         </Grid.ColumnDefinitions>
@@ -22,9 +23,9 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <Image x:Name="PhotoImage" Grid.Row="0" Grid.Column="1" Grid.RowSpan="7" VerticalAlignment="Top" />
 
         <TextBlock Text="Artist Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
@@ -36,8 +37,7 @@
             <HyperlinkButton x:Name="BandHyperlink" Content="abc" Padding="0,0,0,0" Click="BandHyperlink_Click" />
         </StackPanel>
   
-        <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="5" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
-        <Image x:Name="PhotoImage" Grid.Row="6"  Height="100" />
+        <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="5" Grid.ColumnSpan="1" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
 
     </Grid>
 </Page>

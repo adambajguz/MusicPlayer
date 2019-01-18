@@ -18,6 +18,7 @@ namespace MusicPlayer.UWP.Pages.Albums
 
         private readonly MainPage mainPage;
         private AlbumController albumController;
+        private ImageController imageController;
 
         private ObservableRangeCollection<Controllers.Song.Result> AllSongs = new ObservableRangeCollection<Controllers.Song.Result>();
         private SongController songController;
@@ -28,6 +29,7 @@ namespace MusicPlayer.UWP.Pages.Albums
 
             albumController = new AlbumController(App.QueryDispatcher, App.CommandDispatcher);
             songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
+            imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
 
             var frame = (Frame)Window.Current.Content;
             mainPage = (MainPage)frame.Content;
@@ -61,6 +63,9 @@ namespace MusicPlayer.UWP.Pages.Albums
                 return;
             }
 
+            Controllers.Image.Result image = await imageController.Get(album.ImageId);
+            ImageFileTextBox.Text = image.FilePath;
+
             NameTextBox.Text = album.Title;
             DescriptionRichBox.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, album.Description);
 
@@ -87,12 +92,27 @@ namespace MusicPlayer.UWP.Pages.Albums
                 return;
             }
 
+
             DateTime creation = CreationDateCalendar.Date.HasValue ? CreationDateCalendar.Date.Value.DateTime : DateTime.Now;
 
             string description = string.Empty;
             DescriptionRichBox.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out description);
 
-            await albumController.Update(elementID.Value, name, description, creation, 1);
+
+
+            int image_id;
+            {
+                Controllers.Album.Result artist = await albumController.Get(elementID.Value);
+                image_id = artist.ImageId;
+
+                if (ImageFileTextBox.Text == "")
+                    await imageController.Update(image_id, new MusicPlayer.Core.NullObjects.ImageNullObject().FilePath);
+                else
+                    await imageController.Update(image_id, ImageFileTextBox.Text);
+            }
+
+
+            await albumController.Update(elementID.Value, name, description, creation, image_id);
 
             {
                 var selected = await albumController.GetSongs(elementID.Value);
@@ -140,6 +160,28 @@ namespace MusicPlayer.UWP.Pages.Albums
             mainPage.GoBack();
         }
 
-     
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var picker = new Windows.Storage.Pickers.FileOpenPicker
+            {
+                ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail,
+                SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary
+            };
+            picker.FileTypeFilter.Add(".jpg");
+            picker.FileTypeFilter.Add(".jpeg");
+            picker.FileTypeFilter.Add(".png");
+
+            Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+            if (file != null)
+            {
+                // Application now has read/write access to the picked file
+
+                ImageFileTextBox.Text = file.Path;
+            }
+            else
+            {
+                //Operation cancelled
+            }
+        }
     }
 }

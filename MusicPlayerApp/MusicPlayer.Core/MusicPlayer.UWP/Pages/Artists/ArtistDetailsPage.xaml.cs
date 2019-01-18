@@ -1,6 +1,7 @@
 ﻿using MusicPlayer.UWP.Controllers;
 using System;
 using Windows.Storage;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
@@ -52,12 +53,23 @@ namespace MusicPlayer.UWP.Pages.Artists
                 Controllers.Image.Result DBimage = await imageController.Get(artist.ImageId);
                 if(DBimage.FilePath != img.FilePath)
                 {
-                    //var file = await StorageFile.GetFileFromPathAsync(DBimage.FilePath);
-                    //var stream = await file.OpenReadAsync();
-                    //var imageSource = new BitmapImage();
-                    //await imageSource.SetSourceAsync(stream);
+                    try
+                    {
+                        var file = await StorageFile.GetFileFromPathAsync(DBimage.FilePath);
+                        var stream = await file.OpenReadAsync();
+                        var imageSource = new BitmapImage();
+                        await imageSource.SetSourceAsync(stream);
 
-                    //PhotoImage.Source = imageSource;
+                        PhotoImage.Source = imageSource;
+                    }
+                    catch (Exception)
+                    {
+                        // prompt user for what action they should do then launch below
+                        // suggestion could be a message prompt
+                        await Launcher.LaunchUriAsync(new Uri("ms-settings:appsfeatures-app"));
+                    }
+
+
                 }
             }
 

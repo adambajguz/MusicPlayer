@@ -36,6 +36,16 @@ namespace MusicPlayer.UWP.Controllers
 
         }
 
+        public async Task Update(int id, string filePath)
+        {
+            await _commandDispatcher.Dispatch<UpdateImage.Command>(new UpdateImage.Command
+            {
+                ID = id,
+                FilePath = filePath,
+            });
+
+        }
+
         public async Task Delete(int id)
         {
             await _commandDispatcher.Dispatch<DeleteImage.Command>(new DeleteImage.Command
