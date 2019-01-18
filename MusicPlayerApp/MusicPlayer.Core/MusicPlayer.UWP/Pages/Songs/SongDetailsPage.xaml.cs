@@ -57,8 +57,9 @@ namespace MusicPlayer.UWP.Pages.Songs
                         DBimage = await imageController.Get((int)song.ImageId);
                     else
                     {
-                        Controllers.Album.Result firstAlbum = await songController.GetAlbum(song.Id);
-                        DBimage = await imageController.Get(firstAlbum.ImageId);
+                        List<Controllers.Album.Result> albums = await songController.GetAlbums(song.Id);
+                        if (albums.Count > 0)
+                            DBimage = await imageController.Get(albums.ElementAt(0).ImageId);
                     }
 
                     if (DBimage != null && DBimage.FilePath != img.FilePath)
