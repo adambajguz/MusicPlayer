@@ -15,7 +15,7 @@
                             <Border Background="Transparent" />
                             <Image  x:Name="PosterImage" Visibility="Visible" Height="96px" Source="{TemplateBinding PosterSource}" Stretch="{TemplateBinding Stretch}" />
                             <MediaPlayerPresenter x:Name="MediaPlayerPresenter" IsFullWindow="{TemplateBinding IsFullWindow}" Stretch="{TemplateBinding Stretch}"
-                                                  MediaPlayer="{TemplateBinding MediaPlayer}" Visibility="Visible"/>
+                                                  MediaPlayer="{TemplateBinding MediaPlayer}" Visibility="Visible" />
                             <ContentPresenter x:Name="TransportControlsPresenter" Visibility="{TemplateBinding AreTransportControlsEnabled}" />
                             <Grid x:Name="TimedTextSourcePresenter" />
                         </Grid>
@@ -84,8 +84,10 @@
                             Source="ms-appx:///Assets/sample.mp3" Margin="0,8,0,8" PosterSource="/Assets/Wide310x150Logo.png">
 
                 <MediaPlayerElement.TransportControls>
-                    <MediaTransportControls IsNextTrackButtonVisible="False" IsPreviousTrackButtonVisible="False" IsSeekBarVisible="True" IsFullWindowButtonVisible="True" 
+                    <MediaTransportControls IsNextTrackButtonVisible="False" IsPreviousTrackButtonVisible="False" 
+                                            IsSeekBarVisible="True" IsFullWindowButtonVisible="True"  IsStopEnabled="True" IsStopButtonVisible="True"
                                             IsFullWindowEnabled="True" IsRepeatButtonVisible="True"
+                                            IsFastRewindButtonVisible="True" IsFastForwardButtonVisible="True" IsFastForwardEnabled="True" IsFastRewindEnabled="True"
                                         IsZoomEnabled="False" IsPlaybackRateEnabled="True" IsPlaybackRateButtonVisible="True"
                                         IsRepeatEnabled="True" IsSkipBackwardButtonVisible="True" IsSkipBackwardEnabled="True"
                                         IsSkipForwardButtonVisible="True" IsSkipForwardEnabled="True" IsTextScaleFactorEnabled="False"

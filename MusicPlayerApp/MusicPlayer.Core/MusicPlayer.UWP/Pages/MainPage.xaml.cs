@@ -113,6 +113,7 @@ namespace MusicPlayer.UWP.Pages
                     }
 
                     ThumbImage.Source = imageSource;
+                    AudioPlayer.PosterSource = imageSource;
                 }
             });
 
