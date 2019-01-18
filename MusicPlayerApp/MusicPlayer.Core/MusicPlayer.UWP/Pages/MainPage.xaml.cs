@@ -10,6 +10,7 @@ using MusicPlayer.UWP.Pages.Songs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Windows.Media.Core;
 using Windows.Storage;
 using Windows.System;
@@ -18,6 +19,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media.Animation;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 //Szablon elementu Pusta strona jest udokumentowany na stronie https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x415
@@ -36,20 +38,22 @@ namespace MusicPlayer.UWP.Pages
     {
         private SongController songController;
         private PlayQueueController playQueueController;
+        ImageController imageController;
 
         public MainPage()
         {
             this.InitializeComponent();
 
             playQueueController = new PlayQueueController(App.QueryDispatcher, App.CommandDispatcher);
-            songController = new SongController(App.QueryDispatcher, App.CommandDispatcher);
+            songController = new SongController(App.QueryDispatcher2, App.CommandDispatcher2);
+            imageController = new ImageController(App.QueryDispatcher2, App.CommandDispatcher2);
 
             AudioPlayer.MediaPlayer.MediaEnded += MediaPlayer_MediaEnded;
             AudioPlayer.MediaPlayer.PlaybackSession.SeekCompleted += PlaybackSession_SeekCompleted;
             //AudioPlayer.MediaPlayer.SeekCompleted
         }
 
-        public async void SetAudio(string filePath)
+        public async void SetAudio(string filePath, Controllers.Song.Result song)
         {
             StorageFile file = null;
             try
@@ -63,13 +67,52 @@ namespace MusicPlayer.UWP.Pages
                 await Launcher.LaunchUriAsync(new Uri("ms-settings:appsfeatures-app"));
             }
 
+
+
             await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
-            () =>
+            async () =>
             {
+
                 if (file != null)
                 {
                     AudioPlayer.Source = MediaSource.CreateFromStorageFile(file);
                     AudioPlayer.MediaPlayer.Play();
+
+
+                    var img = new Core.NullObjects.ImageNullObject();
+                    BitmapImage imageSource = new BitmapImage(new Uri(img.FilePath));
+
+                    {
+                        Controllers.Image.Result DBimage = null;
+                        if (song.ImageId != null)
+                            DBimage = await imageController.Get((int)song.ImageId);
+                        else
+                        {
+                            List<Controllers.Album.Result> albums = await songController.GetAlbums(song.Id);
+                            if (albums.Count > 0)
+                                DBimage = await imageController.Get(albums.ElementAt(0).ImageId);
+                        }
+
+                        if (DBimage != null && DBimage.FilePath != img.FilePath)
+                        {
+                            try
+                            {
+                                BitmapImage tmpImage = new BitmapImage();
+                                StorageFile imfile = await StorageFile.GetFileFromPathAsync(DBimage.FilePath);
+                                var stream = await imfile.OpenReadAsync();
+                                tmpImage.SetSourceAsync(stream);
+                                imageSource = tmpImage;
+                            }
+                            catch (Exception)
+                            {
+                                // prompt user for what action they should do then launch below
+                                // suggestion could be a message prompt
+                                await Launcher.LaunchUriAsync(new Uri("ms-settings:appsfeatures-app"));
+                            }
+                        }
+                    }
+
+                    ThumbImage.Source = imageSource;
                 }
             });
 
@@ -85,17 +128,21 @@ namespace MusicPlayer.UWP.Pages
             PlayNextFromQueue();
         }
 
+    
         private async void PlayNextFromQueue()
         {
             List<Controllers.PlayQueue.Result> playQueueList = await playQueueController.GetAll();
 
             if (playQueueList.Count > 0)
             {
-                int songId = playQueueList.ElementAt(0).SongId;
+                Controllers.PlayQueue.Result elementToPlay = playQueueList.ElementAt(0);
+                int songId = elementToPlay.SongId;
 
                 Controllers.Song.Result song = await songController.Get(songId);
 
-                SetAudio(song.FilePath);
+                SetAudio(song.FilePath, song);
+
+                playQueueController.Delete(elementToPlay.Id);
             }
         }
 

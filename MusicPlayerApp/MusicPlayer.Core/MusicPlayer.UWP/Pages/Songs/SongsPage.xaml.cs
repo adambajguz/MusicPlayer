@@ -219,7 +219,7 @@ namespace MusicPlayer.UWP.Pages.Songs
                     switch (selectedItem.Name.ToString())
                     {
                         case "IPlay":
-                            mainPage.SetAudio(selectedSong.FilePath);
+                            mainPage.SetAudio(selectedSong.FilePath, selectedSong);
                             break;
 
                         case "IAddToQueue":

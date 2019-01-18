@@ -77,7 +77,7 @@
                 <RowDefinition Height="{Binding ActualHeight, ElementName=AudioPlayer}" />
             </Grid.RowDefinitions>
 
-            <Image Width="{Binding ActualHeight, ElementName=AudioPlayer}" Height="{Binding ActualHeight, ElementName=AudioPlayer}" Grid.Column="0" Source="/Assets/StoreLogo.png" Margin="10,0,8,0" />
+            <Image x:Name="ThumbImage" Width="{Binding ActualHeight, ElementName=AudioPlayer}" Height="{Binding ActualHeight, ElementName=AudioPlayer}" Grid.Column="0" Source="/Assets/StoreLogo.png" Margin="10,0,8,0" />
 
             <MediaPlayerElement Name="AudioPlayer" AutoPlay="False" Grid.Column="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}"
                             AreTransportControlsEnabled="True" UseLayoutRounding="False" d:LayoutRounding="Auto" 
