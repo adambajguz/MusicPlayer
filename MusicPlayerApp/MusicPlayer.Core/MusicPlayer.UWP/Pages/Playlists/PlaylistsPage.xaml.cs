@@ -2,7 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
+using Windows.Storage;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -198,7 +201,27 @@ namespace MusicPlayer.UWP.Pages.Playlists
 
 
                         case "IExport":
+                            {
+                                List<Controllers.Song.Result> playlistSongs = await playlistController.GetSongs(selectedAlbum.Id);
+                                StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
 
+                                string filename = selectedAlbum.Name.ToString() + ".xml";
+                                StorageFile createFile = await storageFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
+
+                                XmlSerializer serializer = new XmlSerializer(typeof(List<Controllers.Song.Result>));
+                                Stream stream = await createFile.OpenStreamForWriteAsync().ConfigureAwait(false);
+
+                                string xml;
+                                using (stream)
+                                {
+                                    var sw = new StringWriter();
+                                    serializer.Serialize(sw, playlistSongs);
+                                    xml = sw.ToString();
+                                }
+
+                                StorageFile sampleFile = await storageFolder.GetFileAsync(filename);
+                                await FileIO.WriteTextAsync(sampleFile, xml);
+                            }
                             break;
 
                         case "IEdit":
