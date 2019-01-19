@@ -139,8 +139,8 @@
                                     <RatingControl IsReadOnly="True" Value="{x:Bind Score}" Margin="6,0,0,0"/>
 
                                     <TextBlock Text="{x:Bind Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                    <TextBlock Text="{x:Bind Length}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                    <TextBlock Text="{x:Bind PlayTimes}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                    <TextBlock Text="Times played:" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                    <TextBlock Text="{x:Bind PlayTimes}" VerticalAlignment="Center" Margin="6,0,0,0" Grid.Column="0"/>
                                 </StackPanel>
 
                                 <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right"  Grid.Column="1">
