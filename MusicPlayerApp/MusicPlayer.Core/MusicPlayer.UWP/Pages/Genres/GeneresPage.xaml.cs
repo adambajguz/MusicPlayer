@@ -182,10 +182,16 @@ namespace MusicPlayer.UWP.Pages.Genres
 
 
             if (result == ContentDialogResult.Primary)
-            {       
+            {
                 // Delete
-
-                await genreController.Delete(genreToDelete.Id);
+                try
+                {
+                    await genreController.Delete(genreToDelete.Id);
+                }
+                catch(Exception)
+                {
+                    DisplayCannotDelete();
+                }
 
                 List<Controllers.Genre.Result> temp = await genreController.GetAll();
                 genres.Clear();
@@ -197,6 +203,18 @@ namespace MusicPlayer.UWP.Pages.Genres
                 // The user clicked the CLoseButton, pressed ESC, Gamepad B, or the system back button.
                 // Do nothing.
             }
+        }
+
+        private async void DisplayCannotDelete()
+        {
+            ContentDialog noWifiDialog = new ContentDialog
+            {
+                Title = "Cannot delete this genre!",
+                Content = "Please delete all song assigned to this genre and try again.",
+                CloseButtonText = "Ok"
+            };
+
+            ContentDialogResult result = await noWifiDialog.ShowAsync();
         }
 
         private async void DisplayDeleteListDialog(IList<object> genresToDelete)
