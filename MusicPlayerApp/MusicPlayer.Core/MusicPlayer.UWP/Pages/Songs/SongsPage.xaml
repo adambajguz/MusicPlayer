@@ -146,10 +146,10 @@
                             <TextBlock Text="{x:Bind SongArtists}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
                             <TextBlock Text="{x:Bind SongAlbums}" VerticalAlignment="Center" Margin="26,0,0,0" FontWeight="Bold" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
 
-                            <!--<StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,8" >
-                                <TextBlock Text="{x:Bind Song.LengthText}" VerticalAlignment="Center" Margin="6,0,0,0" />
+                            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,8" >
+                                <!--<TextBlock Text="{x:Bind Song.LengthText}" VerticalAlignment="Center" Margin="6,0,0,0" />-->
                                 <TextBlock Text="{x:Bind Song.PlayTimesText}" VerticalAlignment="Center" Margin="26,0,0,0" />
-                            </StackPanel>-->
+                            </StackPanel>
                         </Grid>
 
                         <!--<StackPanel Orientation="Horizontal" Padding="12" BorderThickness="2" HorizontalAlignment="Stretch">
