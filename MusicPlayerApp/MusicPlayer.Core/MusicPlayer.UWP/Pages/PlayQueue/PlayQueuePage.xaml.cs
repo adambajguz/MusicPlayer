@@ -1,5 +1,4 @@
 ﻿using MusicPlayer.UWP.Controllers;
-using MusicPlayer.UWP.Pages.Songs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -104,13 +103,17 @@ namespace MusicPlayer.UWP.Pages.PlayQueue
         //    GenresListView.ItemsSource = genres;
         //}
 
-  
+
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
             if (sender is AppBarButton selectedItem)
             {
                 switch (selectedItem.Tag.ToString())
                 {
+                    case "PlayAll":
+                        mainPage.PlayNextFromQueue();
+
+                        break;
                     case "Remove":
                         DisplayDeleteListDialog(PlayQueueListView.SelectedItems);
 

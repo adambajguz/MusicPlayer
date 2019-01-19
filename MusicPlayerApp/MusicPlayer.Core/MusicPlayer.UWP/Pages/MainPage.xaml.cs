@@ -10,7 +10,6 @@ using MusicPlayer.UWP.Pages.Songs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Windows.Media.Core;
 using Windows.Storage;
 using Windows.System;
@@ -38,6 +37,7 @@ namespace MusicPlayer.UWP.Pages
     {
         private SongController songController;
         private PlayQueueController playQueueController;
+        private PlayQueueController playQueueController3;
         ImageController imageController;
 
         public MainPage()
@@ -45,15 +45,18 @@ namespace MusicPlayer.UWP.Pages
             this.InitializeComponent();
 
             playQueueController = new PlayQueueController(App.QueryDispatcher, App.CommandDispatcher);
+            playQueueController3 = new PlayQueueController(App.QueryDispatcher3, App.CommandDispatcher3);
             songController = new SongController(App.QueryDispatcher2, App.CommandDispatcher2);
             imageController = new ImageController(App.QueryDispatcher2, App.CommandDispatcher2);
 
             AudioPlayer.MediaPlayer.MediaEnded += MediaPlayer_MediaEnded;
             AudioPlayer.MediaPlayer.PlaybackSession.SeekCompleted += PlaybackSession_SeekCompleted;
             //AudioPlayer.MediaPlayer.SeekCompleted
+
+            PlayNextFromQueue(false);
         }
 
-        public async void SetAudio(string filePath, Controllers.Song.Result song)
+        public async void SetAudio(string filePath, Controllers.Song.Result song, bool play = true)
         {
             StorageFile file = null;
             try
@@ -76,7 +79,8 @@ namespace MusicPlayer.UWP.Pages
                 if (file != null)
                 {
                     AudioPlayer.Source = MediaSource.CreateFromStorageFile(file);
-                    AudioPlayer.MediaPlayer.Play();
+                    if (play)
+                        AudioPlayer.MediaPlayer.Play();
 
 
                     var img = new Core.NullObjects.ImageNullObject();
@@ -129,10 +133,10 @@ namespace MusicPlayer.UWP.Pages
             PlayNextFromQueue();
         }
 
-    
-        private async void PlayNextFromQueue()
+
+        public async void PlayNextFromQueue(bool play = true)
         {
-            List<Controllers.PlayQueue.Result> playQueueList = await playQueueController.GetAll();
+            List<Controllers.PlayQueue.Result> playQueueList = await playQueueController3.GetAll();
 
             if (playQueueList.Count > 0)
             {
@@ -141,9 +145,9 @@ namespace MusicPlayer.UWP.Pages
 
                 Controllers.Song.Result song = await songController.Get(songId);
 
-                SetAudio(song.FilePath, song);
+                SetAudio(song.FilePath, song, play);
 
-                await playQueueController.Delete(elementToPlay.Id);
+                await playQueueController3.Delete(elementToPlay.Id);
             }
         }
 

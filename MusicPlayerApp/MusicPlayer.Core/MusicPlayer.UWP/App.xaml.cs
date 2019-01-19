@@ -35,6 +35,11 @@ namespace MusicPlayer.UWP
         public static ICommandDispatcher CommandDispatcher2 { get; private set; }
         public static IQueryDispatcher QueryDispatcher2 { get; private set; }
 
+        public static IContainer ApplicationContainer3 { get; private set; }
+
+        public static ICommandDispatcher CommandDispatcher3 { get; private set; }
+        public static IQueryDispatcher QueryDispatcher3 { get; private set; }
+
 
         /// <summary>
         /// Inicjuje pojedynczy obiekt aplikacji. Jest to pierwszy wiersz napisanego kodu
@@ -116,7 +121,40 @@ namespace MusicPlayer.UWP
                 }
             }
 
+            {
+                IServiceCollection services3 = new ServiceCollection();
+                services3.AddDbContext<DataContext>();
+                /*
+                 * An error that sometimes occures when switching pages:
+                 * 
+                 * System.InvalidOperationException: 'A second operation started on this context before a previous operation completed.
+                 * This is usually caused by different threads using the same instance of DbContext, however instance members are not
+                 * guaranteed to be thread safe. This could also be caused by a nested query being evaluated on the client, if this
+                 * is the case rewrite the query avoiding nested invocations.'
+                 * 
+                 */
 
+                ApplicationContainer3 = IocConfig.RegisterDependencies(services3);
+
+                IContainer container3 = IocConfig.RegisterDependencies(services3);
+            
+                ILifetimeScope scop3 = container3.BeginLifetimeScope();
+                CommandDispatcher3 = scop3.Resolve<ICommandDispatcher>();
+                QueryDispatcher3 = scop3.Resolve<IQueryDispatcher>();
+
+                //sprawdzam
+                using (var scope = container3.BeginLifetimeScope())
+                {
+                    //var commandDispatcher = scope.Resolve<ICommandDispatcher>();
+                    //var queryDispatcher = scope.Resolve<IQueryDispatcher>();
+                    var dataContextEntityContext3 = scope.Resolve<IEntitiesContext>();
+                    var dataContextDbContext3 = scope.Resolve<DbContext>();
+                    var uow3 = scope.Resolve<IUnitOfWork>();
+
+                    //var app = scope.Resolve<IQueryDispatcher>();
+                    //app.WriteInformation("injected!");
+                }
+            }
 
             //         ImageController ImgController = new ImageController(QueryDispatcher, CommandDispatcher);
             //ImgController.Create("sciezka4").Wait();

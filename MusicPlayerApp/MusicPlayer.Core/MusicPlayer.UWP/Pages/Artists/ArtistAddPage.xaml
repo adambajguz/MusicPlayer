@@ -37,7 +37,7 @@
         <TextBox Header="Pseudonym:" x:Name="PseudonymTextBox" Grid.Row="2" Grid.Column="0" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
 
 
-        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0"  HorizontalAlignment="Stretch" Margin="8,18,8,8" Grid.ColumnSpan="2" >
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0"  HorizontalAlignment="Stretch" Margin="8,8,8,8" Grid.ColumnSpan="2" >
             <DatePicker Header="Birthday:" x:Name="BirthdayDatePicker" Margin="0,0,28,8" HorizontalAlignment="Left" />
 
             <ToggleSwitch Header="Band:" x:Name="BandToogle" OffContent="" OnContent="" Width="64" Toggled="ToggleSwitch_Toggled"/>
@@ -54,7 +54,7 @@
         </StackPanel>
 
 
-        <Grid  Grid.Row="5" Grid.Column="0"   Grid.ColumnSpan="2"
+        <Grid  Grid.Row="4" Grid.Column="1"   Grid.ColumnSpan="2" Margin="8,8,8,8"
               RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
             <Grid.ColumnDefinitions>
@@ -75,7 +75,7 @@
             </Button>
         </Grid>
 
-        <RichEditBox Header="Description:" x:Name="DescriptionRichBox" Grid.Row="6" Grid.Column="0"  Grid.ColumnSpan="2" IsSpellCheckEnabled="True" Height="200" Margin="8,18,8,8" />
+        <RichEditBox Header="Description:" x:Name="DescriptionRichBox" Grid.Row="6" Grid.Column="0"  Grid.ColumnSpan="2" IsSpellCheckEnabled="True" Height="200" Margin="8,8,8,8" />
 
         <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
             <Button Click="SaveButton_Click" Margin="8,8,8,8" >

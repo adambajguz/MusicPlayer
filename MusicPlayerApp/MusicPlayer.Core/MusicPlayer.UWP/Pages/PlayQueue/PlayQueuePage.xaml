@@ -33,7 +33,8 @@
                             PlaceholderText="Search song"
                             QuerySubmitted="AutoSuggestBox_QuerySubmitted" TextChanged="AutoSuggestBox_TextChanged"/>-->
 
-            <CommandBar Grid.Row="0" Grid.Column="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" Margin="0,2,0,0" OverflowButtonVisibility="Collapsed">
+            <CommandBar Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" Margin="0,2,0,0" OverflowButtonVisibility="Collapsed">
+                <AppBarButton Icon="Play" IsEnabled="True" Label="Start playing" Tag="PlayAll" Click="AppBarButton_Click" />
                 <AppBarButton Icon="Delete" x:Name="DeleteSelected" IsEnabled="False" Label="Remove from queue" Tag="Remove" Click="AppBarButton_Click"/>
             </CommandBar>
 
