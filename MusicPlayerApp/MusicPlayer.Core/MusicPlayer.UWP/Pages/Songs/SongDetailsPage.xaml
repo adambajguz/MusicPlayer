@@ -8,38 +8,41 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
+    <ScrollViewer>
+
+        <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
               RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="*" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
 
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
 
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-        <Image x:Name="PhotoImage" Grid.Row="0" Grid.Column="1" Grid.RowSpan="7" VerticalAlignment="Top" />
+            <Image x:Name="PhotoImage" Grid.Row="0" Grid.Column="1" Grid.RowSpan="7" VerticalAlignment="Top" />
 
-        <TextBlock Text="Song Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+            <TextBlock Text="Song Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
-        <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
-        <TextBlock x:Name="ArtistsTextBox" Grid.Row="2" Margin="8,0,8,8" />
-        <TextBlock x:Name="AlbumsTextBox" Grid.Row="3" Margin="8,0,8,8" />
-        <StackPanel Grid.Row="4" Orientation="Horizontal">
-            <TextBlock Text="Score: " Grid.Row="3" Margin="8,0,8,8" />
-            <RatingControl x:Name="SongRating" Grid.Row="4" IsReadOnly="True" />
-        </StackPanel>
-        <TextBlock x:Name="GenreTextBox" Grid.Row="5" Margin="8,0,8,8" />
-        <TextBlock x:Name="StatTextBox" Grid.Row="6" Margin="8,0,8,8" />
-  
-    </Grid>
+            <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
+            <TextBlock x:Name="ArtistsTextBox" Grid.Row="2" Margin="8,0,8,8" />
+            <TextBlock x:Name="AlbumsTextBox" Grid.Row="3" Margin="8,0,8,8" />
+            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                <TextBlock Text="Score: " Grid.Row="3" Margin="8,0,8,8" />
+                <RatingControl x:Name="SongRating" Grid.Row="4" IsReadOnly="True" />
+            </StackPanel>
+            <TextBlock x:Name="GenreTextBox" Grid.Row="5" Margin="8,0,8,8" />
+            <TextBlock x:Name="StatTextBox" Grid.Row="6" Margin="8,0,8,8" />
+
+        </Grid>
+    </ScrollViewer>
 </Page>

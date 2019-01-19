@@ -8,36 +8,39 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
+    <ScrollViewer>
+
+        <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
               RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width ="2*" />
-            <ColumnDefinition Width ="*" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width ="2*" />
+                <ColumnDefinition Width ="*" />
 
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
 
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Image x:Name="PhotoImage" Grid.Row="0" Grid.Column="1" Grid.RowSpan="7" VerticalAlignment="Top" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image x:Name="PhotoImage" Grid.Row="0" Grid.Column="1" Grid.RowSpan="7" VerticalAlignment="Top" />
 
-        <TextBlock Text="Artist Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+            <TextBlock Text="Artist Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
-        <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
-        <TextBlock x:Name="BirthdayTextBox" Grid.Row="2" Margin="8,0,8,8" FontSize="14" FontWeight="Bold" FontStyle="Italic" />
+            <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
+            <TextBlock x:Name="BirthdayTextBox" Grid.Row="2" Margin="8,0,8,8" FontSize="14" FontWeight="Bold" FontStyle="Italic" />
 
-        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="8,0,8,8">
-            <TextBlock Text="Band: " TextDecorations="None" Margin="0,0,8,0"/>
-            <HyperlinkButton x:Name="BandHyperlink" Content="abc" Padding="0,0,0,0" Click="BandHyperlink_Click" />
-        </StackPanel>
-  
-        <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="5" Grid.ColumnSpan="1" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
+            <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="8,0,8,8">
+                <TextBlock Text="Band: " TextDecorations="None" Margin="0,0,8,0"/>
+                <HyperlinkButton x:Name="BandHyperlink" Content="abc" Padding="0,0,0,0" Click="BandHyperlink_Click" />
+            </StackPanel>
 
-    </Grid>
+            <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="5" Grid.ColumnSpan="1" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
+
+        </Grid>
+    </ScrollViewer>
 </Page>

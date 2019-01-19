@@ -7,25 +7,27 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer>
 
-    <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
+        <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
               RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
 
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
 
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-        <TextBlock Text="Genere Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+            <TextBlock Text="Genere Details" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
 
-        <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
-        <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="2" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
-      
-    </Grid>
+            <TextBlock x:Name="NameTextBox" Grid.Row="1" Margin="8,0,8,8" FontSize="22" FontWeight="Bold" />
+            <RichEditBox x:Name="DescriptionRichBox" Header="Description:" Grid.Row="2" IsHitTestVisible="False" BorderThickness="0" Height="Auto" Margin="8,18,8,8" />
+
+        </Grid>
+    </ScrollViewer>
 </Page>

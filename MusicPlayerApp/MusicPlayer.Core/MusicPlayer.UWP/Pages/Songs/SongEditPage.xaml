@@ -10,149 +10,151 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer>
 
-    <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
+        <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
               RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
-        <TextBlock Text="Edit Song" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" Grid.ColumnSpan="2" />
-
-        <TextBox Header="Title:" x:Name="NameTextBox" Grid.Row="1" Grid.Column="0" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" Grid.ColumnSpan="2"/>
-
-        <StackPanel Orientation="Horizontal"  Margin="8,0,8,8"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-            <CalendarDatePicker PlaceholderText="Pick a date" Header="Song creation:" x:Name="CreationDateCalendar" />
-
-            <StackPanel  Margin="24,0,0,0">
-                <TextBlock Text="Song score:"/>
-                <RatingControl x:Name="ScoreRating" Margin="8,0,8,0" HorizontalAlignment="Left"  />
-            </StackPanel>
-
-            <ComboBox x:Name="GenreComboBox" Header="Genre" Margin="24,0,0,0" >
-                <ComboBox.ItemTemplate>
-                    <DataTemplate x:DataType="controllerGenres:Result">
-                        <StackPanel>
-                            <TextBlock Text="{x:Bind Name}"></TextBlock>
-                        </StackPanel>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-        </StackPanel>
-
-
-        <TextBox Header="File path:" x:Name="FileTextBox"  Grid.Row="3" Grid.Column="0" Margin="8,0,8,8" />
-
-        <Button Margin="8,18,8,4"  Grid.Row="3" Grid.Column="1" Click="FileButton_Click">
-            <StackPanel Orientation="Horizontal">
-                <SymbolIcon Symbol="BrowsePhotos" Margin="8,0,0,0"/>
-                <TextBlock Text="Browse" Margin="15,0,8,0"/>
-            </StackPanel>
-        </Button>
-
-
-        <TextBox Header="Cover photo:" x:Name="ImageFileTextBox"  Grid.Row="4" Grid.Column="0" Margin="8,0,8,8" />
-
-        <Button Margin="8,18,8,4"  Grid.Row="4" Grid.Column="1" Click="Button_Click" >
-            <StackPanel Orientation="Horizontal">
-                <SymbolIcon Symbol="BrowsePhotos" Margin="8,0,0,0"/>
-                <TextBlock Text="Browse" Margin="15,0,8,0"/>
-            </StackPanel>
-        </Button>
-
-
-        <Grid Visibility="Visible" Margin="8,8,8,8" Grid.Row="6"  Grid.ColumnSpan="2"
-              RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
-              RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Album:" Grid.Column="0"  Grid.Row="0" Margin="8,0,8,8" />
+            <TextBlock Text="Edit Song" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" Grid.ColumnSpan="2" />
 
-            <ListView Grid.Column="0" Grid.Row="1" x:Name="AlbumsListView"
+            <TextBox Header="Title:" x:Name="NameTextBox" Grid.Row="1" Grid.Column="0" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" Grid.ColumnSpan="2"/>
+
+            <StackPanel Orientation="Horizontal"  Margin="8,0,8,8"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <CalendarDatePicker PlaceholderText="Pick a date" Header="Song creation:" x:Name="CreationDateCalendar" />
+
+                <StackPanel  Margin="24,0,0,0">
+                    <TextBlock Text="Song score:"/>
+                    <RatingControl x:Name="ScoreRating" Margin="8,0,8,0" HorizontalAlignment="Left"  />
+                </StackPanel>
+
+                <ComboBox x:Name="GenreComboBox" Header="Genre" Margin="24,0,0,0" >
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="controllerGenres:Result">
+                            <StackPanel>
+                                <TextBlock Text="{x:Bind Name}"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+
+
+            <TextBox Header="File path:" x:Name="FileTextBox"  Grid.Row="3" Grid.Column="0" Margin="8,0,8,8" />
+
+            <Button Margin="8,18,8,4"  Grid.Row="3" Grid.Column="1" Click="FileButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="BrowsePhotos" Margin="8,0,0,0"/>
+                    <TextBlock Text="Browse" Margin="15,0,8,0"/>
+                </StackPanel>
+            </Button>
+
+
+            <TextBox Header="Cover photo:" x:Name="ImageFileTextBox"  Grid.Row="4" Grid.Column="0" Margin="8,0,8,8" />
+
+            <Button Margin="8,18,8,4"  Grid.Row="4" Grid.Column="1" Click="Button_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="BrowsePhotos" Margin="8,0,0,0"/>
+                    <TextBlock Text="Browse" Margin="15,0,8,0"/>
+                </StackPanel>
+            </Button>
+
+
+            <Grid Visibility="Visible" Margin="8,8,8,8" Grid.Row="6"  Grid.ColumnSpan="2"
+              RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
+              RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Album:" Grid.Column="0"  Grid.Row="0" Margin="8,0,8,8" />
+
+                <ListView Grid.Column="0" Grid.Row="1" x:Name="AlbumsListView"
                       IsItemClickEnabled="False" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
                       Margin="8,8,8,8" >
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                    </Style>
-                </ListView.ItemContainerStyle>
-                <ListView.ItemTemplate>
-                    <DataTemplate x:Name="SingleAlbumsLineDataTemplate" x:DataType="controllerAlbums:Result" >
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:Name="SingleAlbumsLineDataTemplate" x:DataType="controllerAlbums:Result" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{x:Bind Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                            </StackPanel>
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{x:Bind Title}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-            <TextBlock Text="Artist:" Grid.Column="1"  Grid.Row="0" Margin="8,0,8,8" />
+                <TextBlock Text="Artist:" Grid.Column="1"  Grid.Row="0" Margin="8,0,8,8" />
 
-            <ListView Grid.Column="1" Grid.Row="1" x:Name="ArtistsListView"
+                <ListView Grid.Column="1" Grid.Row="1" x:Name="ArtistsListView"
                       IsItemClickEnabled="False" IsSwipeEnabled="False" CanDragItems="False" SelectionMode="Multiple"
                       Margin="8,8,8,8" >
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                    </Style>
-                </ListView.ItemContainerStyle>
-                <ListView.ItemTemplate>
-                    <DataTemplate x:Name="SingleArtistsLineDataTemplate" x:DataType="controllerArtists:Result" >
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:Name="SingleArtistsLineDataTemplate" x:DataType="controllerArtists:Result" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                                <TextBlock Text="{x:Bind Surname}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
-                            </StackPanel>
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Margin="12,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                    <TextBlock Text="{x:Bind Surname}" VerticalAlignment="Center" Margin="6,0,0,0" FontWeight="Bold" Grid.Column="0"/>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+            <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
+                <Button Click="SaveButton_Click" Margin="8,8,8,8" >
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Save" Margin="8,0,0,0"/>
+                        <TextBlock Text="Save" Margin="15,0,8,0"/>
+                    </StackPanel>
+                </Button>
+                <Button Click="CancelButton_Click" Margin="8,8,8,8" ToolTipService.ToolTip="Discard changes" >
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Cancel" Margin="8,0,0,0"/>
+                        <TextBlock Text="Cancel" Margin="15,0,8,0"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
         </Grid>
-
-        <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
-            <Button Click="SaveButton_Click" Margin="8,8,8,8" >
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="Save" Margin="8,0,0,0"/>
-                    <TextBlock Text="Save" Margin="15,0,8,0"/>
-                </StackPanel>
-            </Button>
-            <Button Click="CancelButton_Click" Margin="8,8,8,8" ToolTipService.ToolTip="Discard changes" >
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="Cancel" Margin="8,0,0,0"/>
-                    <TextBlock Text="Cancel" Margin="15,0,8,0"/>
-                </StackPanel>
-            </Button>
-        </StackPanel>
-    </Grid>
+    </ScrollViewer>
 </Page>

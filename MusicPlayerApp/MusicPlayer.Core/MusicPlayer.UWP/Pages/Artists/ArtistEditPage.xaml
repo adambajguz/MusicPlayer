@@ -9,87 +9,90 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
-              RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
-              RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+    <ScrollViewer>
 
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
-        <TextBlock Text="Edit Artist" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
-
-        <TextBox Header="Name:" x:Name="NameTextBox" Grid.Row="1" Grid.Column="0" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
-
-        <TextBox Header="Surname:" x:Name="SurnameTextBox" Grid.Row="1" Grid.Column="2" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
-        <TextBox Header="Pseudonym:" x:Name="PseudonymTextBox" Grid.Row="2" Grid.Column="0" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
-
-        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0"  HorizontalAlignment="Stretch" Margin="8,18,8,8" Grid.ColumnSpan="2">
-            <DatePicker  Header="Birthday:" x:Name="BirthdayDatePicker" Margin="0,0,28,8" HorizontalAlignment="Left" />
-
-            <ToggleSwitch Header="Band:" x:Name="BandToogle" OffContent="" OnContent="" Width="64" Toggled="ToggleSwitch_Toggled"/>
-            
-            <ComboBox x:Name="BandComboBox" Header="&#160;" HorizontalAlignment="Stretch" >
-                <ComboBox.ItemTemplate>
-                    <DataTemplate x:DataType="controllerBand:Result">
-                        <StackPanel>
-                            <TextBlock Text="{x:Bind name}"></TextBlock>
-                        </StackPanel>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-        </StackPanel>
-
-
-
-        <Grid  Grid.Row="4" Grid.Column="0"   Grid.ColumnSpan="2"
+        <Grid x:Name="PageContent" Visibility="Visible" Margin="8,8,8,8"
               RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            
-            <TextBox Header="Cover photo:" x:Name="ImageFileTextBox" Grid.Column="0" Margin="8,0,8,8" />
 
-            <Button Margin="8,18,8,4"  Grid.Column="1" Click="Button_Click" >
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="BrowsePhotos" Margin="8,0,0,0"/>
-                    <TextBlock Text="Browse" Margin="15,0,8,0"/>
-                </StackPanel>
-            </Button>
+            <TextBlock Text="Edit Artist" Grid.Row="0" Margin="8,0,8,8" FontSize="24" FontWeight="Bold" TextDecorations="Underline" />
+
+            <TextBox Header="Name:" x:Name="NameTextBox" Grid.Row="1" Grid.Column="0" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
+
+            <TextBox Header="Surname:" x:Name="SurnameTextBox" Grid.Row="1" Grid.Column="2" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
+            <TextBox Header="Pseudonym:" x:Name="PseudonymTextBox" Grid.Row="2" Grid.Column="0" IsSpellCheckEnabled="True" SelectionHighlightColor="Green" Margin="8,0,8,8" />
+
+            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0"  HorizontalAlignment="Stretch" Margin="8,8,8,8" Grid.ColumnSpan="2">
+                <DatePicker  Header="Birthday:" x:Name="BirthdayDatePicker" Margin="0,0,28,8" HorizontalAlignment="Left" />
+
+                <ToggleSwitch Header="Band:" x:Name="BandToogle" OffContent="" OnContent="" Width="64" Toggled="ToggleSwitch_Toggled"/>
+
+                <ComboBox x:Name="BandComboBox" Header="&#160;" HorizontalAlignment="Stretch" >
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="controllerBand:Result">
+                            <StackPanel>
+                                <TextBlock Text="{x:Bind name}"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+
+
+
+            <Grid  Grid.Row="3" Grid.Column="1"   Grid.ColumnSpan="2" Margin="8,8,8,8"
+              RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
+              RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBox Header="Cover photo:" x:Name="ImageFileTextBox" Grid.Column="0" Margin="8,0,8,8" />
+
+                <Button Margin="8,18,8,4"  Grid.Column="1" Click="Button_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="BrowsePhotos" Margin="8,0,0,0"/>
+                        <TextBlock Text="Browse" Margin="15,0,8,0"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+
+
+            <RichEditBox Header="Description:" x:Name="DescriptionRichBox" Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="2" IsSpellCheckEnabled="True" Height="200" Margin="8,8,8,8" />
+
+            <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
+                <Button Click="SaveButton_Click" Margin="8,8,8,8" >
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Save" Margin="8,0,0,0"/>
+                        <TextBlock Text="Save" Margin="15,0,8,0"/>
+                    </StackPanel>
+                </Button>
+                <Button Click="CancelButton_Click" Margin="8,8,8,8" ToolTipService.ToolTip="Discard changes" >
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Cancel" Margin="8,0,0,0"/>
+                        <TextBlock Text="Cancel" Margin="15,0,8,0"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
         </Grid>
-
-
-        <RichEditBox Header="Description:" x:Name="DescriptionRichBox" Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="2" IsSpellCheckEnabled="True" Height="200" Margin="8,18,8,8" />
-
-        <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right" >
-            <Button Click="SaveButton_Click" Margin="8,8,8,8" >
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="Save" Margin="8,0,0,0"/>
-                    <TextBlock Text="Save" Margin="15,0,8,0"/>
-                </StackPanel>
-            </Button>
-            <Button Click="CancelButton_Click" Margin="8,8,8,8" ToolTipService.ToolTip="Discard changes" >
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="Cancel" Margin="8,0,0,0"/>
-                    <TextBlock Text="Cancel" Margin="15,0,8,0"/>
-                </StackPanel>
-            </Button>
-        </StackPanel>
-    </Grid>
+    </ScrollViewer>
 </Page>
