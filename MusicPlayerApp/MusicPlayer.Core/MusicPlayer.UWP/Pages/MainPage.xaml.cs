@@ -80,7 +80,10 @@ namespace MusicPlayer.UWP.Pages
                 {
                     AudioPlayer.Source = MediaSource.CreateFromStorageFile(file);
                     if (play)
+                    {
                         AudioPlayer.MediaPlayer.Play();
+                        await songController.IncreasePlayTimes(song.Id);
+                    }
 
 
                     var img = new Core.NullObjects.ImageNullObject();
