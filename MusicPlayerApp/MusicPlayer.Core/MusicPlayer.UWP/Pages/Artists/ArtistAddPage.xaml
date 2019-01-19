@@ -55,7 +55,7 @@
             </StackPanel>
 
 
-            <Grid  Grid.Row="4" Grid.Column="1"   Grid.ColumnSpan="2" Margin="8,8,8,8"
+            <Grid  Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="2"
               RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" 
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
                 <Grid.ColumnDefinitions>

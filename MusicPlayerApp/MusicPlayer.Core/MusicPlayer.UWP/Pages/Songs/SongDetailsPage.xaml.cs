@@ -145,8 +145,8 @@ namespace MusicPlayer.UWP.Pages.Songs
                 GenreTextBox.Text = "Genre: " + genre.Name;
             }
 
-            StatTextBox.Text = song.LengthText + "\t" + song.PlayTimesText +
-                "\n\nBitrate: " + song.bitrate +
+            StatTextBox.Text =  song.PlayTimesText +//song.LengthText + "\t" +
+                //"\n\nBitrate: " + song.bitrate +
                 "\nFile path: " + song.FilePath +
                 "\n\nCreation date: " + song.CreationDate.ToLongDateString() +
                 "\nAdded to library: " + song.DBCreationDate.ToLongDateString();
