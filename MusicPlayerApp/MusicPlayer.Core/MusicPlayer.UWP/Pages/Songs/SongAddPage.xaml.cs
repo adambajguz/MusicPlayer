@@ -56,6 +56,11 @@ namespace MusicPlayer.UWP.Pages.Songs
         private async void LoadGenres()
         {
             List<Controllers.Genre.Result> temp = await genreController.GetAll();
+            if(temp.Count == 0)
+            {
+                DisplayNoGenresDialog();
+                mainPage.GoBack();
+            }
 
             AllGenres.AddRange(temp);
 
@@ -79,7 +84,6 @@ namespace MusicPlayer.UWP.Pages.Songs
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
         }
 
         private void AllBands_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -132,6 +136,18 @@ namespace MusicPlayer.UWP.Pages.Songs
             {
                 Title = "No song title provided!",
                 Content = "Please enter the title of the song and try again.",
+                CloseButtonText = "Ok"
+            };
+
+            ContentDialogResult result = await noWifiDialog.ShowAsync();
+        }
+
+        private async void DisplayNoGenresDialog()
+        {
+            ContentDialog noWifiDialog = new ContentDialog
+            {
+                Title = "No genres!",
+                Content = "Please create a genre and try again.",
                 CloseButtonText = "Ok"
             };
 
