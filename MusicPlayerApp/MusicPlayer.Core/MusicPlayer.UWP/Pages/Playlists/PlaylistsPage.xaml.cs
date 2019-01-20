@@ -246,11 +246,6 @@ namespace MusicPlayer.UWP.Pages.Playlists
                                     // Operation cancelled
                                 }
 
-                               
-
-
-                          
-
                             }
                             break;
 
