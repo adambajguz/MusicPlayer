@@ -3,7 +3,7 @@
   <Class Name="MusicPlayer.Data.DataContext" BaseTypeListCollapsed="true">
     <Position X="0.5" Y="0.5" Width="4.25" />
     <TypeIdentifier>
-      <HashCode>AAAQBAAAAQAAAAAAAAIEAAAAAABABBAAIEAACAAEAAA=</HashCode>
+      <HashCode>AAAQBAAAAQAAAAAAAAIEAAAAEABABBAAIEAACAAEAAA=</HashCode>
       <FileName>DataContext.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -33,7 +33,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="MusicPlayer.Data.IEntitiesContext">
-    <Position X="0.5" Y="4.5" Width="3.25" />
+    <Position X="0.5" Y="4.75" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAQBAAAAAAAAAAAAAIEAAAAAABABBAAIEAACAAEAAA=</HashCode>
       <FileName>IEntitiesContext.cs</FileName>

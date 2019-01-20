@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MusicPlayer.UWP.Pages.Albums.AlbumAddPage" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>FBBAAAAAAACAAAACAAAAAAUAAAABAQAAgAAAAAAAAAE=</HashCode>
+      <FileName>Pages\Albums\AlbumAddPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Albums.AlbumDetailsPage" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>UABQAAAAABAAAAQAAAAEAAQAAAABEAAAgAAAAIAAAAA=</HashCode>
+      <FileName>Pages\Albums\AlbumDetailsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Albums.AlbumEditPage" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>FBBAAAAAAACAAAACAAAEAAUAAAABAQAAgAAAAAAAAAE=</HashCode>
+      <FileName>Pages\Albums\AlbumEditPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Albums.AlbumsPage" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QIBQIAAACAAAAAAAAAAAAQAAAAABEAAICAEAAIAAAAA=</HashCode>
+      <FileName>Pages\Albums\AlbumsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Artists.ArtistAddPage" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BBBAAAAACACAAAAAAAAAACUCAAAAAQCAAAAAAAAAAAE=</HashCode>
+      <FileName>Pages\Artists\ArtistAddPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Artists.ArtistData">
+    <Position X="16" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Pages\Artists\ArtistData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Artists.ArtistDetailsPage" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAACAAAAAAAAAAEAAQAAAAAAAAAAAAAABAAAIA=</HashCode>
+      <FileName>Pages\Artists\ArtistDetailsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Artists.ArtistEditPage" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BBBAAAAACACAAAAAAAAEACUCAAAAAQCAAAAAAAAAAAE=</HashCode>
+      <FileName>Pages\Artists\ArtistEditPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Artists.ArtistsPage" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="5.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QJBQIAAACAEAAAAAAAAAQQAAAAAAAAAAAAEAAIBAAAE=</HashCode>
+      <FileName>Pages\Artists\ArtistsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Bands.BandAddPage" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BBBAAAAAAAEAAAAAAAAAACQAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Pages\Bands\BandAddPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Bands.BandDetailsPage" BaseTypeListCollapsed="true">
+    <Position X="13" Y="5.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QIBQIAAACBEAAAAAAAAEAAQABAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Pages\Bands\BandDetailsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Bands.BandEditPage" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BBBAAAAAAAEAAAAAAAAEACQAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Pages\Bands\BandEditPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Bands.BandsPage" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="9.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QIBQIAAACAEAAAAAAAAAAQAEAAAAAAAACAEAAIAAAAA=</HashCode>
+      <FileName>Pages\Bands\BandsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Genres.GenresPage" BaseTypeListCollapsed="true">
+    <Position X="24" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QIBQIAAAABAAAAAAAAAAAQACBABAAIAAAAEAAIAAAAA=</HashCode>
+      <FileName>Pages\Genres\GeneresPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Genres.GenreAddPage" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BBBAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Pages\Genres\GenreAddPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Genres.GenreDetailsPage" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="12.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAEAAQAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\Genres\GenreDetailsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Genres.GenreEditPage" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BBBAAAAAAAAAAAAAAAAEAAQAAABAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Pages\Genres\GenreEditPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Playlists.PlaylistAddPage" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="10.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>FBDAAAAAAAAAAAACAAAAAAQAAAAAAQAAgAAAAAAAAAE=</HashCode>
+      <FileName>Pages\Playlists\PlaylistAddPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Playlists.PlaylistDetailsPage" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="10" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>UADQAAAAABAAAAQAAAAEAAQAAAAAEAAAgAAAAIAAAAA=</HashCode>
+      <FileName>Pages\Playlists\PlaylistsDetailsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Playlists.PlaylistEditPage" BaseTypeListCollapsed="true">
+    <Position X="14" Y="10" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>FBDAAAAAAAAAAAACAAAEAAQAAAAAAQAAgAAAAAAAAAE=</HashCode>
+      <FileName>Pages\Playlists\PlaylistsEditPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Playlists.PlaylistsPage" BaseTypeListCollapsed="true">
+    <Position X="6" Y="10" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QIDQIAAACAAAAAAAAAAAAQAAAAAAEAAACAEAAIAAEAA=</HashCode>
+      <FileName>Pages\Playlists\PlaylistsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.PlayQueue.PlayQueueData">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\PlayQueue\PlayQueueData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.PlayQueue.PlayQueuePage" BaseTypeListCollapsed="true">
+    <Position X="24" Y="5.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>UJBQIAAAAAAAAAQAAAACAAAAAAAAEAAAgAAAAAAAAAE=</HashCode>
+      <FileName>Pages\PlayQueue\PlayQueuePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.SettingsPage" BaseTypeListCollapsed="true">
+    <Position X="9" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\Settings\SettingsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Songs.SongAddPage" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="10" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>lBBAAABACACAAABAAAAAQAUAoABBAQAAAAAAIAABAAE=</HashCode>
+      <FileName>Pages\Songs\SongAddPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Songs.SongData">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAgAAAAAAAAAAEAACAAEAAA=</HashCode>
+      <FileName>Pages\Songs\SongData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Songs.SongDetailsPage" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="12.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EABAAAAAAAAAAAAAAAAEAAQAAAAAAAAAAAAAABAAAIA=</HashCode>
+      <FileName>Pages\Songs\SongDetailsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Songs.SongEditPage" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="9" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>lBBAAABACACAAABAAAAEQAUAoABBAQAAAAAAAAABAAE=</HashCode>
+      <FileName>Pages\Songs\SongEditPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.Songs.SongsPage" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>UJBQIAAAAAAAAAQAAAACAQAAAAAAEAAAgAEAAIAAAAE=</HashCode>
+      <FileName>Pages\Songs\SongsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.DependencyObjectExtension">
+    <Position X="16" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\DependencyObjectExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.MainPage" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>MAAKkEAgIIKAAIBAIZAQAAwAFAABPIEA7hEAYAABAAE=</HashCode>
+      <FileName>Pages\MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicPlayer.UWP.Pages.WriteOnce&lt;T&gt;">
+    <Position X="21.25" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAACAAAEAgIAAABAA=</HashCode>
+      <FileName>Pages\WriteOnce.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Collections.ObjectModel.ObservableRangeCollection&lt;T&gt;">
+    <Position X="18.5" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="System.Collections.ObjectModel.ObservableRangeCollection&lt;T&gt;.DeferredEventsCollection" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Pages\ObservableRangeCollection.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ADAAAAAAEAQABgAAAQAAAAAAQAAAIBAAIAAAAIAEAAI=</HashCode>
+      <FileName>Pages\ObservableRangeCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Collections.ObjectModel.EventArgsCache">
+    <Position X="18.5" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAABAAAAAAgAAAAAA=</HashCode>
+      <FileName>Pages\ObservableRangeCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
