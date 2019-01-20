@@ -1,4 +1,5 @@
-﻿using MusicPlayer.UWP.Controllers;
+﻿using MusicPlayer.Core.Logging;
+using MusicPlayer.UWP.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -51,18 +52,25 @@ namespace MusicPlayer.UWP.Pages.Playlists
 
         private async void WaitedLoad()
         {
-            List<Controllers.Playlist.Result> temp = await playlistController.GetAll();
-            playlists.AddRange(temp);
-
-            await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
-            () =>
+            try
             {
-                LoadingProgress.Visibility = Visibility.Collapsed;
-                LoadingProgress.IsActive = false;
-                PageContent.Visibility = Visibility.Visible;
+                List<Controllers.Playlist.Result> temp = await playlistController.GetAll();
+                playlists.AddRange(temp);
 
-                PlaylistListView.ItemsSource = playlists;
-            });
+                await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                () =>
+                {
+                    LoadingProgress.Visibility = Visibility.Collapsed;
+                    LoadingProgress.IsActive = false;
+                    PageContent.Visibility = Visibility.Visible;
+
+                    PlaylistListView.ItemsSource = playlists;
+                });
+            }
+            catch(Exception e)
+            {
+                NLogLogger.Instance.Error(e.Message, e.StackTrace);
+            }
 
 
         }
@@ -202,25 +210,42 @@ namespace MusicPlayer.UWP.Pages.Playlists
 
                         case "IExport":
                             {
-                                List<Controllers.Song.Result> playlistSongs = await playlistController.GetSongs(selectedAlbum.Id);
-                                StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
-
-                                string filename = selectedAlbum.Name.ToString() + ".xml";
-                                StorageFile createFile = await storageFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
-
-                                XmlSerializer serializer = new XmlSerializer(typeof(List<Controllers.Song.Result>));
-                                Stream stream = await createFile.OpenStreamForWriteAsync().ConfigureAwait(false);
-
-                                string xml;
-                                using (stream)
+                                var folderPicker = new Windows.Storage.Pickers.FolderPicker
                                 {
-                                    var sw = new StringWriter();
-                                    serializer.Serialize(sw, playlistSongs);
-                                    xml = sw.ToString();
+                                    SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.Desktop
+                                };
+                                folderPicker.FileTypeFilter.Add("*");
+
+                                StorageFolder storageFolder = await folderPicker.PickSingleFolderAsync();
+                                if (storageFolder != null)
+                                {
+                                    // Application now has read/write access to the picked folder
+
+
+                                    List<Controllers.Song.Result> playlistSongs = await playlistController.GetSongs(selectedAlbum.Id);
+
+                                    string filename = selectedAlbum.Name.ToString() + ".xml";
+                                    StorageFile createFile = await storageFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
+
+                                    XmlSerializer serializer = new XmlSerializer(typeof(List<Controllers.Song.Result>));
+                                    Stream stream = await createFile.OpenStreamForWriteAsync().ConfigureAwait(false);
+
+                                    string xml;
+                                    using (stream)
+                                    {
+                                        var sw = new StringWriter();
+                                        serializer.Serialize(sw, playlistSongs);
+                                        xml = sw.ToString();
+                                    }
+
+                                    StorageFile sampleFile = await storageFolder.GetFileAsync(filename);
+                                    await FileIO.WriteTextAsync(sampleFile, xml);
+                                }
+                                else
+                                {
+                                    // Operation cancelled
                                 }
 
-                                StorageFile sampleFile = await storageFolder.GetFileAsync(filename);
-                                await FileIO.WriteTextAsync(sampleFile, xml);
                             }
                             break;
 
@@ -239,6 +264,8 @@ namespace MusicPlayer.UWP.Pages.Playlists
 
             }
         }
+
+
 
         private async void DisplayDeleteSingleDialog(Controllers.Playlist.Result playlistToDelete)
         {

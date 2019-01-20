@@ -188,7 +188,7 @@ namespace MusicPlayer.UWP.Pages.Songs
             var picker = new Windows.Storage.Pickers.FileOpenPicker
             {
                 ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail,
-                SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary
+                SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.MusicLibrary
             };
             picker.FileTypeFilter.Add(".mp3");
             picker.FileTypeFilter.Add(".wav");
