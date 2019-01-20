@@ -6,6 +6,7 @@ using System;
 using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
+using MusicPlayer.Core.Logging;
 
 namespace MusicPlayer.Data
 {
@@ -179,7 +180,7 @@ namespace MusicPlayer.Data
             }
             catch(Exception e)
             {
-                string b = e.Message;
+                NLogLogger.Instance.Error(e.Message, e.StackTrace);
                 throw e;
             }
         }
