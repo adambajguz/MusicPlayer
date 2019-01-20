@@ -1,34 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph DataVirtualized="True" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="(@1 @3 Type=EnumExtensions Member=(Name=GetDescription OverloadingParameters=[(@9 Namespace=System Type=Enum)]))" Category="CodeSchema_Method" Bounds="55.8900000000002,0.579949999949967,114.83,25.96" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="GetDescription" />
-    <Node Id="(@1 @3 Type=EnumerableExtensions Member=(Name=ForEach @10 OverloadingParameters=[(@9 Namespace=System.Collections.Generic Type=(Name=IEnumerable @10 GenericArguments=[(ParameterIdentifier=0)])),(@9 Namespace=System Type=(Name=Action @10 GenericArguments=[(ParameterIdentifier=0)]))]))" Category="CodeSchema_Method" Bounds="74.5183333333334,288.46014999995,77.5733333333334,25.96" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="ForEach" />
-    <Node Id="(@1 @3 Type=ObjectExtensions Member=(Name=IsNotNull @10 OverloadingParameters=[(ParameterIdentifier=0)]))" Category="CodeSchema_Method" Bounds="72.7440035066667,172.44934999995,85.94,25.96" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="IsNotNull" />
-    <Node Id="(@1 @3 Type=ObjectExtensions Member=(Name=IsNull @10 OverloadingParameters=[(ParameterIdentifier=0)]))" Category="CodeSchema_Method" Bounds="72.7440035066667,116.56500791995,65.8666666666667,25.96" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="IsNull" />
-    <Node Id="(@1 @3 Type=StringExtensions Member=(Name=To @10 OverloadingParameters=[(@9 Namespace=System Type=String)]))" Category="CodeSchema_Method" Bounds="278.168327133333,61.56490791995,50,25.96" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="To" />
-    <Node Id="(@1 @3 Type=StringExtensions Member=(Name=ToN @10 OverloadingParameters=[(@9 Namespace=System Type=String)]))" Category="CodeSchema_Method" Bounds="278.168327133333,117.44924999995,57.1233333333333,25.96" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="ToN" />
-    <Node Id="@2" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2018 10:52:38" Bounds="-16.3966666666666,-119.42005000005,437.016666666667,493.8402" CodeSchemaProperty_StrongName="MusicPlayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" CommonLabel="MusicPlayer.Core" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" FilePath="$(ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPath)" Group="Expanded" Label="MusicPlayer.Core.dll" />
-    <Node Id="@4" Category="CodeSchema_Namespace" Bounds="3.60333333333341,-79.4200500000501,397.016666666667,433.8402" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.Core.Extensions" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.Core.Extensions" />
-    <Node Id="@5" Category="CodeSchema_Class" Bounds="23.6033333333334,248.46014999995,179.403333333333,85.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="EnumerableExtensions" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Icon="CodeSchema_Class" Label="EnumerableExtensions" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Extensions/EnumerableExtensions.cs StartLineNumber=5 StartCharacterOffset=24 EndLineNumber=5 EndCharacterOffset=44)" UseManualLocation="True" />
-    <Node Id="@6" Category="CodeSchema_Class" Bounds="35.8900000000002,-39.4200500000501,154.83,85.96" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="EnumExtensions" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Icon="CodeSchema_Class" Label="EnumExtensions" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Extensions/EnumExtensions.cs StartLineNumber=6 StartCharacterOffset=24 EndLineNumber=6 EndCharacterOffset=38)" UseManualLocation="True" />
-    <Node Id="@7" Category="CodeSchema_Class" Bounds="40.0000000000001,76.61908791995,151.516666666667,141.76192416" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="ObjectExtensions" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Icon="CodeSchema_Class" Label="ObjectExtensions" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Extensions/ObjectExtensions.cs StartLineNumber=2 StartCharacterOffset=24 EndLineNumber=2 EndCharacterOffset=40)" UseManualLocation="True" />
-    <Node Id="@8" Category="CodeSchema_Class" Bounds="232.984498373333,21.61898791995,147.613333333333,141.76192416" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="StringExtensions" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Icon="CodeSchema_Class" Label="StringExtensions" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Extensions/StringExtensions.cs StartLineNumber=5 StartCharacterOffset=24 EndLineNumber=5 EndCharacterOffset=40)" UseManualLocation="True" />
+    <Node Id="(@3 @5 Type=EnumExtensions Member=(Name=GetDescription OverloadingParameters=[(@13 Namespace=System Type=Enum)]))" Category="CodeSchema_Method" Bounds="400.715881281874,231.744594123936,114.83,25.96" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="GetDescription" />
+    <Node Id="(@3 @5 Type=EnumerableExtensions Member=(Name=ForEach @14 OverloadingParameters=[(@13 Namespace=System.Collections.Generic Type=(Name=IEnumerable @14 GenericArguments=[(ParameterIdentifier=0)])),(@13 Namespace=System Type=(Name=Action @14 GenericArguments=[(ParameterIdentifier=0)]))]))" Category="CodeSchema_Method" Bounds="222.227549728733,231.744563606358,77.5733333333333,25.96" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="ForEach" />
+    <Node Id="(@3 @5 Type=ObjectExtensions Member=(Name=IsNotNull @14 OverloadingParameters=[(ParameterIdentifier=0)]))" Category="CodeSchema_Method" Bounds="204.100883723281,59.8245959549904,85.94,25.96" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="IsNotNull" />
+    <Node Id="(@3 @5 Type=ObjectExtensions Member=(Name=IsNull @14 OverloadingParameters=[(ParameterIdentifier=0)]))" Category="CodeSchema_Method" Bounds="204.10088351983,115.784602668858,65.8666666666667,25.96" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="IsNull" />
+    <Node Id="(@3 @5 Type=StringExtensions Member=(Name=To @14 OverloadingParameters=[(@13 Namespace=System Type=String)]))" Category="CodeSchema_Method" Bounds="398.074240656874,59.8246035843849,50,25.96" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="To" />
+    <Node Id="(@3 @5 Type=StringExtensions Member=(Name=ToN @14 OverloadingParameters=[(@13 Namespace=System Type=String)]))" Category="CodeSchema_Method" Bounds="398.074234756809,115.784595039463,57.1233333333332,25.96" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="ToN" />
+    <Node Id="@10" Category="CodeSchema_Class" Bounds="380.715881281874,191.744716030678,154.83,85.9602" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="EnumExtensions" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Icon="CodeSchema_Class" Label="EnumExtensions" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Extensions/EnumExtensions.cs StartLineNumber=6 StartCharacterOffset=24 EndLineNumber=6 EndCharacterOffset=38)" />
+    <Node Id="@11" Category="CodeSchema_Class" Bounds="171.31255032213,19.8244959549904,151.516666666667,141.920206713867" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="ObjectExtensions" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Icon="CodeSchema_Class" Label="ObjectExtensions" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Extensions/ObjectExtensions.cs StartLineNumber=2 StartCharacterOffset=24 EndLineNumber=2 EndCharacterOffset=40)" />
+    <Node Id="@12" Category="CodeSchema_Class" Bounds="352.829234621175,19.8243160306778,147.613333333333,141.9203" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="StringExtensions" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Icon="CodeSchema_Class" Label="StringExtensions" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Extensions/StringExtensions.cs StartLineNumber=5 StartCharacterOffset=24 EndLineNumber=5 EndCharacterOffset=40)" />
+    <Node Id="@16" Category="CodeSchema_Method" Bounds="-91.2192166666666,76.9456762007726,92.3466666666667,25.96" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="FindParent" />
+    <Node Id="@2" Category="CodeSchema_Assembly" AssemblyTimestamp="01/20/2019 09:50:47" Bounds="-191.404216666667,-43.0543237992274,292.716666666667,250.46" CodeSchemaProperty_StrongName="MusicPlayer.UWP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" CommonLabel="MusicPlayer.UWP" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" FilePath="$(33f2107c-7c77-4ac8-8814-9cafbbfdc4fc.OutputPath)" Group="Expanded" Label="MusicPlayer.UWP.exe" />
+    <Node Id="@4" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2018 10:52:38" Bounds="131.31255,-60.1758839693223,444.233331214057,377.881" CodeSchemaProperty_StrongName="MusicPlayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" CommonLabel="MusicPlayer.Core" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" FilePath="$(ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPath)" Group="Expanded" Label="MusicPlayer.Core.dll" />
+    <Node Id="@6" Category="CodeSchema_Namespace" Bounds="151.31255,-20.1757839693223,404.233331214057,317.8808" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.Core.Extensions" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.Core.Extensions" />
+    <Node Id="@7" Category="CodeSchema_Namespace" Bounds="-171.404216666667,-3.05432379922742,252.716666666667,190.46" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="MusicPlayer.UWP.Pages" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="MusicPlayer.UWP.Pages" />
+    <Node Id="@8" Category="CodeSchema_Class" Bounds="-151.404216666667,36.9456762007726,212.716666666667,130.46" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="DependencyObjectExtension" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Icon="CodeSchema_Class" Label="DependencyObjectExtension" SourceLocation="(Assembly=file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/Pages/DependencyObjectExtension.cs StartLineNumber=5 StartCharacterOffset=24 EndLineNumber=5 EndCharacterOffset=49)" UseManualLocation="True" />
+    <Node Id="@9" Category="CodeSchema_Class" Bounds="171.31255,191.744716030678,179.403333333333,85.9602" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="EnumerableExtensions" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Icon="CodeSchema_Class" Label="EnumerableExtensions" SourceLocation="(Assembly=file:///X:/Dokumenty/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/Extensions/EnumerableExtensions.cs StartLineNumber=5 StartCharacterOffset=24 EndLineNumber=5 EndCharacterOffset=44)" />
   </Nodes>
   <Links>
-    <Link Source="@2" Target="@4" Category="Contains" FetchingParent="@2" />
-    <Link Source="@4" Target="@5" Category="Contains" FetchingParent="@4" />
+    <Link Source="@10" Target="(@3 @5 Type=EnumExtensions Member=(Name=GetDescription OverloadingParameters=[(@13 Namespace=System Type=Enum)]))" Category="Contains" FetchingParent="@10" />
+    <Link Source="@11" Target="(@3 @5 Type=ObjectExtensions Member=(Name=IsNotNull @14 OverloadingParameters=[(ParameterIdentifier=0)]))" Category="Contains" FetchingParent="@11" />
+    <Link Source="@11" Target="(@3 @5 Type=ObjectExtensions Member=(Name=IsNull @14 OverloadingParameters=[(ParameterIdentifier=0)]))" Category="Contains" FetchingParent="@11" />
+    <Link Source="@12" Target="(@3 @5 Type=StringExtensions Member=(Name=To @14 OverloadingParameters=[(@13 Namespace=System Type=String)]))" Category="Contains" FetchingParent="@12" />
+    <Link Source="@12" Target="(@3 @5 Type=StringExtensions Member=(Name=ToN @14 OverloadingParameters=[(@13 Namespace=System Type=String)]))" Category="Contains" FetchingParent="@12" />
+    <Link Source="@16" Target="@16" Category="CodeSchema_Calls" Bounds="-68.1325531005859,102.90567779541,46.1733360290527,43.4999923706055" Weight="1" />
+    <Link Source="@2" Target="@4" Category="CodeMap_ProjectReference" Bounds="101.31245,99.2876101795942,21.0609906907979,2.46241040070268" />
+    <Link Source="@2" Target="@7" Category="Contains" FetchingParent="@2" />
     <Link Source="@4" Target="@6" Category="Contains" FetchingParent="@4" />
-    <Link Source="@4" Target="@7" Category="Contains" FetchingParent="@4" />
-    <Link Source="@4" Target="@8" Category="Contains" FetchingParent="@4" />
-    <Link Source="@5" Target="(@1 @3 Type=EnumerableExtensions Member=(Name=ForEach @10 OverloadingParameters=[(@9 Namespace=System.Collections.Generic Type=(Name=IEnumerable @10 GenericArguments=[(ParameterIdentifier=0)])),(@9 Namespace=System Type=(Name=Action @10 GenericArguments=[(ParameterIdentifier=0)]))]))" Category="Contains" FetchingParent="@5" />
-    <Link Source="@6" Target="(@1 @3 Type=EnumExtensions Member=(Name=GetDescription OverloadingParameters=[(@9 Namespace=System Type=Enum)]))" Category="Contains" FetchingParent="@6" />
-    <Link Source="@7" Target="(@1 @3 Type=ObjectExtensions Member=(Name=IsNotNull @10 OverloadingParameters=[(ParameterIdentifier=0)]))" Category="Contains" FetchingParent="@7" />
-    <Link Source="@7" Target="(@1 @3 Type=ObjectExtensions Member=(Name=IsNull @10 OverloadingParameters=[(ParameterIdentifier=0)]))" Category="Contains" FetchingParent="@7" />
-    <Link Source="@8" Target="(@1 @3 Type=StringExtensions Member=(Name=To @10 OverloadingParameters=[(@9 Namespace=System Type=String)]))" Category="Contains" FetchingParent="@8" />
-    <Link Source="@8" Target="(@1 @3 Type=StringExtensions Member=(Name=ToN @10 OverloadingParameters=[(@9 Namespace=System Type=String)]))" Category="Contains" FetchingParent="@8" />
+    <Link Source="@6" Target="@10" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="@11" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="@12" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="@9" Category="Contains" FetchingParent="@6" />
+    <Link Source="@7" Target="@8" Category="Contains" FetchingParent="@7" />
+    <Link Source="@8" Target="@16" Category="Contains" FetchingParent="@8" />
+    <Link Source="@9" Target="(@3 @5 Type=EnumerableExtensions Member=(Name=ForEach @14 OverloadingParameters=[(@13 Namespace=System.Collections.Generic Type=(Name=IEnumerable @14 GenericArguments=[(ParameterIdentifier=0)])),(@13 Namespace=System Type=(Name=Action @14 GenericArguments=[(ParameterIdentifier=0)]))]))" Category="Contains" FetchingParent="@9" />
   </Links>
   <Categories>
+    <Category Id="CodeMap_ProjectReference" Label="Project Reference" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
     <Category Id="CodeSchema_Assembly" Label="Assembly" BasedOn="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Assembly" NavigationActionLabel="Assemblies" />
+    <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
     <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
     <Category Id="CodeSchema_Member" Label="Member" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Field" NavigationActionLabel="Members" />
     <Category Id="CodeSchema_Method" Label="Method" BasedOn="CodeSchema_Member" CanBeDataDriven="True" DefaultAction="Link:Forward:CodeSchema_Calls" Icon="CodeSchema_Method" NavigationActionLabel="Methods" />
@@ -59,7 +70,7 @@
     <Property Id="FilePath" Label="File Path" Description="File Path" DataType="System.String" />
     <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
     <Property Id="GroupLabel" DataType="System.String" />
-    <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
+    <Property Id="Icon" Label="Icon" DataType="System.String" />
     <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
     <Property Id="IsContainment" DataType="System.Boolean" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
@@ -73,6 +84,7 @@
     <Property Id="Value" DataType="System.String" />
     <Property Id="ValueLabel" DataType="System.String" />
     <Property Id="Visibility" Label="Visibility" Description="Defines whether a node in the graph is visible or not" DataType="System.Windows.Visibility" />
+    <Property Id="Weight" Label="Weight" Description="Weight" DataType="System.Double" />
     <Property Id="ZoomLevel" DataType="System.String" />
   </Properties>
   <QualifiedNames>
@@ -87,16 +99,22 @@
     <Name Id="Type" Label="Type" ValueType="System.Object" />
   </QualifiedNames>
   <IdentifierAliases>
-    <Alias n="1" Uri="Assembly=$(ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPathUri)" />
+    <Alias n="1" Uri="Assembly=$(33f2107c-7c77-4ac8-8814-9cafbbfdc4fc.OutputPathUri)" />
     <Alias n="2" Id="(@1)" />
-    <Alias n="3" Id="Namespace=MusicPlayer.Core.Extensions" />
-    <Alias n="4" Id="(@1 @3)" />
-    <Alias n="5" Id="(@1 @3 Type=EnumerableExtensions)" />
-    <Alias n="6" Id="(@1 @3 Type=EnumExtensions)" />
-    <Alias n="7" Id="(@1 @3 Type=ObjectExtensions)" />
-    <Alias n="8" Id="(@1 @3 Type=StringExtensions)" />
-    <Alias n="9" Uri="Assembly=file:///C:/Program Files/dotnet/sdk/NuGetFallbackFolder/netstandard.library/2.0.3/build/netstandard2.0/ref/netstandard.dll" />
-    <Alias n="10" Id="GenericParameterCount=1" />
+    <Alias n="3" Uri="Assembly=$(ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPathUri)" />
+    <Alias n="4" Id="(@3)" />
+    <Alias n="5" Id="Namespace=MusicPlayer.Core.Extensions" />
+    <Alias n="6" Id="(@3 @5)" />
+    <Alias n="7" Id="(@1 Namespace=MusicPlayer.UWP.Pages)" />
+    <Alias n="8" Id="(@1 Namespace=MusicPlayer.UWP.Pages Type=DependencyObjectExtension)" />
+    <Alias n="9" Id="(@3 @5 Type=EnumerableExtensions)" />
+    <Alias n="10" Id="(@3 @5 Type=EnumExtensions)" />
+    <Alias n="11" Id="(@3 @5 Type=ObjectExtensions)" />
+    <Alias n="12" Id="(@3 @5 Type=StringExtensions)" />
+    <Alias n="13" Uri="Assembly=file:///C:/Program Files/dotnet/sdk/NuGetFallbackFolder/netstandard.library/2.0.3/build/netstandard2.0/ref/netstandard.dll" />
+    <Alias n="14" Id="GenericParameterCount=1" />
+    <Alias n="15" Uri="Assembly=$(ProgramFilesUri)/Windows Kits/10/References/10.0.17763.0/Windows.Foundation.UniversalApiContract/7.0.0.0/Windows.Foundation.UniversalApiContract.winmd" />
+    <Alias n="16" Id="(@1 Namespace=MusicPlayer.UWP.Pages Type=DependencyObjectExtension Member=(Name=FindParent @14 OverloadingParameters=[(@15 Namespace=Windows.UI.Xaml Type=DependencyObject)]))" />
   </IdentifierAliases>
   <Styles>
     <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
@@ -316,7 +334,10 @@
     </Style>
   </Styles>
   <Paths>
+    <Path Id="33f2107c-7c77-4ac8-8814-9cafbbfdc4fc.OutputPath" Value="X:\GitHub\MusicPlayer\MusicPlayerApp\MusicPlayer.Core\MusicPlayer.UWP\bin\x86\Debug\MusicPlayer.UWP.exe" />
+    <Path Id="33f2107c-7c77-4ac8-8814-9cafbbfdc4fc.OutputPathUri" Value="file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.UWP/bin/x86/Debug/MusicPlayer.UWP.exe" />
     <Path Id="ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPath" Value="X:\GitHub\MusicPlayer\MusicPlayerApp\MusicPlayer.Core\MusicPlayer.Core\bin\Debug\netstandard2.0\MusicPlayer.Core.dll" />
     <Path Id="ea5a7dc2-ff0e-4d99-bc33-31484e2db3e4.OutputPathUri" Value="file:///X:/GitHub/MusicPlayer/MusicPlayerApp/MusicPlayer.Core/MusicPlayer.Core/bin/Debug/netstandard2.0/MusicPlayer.Core.dll" />
+    <Path Id="ProgramFilesUri" Value="file:///C:/Program Files (x86)" />
   </Paths>
 </DirectedGraph>
