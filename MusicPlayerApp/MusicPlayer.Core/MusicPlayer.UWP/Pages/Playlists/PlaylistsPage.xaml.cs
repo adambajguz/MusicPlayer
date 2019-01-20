@@ -1,4 +1,5 @@
-﻿using MusicPlayer.UWP.Controllers;
+﻿using MusicPlayer.Core.Logging;
+using MusicPlayer.UWP.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -51,18 +52,25 @@ namespace MusicPlayer.UWP.Pages.Playlists
 
         private async void WaitedLoad()
         {
-            List<Controllers.Playlist.Result> temp = await playlistController.GetAll();
-            playlists.AddRange(temp);
-
-            await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
-            () =>
+            try
             {
-                LoadingProgress.Visibility = Visibility.Collapsed;
-                LoadingProgress.IsActive = false;
-                PageContent.Visibility = Visibility.Visible;
+                List<Controllers.Playlist.Result> temp = await playlistController.GetAll();
+                playlists.AddRange(temp);
 
-                PlaylistListView.ItemsSource = playlists;
-            });
+                await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                () =>
+                {
+                    LoadingProgress.Visibility = Visibility.Collapsed;
+                    LoadingProgress.IsActive = false;
+                    PageContent.Visibility = Visibility.Visible;
+
+                    PlaylistListView.ItemsSource = playlists;
+                });
+            }
+            catch(Exception e)
+            {
+                NLogLogger.Instance.Error(e.Message, e.StackTrace);
+            }
 
 
         }
