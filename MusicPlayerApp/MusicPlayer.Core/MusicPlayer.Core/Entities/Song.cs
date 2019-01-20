@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace MusicPlayer.Core.Entities
 {
@@ -27,9 +28,11 @@ namespace MusicPlayer.Core.Entities
         public DateTime DBCreationDate { get; set; }
 
         public uint PlayTimes { get; set; }
-
+        [XmlIgnore()]
         public ICollection<SongAlbum> SongAlbums { get; set; }
+        [XmlIgnore()]
         public ICollection<SongArtist> SongArtists { get; set; }
+        [XmlIgnore()]
         public ICollection<SongPlaylist> SongPlaylists { get; set; }
     }
 }
