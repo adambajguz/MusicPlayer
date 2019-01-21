@@ -51,7 +51,7 @@ namespace MusicPlayer.Data
             modelBuilder.Entity<SongArtist>()
        .HasOne(po => po.Artist)
        .WithMany(p => p.SongArtists)
-       .HasForeignKey(po => po.ArtistId).OnDelete(DeleteBehavior.Cascade);
+       .HasForeignKey(po => po.ArtistId).OnDelete(DeleteBehavior.ClientSetNull);
 
             modelBuilder.Entity<SongPlaylist>()
            .HasOne(po => po.Song)

@@ -301,8 +301,7 @@ namespace MusicPlayer.Data.Migrations
                 {
                     b.HasOne("MusicPlayer.Core.Entities.Artist", "Artist")
                         .WithMany("SongArtists")
-                        .HasForeignKey("ArtistId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ArtistId");
 
                     b.HasOne("MusicPlayer.Core.Entities.Song", "Song")
                         .WithMany("SongArtists")

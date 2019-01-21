@@ -10,7 +10,7 @@ using MusicPlayer.Data;
 namespace MusicPlayer.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20181214001318_Init")]
+    [Migration("20190121134652_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -303,8 +303,7 @@ namespace MusicPlayer.Data.Migrations
                 {
                     b.HasOne("MusicPlayer.Core.Entities.Artist", "Artist")
                         .WithMany("SongArtists")
-                        .HasForeignKey("ArtistId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ArtistId");
 
                     b.HasOne("MusicPlayer.Core.Entities.Song", "Song")
                         .WithMany("SongArtists")

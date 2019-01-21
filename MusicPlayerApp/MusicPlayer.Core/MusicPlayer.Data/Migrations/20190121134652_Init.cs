@@ -217,7 +217,7 @@ namespace MusicPlayer.Data.Migrations
                         column: x => x.ArtistId,
                         principalTable: "Artists",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_SongArtists_Songs_SongId",
                         column: x => x.SongId,
