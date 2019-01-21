@@ -228,9 +228,11 @@ namespace MusicPlayer.UWP.Pages.Albums
             {
                 // Delete
                 ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
+                await albumController.Delete(albumToDelete.Id);
+
                 await imageController.Delete(albumToDelete.ImageId);
 
-                await albumController.Delete(albumToDelete.Id);
+                
 
                 List<Controllers.Album.Result> temp = await albumController.GetAll();
                 albums.Clear();
