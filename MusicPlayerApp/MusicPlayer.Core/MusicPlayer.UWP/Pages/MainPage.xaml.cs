@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Windows.Media.Core;
 using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.System;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
@@ -53,6 +54,7 @@ namespace MusicPlayer.UWP.Pages
             AudioPlayer.MediaPlayer.PlaybackSession.SeekCompleted += PlaybackSession_SeekCompleted;
             //AudioPlayer.MediaPlayer.SeekCompleted
 
+
             PlayNextFromQueue(false);
         }
 
@@ -85,9 +87,14 @@ namespace MusicPlayer.UWP.Pages
                         await songController.IncreasePlayTimes(song.Id);
                     }
 
-
                     var img = new Core.NullObjects.ImageNullObject();
-                    BitmapImage imageSource = new BitmapImage(new Uri(img.FilePath));
+                    string imagePath = img.FilePath;
+                    bool fromFile = false;
+                    List<Controllers.Album.Result> albums = await songController.GetAlbums(song.Id);
+
+
+                    StorageFile imfile = null;
+                    BitmapImage imageSource = new BitmapImage(new Uri(imagePath));
 
                     {
                         Controllers.Image.Result DBimage = null;
@@ -95,7 +102,6 @@ namespace MusicPlayer.UWP.Pages
                             DBimage = await imageController.Get((int)song.ImageId);
                         else
                         {
-                            List<Controllers.Album.Result> albums = await songController.GetAlbums(song.Id);
                             if (albums.Count > 0)
                                 DBimage = await imageController.Get(albums.ElementAt(0).ImageId);
                         }
@@ -105,22 +111,63 @@ namespace MusicPlayer.UWP.Pages
                             try
                             {
                                 BitmapImage tmpImage = new BitmapImage();
-                                StorageFile imfile = await StorageFile.GetFileFromPathAsync(DBimage.FilePath);
+                                imagePath = DBimage.FilePath;
+                                imfile = await StorageFile.GetFileFromPathAsync(imagePath);
                                 var stream = await imfile.OpenReadAsync();
                                 await tmpImage.SetSourceAsync(stream);
                                 imageSource = tmpImage;
+                                fromFile = true;
                             }
                             catch (Exception)
                             {
                                 // prompt user for what action they should do then launch below
                                 // suggestion could be a message prompt
                                 await Launcher.LaunchUriAsync(new Uri("ms-settings:appsfeatures-app"));
+                                imagePath = img.FilePath;
+                                fromFile = false;
                             }
                         }
                     }
 
                     ThumbImage.Source = imageSource;
                     AudioPlayer.PosterSource = imageSource;
+
+                    string albumStr = "";
+                    {
+                        if (albums.Count == 0)
+                            albumStr = "Single";
+                        else if (albums.Count > 0)
+                        {
+                            int max = 2;
+                            var last = albums.Last();
+                            foreach (var album in albums)
+                            {
+                                albumStr += album.Title;
+
+                                if (!album.Equals(last) && max != 0)
+                                    albumStr += ", ";
+
+                                if (max == 0)
+                                    albumStr += ", ...";
+
+                                --max;
+
+                            }
+                        }
+                    }
+
+
+                    var systemInfoUpdater = AudioPlayer.MediaPlayer.SystemMediaTransportControls.DisplayUpdater;
+                    systemInfoUpdater.Type = Windows.Media.MediaPlaybackType.Music;
+                    systemInfoUpdater.MusicProperties.Title = song.Title;
+                    systemInfoUpdater.MusicProperties.Artist = albumStr;
+
+                    if (!fromFile)
+                        systemInfoUpdater.Thumbnail = RandomAccessStreamReference.CreateFromUri(new Uri(img.FilePath));
+                    else
+                        systemInfoUpdater.Thumbnail = RandomAccessStreamReference.CreateFromFile(imfile);
+
+                    systemInfoUpdater.Update();
                 }
             });
 
