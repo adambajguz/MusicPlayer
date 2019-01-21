@@ -262,14 +262,13 @@ namespace MusicPlayer.UWP.Pages.Songs
 
             if (result == ContentDialogResult.Primary)
             {
+                await songController.Delete(songToDelete.Id);
                 // Delete
                 if (songToDelete.ImageId != null)
                 {
                     ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
                     await imageController.Delete((int)songToDelete.ImageId);
                 }
-                await songController.Delete(songToDelete.Id);
-
 
                 List<Controllers.Song.Result> temp = await songController.GetAll();
                 List<SongData> songsList = await LoadSongs(temp);
