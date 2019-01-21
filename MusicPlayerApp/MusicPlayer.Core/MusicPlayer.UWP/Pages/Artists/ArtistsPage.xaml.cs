@@ -215,12 +215,10 @@ namespace MusicPlayer.UWP.Pages.Artists
 
             if (result == ContentDialogResult.Primary)
             {
+                await artistController.Delete(artistToDelete.Id);
                 // Delete
                 ImageController imageController = new ImageController(App.QueryDispatcher, App.CommandDispatcher);
                 await imageController.Delete(artistToDelete.ImageId);
-
-                await artistController.Delete(artistToDelete.Id);
-
 
                 List<Controllers.Artist.Result> temp = await artistController.GetAll();
                 List<ArtistData> artistsList = await LoadArtists(temp);

@@ -30,8 +30,8 @@ namespace MusicPlayer.UWP.Controllers.Artist
                     _uow.SongArtistRepository.Delete(song);
                 }
 
-                var artist = _uow.ArtistRepository.Query().Where(x => x.Id == command.ID).FirstOrDefault();
-                _uow.ArtistRepository.Delete(artist);
+                //var artist = _uow.ArtistRepository.Query().Where(x => x.Id == command.ID).FirstOrDefault();
+                //_uow.ArtistRepository.Delete(artist);
                 int i = _uow.SaveChanges();
 
                 await _uow.SaveChangesAsync();
